@@ -42,7 +42,7 @@ export function Phase0Layout() {
       <div className="h-14 border-b border-white/5 bg-deep-space/80 backdrop-blur-xl fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <span className="font-serif italic text-lg">Reed Lumber</span>
+            <span className="font-serif italic text-lg">Reed Building Materials</span>
             <span className="text-zinc-600">×</span>
             <span className="font-bold tracking-tight">GableX<span className="text-gable-green font-light">Hardscape</span></span>
           </div>

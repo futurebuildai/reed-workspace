@@ -93,7 +93,7 @@ export function DiscoveryForm() {
     setIsFinalSubmitting(true);
 
     // Format the message for Google Chat
-    let messageBody = `🚀 *Phase 0 Discovery Audit Completed: Reed Building Supply*\n\n`;
+    let messageBody = `🚀 *Phase 0 Discovery Audit Completed: Reed Building Materials*\n\n`;
     
     DISCOVERY_SECTIONS.forEach(section => {
       messageBody += `*${section.title.toUpperCase()}*\n`;

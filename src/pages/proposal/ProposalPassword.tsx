@@ -19,7 +19,7 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
     // Simulate a brief validation delay for premium feel
     await new Promise(resolve => setTimeout(resolve, 600));
 
-    if (password === 'HowReed LumberWins2026') {
+    if (password === 'HowReedWins2026') {
       onAuthenticated();
     } else {
       setError(true);
@@ -47,8 +47,8 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
           >
             <Lock className="text-gable-green" size={28} />
           </motion.div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Reed Lumber Partner Portal</h1>
-          <p className="text-zinc-500 text-sm">Enter password to access the Reed Lumber Partner Portal.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Reed Building Materials Partner Portal</h1>
+          <p className="text-zinc-500 text-sm">Enter password to access the Reed Building Materials Partner Portal.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -120,7 +120,7 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
         </AnimatePresence>
 
         <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-bold">GableXHardscape | OS &copy; 2026</p>
+          <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-bold">GableLBM | OS &copy; 2026</p>
         </div>
       </motion.div>
     </div>

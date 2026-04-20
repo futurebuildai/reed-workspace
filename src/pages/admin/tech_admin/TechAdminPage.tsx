@@ -214,7 +214,7 @@ const Integrations = () => {
             />
             <IntegrationCard
                 name="Zapier / Make"
-                description="Connect GableXHardscape to 5,000+ other apps via webhooks."
+                description="Connect GableLBM to 5,000+ other apps via webhooks."
                 icon={Activity}
             />
         </div>

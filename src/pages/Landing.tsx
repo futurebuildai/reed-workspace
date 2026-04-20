@@ -48,9 +48,9 @@ export function Landing() {
           >
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gable-green/70 mb-4">Strategic Partnership</span>
             <div className="flex items-center gap-6">
-               {/* Custom CSS text logo for Reed Lumber that looks like an established brand */}
+               {/* Custom CSS text logo for Reed Building Materials that looks like an established brand */}
                <div className="font-serif italic tracking-tight text-3xl md:text-5xl text-white">
-                 Reed Lumber
+                 Reed Building Materials
                </div>
                <div className="text-xl md:text-2xl text-zinc-600 font-light">×</div>
                <div className="font-sans text-2xl md:text-4xl font-bold tracking-tight flex items-center">
@@ -135,7 +135,7 @@ export function Landing() {
             variants={fadeUp}
             className="text-zinc-400 text-center mb-16 max-w-2xl mx-auto leading-relaxed"
           >
-            Reed Lumber runs on two disconnected systems and a lot of manual workarounds. Here is what changes when you own the platform.
+            Reed Building Materials runs on two disconnected systems and a lot of manual workarounds. Here is what changes when you own the platform.
           </motion.p>
 
           <div className="space-y-10">
@@ -143,7 +143,7 @@ export function Landing() {
               {
                 number: '01',
                 title: 'One Unified System, Zero Reconciliation',
-                body: 'Today, BisTrack handles your yard and Great Plains handles your books. Every transaction requires manual syncing between them. GableXHardscape collapses both into one platform. Sales, inventory, purchasing, and full GL accounting live in a single data model. The reconciliation step disappears entirely.',
+                body: 'Today, BisTrack handles your yard and Great Plains handles your books. Every transaction requires manual syncing between them. GableLBM collapses both into one platform. Sales, inventory, purchasing, and full GL accounting live in a single data model. The reconciliation step disappears entirely.',
                 accent: 'emerald',
               },
               {
@@ -237,7 +237,7 @@ export function Landing() {
       <footer className="border-t border-white/5 py-8 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-zinc-600">
           <span>© 2026 FutureBuild AI · Confidential</span>
-          <span>Prepared for Reed Building Supply · Trenton & Kingston, ON</span>
+          <span>Prepared for Reed Building Materials · Trenton & Kingston, ON</span>
         </div>
       </footer>
     </div>

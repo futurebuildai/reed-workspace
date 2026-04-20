@@ -77,7 +77,7 @@ export const DiscrepancyTable = () => {
                             Data Discrepancies
                         </h1>
                         <p className="text-zinc-500 mt-1">
-                            Conflicts between BisTrack and GableXHardscape data.
+                            Conflicts between BisTrack and GableLBM data.
                         </p>
                     </div>
                 </div>

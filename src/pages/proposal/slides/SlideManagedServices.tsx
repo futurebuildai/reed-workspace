@@ -53,7 +53,7 @@ export function SlideManagedServices() {
     <div className="w-full max-w-6xl">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold mb-4">Build Your <span className="text-gable-green">Managed Service Package</span></h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto">Choose the service levels that fit Reed Lumber' operational comfort.</p>
+        <p className="text-zinc-500 max-w-2xl mx-auto">Choose the service levels that fit Reed Building Materials' operational comfort.</p>
       </div>
 
       <div className="grid lg:grid-cols-4 gap-8 items-start">

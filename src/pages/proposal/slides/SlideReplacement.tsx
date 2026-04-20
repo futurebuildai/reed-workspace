@@ -73,7 +73,7 @@ export function SlideReplacement() {
             <div className="bg-deep-space/50 rounded-xl p-4 border border-white/5">
               <h4 className="font-bold text-sm text-zinc-200 mb-1">Massive Down The Road Savings</h4>
               <p className="text-[11px] text-zinc-400 leading-relaxed">
-                Even higher savings occur down the road once custom features are implemented and the ecosystem has been tested in real life and optimized for Reed Building Supply.
+                Even higher savings occur down the road once custom features are implemented and the ecosystem has been tested in real life and optimized for Reed Building Materials.
               </p>
             </div>
 

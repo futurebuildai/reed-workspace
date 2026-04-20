@@ -33,7 +33,7 @@ export function PartnerRoomTracker({ isOpen, onClose }: { isOpen: boolean, onClo
     try {
       const payload = {
         timestamp: new Date().toISOString(),
-        customer: 'Reed Building Supply',
+        customer: 'Reed Building Materials',
         field: DISCOVERY_ITEMS.find(item => item.id === id)?.question || id,
         value: values[id],
         category: DISCOVERY_ITEMS.find(item => item.id === id)?.category || 'General',

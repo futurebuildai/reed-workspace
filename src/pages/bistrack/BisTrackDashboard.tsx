@@ -223,7 +223,7 @@ export const BisTrackDashboard = () => {
                     <div className="flex-1">
                         <div className="text-white font-medium">Data Discrepancies</div>
                         <div className="text-zinc-500 text-sm">
-                            Review and resolve conflicts between BisTrack and GableXHardscape data.
+                            Review and resolve conflicts between BisTrack and GableLBM data.
                         </div>
                     </div>
                     <ArrowRight className="w-5 h-5 text-zinc-500 group-hover:text-gable-green transition-colors" />
