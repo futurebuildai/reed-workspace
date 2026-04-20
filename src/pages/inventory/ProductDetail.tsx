@@ -69,7 +69,7 @@ export const ProductDetail: React.FC = () => {
             <div className="flex flex-col items-center justify-center h-96 gap-4">
                 <Package className="w-16 h-16 text-zinc-600" />
                 <p className="text-zinc-500">Product not found</p>
-                <button onClick={() => navigate('/erp/inventory')} className="text-stone-amber hover:underline text-sm">
+                <button onClick={() => navigate('/erp/inventory')} className="text-gable-green hover:underline text-sm">
                     Back to Inventory
                 </button>
             </div>
@@ -94,7 +94,7 @@ export const ProductDetail: React.FC = () => {
                         </span>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-zinc-500">
-                        {product.manufacturer && <span className="text-stone-amber">{product.manufacturer}</span>}
+                        {product.manufacturer && <span className="text-gable-green">{product.manufacturer}</span>}
                         {product.collection && <span>{product.collection}</span>}
                         {product.vendor && !product.manufacturer && <span>{product.vendor}</span>}
                         <span>{product.uom_primary}</span>
@@ -112,7 +112,7 @@ export const ProductDetail: React.FC = () => {
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
                                 activeTab === tab.id
-                                    ? 'border-stone-amber text-stone-amber'
+                                    ? 'border-gable-green text-gable-green'
                                     : 'border-transparent text-zinc-400 hover:text-white hover:border-white/20'
                             }`}
                         >

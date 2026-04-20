@@ -62,10 +62,10 @@ export const CartSidebar = ({ isOpen, onClose, refreshKey }: CartSidebarProps) =
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b border-white/10">
                     <div className="flex items-center gap-2">
-                        <ShoppingCart className="w-5 h-5 text-stone-amber" />
+                        <ShoppingCart className="w-5 h-5 text-gable-green" />
                         <h2 className="text-lg font-semibold text-white">Cart</h2>
                         {cart && cart.item_count > 0 && (
-                            <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-stone-amber/20 text-stone-amber">
+                            <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-gable-green/20 text-gable-green">
                                 {cart.item_count}
                             </span>
                         )}
@@ -93,7 +93,7 @@ export const CartSidebar = ({ isOpen, onClose, refreshKey }: CartSidebarProps) =
                             <Link
                                 to="/portal/catalog"
                                 onClick={onClose}
-                                className="mt-3 text-sm text-stone-amber hover:underline"
+                                className="mt-3 text-sm text-gable-green hover:underline"
                             >
                                 Browse Catalog
                             </Link>
@@ -166,7 +166,7 @@ export const CartSidebar = ({ isOpen, onClose, refreshKey }: CartSidebarProps) =
                             <Link
                                 to="/portal/checkout"
                                 onClick={onClose}
-                                className="flex items-center justify-center gap-1 py-2.5 rounded-xl text-sm font-semibold bg-stone-amber text-black hover:bg-stone-amber/90 transition-colors"
+                                className="flex items-center justify-center gap-1 py-2.5 rounded-xl text-sm font-semibold bg-gable-green text-black hover:bg-gable-green/90 transition-colors"
                             >
                                 Checkout <ArrowRight className="w-4 h-4" />
                             </Link>

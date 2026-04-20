@@ -130,7 +130,7 @@ export const PortalDashboard = () => {
                     <CardTitle>Recent Orders</CardTitle>
                     <Link
                         to="/portal/orders"
-                        className="text-sm text-stone-amber hover:underline flex items-center gap-1"
+                        className="text-sm text-gable-green hover:underline flex items-center gap-1"
                     >
                         View All <ArrowRight className="w-4 h-4" />
                     </Link>

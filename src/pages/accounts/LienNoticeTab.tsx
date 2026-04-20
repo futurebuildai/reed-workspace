@@ -187,13 +187,13 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
             {/* Header + Create */}
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-stone-amber" />
+                    <Shield className="w-5 h-5 text-gable-green" />
                     <h3 className="text-lg font-semibold text-white">Lien Notices</h3>
                     <span className="text-xs text-zinc-500">Ontario Construction Act — 60-day preservation, 10% holdback</span>
                 </div>
                 <button
                     onClick={() => setShowCreate(!showCreate)}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-stone-amber/10 text-stone-amber border border-stone-amber/20 hover:bg-stone-amber/20 transition-colors"
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-gable-green/10 text-gable-green border border-gable-green/20 hover:bg-gable-green/20 transition-colors"
                 >
                     <Plus className="w-4 h-4" />
                     New Lien Notice
@@ -202,7 +202,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
 
             {/* Create Form */}
             {showCreate && (
-                <Card className="p-5 border border-stone-amber/20 bg-stone-amber/5">
+                <Card className="p-5 border border-gable-green/20 bg-gable-green/5">
                     <h4 className="text-sm font-semibold text-white mb-4">Create Lien Notice</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -211,7 +211,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                                 type="text"
                                 value={form.project_name}
                                 onChange={e => setForm({ ...form, project_name: e.target.value })}
-                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm focus:border-stone-amber/50 outline-none"
+                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm focus:border-gable-green/50 outline-none"
                                 placeholder="e.g. 123 Main St Patio"
                             />
                         </div>
@@ -221,7 +221,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                                 type="date"
                                 value={form.supply_date}
                                 onChange={e => setForm({ ...form, supply_date: e.target.value })}
-                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm focus:border-stone-amber/50 outline-none"
+                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm focus:border-gable-green/50 outline-none"
                             />
                         </div>
                         <div>
@@ -232,7 +232,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                                 min="0"
                                 value={form.invoice_total}
                                 onChange={e => setForm({ ...form, invoice_total: e.target.value })}
-                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm font-mono focus:border-stone-amber/50 outline-none"
+                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm font-mono focus:border-gable-green/50 outline-none"
                                 placeholder="0.00"
                             />
                             {form.invoice_total && (
@@ -247,7 +247,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                                 type="text"
                                 value={form.notes}
                                 onChange={e => setForm({ ...form, notes: e.target.value })}
-                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm focus:border-stone-amber/50 outline-none"
+                                className="w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white text-sm focus:border-gable-green/50 outline-none"
                                 placeholder="Optional notes"
                             />
                         </div>
@@ -262,7 +262,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                         <button
                             onClick={handleCreate}
                             disabled={creating || !form.project_name || !form.invoice_total}
-                            className="px-4 py-1.5 rounded-lg text-sm font-medium bg-stone-amber text-black hover:bg-stone-amber/90 transition-colors disabled:opacity-50"
+                            className="px-4 py-1.5 rounded-lg text-sm font-medium bg-gable-green text-black hover:bg-gable-green/90 transition-colors disabled:opacity-50"
                         >
                             {creating ? 'Creating...' : 'Create Lien Notice'}
                         </button>
@@ -279,7 +279,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                         className={cn(
                             'px-3 py-1.5 rounded-lg text-xs font-medium transition-colors',
                             filter === f
-                                ? 'bg-stone-amber/10 text-stone-amber border border-stone-amber/20'
+                                ? 'bg-gable-green/10 text-gable-green border border-gable-green/20'
                                 : 'text-zinc-400 hover:text-white hover:bg-white/5'
                         )}
                     >
@@ -360,7 +360,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                                                 </div>
                                             </td>
                                             <td className="px-4 py-3 text-right">
-                                                <span className="font-mono text-stone-amber font-medium">
+                                                <span className="font-mono text-gable-green font-medium">
                                                     {formatCAD(n.holdback_amount)}
                                                 </span>
                                             </td>
@@ -423,7 +423,7 @@ export function LienNoticeTab({ accountId }: { accountId: string }) {
                     </div>
                     <div className="text-sm">
                         <span className="text-zinc-400">Total Holdback: </span>
-                        <span className="font-mono font-bold text-stone-amber">
+                        <span className="font-mono font-bold text-gable-green">
                             {formatCAD(notices.reduce((sum, n) => sum + (n.status === 'active' || n.status === 'preserved' ? n.holdback_amount : 0), 0))}
                         </span>
                     </div>

@@ -98,7 +98,7 @@ export const PortalDeliveries = () => {
                     <button
                         key={t.key}
                         onClick={() => setFilter(t.key)}
-                        className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${filter === t.key ? 'bg-stone-amber/20 text-stone-amber' : 'text-zinc-400 hover:text-white'}`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${filter === t.key ? 'bg-gable-green/20 text-gable-green' : 'text-zinc-400 hover:text-white'}`}
                     >
                         {t.label} <span className="ml-1 text-[10px] opacity-70">{t.count}</span>
                     </button>
@@ -184,12 +184,12 @@ function StatusTimeline({ status }: { status: string }) {
                     <div key={step} className="flex items-center flex-1">
                         <div className={`w-3 h-3 rounded-full border-2 shrink-0 transition-colors ${
                             isFailed && isCurrent ? 'border-red-400 bg-red-400/30' :
-                            isActive ? 'border-stone-amber bg-stone-amber/30' :
+                            isActive ? 'border-gable-green bg-gable-green/30' :
                             'border-zinc-600 bg-transparent'
                         }`} />
                         {i < STATUS_STEPS.length - 1 && (
                             <div className={`flex-1 h-0.5 mx-1 transition-colors ${
-                                i < currentIdx ? 'bg-stone-amber/50' : 'bg-zinc-700'
+                                i < currentIdx ? 'bg-gable-green/50' : 'bg-zinc-700'
                             }`} />
                         )}
                     </div>
@@ -343,7 +343,7 @@ function DeliveryCard({ delivery: del, expanded, onToggle, onLightbox }: {
                             {del.pod_proof_url && (
                                 <button
                                     onClick={(e) => { e.stopPropagation(); onLightbox(del.pod_proof_url!); }}
-                                    className="w-10 h-10 rounded-lg overflow-hidden border border-white/10 hover:border-stone-amber/50 transition-colors relative group"
+                                    className="w-10 h-10 rounded-lg overflow-hidden border border-white/10 hover:border-gable-green/50 transition-colors relative group"
                                 >
                                     <img src={del.pod_proof_url} alt="POD" className="w-full h-full object-cover" />
                                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

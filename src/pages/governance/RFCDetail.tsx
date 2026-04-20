@@ -34,7 +34,7 @@ export function RFCDetail() {
     if (loading) {
         return (
             <div className="p-12 flex justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-amber"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gable-green"></div>
             </div>
         );
     }
@@ -58,7 +58,7 @@ export function RFCDetail() {
             <div className="flex flex-col lg:flex-row h-[calc(100vh-6rem)] gap-6">
                 {/* Sidebar / Meta */}
                 <div className="lg:w-80 shrink-0">
-                    <Card variant="glass" className="h-full bg-slate-warm/50 border-r border-white/5 lg:border-none">
+                    <Card variant="glass" className="h-full bg-slate-steel/50 border-r border-white/5 lg:border-none">
                         <CardContent className="p-6 flex flex-col h-full">
                             <button
                                 onClick={() => navigate('/governance')}

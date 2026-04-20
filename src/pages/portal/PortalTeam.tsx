@@ -89,7 +89,7 @@ export const PortalTeam = () => {
                 </div>
                 <button
                     onClick={() => navigate('/portal/team/invite')}
-                    className="flex items-center gap-2 px-4 py-2 bg-stone-amber text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors shadow-[0_0_15px_rgba(232,167,78,0.3)]"
+                    className="flex items-center gap-2 px-4 py-2 bg-gable-green text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors shadow-[0_0_15px_rgba(232,167,78,0.3)]"
                 >
                     <UserPlus size={18} /> Invite Member
                 </button>
@@ -126,7 +126,7 @@ export const PortalTeam = () => {
                                             <select
                                                 value={user.role}
                                                 onChange={(e) => handleRoleChange(user.id, e.target.value)}
-                                                className="appearance-none bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 pr-8 text-sm text-white focus:outline-none focus:ring-1 focus:ring-stone-amber cursor-pointer"
+                                                className="appearance-none bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 pr-8 text-sm text-white focus:outline-none focus:ring-1 focus:ring-gable-green cursor-pointer"
                                             >
                                                 <option value="View-Only" className="bg-zinc-900">View-Only</option>
                                                 <option value="Buyer" className="bg-zinc-900">Buyer</option>

@@ -83,7 +83,7 @@ export const ProductMediaTab: React.FC<Props> = ({ productId, media, onMediaUpda
                             value={prompt}
                             onChange={e => setPrompt(e.target.value)}
                             placeholder="Leave empty for auto-generated prompt based on product data..."
-                            className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-stone-amber/50"
+                            className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-gable-green/50"
                         />
                     </div>
                     {error && (
@@ -104,12 +104,12 @@ export const ProductMediaTab: React.FC<Props> = ({ productId, media, onMediaUpda
             ) : (
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {media.map(m => (
-                        <div key={m.id} className={`relative group bg-zinc-900 border rounded-xl overflow-hidden ${m.is_primary ? 'border-stone-amber/50 ring-1 ring-stone-amber/30' : 'border-white/10'}`}>
+                        <div key={m.id} className={`relative group bg-zinc-900 border rounded-xl overflow-hidden ${m.is_primary ? 'border-gable-green/50 ring-1 ring-gable-green/30' : 'border-white/10'}`}>
                             <div className="aspect-square">
                                 <img src={m.url} alt={m.alt_text} className="w-full h-full object-cover" />
                             </div>
                             {m.is_primary && (
-                                <div className="absolute top-2 left-2 px-2 py-0.5 bg-stone-amber/80 text-black text-xs font-bold rounded">Primary</div>
+                                <div className="absolute top-2 left-2 px-2 py-0.5 bg-gable-green/80 text-black text-xs font-bold rounded">Primary</div>
                             )}
                             <div className="absolute top-2 right-2 px-2 py-0.5 bg-black/60 text-zinc-300 text-xs rounded">{m.media_type}</div>
                             {/* Hover Actions */}

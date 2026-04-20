@@ -94,7 +94,7 @@ export const PortalCart = () => {
                     <p className="text-zinc-500 mb-6">Add products from the catalog to get started.</p>
                     <Link
                         to="/portal/catalog"
-                        className="px-6 py-3 rounded-xl bg-stone-amber text-black font-semibold hover:bg-stone-amber/90 transition-colors"
+                        className="px-6 py-3 rounded-xl bg-gable-green text-black font-semibold hover:bg-gable-green/90 transition-colors"
                     >
                         Browse Catalog
                     </Link>
@@ -111,7 +111,7 @@ export const PortalCart = () => {
                                             to={`/portal/catalog/${item.product_id}`}
                                             className="flex-1 min-w-0"
                                         >
-                                            <h3 className="text-sm font-semibold text-white hover:text-stone-amber transition-colors">
+                                            <h3 className="text-sm font-semibold text-white hover:text-gable-green transition-colors">
                                                 {item.product_name}
                                             </h3>
                                             <p className="text-xs text-zinc-500 font-mono mt-0.5">{item.product_sku}</p>
@@ -187,7 +187,7 @@ export const PortalCart = () => {
 
                                 <Link
                                     to="/portal/checkout"
-                                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold bg-stone-amber text-black hover:bg-stone-amber/90 transition-colors"
+                                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold bg-gable-green text-black hover:bg-gable-green/90 transition-colors"
                                 >
                                     Proceed to Checkout <ArrowRight className="w-4 h-4" />
                                 </Link>

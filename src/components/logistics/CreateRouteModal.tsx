@@ -73,10 +73,10 @@ export const CreateRouteModal: React.FC<Props> = ({ isOpen, onClose, onCreated }
         <Dialog open={isOpen} onClose={onClose} className="relative z-50">
             <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" aria-hidden="true" />
             <div className="fixed inset-0 flex items-center justify-center p-4">
-                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-slate-warm border border-white/10 p-6 shadow-xl">
+                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-slate-steel border border-white/10 p-6 shadow-xl">
                     <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
                         <Dialog.Title className="text-xl font-bold font-mono text-white flex items-center gap-2">
-                            <Truck className="text-stone-amber" /> Create Route
+                            <Truck className="text-gable-green" /> Create Route
                         </Dialog.Title>
                         <button onClick={onClose} className="text-zinc-400 hover:text-white transition-colors">
                             <X size={24} />
@@ -93,7 +93,7 @@ export const CreateRouteModal: React.FC<Props> = ({ isOpen, onClose, onCreated }
                                 value={vehicleId}
                                 onChange={e => setVehicleId(e.target.value)}
                                 required
-                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-stone-amber/50 focus:outline-none"
+                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-gable-green/50 focus:outline-none"
                             >
                                 <option value="">Select vehicle...</option>
                                 {vehicles.map(v => (
@@ -119,7 +119,7 @@ export const CreateRouteModal: React.FC<Props> = ({ isOpen, onClose, onCreated }
                                 value={driverId}
                                 onChange={e => setDriverId(e.target.value)}
                                 required
-                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-stone-amber/50 focus:outline-none"
+                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-gable-green/50 focus:outline-none"
                             >
                                 <option value="">Select driver...</option>
                                 {drivers.map(d => (
@@ -140,7 +140,7 @@ export const CreateRouteModal: React.FC<Props> = ({ isOpen, onClose, onCreated }
                                 value={scheduledDate}
                                 onChange={e => setScheduledDate(e.target.value)}
                                 required
-                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-stone-amber/50 focus:outline-none"
+                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-gable-green/50 focus:outline-none"
                             />
                         </div>
 
@@ -154,7 +154,7 @@ export const CreateRouteModal: React.FC<Props> = ({ isOpen, onClose, onCreated }
                                 onChange={e => setNotes(e.target.value)}
                                 rows={2}
                                 placeholder="Special instructions, area focus, etc."
-                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-stone-amber/50 focus:outline-none resize-none"
+                                className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-gable-green/50 focus:outline-none resize-none"
                             />
                         </div>
 

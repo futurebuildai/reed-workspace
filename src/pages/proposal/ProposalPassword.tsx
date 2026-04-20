@@ -19,7 +19,7 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
     // Simulate a brief validation delay for premium feel
     await new Promise(resolve => setTimeout(resolve, 600));
 
-    if (password === 'HowDibbitsWins2026') {
+    if (password === 'HowReed LumberWins2026') {
       onAuthenticated();
     } else {
       setError(true);
@@ -29,9 +29,9 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] bg-deep-earth flex items-center justify-center p-6 overflow-hidden">
+    <div className="fixed inset-0 z-[100] bg-deep-space flex items-center justify-center p-6 overflow-hidden">
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-stone-amber/5 blur-[120px] rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gable-green/5 blur-[120px] rounded-full" />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -43,12 +43,12 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="w-16 h-16 bg-stone-amber/10 border border-stone-amber/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow"
+            className="w-16 h-16 bg-gable-green/10 border border-gable-green/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow"
           >
-            <Lock className="text-stone-amber" size={28} />
+            <Lock className="text-gable-green" size={28} />
           </motion.div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Dibbits Partner Portal</h1>
-          <p className="text-zinc-500 text-sm">Enter password to access the Dibbits Partner Portal.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Reed Lumber Partner Portal</h1>
+          <p className="text-zinc-500 text-sm">Enter password to access the Reed Lumber Partner Portal.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -59,7 +59,7 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
               autoFocus
-              className={`w-full bg-white/5 border ${error ? 'border-rose-500/50 shadow-rose-500/10' : 'border-white/10 group-hover:border-white/20'} rounded-2xl px-6 py-4 text-white placeholder:text-zinc-600 outline-none transition-all focus:border-stone-amber/50 focus:ring-4 focus:ring-stone-amber/5 shadow-elevation-2 font-mono tracking-widest`}
+              className={`w-full bg-white/5 border ${error ? 'border-rose-500/50 shadow-rose-500/10' : 'border-white/10 group-hover:border-white/20'} rounded-2xl px-6 py-4 text-white placeholder:text-zinc-600 outline-none transition-all focus:border-gable-green/50 focus:ring-4 focus:ring-gable-green/5 shadow-elevation-2 font-mono tracking-widest`}
             />
             {error && (
               <motion.div 
@@ -75,7 +75,7 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
           <button
             type="submit"
             disabled={!password || isValidating}
-            className="w-full bg-stone-amber hover:bg-amber-500 disabled:opacity-50 disabled:hover:bg-stone-amber text-deep-earth font-bold py-4 rounded-2xl transition-all shadow-glow flex items-center justify-center gap-2 group overflow-hidden relative"
+            className="w-full bg-gable-green hover:bg-amber-500 disabled:opacity-50 disabled:hover:bg-gable-green text-deep-space font-bold py-4 rounded-2xl transition-all shadow-glow flex items-center justify-center gap-2 group overflow-hidden relative"
           >
             <AnimatePresence mode="wait">
               {isValidating ? (

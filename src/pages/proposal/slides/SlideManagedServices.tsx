@@ -52,8 +52,8 @@ export function SlideManagedServices() {
   return (
     <div className="w-full max-w-6xl">
       <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold mb-4">Build Your <span className="text-stone-amber">Managed Service Package</span></h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto">Choose the service levels that fit Dibbits' operational comfort.</p>
+        <h2 className="text-4xl font-bold mb-4">Build Your <span className="text-gable-green">Managed Service Package</span></h2>
+        <p className="text-zinc-500 max-w-2xl mx-auto">Choose the service levels that fit Reed Lumber' operational comfort.</p>
       </div>
 
       <div className="grid lg:grid-cols-4 gap-8 items-start">
@@ -67,27 +67,27 @@ export function SlideManagedServices() {
                 className={cn(
                   "w-full text-left p-5 rounded-2xl border transition-all relative overflow-hidden group",
                   selected[category] === item.id 
-                    ? "bg-stone-amber/10 border-stone-amber shadow-glow" 
+                    ? "bg-gable-green/10 border-gable-green shadow-glow" 
                     : "bg-white/2 border-white/5 hover:border-white/20"
                 )}
               >
                 {selected[category] === item.id && (
-                  <div className="absolute top-0 right-0 p-2 text-stone-amber">
+                  <div className="absolute top-0 right-0 p-2 text-gable-green">
                     <Check size={16} />
                   </div>
                 )}
                 <div className="flex items-center gap-3 mb-4">
                   <div className={cn(
                     "p-2 rounded-lg",
-                    selected[category] === item.id ? "bg-stone-amber/20" : "bg-white/5"
+                    selected[category] === item.id ? "bg-gable-green/20" : "bg-white/5"
                   )}>
-                    <item.icon size={18} className={selected[category] === item.id ? "text-stone-amber" : "text-zinc-500"} />
+                    <item.icon size={18} className={selected[category] === item.id ? "text-gable-green" : "text-zinc-500"} />
                   </div>
                   <div>
                     <h4 className={cn("text-sm font-bold", selected[category] === item.id ? "text-white" : "text-zinc-400")}>
                       {item.name}
                     </h4>
-                    <span className="text-xs font-bold text-stone-amber/80">${item.price}/mo</span>
+                    <span className="text-xs font-bold text-gable-green/80">${item.price}/mo</span>
                   </div>
                 </div>
                 <ul className="space-y-2">
@@ -105,7 +105,7 @@ export function SlideManagedServices() {
 
         {/* Summary Card */}
         <div className="lg:sticky lg:top-0 space-y-6">
-          <div className="glass-card rounded-3xl p-8 border-stone-amber/20 shadow-elevation-3 bg-stone-amber/5">
+          <div className="glass-card rounded-3xl p-8 border-gable-green/20 shadow-elevation-3 bg-gable-green/5">
             <h3 className="text-lg font-bold mb-6">Service Summary</h3>
             
             <div className="space-y-4 mb-8">
@@ -125,12 +125,12 @@ export function SlideManagedServices() {
 
             <div className="flex justify-between items-center mb-1">
               <span className="text-sm font-bold">Total Monthly</span>
-              <span className="text-2xl font-bold text-stone-amber">${total}</span>
+              <span className="text-2xl font-bold text-gable-green">${total}</span>
             </div>
             <p className="text-[10px] text-zinc-600 text-center mb-6">CAD per month · Cancel anytime</p>
 
-            <div className="p-3 rounded-xl bg-deep-earth/50 border border-white/5 flex gap-3">
-              <Headphones size={16} className="text-stone-amber shrink-0" />
+            <div className="p-3 rounded-xl bg-deep-space/50 border border-white/5 flex gap-3">
+              <Headphones size={16} className="text-gable-green shrink-0" />
               <p className="text-[10px] text-zinc-500 leading-relaxed italic">
                 Support includes technical troubleshooting and operational guidance via private Chat/Phone.
               </p>

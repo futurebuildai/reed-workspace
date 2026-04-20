@@ -129,7 +129,7 @@ export const ProductCollateralTab: React.FC<Props> = ({ productId, collateral, o
                                         className="p-1.5 rounded-md hover:bg-white/10 text-zinc-400 hover:text-white transition-colors"
                                         title="Copy to clipboard"
                                     >
-                                        {copiedId === c.id ? <RefreshCw className="w-4 h-4 text-stone-amber" /> : <Copy className="w-4 h-4" />}
+                                        {copiedId === c.id ? <RefreshCw className="w-4 h-4 text-gable-green" /> : <Copy className="w-4 h-4" />}
                                     </button>
                                     <button
                                         onClick={() => handleDelete(c.id)}

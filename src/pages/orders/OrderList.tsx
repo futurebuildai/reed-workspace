@@ -41,7 +41,7 @@ export default function OrderList() {
                 </button> */}
             </div>
 
-            <div className="bg-slate-warm border border-white/10 rounded-lg overflow-hidden">
+            <div className="bg-slate-steel border border-white/10 rounded-lg overflow-hidden">
                 <table className="w-full text-left text-sm">
                     <thead>
                         <tr className="border-b border-white/10 bg-white/5">
@@ -69,7 +69,7 @@ export default function OrderList() {
                                     <td className="p-4">
                                         <StatusBadge status={order.status} />
                                     </td>
-                                    <td className="p-4 font-mono text-right text-stone-amber">
+                                    <td className="p-4 font-mono text-right text-gable-green">
                                         ${order.total_amount.toFixed(2)}
                                     </td>
                                     <td className="p-4 text-right">
@@ -95,7 +95,7 @@ function StatusBadge({ status }: { status: import('../../types/order').OrderStat
 
     let bg = "bg-white/10 text-white";
     if (color === 'info') bg = "bg-blue-500/20 text-blue-400 border-blue-500/50";
-    if (color === 'success') bg = "bg-stone-amber/20 text-stone-amber border-stone-amber/50";
+    if (color === 'success') bg = "bg-gable-green/20 text-gable-green border-gable-green/50";
     if (color === 'warning') bg = "bg-amber-500/20 text-amber-400 border-amber-500/50";
     if (color === 'error') bg = "bg-red-500/20 text-red-400 border-red-500/50";
 

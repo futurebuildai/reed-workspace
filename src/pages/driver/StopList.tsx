@@ -28,7 +28,7 @@ export function StopList() {
     if (loading) {
         return (
             <div className="flex justify-center items-center h-screen bg-[#0C0D12]">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-amber"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gable-green"></div>
             </div>
         );
     }
@@ -56,7 +56,7 @@ export function StopList() {
                 {/* Progress Bar */}
                 <div className="h-1 bg-white/10 rounded-full overflow-hidden">
                     <div
-                        className="h-full bg-stone-amber transition-all duration-1000 ease-out"
+                        className="h-full bg-gable-green transition-all duration-1000 ease-out"
                         style={{ width: `${progress}%` }}
                     />
                 </div>
@@ -82,7 +82,7 @@ export function StopList() {
                         return (
                             <div key={d.id} className="relative pl-10">
                                 {/* Timeline Node */}
-                                <div className={`absolute left-0 top-6 -translate-y-1/2 w-8 h-8 rounded-full border-2 flex items-center justify-center font-bold text-xs z-10 bg-[#0C0D12] transition-colors ${isCompleted ? 'border-stone-amber text-stone-amber' :
+                                <div className={`absolute left-0 top-6 -translate-y-1/2 w-8 h-8 rounded-full border-2 flex items-center justify-center font-bold text-xs z-10 bg-[#0C0D12] transition-colors ${isCompleted ? 'border-gable-green text-gable-green' :
                                     isFailed ? 'border-rose-500 text-rose-500' :
                                         isNext ? 'border-white text-white shadow-[0_0_10px_rgba(255,255,255,0.3)]' :
                                             'border-zinc-700 text-zinc-500'
@@ -94,12 +94,12 @@ export function StopList() {
                                     variant="glass"
                                     className={`
                                         transition-all active:scale-[0.98] cursor-pointer relative overflow-hidden
-                                        ${isNext ? 'border-stone-amber/50 bg-stone-amber/5' : 'border-white/5'}
+                                        ${isNext ? 'border-gable-green/50 bg-gable-green/5' : 'border-white/5'}
                                         ${isCompleted ? 'opacity-60 grayscale-[0.5]' : ''}
                                     `}
                                     onClick={() => navigate(`/driver/deliveries/${d.id}`)}
                                 >
-                                    {isNext && <div className="absolute top-0 right-0 px-2 py-0.5 bg-stone-amber text-black text-[10px] font-bold font-mono uppercase rounded-bl-lg">Next Stop</div>}
+                                    {isNext && <div className="absolute top-0 right-0 px-2 py-0.5 bg-gable-green text-black text-[10px] font-bold font-mono uppercase rounded-bl-lg">Next Stop</div>}
 
                                     <CardContent className="p-4">
                                         <div className="flex justify-between items-start mb-1">
@@ -116,7 +116,7 @@ export function StopList() {
                                                 Order #{d.order_number}
                                             </div>
                                             {isNext && (
-                                                <div className="text-xs font-bold text-stone-amber flex items-center gap-1">
+                                                <div className="text-xs font-bold text-gable-green flex items-center gap-1">
                                                     NAVIGATE <Navigation className="w-3 h-3" />
                                                 </div>
                                             )}

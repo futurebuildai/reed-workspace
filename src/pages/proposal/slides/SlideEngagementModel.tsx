@@ -5,15 +5,15 @@ export function SlideEngagementModel() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">A New Model for <span className="text-stone-amber">Software Partnerships</span></h2>
+        <h2 className="text-4xl font-bold mb-4">A New Model for <span className="text-gable-green">Software Partnerships</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">We build the foundation, you own the equity. No vendor lock-in, ever.</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="glass-card rounded-2xl p-8 border-stone-amber/10 bg-stone-amber/5">
+        <div className="glass-card rounded-2xl p-8 border-gable-green/10 bg-gable-green/5">
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-stone-amber/20 rounded-lg">
-              <Code2 size={24} className="text-stone-amber" />
+            <div className="p-2 bg-gable-green/20 rounded-lg">
+              <Code2 size={24} className="text-gable-green" />
             </div>
             <h3 className="text-xl font-bold">You Own the Code</h3>
           </div>

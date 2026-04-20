@@ -90,7 +90,7 @@ export const DiscrepancyTable = () => {
                             onClick={() => { setFilter(f); setLoading(true); }}
                             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                                 filter === f
-                                    ? 'bg-stone-amber/10 text-stone-amber border border-stone-amber/20'
+                                    ? 'bg-gable-green/10 text-gable-green border border-gable-green/20'
                                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                             }`}
                         >
@@ -143,7 +143,7 @@ export const DiscrepancyTable = () => {
                                                 </code>
                                             </td>
                                             <td className="px-4 py-3">
-                                                <code className="px-1.5 py-0.5 rounded bg-stone-amber/10 text-stone-amber text-xs font-mono">
+                                                <code className="px-1.5 py-0.5 rounded bg-gable-green/10 text-gable-green text-xs font-mono">
                                                     {d.native_value || '(empty)'}
                                                 </code>
                                             </td>
@@ -173,7 +173,7 @@ export const DiscrepancyTable = () => {
                                                         <button
                                                             onClick={() => handleResolve(d.id, 'use_native')}
                                                             disabled={resolving === d.id}
-                                                            className="px-2 py-1 rounded text-xs font-medium bg-stone-amber/10 text-stone-amber border border-stone-amber/20 hover:bg-stone-amber/20 transition-colors disabled:opacity-50"
+                                                            className="px-2 py-1 rounded text-xs font-medium bg-gable-green/10 text-gable-green border border-gable-green/20 hover:bg-gable-green/20 transition-colors disabled:opacity-50"
                                                         >
                                                             Use Native
                                                         </button>

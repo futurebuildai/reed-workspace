@@ -143,7 +143,7 @@ export function PurchaseOrderDetail() {
     if (!po) {
         return (
             <div className="p-12 flex justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stone-amber"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gable-green"></div>
             </div>
         );
     }
@@ -415,7 +415,7 @@ export function PurchaseOrderDetail() {
                                 >
                                     {freightUploading ? (
                                         <>
-                                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-stone-amber"></div>
+                                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gable-green"></div>
                                             Processing freight invoice...
                                         </>
                                     ) : (

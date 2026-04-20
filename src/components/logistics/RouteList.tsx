@@ -65,15 +65,15 @@ export const RouteList: React.FC<RouteListProps> = ({ onSelectRoute, selectedRou
                             key={route.id}
                             onClick={() => onSelectRoute(route.id, route.vehicle_id, route.status)}
                             className={`p-4 rounded-lg border transition-all duration-200 cursor-pointer group relative overflow-hidden ${isSelected
-                                    ? 'bg-stone-amber/10 border-stone-amber/50 shadow-[0_0_15px_rgba(232,167,78,0.1)]'
+                                    ? 'bg-gable-green/10 border-gable-green/50 shadow-[0_0_15px_rgba(232,167,78,0.1)]'
                                     : 'bg-[#171921] border-white/5 hover:border-white/20 hover:bg-white/5'
                                 }`}
                         >
-                            {isSelected && <div className="absolute left-0 top-0 bottom-0 w-1 bg-stone-amber" />}
+                            {isSelected && <div className="absolute left-0 top-0 bottom-0 w-1 bg-gable-green" />}
 
                             <div className="flex justify-between items-start mb-3">
                                 <div className="flex items-center gap-2">
-                                    <Truck className={`w-4 h-4 ${isSelected ? 'text-stone-amber' : 'text-zinc-500'}`} />
+                                    <Truck className={`w-4 h-4 ${isSelected ? 'text-gable-green' : 'text-zinc-500'}`} />
                                     <span className={`font-bold font-mono ${isSelected ? 'text-white' : 'text-zinc-300'}`}>
                                         {route.vehicle_name}
                                     </span>
@@ -92,7 +92,7 @@ export const RouteList: React.FC<RouteListProps> = ({ onSelectRoute, selectedRou
                                     {formatDate(route.scheduled_date)}
                                 </div>
                                 <div className="flex items-center gap-1.5 text-xs font-mono bg-white/5 px-2 py-1 rounded text-zinc-300 border border-white/5">
-                                    <MapPin className="w-3 h-3 text-stone-amber" />
+                                    <MapPin className="w-3 h-3 text-gable-green" />
                                     {route.stop_count} Stops
                                 </div>
                             </div>

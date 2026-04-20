@@ -251,7 +251,7 @@ export const QuoteBuilder = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-display-large text-white flex items-center gap-3">
-                        <FileText className="w-10 h-10 text-stone-amber" />
+                        <FileText className="w-10 h-10 text-gable-green" />
                         {isEditing ? 'Edit Quote' : 'New Quote'}
                     </h1>
                     <p className="text-zinc-500 mt-1 max-w-2xl text-lg">
@@ -291,7 +291,7 @@ export const QuoteBuilder = () => {
                                     </div>
                                     <div className="flex justify-between items-center">
                                         <span className="text-zinc-400">Price Level</span>
-                                        <span className="text-stone-amber font-medium px-2 py-0.5 rounded bg-stone-amber/10 border border-stone-amber/20">
+                                        <span className="text-gable-green font-medium px-2 py-0.5 rounded bg-gable-green/10 border border-gable-green/20">
                                             {customer.price_level?.name || 'Retail'}
                                         </span>
                                     </div>
@@ -337,7 +337,7 @@ export const QuoteBuilder = () => {
                                     onClick={() => { setDeliveryType('PICKUP'); setFreightAmount(0); setSelectedVehicleId(undefined); }}
                                     className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all ${
                                         deliveryType === 'PICKUP'
-                                            ? 'bg-stone-amber/10 text-stone-amber border border-stone-amber/20'
+                                            ? 'bg-gable-green/10 text-gable-green border border-gable-green/20'
                                             : 'text-zinc-400 hover:text-white'
                                     }`}
                                 >
@@ -395,10 +395,10 @@ export const QuoteBuilder = () => {
                         </CardContent>
                     </Card>
 
-                    <Card variant="glass" className="bg-gradient-to-br from-stone-amber/5 to-amber-900/5 border-stone-amber/20">
+                    <Card variant="glass" className="bg-gradient-to-br from-gable-green/5 to-amber-900/5 border-gable-green/20">
                         <CardContent className="p-6">
                             <h2 className="text-lg font-medium text-white mb-4 flex items-center gap-2">
-                                <Calculator className="w-5 h-5 text-stone-amber" />
+                                <Calculator className="w-5 h-5 text-gable-green" />
                                 Quote Summary
                             </h2>
                             <div className="flex items-baseline justify-between">
@@ -428,7 +428,7 @@ export const QuoteBuilder = () => {
                                 <div className="mt-3 pt-3 border-t border-white/5">
                                     <div className="flex items-baseline justify-between">
                                         <span className="text-zinc-400 flex items-center gap-1.5 text-sm">
-                                            <TrendingUp className="w-3.5 h-3.5 text-stone-amber" />
+                                            <TrendingUp className="w-3.5 h-3.5 text-gable-green" />
                                             Escalated Total
                                         </span>
                                         <span className="text-xl font-mono font-bold text-emerald-400">
@@ -490,7 +490,7 @@ export const QuoteBuilder = () => {
                                         {lines.map((line, idx) => (
                                             <tr key={idx} className="group hover:bg-white/5 transition-colors">
                                                 <td className="px-6 py-4">
-                                                    <div className="font-mono text-white mb-0.5 group-hover:text-stone-amber transition-colors">{line.sku}</div>
+                                                    <div className="font-mono text-white mb-0.5 group-hover:text-gable-green transition-colors">{line.sku}</div>
                                                     <div className="text-zinc-400 text-xs">{line.description}</div>
 
                                                     {/* Escalator Toggle */}
@@ -528,7 +528,7 @@ export const QuoteBuilder = () => {
                                                 <td colSpan={3} className="px-6 py-4 text-right font-medium text-zinc-400 uppercase tracking-wider text-xs">
                                                     {effectiveFreight > 0 ? 'Lines Subtotal' : 'Total Amount'}
                                                 </td>
-                                                <td className="px-6 py-4 text-right font-mono text-xl font-bold text-stone-amber">${subtotalAmount.toFixed(2)}</td>
+                                                <td className="px-6 py-4 text-right font-mono text-xl font-bold text-gable-green">${subtotalAmount.toFixed(2)}</td>
                                             </tr>
                                             {effectiveFreight > 0 && (
                                                 <>
@@ -540,7 +540,7 @@ export const QuoteBuilder = () => {
                                                     </tr>
                                                     <tr className="border-t border-white/5">
                                                         <td colSpan={3} className="px-6 py-4 text-right font-medium text-zinc-400 uppercase tracking-wider text-xs">Total Amount</td>
-                                                        <td className="px-6 py-4 text-right font-mono text-xl font-bold text-stone-amber">${totalAmount.toFixed(2)}</td>
+                                                        <td className="px-6 py-4 text-right font-mono text-xl font-bold text-gable-green">${totalAmount.toFixed(2)}</td>
                                                     </tr>
                                                 </>
                                             )}

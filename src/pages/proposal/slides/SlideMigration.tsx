@@ -3,9 +3,9 @@ import { Database, Zap, Search } from 'lucide-react';
 
 export function SlideMigration() {
   const workflows = [
-    { title: 'Schema Discovery', desc: 'Auto-maps BisTrack tables/fields' },
+    { title: 'Data Mapping', desc: 'Auto-maps QuickBooks / Clover data' },
     { title: 'Data Quality Audit', desc: 'Identifies duplicates & orphans' },
-    { title: 'Iterative ETL', desc: 'Runs daily during sandbox' },
+    { title: 'Iterative ETL', desc: 'Syncs securely to your cloud sandbox' },
     { title: 'Validation Engine', desc: '100% record-level verification' },
   ];
 
@@ -14,9 +14,9 @@ export function SlideMigration() {
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         <div className="flex-1 space-y-8">
           <div>
-            <h2 className="text-4xl font-bold mb-4">AI-Powered <span className="text-stone-amber">Migration Engine</span></h2>
+            <h2 className="text-4xl font-bold mb-4">AI-Powered <span className="text-gable-green">Migration Engine</span></h2>
             <p className="text-zinc-500 leading-relaxed max-w-xl">
-              Don't manually map spreadsheets. We deploy custom Claude Code agents that understand the BisTrack schema to automate mapping and validation.
+              Don't manually map spreadsheets. We deploy custom Claude Code agents that understand QuickBooks CSV exports to automate mapping and validation.
             </p>
           </div>
 
@@ -27,10 +27,10 @@ export function SlideMigration() {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/5 group hover:border-stone-amber/20 transition-all"
+                className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/5 group hover:border-gable-green/20 transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-stone-amber/10 flex items-center justify-center shrink-0 group-hover:bg-stone-amber/20 transition-all">
-                  <Database size={20} className="text-stone-amber" />
+                <div className="w-10 h-10 rounded-lg bg-gable-green/10 flex items-center justify-center shrink-0 group-hover:bg-gable-green/20 transition-all">
+                  <Database size={20} className="text-gable-green" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white leading-none mb-1">{w.title}</h4>
@@ -45,9 +45,9 @@ export function SlideMigration() {
         </div>
 
         <div className="w-full lg:w-[450px] space-y-6">
-          <div className="glass-card rounded-2xl p-8 border-white/5 relative bg-gradient-to-br from-deep-earth to-slate-warm shadow-elevation-2">
+          <div className="glass-card rounded-2xl p-8 border-white/5 relative bg-gradient-to-br from-deep-space to-slate-steel shadow-elevation-2">
             <div className="flex items-center gap-2 mb-8 border-b border-white/5 pb-4">
-              <Zap size={18} className="text-stone-amber" />
+              <Zap size={18} className="text-gable-green" />
               <h3 className="font-bold uppercase tracking-widest text-[10px] text-zinc-400">Migration Logic - Visualized</h3>
             </div>
             
@@ -58,9 +58,9 @@ export function SlideMigration() {
               </div>
               <div className="ml-1.25 border-l border-dashed border-zinc-800 h-8" />
               <div className="flex items-center gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-stone-amber shadow-glow" />
-                <div className="h-6 w-48 bg-stone-amber/10 border border-stone-amber/20 rounded flex items-center px-2 text-[10px] font-mono text-stone-amber">
-                  AUTO_MAP_PROPERTY_LBM_TO_HARD
+                <div className="w-2.5 h-2.5 rounded-full bg-gable-green shadow-glow" />
+                <div className="h-6 w-48 bg-gable-green/10 border border-gable-green/20 rounded flex items-center px-2 text-[10px] font-mono text-gable-green">
+                  AUTO_MAP_QB_TO_CLOUD
                 </div>
               </div>
               <div className="ml-1.25 border-l border-dashed border-zinc-800 h-8" />
@@ -78,15 +78,15 @@ export function SlideMigration() {
                 <span>84%</span>
               </div>
               <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full w-[84%] bg-stone-amber shadow-glow" />
+                <div className="h-full w-[84%] bg-gable-green shadow-glow" />
               </div>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl border border-stone-amber/10 bg-stone-amber/5 flex items-center gap-3">
-            <Search size={20} className="text-stone-amber" />
+          <div className="p-4 rounded-xl border border-gable-green/10 bg-gable-green/5 flex items-center gap-3">
+            <Search size={20} className="text-gable-green" />
             <p className="text-[10px] text-zinc-400 italic">
-              "Our agents handle the 'dirty work' of SQL Server schema discovery, finding custom fields NetSuite would miss."
+              "Our agents handle the 'dirty work' of QuickBooks data discovery, finding edge-cases and anomalies that traditional cutovers would miss."
             </p>
           </div>
         </div>

@@ -14,21 +14,21 @@ export function QuoteViewTabs({ active }: { active: 'list' | 'new' }) {
                 to="/erp/quotes"
                 className={cn(
                     "flex items-center gap-2 px-5 py-3 text-sm font-medium transition-colors relative",
-                    active === 'list' ? "text-stone-amber" : "text-zinc-400 hover:text-white"
+                    active === 'list' ? "text-gable-green" : "text-zinc-400 hover:text-white"
                 )}
             >
                 <List size={16} /> All Quotes
-                {active === 'list' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-stone-amber" />}
+                {active === 'list' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gable-green" />}
             </Link>
             <Link
                 to="/erp/quotes/new"
                 className={cn(
                     "flex items-center gap-2 px-5 py-3 text-sm font-medium transition-colors relative",
-                    active === 'new' ? "text-stone-amber" : "text-zinc-400 hover:text-white"
+                    active === 'new' ? "text-gable-green" : "text-zinc-400 hover:text-white"
                 )}
             >
                 <FilePlus size={16} /> New Quote
-                {active === 'new' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-stone-amber" />}
+                {active === 'new' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gable-green" />}
             </Link>
         </div>
     );
@@ -111,7 +111,7 @@ export default function QuoteList() {
                 </div>
             </div>
 
-            <div className="bg-slate-warm border border-white/10 rounded-lg overflow-hidden">
+            <div className="bg-slate-steel border border-white/10 rounded-lg overflow-hidden">
                 <table className="w-full text-left text-sm">
                     <thead>
                         <tr className="border-b border-white/10 bg-white/5">
@@ -169,7 +169,7 @@ export default function QuoteList() {
                                                 {quote.state}
                                             </span>
                                         </td>
-                                        <td className="p-4 font-mono text-right text-stone-amber">
+                                        <td className="p-4 font-mono text-right text-gable-green">
                                             ${quote.total_amount.toFixed(2)}
                                         </td>
                                         <td className="p-4 text-right" onClick={(e) => e.stopPropagation()}>
@@ -200,7 +200,7 @@ export default function QuoteList() {
                                                 )}
                                                 {(quote.state === 'DRAFT' || quote.state === 'SENT' || quote.state === 'ACCEPTED') && (
                                                     <button onClick={() => handleConvert(quote.id)} disabled={isBusy}
-                                                        className="text-stone-amber hover:text-stone-amber/80 transition-colors flex items-center gap-1 text-xs font-medium disabled:opacity-50 p-1 rounded hover:bg-white/5"
+                                                        className="text-gable-green hover:text-gable-green/80 transition-colors flex items-center gap-1 text-xs font-medium disabled:opacity-50 p-1 rounded hover:bg-white/5"
                                                         title="Convert to Order">
                                                         <ShoppingCart size={14} />
                                                     </button>

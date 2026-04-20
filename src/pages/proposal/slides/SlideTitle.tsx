@@ -24,7 +24,7 @@ export function SlideTitle() {
         className="space-y-4"
       >
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-          GableX<span className="bg-gradient-to-r from-stone-amber to-amber-400 bg-clip-text text-transparent italic">Hardscape</span> OS
+          GableX<span className="bg-gradient-to-r from-gable-green to-amber-400 bg-clip-text text-transparent italic">Hardscape</span> OS
         </h1>
         <p className="text-xl md:text-2xl text-zinc-500 font-medium">Pricing & Scope Framework</p>
       </motion.div>
@@ -35,8 +35,8 @@ export function SlideTitle() {
         transition={{ delay: 0.6, duration: 1 }}
         className="mt-16 flex flex-col items-center gap-2"
       >
-        <div className="h-px w-20 bg-gradient-to-r from-transparent via-stone-amber/50 to-transparent" />
-        <span className="text-xs uppercase tracking-[0.3em] font-bold text-stone-amber/60">Prepared for Dibbits Landscape Supply</span>
+        <div className="h-px w-20 bg-gradient-to-r from-transparent via-gable-green/50 to-transparent" />
+        <span className="text-xs uppercase tracking-[0.3em] font-bold text-gable-green/60">Prepared for Reed Building Supply</span>
         <div className="text-[10px] text-zinc-600 font-mono mt-4">PRIVATE & CONFIDENTIAL · APRIL 2026</div>
       </motion.div>
     </div>

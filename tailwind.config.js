@@ -53,14 +53,14 @@ export default {
                     foreground: "hsl(var(--card-foreground))",
                 },
 
-                // Specific Brand Aliases (Hardscape Dark)
-                'stone-amber': '#E8A74E',
-                'deep-earth': '#0C0D12',  // Surface 0
-                'slate-warm': '#171921',  // Surface 1
-                'surface-2': '#1F2129',   // Surface 2 (Cards)
-                'surface-3': '#272936',   // Surface 3 (Modals)
+                // Specific Brand Aliases
+                'gable-green': '#00FFA3',
+                'deep-space': '#0A0B10', // Surface 0
+                'slate-steel': '#161821', // Surface 1
+                'surface-2': '#1E2029',   // Surface 2 (Cards)
+                'surface-3': '#252836',   // Surface 3 (Modals)
                 'safety-red': '#F43F5E',
-                'info-blue': '#60A5FA'
+                'blueprint-blue': '#38BDF8'
             },
             borderRadius: {
                 lg: 'var(--radius)',
@@ -73,8 +73,8 @@ export default {
                 'elevation-1': '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
                 'elevation-2': '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)',
                 'elevation-3': '0px 1px 3px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15)',
-                'glow': '0 0 15px rgba(232, 167, 78, 0.3)',
-                'glow-strong': '0 0 25px rgba(232, 167, 78, 0.5)',
+                'glow': '0 0 15px rgba(0, 255, 163, 0.3)',
+                'glow-strong': '0 0 25px rgba(0, 255, 163, 0.5)',
             },
             animation: {
                 'fade-in': 'fadeIn 0.3s cubic-bezier(0.2, 0.0, 0, 1.0)', // Emphasized easing

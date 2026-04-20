@@ -99,7 +99,7 @@ export const ProductSEOTab: React.FC<Props> = ({ productId, content, onContentUp
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                     placeholder="SEO page title..."
-                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-stone-amber/50"
+                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-gable-green/50"
                 />
             </div>
 
@@ -116,7 +116,7 @@ export const ProductSEOTab: React.FC<Props> = ({ productId, content, onContentUp
                     onChange={e => setDescription(e.target.value)}
                     rows={3}
                     placeholder="SEO meta description..."
-                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 resize-none focus:outline-none focus:border-stone-amber/50"
+                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 resize-none focus:outline-none focus:border-gable-green/50"
                 />
             </div>
 
@@ -125,7 +125,7 @@ export const ProductSEOTab: React.FC<Props> = ({ productId, content, onContentUp
                 <label className="text-sm font-medium text-zinc-400 mb-2 block">Keywords</label>
                 <div className="flex flex-wrap gap-2 mb-3">
                     {keywords.map(kw => (
-                        <span key={kw} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs bg-stone-amber/10 border border-stone-amber/20 text-stone-amber">
+                        <span key={kw} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs bg-gable-green/10 border border-gable-green/20 text-gable-green">
                             {kw}
                             <button onClick={() => removeKeyword(kw)} className="hover:text-white">
                                 <X className="w-3 h-3" />
@@ -140,7 +140,7 @@ export const ProductSEOTab: React.FC<Props> = ({ productId, content, onContentUp
                         onChange={e => setKeywordInput(e.target.value)}
                         onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addKeyword())}
                         placeholder="Add keyword..."
-                        className="flex-1 bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-stone-amber/50"
+                        className="flex-1 bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-gable-green/50"
                     />
                     <button onClick={addKeyword} className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-zinc-300 hover:bg-white/10">
                         Add
@@ -158,7 +158,7 @@ export const ProductSEOTab: React.FC<Props> = ({ productId, content, onContentUp
                         value={slug}
                         onChange={e => setSlug(e.target.value)}
                         placeholder="url-friendly-slug"
-                        className="flex-1 bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white font-mono placeholder-zinc-600 focus:outline-none focus:border-stone-amber/50"
+                        className="flex-1 bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white font-mono placeholder-zinc-600 focus:outline-none focus:border-gable-green/50"
                     />
                 </div>
             </div>
@@ -190,7 +190,7 @@ export const ProductSEOTab: React.FC<Props> = ({ productId, content, onContentUp
                 <button
                     onClick={handleSave}
                     disabled={saving}
-                    className="flex items-center gap-2 px-5 py-2.5 bg-stone-amber/20 text-stone-amber border border-stone-amber/30 rounded-lg hover:bg-stone-amber/30 transition-colors disabled:opacity-50"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-gable-green/20 text-gable-green border border-gable-green/30 rounded-lg hover:bg-gable-green/30 transition-colors disabled:opacity-50"
                 >
                     {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                     {saving ? 'Saving...' : 'Save SEO'}

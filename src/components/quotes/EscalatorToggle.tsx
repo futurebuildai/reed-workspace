@@ -86,7 +86,7 @@ export const EscalatorToggle = ({ basePrice, escalator, onChange }: EscalatorTog
                 type="button"
                 onClick={handleToggle}
                 className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${escalator.enabled
-                        ? 'bg-stone-amber/15 border-stone-amber/40 text-stone-amber hover:bg-stone-amber/25'
+                        ? 'bg-gable-green/15 border-gable-green/40 text-gable-green hover:bg-gable-green/25'
                         : 'bg-white/5 border-white/10 text-zinc-500 hover:border-white/20 hover:text-zinc-300'
                     }`}
             >
@@ -103,7 +103,7 @@ export const EscalatorToggle = ({ basePrice, escalator, onChange }: EscalatorTog
                             type="button"
                             onClick={() => handleTypeChange('PERCENTAGE')}
                             className={`flex items-center gap-1.5 text-xs px-3 py-2 rounded-lg border transition-all ${escalator.escalation_type === 'PERCENTAGE'
-                                    ? 'bg-stone-amber/10 border-stone-amber/30 text-stone-amber'
+                                    ? 'bg-gable-green/10 border-gable-green/30 text-gable-green'
                                     : 'bg-white/5 border-white/10 text-zinc-400 hover:border-white/20'
                                 }`}
                         >
@@ -137,7 +137,7 @@ export const EscalatorToggle = ({ basePrice, escalator, onChange }: EscalatorTog
                                     max="50"
                                     value={escalator.escalation_rate}
                                     onChange={e => handleRateChange(parseFloat(e.target.value) || 0)}
-                                    className="w-full bg-black/30 border border-white/10 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-stone-amber/50 focus:outline-none focus:ring-1 focus:ring-stone-amber/20 transition-colors"
+                                    className="w-full bg-black/30 border border-white/10 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-gable-green/50 focus:outline-none focus:ring-1 focus:ring-gable-green/20 transition-colors"
                                 />
                             </div>
                         ) : (
@@ -188,7 +188,7 @@ export const EscalatorToggle = ({ basePrice, escalator, onChange }: EscalatorTog
                                 type="date"
                                 value={escalator.effective_date}
                                 onChange={e => handleDateChange('effective_date', e.target.value)}
-                                className="w-full bg-black/30 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-stone-amber/50 focus:outline-none focus:ring-1 focus:ring-stone-amber/20 transition-colors"
+                                className="w-full bg-black/30 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-gable-green/50 focus:outline-none focus:ring-1 focus:ring-gable-green/20 transition-colors"
                             />
                         </div>
                         <div>
@@ -200,7 +200,7 @@ export const EscalatorToggle = ({ basePrice, escalator, onChange }: EscalatorTog
                                 type="date"
                                 value={escalator.target_date}
                                 onChange={e => handleDateChange('target_date', e.target.value)}
-                                className="w-full bg-black/30 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-stone-amber/50 focus:outline-none focus:ring-1 focus:ring-stone-amber/20 transition-colors"
+                                className="w-full bg-black/30 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-gable-green/50 focus:outline-none focus:ring-1 focus:ring-gable-green/20 transition-colors"
                             />
                         </div>
                     </div>
@@ -210,7 +210,7 @@ export const EscalatorToggle = ({ basePrice, escalator, onChange }: EscalatorTog
                         type="button"
                         onClick={handleCalculate}
                         disabled={loading}
-                        className="w-full flex items-center justify-center gap-2 text-xs font-medium px-4 py-2.5 rounded-lg bg-stone-amber/10 border border-stone-amber/20 text-stone-amber hover:bg-stone-amber/20 transition-all disabled:opacity-50"
+                        className="w-full flex items-center justify-center gap-2 text-xs font-medium px-4 py-2.5 rounded-lg bg-gable-green/10 border border-gable-green/20 text-gable-green hover:bg-gable-green/20 transition-all disabled:opacity-50"
                     >
                         <TrendingUp className="w-3.5 h-3.5" />
                         {loading ? 'Calculating...' : 'Calculate Future Price'}

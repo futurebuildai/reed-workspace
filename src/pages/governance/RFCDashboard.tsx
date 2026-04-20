@@ -40,7 +40,7 @@ export function RFCDashboard() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-display-large text-white flex items-center gap-3">
-                        <GitPullRequest className="w-10 h-10 text-stone-amber" />
+                        <GitPullRequest className="w-10 h-10 text-gable-green" />
                         Governance
                     </h1>
                     <p className="text-zinc-500 mt-1 max-w-2xl text-lg">
@@ -103,7 +103,7 @@ export function RFCDashboard() {
                                                     </span>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="font-medium text-white group-hover:text-stone-amber transition-colors">{rfc.title}</div>
+                                                    <div className="font-medium text-white group-hover:text-gable-green transition-colors">{rfc.title}</div>
                                                     <div className="text-xs text-zinc-500 font-mono mt-0.5">ID: {rfc.id.substring(0, 8)}</div>
                                                 </td>
                                                 <td className="px-6 py-4 text-zinc-400 max-w-md truncate">

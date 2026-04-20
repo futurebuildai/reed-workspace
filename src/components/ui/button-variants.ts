@@ -5,13 +5,13 @@ export const buttonVariants = cva(
     {
         variants: {
             variant: {
-                default: "bg-stone-amber text-deep-earth hover:shadow-glow hover:-translate-y-0.5 font-bold tracking-wide",
-                destructive: "bg-deep-earth border border-safety-red text-safety-red hover:bg-safety-red/10 hover:shadow-[0_0_15px_rgba(244,63,94,0.3)]",
-                outline: "border border-white/10 bg-transparent hover:bg-white/5 text-white hover:border-stone-amber/50",
-                secondary: "bg-slate-warm text-white hover:bg-slate-warm/80 border border-white/5",
+                default: "bg-gable-green text-deep-space hover:shadow-glow hover:-translate-y-0.5 font-bold tracking-wide",
+                destructive: "bg-deep-space border border-safety-red text-safety-red hover:bg-safety-red/10 hover:shadow-[0_0_15px_rgba(244,63,94,0.3)]",
+                outline: "border border-white/10 bg-transparent hover:bg-white/5 text-white hover:border-gable-green/50",
+                secondary: "bg-slate-steel text-white hover:bg-slate-steel/80 border border-white/5",
                 ghost: "hover:bg-white/5 text-zinc-400 hover:text-white",
-                link: "text-stone-amber underline-offset-4 hover:underline",
-                premium: "bg-gradient-to-r from-stone-amber to-amber-400 text-deep-earth font-bold shadow-glow hover:shadow-glow-strong hover:-translate-y-1"
+                link: "text-gable-green underline-offset-4 hover:underline",
+                premium: "bg-gradient-to-r from-gable-green to-amber-400 text-deep-space font-bold shadow-glow hover:shadow-glow-strong hover:-translate-y-1"
             },
             size: {
                 default: "h-10 py-2 px-4",

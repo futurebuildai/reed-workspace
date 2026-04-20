@@ -20,9 +20,9 @@ interface CustomTooltipProps {
 const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
     if (active && payload && payload.length) {
         return (
-            <div className="bg-slate-warm/90 backdrop-blur-md border border-white/10 p-3 rounded-lg shadow-xl">
+            <div className="bg-slate-steel/90 backdrop-blur-md border border-white/10 p-3 rounded-lg shadow-xl">
                 <p className="text-zinc-400 text-xs mb-1">{label}</p>
-                <p className="text-stone-amber font-mono font-bold text-lg">
+                <p className="text-gable-green font-mono font-bold text-lg">
                     ${(payload[0].value).toLocaleString('en-CA', { minimumFractionDigits: 2 })}
                 </p>
             </div>

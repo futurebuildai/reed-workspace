@@ -69,7 +69,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-stone-amber/30 selection:text-stone-amber;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-gable-green/30 selection:text-gable-green;
   }
 }
 
@@ -77,11 +77,11 @@
 
   /* Glassmorphism Utilities */
   .glass-card {
-    @apply bg-slate-warm/60 backdrop-blur-xl border border-white/5 shadow-elevation-1;
+    @apply bg-slate-steel/60 backdrop-blur-xl border border-white/5 shadow-elevation-1;
   }
 
   .glass-panel {
-    @apply bg-deep-earth/80 backdrop-blur-2xl border-r border-white/5;
+    @apply bg-deep-space/80 backdrop-blur-2xl border-r border-white/5;
   }
 
   /* Text Styles */

@@ -38,7 +38,7 @@ export function CustomerStatementPage() {
         <PageTransition>
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-                    <FileText className="w-8 h-8 text-stone-amber" />
+                    <FileText className="w-8 h-8 text-gable-green" />
                     Customer Statement
                 </h1>
                 <p className="text-zinc-500 mt-1">Generate account activity statements</p>

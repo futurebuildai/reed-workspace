@@ -7,10 +7,10 @@ export const ShortcutsModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: 
             <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" aria-hidden="true" />
 
             <div className="fixed inset-0 flex items-center justify-center p-4">
-                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-slate-warm border border-white/10 p-6 text-left shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-slate-steel border border-white/10 p-6 text-left shadow-xl transition-all">
                     <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
                         <Dialog.Title as="h3" className="text-xl font-bold font-mono text-white flex items-center gap-2">
-                            <Keyboard className="text-stone-amber" /> Keyboard Shortcuts
+                            <Keyboard className="text-gable-green" /> Keyboard Shortcuts
                         </Dialog.Title>
                         <button
                             onClick={onClose}
@@ -22,7 +22,7 @@ export const ShortcutsModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: 
 
                     <div className="grid grid-cols-2 gap-8">
                         <div>
-                            <h4 className="text-sm font-bold text-stone-amber uppercase tracking-wider mb-4">Global</h4>
+                            <h4 className="text-sm font-bold text-gable-green uppercase tracking-wider mb-4">Global</h4>
                             <div className="space-y-3">
                                 <ShortcutItem keys={["⌘", "K"]} description="Open Omnibar (Search)" />
                                 <ShortcutItem keys={["?"]} description="Show Shortcuts" />
@@ -30,7 +30,7 @@ export const ShortcutsModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: 
                         </div>
 
                         <div>
-                            <h4 className="text-sm font-bold text-stone-amber uppercase tracking-wider mb-4">Navigation</h4>
+                            <h4 className="text-sm font-bold text-gable-green uppercase tracking-wider mb-4">Navigation</h4>
                             <div className="space-y-3">
                                 <ShortcutItem keys={["G", "D"]} description="Go to Dashboard" />
                                 <ShortcutItem keys={["G", "I"]} description="Go to Inventory" />
@@ -39,7 +39,7 @@ export const ShortcutsModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: 
                         </div>
 
                         <div>
-                            <h4 className="text-sm font-bold text-stone-amber uppercase tracking-wider mb-4">Quote Builder</h4>
+                            <h4 className="text-sm font-bold text-gable-green uppercase tracking-wider mb-4">Quote Builder</h4>
                             <div className="space-y-3">
                                 <ShortcutItem keys={["Enter"]} description="Add Item" />
                                 <ShortcutItem keys={["⌘", "S"]} description="Save Quote" />

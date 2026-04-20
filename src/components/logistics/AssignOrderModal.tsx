@@ -93,10 +93,10 @@ export const AssignOrderModal: React.FC<Props> = ({ isOpen, onClose, routeId, ve
         <Dialog open={isOpen} onClose={onClose} className="relative z-50">
             <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" aria-hidden="true" />
             <div className="fixed inset-0 flex items-center justify-center p-4">
-                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-slate-warm border border-white/10 p-6 shadow-xl">
+                <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-slate-steel border border-white/10 p-6 shadow-xl">
                     <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
                         <Dialog.Title className="text-xl font-bold font-mono text-white flex items-center gap-2">
-                            <Package className="text-stone-amber" /> Assign Order to Route
+                            <Package className="text-gable-green" /> Assign Order to Route
                         </Dialog.Title>
                         <button onClick={onClose} className="text-zinc-400 hover:text-white transition-colors">
                             <X size={24} />
@@ -134,7 +134,7 @@ export const AssignOrderModal: React.FC<Props> = ({ isOpen, onClose, routeId, ve
                                             <label
                                                 key={order.id}
                                                 className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${selectedOrderId === order.id
-                                                        ? 'bg-stone-amber/10 border-stone-amber/50'
+                                                        ? 'bg-gable-green/10 border-gable-green/50'
                                                         : 'bg-[#0C0D12] border-white/10 hover:border-white/20'
                                                     }`}
                                             >
@@ -169,7 +169,7 @@ export const AssignOrderModal: React.FC<Props> = ({ isOpen, onClose, routeId, ve
                                     onChange={e => setInstructions(e.target.value)}
                                     rows={2}
                                     placeholder="Gate code, dock preference, contact on arrival..."
-                                    className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-stone-amber/50 focus:outline-none resize-none"
+                                    className="w-full bg-[#0C0D12] border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-gable-green/50 focus:outline-none resize-none"
                                 />
                             </div>
 

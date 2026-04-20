@@ -120,7 +120,7 @@ export const DeliveryList: React.FC<DeliveryListProps> = ({ routeId, vehicleId, 
 
     if (loading) return (
         <div className="flex flex-col items-center justify-center h-full text-zinc-500 gap-4">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stone-amber"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gable-green"></div>
             <p>Loading Manifest...</p>
         </div>
     );
@@ -175,19 +175,19 @@ export const DeliveryList: React.FC<DeliveryListProps> = ({ routeId, vehicleId, 
             <div className="flex-1 overflow-y-auto p-6 space-y-6 relative">
                 {/* Timeline Line */}
                 {deliveries.length > 0 && (
-                    <div className="absolute left-[2.25rem] top-6 bottom-6 w-px bg-gradient-to-b from-stone-amber/50 via-white/10 to-transparent"></div>
+                    <div className="absolute left-[2.25rem] top-6 bottom-6 w-px bg-gradient-to-b from-gable-green/50 via-white/10 to-transparent"></div>
                 )}
 
                 {deliveries.map((delivery, index) => (
                     <div key={delivery.id} className="relative pl-12 group">
                         {/* Timeline Node */}
-                        <div className="absolute left-6 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-[#0C0D12] border-2 border-stone-amber flex items-center justify-center shadow-[0_0_10px_rgba(232,167,78,0.3)] z-10 text-[10px] font-bold text-white">
+                        <div className="absolute left-6 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-[#0C0D12] border-2 border-gable-green flex items-center justify-center shadow-[0_0_10px_rgba(232,167,78,0.3)] z-10 text-[10px] font-bold text-white">
                             {index + 1}
                         </div>
 
-                        <div className="bg-[#171921] border border-white/5 p-5 rounded-xl hover:border-stone-amber/30 hover:bg-white/5 transition-all duration-300 group-hover:translate-x-1">
+                        <div className="bg-[#171921] border border-white/5 p-5 rounded-xl hover:border-gable-green/30 hover:bg-white/5 transition-all duration-300 group-hover:translate-x-1">
                             <div className="flex justify-between items-start mb-2">
-                                <span className="font-bold text-lg text-white group-hover:text-stone-amber transition-colors">{delivery.customer_name}</span>
+                                <span className="font-bold text-lg text-white group-hover:text-gable-green transition-colors">{delivery.customer_name}</span>
                                 <div className="flex items-center gap-2">
                                     {/* Reorder buttons */}
                                     <div className="opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
@@ -250,7 +250,7 @@ export const DeliveryList: React.FC<DeliveryListProps> = ({ routeId, vehicleId, 
             <div className="p-4 border-t border-white/5 bg-white/5">
                 <Button
                     variant="outline"
-                    className="w-full border-dashed border-white/20 hover:border-stone-amber/50 text-stone-amber hover:bg-stone-amber/5"
+                    className="w-full border-dashed border-white/20 hover:border-gable-green/50 text-gable-green hover:bg-gable-green/5"
                     onClick={() => setShowAssignModal(true)}
                 >
                     <ArrowRight className="w-4 h-4 mr-2" />

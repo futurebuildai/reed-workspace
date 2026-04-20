@@ -79,14 +79,14 @@ export const ProjectList = () => {
             <div className="mb-6 flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-                        <FolderGit2 className="text-stone-amber" /> Projects
+                        <FolderGit2 className="text-gable-green" /> Projects
                     </h1>
                     <p className="text-zinc-400 text-sm mt-1">Organize orders, deliveries, and invoices by job site or project</p>
                 </div>
                 {!isCreating && (
                     <button
                         onClick={() => setIsCreating(true)}
-                        className="flex items-center gap-2 px-4 py-2 bg-stone-amber text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors shadow-[0_0_15px_rgba(232,167,78,0.3)]"
+                        className="flex items-center gap-2 px-4 py-2 bg-gable-green text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors shadow-[0_0_15px_rgba(232,167,78,0.3)]"
                     >
                         <Plus size={18} /> New Project
                     </button>
@@ -94,7 +94,7 @@ export const ProjectList = () => {
             </div>
 
             {isCreating && (
-                <Card variant="glass" className="mb-6 border-stone-amber/30">
+                <Card variant="glass" className="mb-6 border-gable-green/30">
                     <CardContent className="p-4">
                         <form onSubmit={handleCreateProject} className="flex gap-3 items-end">
                             <div className="flex-1">
@@ -106,7 +106,7 @@ export const ProjectList = () => {
                                     value={newProjectName}
                                     onChange={(e) => setNewProjectName(e.target.value)}
                                     placeholder="e.g. 123 Main St Subivision"
-                                    className="w-full bg-black/20 border border-white/10 rounded-lg py-2 px-3 text-white placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-stone-amber"
+                                    className="w-full bg-black/20 border border-white/10 rounded-lg py-2 px-3 text-white placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-gable-green"
                                 />
                             </div>
                             <button
@@ -136,7 +136,7 @@ export const ProjectList = () => {
                         <p className="text-zinc-400 mb-6">Group your orders and deliveries by creating your first project.</p>
                         <button
                             onClick={() => setIsCreating(true)}
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-stone-amber text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-gable-green text-black font-semibold rounded-lg hover:bg-amber-400 transition-colors"
                         >
                             <Plus size={18} /> New Project
                         </button>

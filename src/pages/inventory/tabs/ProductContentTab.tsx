@@ -125,7 +125,7 @@ export const ProductContentTab: React.FC<Props> = ({ productId, content, onConte
                 <button
                     onClick={handleSave}
                     disabled={saving}
-                    className="flex items-center gap-2 px-5 py-2.5 bg-stone-amber/20 text-stone-amber border border-stone-amber/30 rounded-lg hover:bg-stone-amber/30 transition-colors disabled:opacity-50"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-gable-green/20 text-gable-green border border-gable-green/30 rounded-lg hover:bg-gable-green/30 transition-colors disabled:opacity-50"
                 >
                     {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                     {saving ? 'Saving...' : 'Save Changes'}
@@ -149,7 +149,7 @@ const TextArea: React.FC<{ label: string; value: string; onChange: (v: string) =
             value={value}
             onChange={e => onChange(e.target.value)}
             rows={rows}
-            className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 resize-none focus:outline-none focus:border-stone-amber/50"
+            className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-600 resize-none focus:outline-none focus:border-gable-green/50"
             placeholder={`Enter ${label.toLowerCase()}...`}
         />
     </div>

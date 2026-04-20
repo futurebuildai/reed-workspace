@@ -56,7 +56,7 @@ export const PortalInvite = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="colleague@company.com"
-                                    className="w-full bg-black/20 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-stone-amber transition-all"
+                                    className="w-full bg-black/20 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-gable-green transition-all"
                                 />
                             </div>
                         </div>
@@ -105,7 +105,7 @@ export const PortalInvite = () => {
                             <button
                                 type="submit"
                                 disabled={submitting || !email}
-                                className="flex items-center gap-2 px-6 py-2 bg-stone-amber text-black font-semibold rounded-lg hover:bg-amber-400 transition-all shadow-[0_0_15px_rgba(232,167,78,0.3)] disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed"
+                                className="flex items-center gap-2 px-6 py-2 bg-gable-green text-black font-semibold rounded-lg hover:bg-amber-400 transition-all shadow-[0_0_15px_rgba(232,167,78,0.3)] disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed"
                             >
                                 {submitting ? <Loader2 size={18} className="animate-spin" /> : <UserPlus size={18} />}
                                 Send Invitation

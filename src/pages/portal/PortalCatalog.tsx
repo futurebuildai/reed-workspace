@@ -80,13 +80,13 @@ export const PortalCatalog = () => {
                         placeholder="Search by SKU or description..."
                         value={search}
                         onChange={e => setSearch(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-stone-amber/50 transition-colors text-sm"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-gable-green/50 transition-colors text-sm"
                     />
                 </div>
                 <select
                     value={category}
                     onChange={e => setCategory(e.target.value)}
-                    className="px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-stone-amber/50 transition-colors appearance-none"
+                    className="px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-gable-green/50 transition-colors appearance-none"
                 >
                     <option value="">All Categories</option>
                     {categories.map(c => (
@@ -96,7 +96,7 @@ export const PortalCatalog = () => {
                 <select
                     value={manufacturer}
                     onChange={e => setManufacturer(e.target.value)}
-                    className="px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-stone-amber/50 transition-colors appearance-none"
+                    className="px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-gable-green/50 transition-colors appearance-none"
                 >
                     <option value="">All Manufacturers</option>
                     {manufacturers.map(m => (
@@ -106,7 +106,7 @@ export const PortalCatalog = () => {
                 <select
                     value={finish}
                     onChange={e => setFinish(e.target.value)}
-                    className="px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-stone-amber/50 transition-colors appearance-none"
+                    className="px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-gable-green/50 transition-colors appearance-none"
                 >
                     <option value="">All Finishes</option>
                     {finishes.map(f => (
@@ -123,7 +123,7 @@ export const PortalCatalog = () => {
                         {[category, manufacturer, finish].filter(Boolean).map(f => (
                             <span
                                 key={f}
-                                className="px-2 py-0.5 rounded-full text-xs bg-stone-amber/10 text-stone-amber border border-stone-amber/20"
+                                className="px-2 py-0.5 rounded-full text-xs bg-gable-green/10 text-gable-green border border-gable-green/20"
                             >
                                 {f}
                             </span>

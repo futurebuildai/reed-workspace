@@ -56,7 +56,7 @@ export function KPICard({
 
     if (loading) {
         return (
-            <Card variant="default" className="border-white/5 bg-slate-warm/50">
+            <Card variant="default" className="border-white/5 bg-slate-steel/50">
                 <CardContent className="p-6 relative overflow-hidden">
                     <div className="flex justify-between items-start mb-4">
                         <div className="h-4 w-24 bg-white/10 rounded animate-pulse" />
@@ -88,7 +88,7 @@ export function KPICard({
                     <h3 className="text-sm font-medium text-zinc-400 font-sans tracking-wide">{title}</h3>
                     {icon && (
                         <Tooltip content={`View details for ${title}`}>
-                            <div className={`p-2 rounded-lg bg-white/5 text-zinc-300 group-hover:text-stone-amber group-hover:bg-stone-amber/10 transition-colors duration-300`}>{icon}</div>
+                            <div className={`p-2 rounded-lg bg-white/5 text-zinc-300 group-hover:text-gable-green group-hover:bg-gable-green/10 transition-colors duration-300`}>{icon}</div>
                         </Tooltip>
                     )}
                 </div>
@@ -118,7 +118,7 @@ export function KPICard({
             </CardContent>
 
             {/* Hover Glow Effect */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-stone-amber/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gable-green/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         </Card>
     );
 }

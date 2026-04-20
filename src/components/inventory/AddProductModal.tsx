@@ -14,7 +14,7 @@ const UOM_OPTIONS: UOM[] = [
     'BAG', 'BUNDLE', 'PAIR', 'SET'
 ];
 
-const inputClass = "w-full bg-zinc-950 border border-zinc-700 rounded px-3 py-2 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-stone-amber/60 focus:border-transparent text-sm";
+const inputClass = "w-full bg-zinc-950 border border-zinc-700 rounded px-3 py-2 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-gable-green/60 focus:border-transparent text-sm";
 const labelClass = "block text-sm font-medium text-zinc-400 mb-1";
 
 export const AddProductModal: React.FC<AddProductModalProps> = ({ isOpen, onClose, onSave }) => {
@@ -116,7 +116,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ isOpen, onClos
 
                     {/* Product Attributes */}
                     <div className="border-t border-white/10 pt-4">
-                        <h3 className="text-sm font-medium text-stone-amber mb-3">Product Attributes</h3>
+                        <h3 className="text-sm font-medium text-gable-green mb-3">Product Attributes</h3>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label className={labelClass}>Manufacturer</label>
@@ -153,7 +153,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ isOpen, onClos
 
                     {/* Unit Conversions */}
                     <div className="border-t border-white/10 pt-4">
-                        <h3 className="text-sm font-medium text-stone-amber mb-3">Unit & Coverage</h3>
+                        <h3 className="text-sm font-medium text-gable-green mb-3">Unit & Coverage</h3>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label className={labelClass}>Pallet Count (pcs/PLT)</label>
@@ -180,7 +180,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ isOpen, onClos
 
                     {/* Pricing & Vendor */}
                     <div className="border-t border-white/10 pt-4">
-                        <h3 className="text-sm font-medium text-stone-amber mb-3">Pricing & Vendor</h3>
+                        <h3 className="text-sm font-medium text-gable-green mb-3">Pricing & Vendor</h3>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label className={labelClass}>Base Price ($)</label>
@@ -207,7 +207,7 @@ export const AddProductModal: React.FC<AddProductModalProps> = ({ isOpen, onClos
                             Cancel
                         </button>
                         <button type="submit" disabled={isSubmitting}
-                            className="px-4 py-2 bg-stone-amber hover:bg-stone-amber/90 text-black rounded-lg text-sm font-semibold transition-colors disabled:opacity-50">
+                            className="px-4 py-2 bg-gable-green hover:bg-gable-green/90 text-black rounded-lg text-sm font-semibold transition-colors disabled:opacity-50">
                             {isSubmitting ? 'Saving...' : 'Create Product'}
                         </button>
                     </div>

@@ -75,18 +75,18 @@ export const MaterialListUpload = ({ onParseComplete, disabled }: MaterialListUp
                 onClick={handleClick}
                 disabled={disabled || uploading}
                 variant="secondary"
-                className="relative overflow-hidden border-dashed border-stone-amber/30 hover:border-stone-amber/60 hover:bg-stone-amber/5 transition-all"
+                className="relative overflow-hidden border-dashed border-gable-green/30 hover:border-gable-green/60 hover:bg-gable-green/5 transition-all"
                 id="upload-material-list-btn"
             >
                 {uploading ? (
                     <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin text-stone-amber" />
-                        <span className="text-stone-amber">Parsing...</span>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin text-gable-green" />
+                        <span className="text-gable-green">Parsing...</span>
                     </>
                 ) : (
                     <>
-                        <Camera className="w-4 h-4 mr-1.5 text-stone-amber" />
-                        <Upload className="w-3.5 h-3.5 mr-2 text-stone-amber" />
+                        <Camera className="w-4 h-4 mr-1.5 text-gable-green" />
+                        <Upload className="w-3.5 h-3.5 mr-2 text-gable-green" />
                         Upload Material List
                     </>
                 )}
@@ -94,7 +94,7 @@ export const MaterialListUpload = ({ onParseComplete, disabled }: MaterialListUp
                 {/* Progress bar overlay */}
                 {uploading && (
                     <div
-                        className="absolute bottom-0 left-0 h-0.5 bg-stone-amber transition-all duration-300 ease-out"
+                        className="absolute bottom-0 left-0 h-0.5 bg-gable-green transition-all duration-300 ease-out"
                         style={{ width: `${progress}%` }}
                     />
                 )}

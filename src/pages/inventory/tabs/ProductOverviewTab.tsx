@@ -49,7 +49,7 @@ export const ProductOverviewTab: React.FC<Props> = ({ product, onProductUpdate }
                             </div>
                             <button
                                 onClick={() => setMarginModalOpen(true)}
-                                className="p-1 rounded hover:bg-white/10 text-zinc-500 hover:text-stone-amber transition-colors"
+                                className="p-1 rounded hover:bg-white/10 text-zinc-500 hover:text-gable-green transition-colors"
                                 title="Edit pricing controls"
                             >
                                 <Pencil className="w-3.5 h-3.5" />
@@ -86,7 +86,7 @@ export const ProductOverviewTab: React.FC<Props> = ({ product, onProductUpdate }
                         <div className="flex items-center gap-2 text-sm font-mono text-white">
                             <span>1 PLT</span>
                             <span className="text-zinc-600">=</span>
-                            <span className="text-stone-amber">{product.pallet_count} PC</span>
+                            <span className="text-gable-green">{product.pallet_count} PC</span>
                             {product.pieces_per_sf && product.pieces_per_sf > 0 && (
                                 <>
                                     <span className="text-zinc-600">=</span>
@@ -156,7 +156,7 @@ const InfoCard: React.FC<{ icon: React.ReactNode; label: string; value: string; 
             {icon}
             {label}
         </div>
-        <div className={`font-mono text-sm font-medium ${accent === 'emerald' ? 'text-emerald-400' : accent === 'green' ? 'text-stone-amber' : 'text-white'}`}>
+        <div className={`font-mono text-sm font-medium ${accent === 'emerald' ? 'text-emerald-400' : accent === 'green' ? 'text-gable-green' : 'text-white'}`}>
             {value}
         </div>
     </div>

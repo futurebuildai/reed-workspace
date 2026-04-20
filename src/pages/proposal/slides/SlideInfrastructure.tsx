@@ -4,13 +4,13 @@ export function SlideInfrastructure() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">High-Availability <span className="text-stone-amber">Architecture</span></h2>
+        <h2 className="text-4xl font-bold mb-4">High-Availability <span className="text-gable-green">Architecture</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">Enterprise-grade infrastructure with multi-cloud redundancy and Canadian data residency.</p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-earth/30">
+          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
             <h3 className="font-bold flex items-center gap-2 mb-6">
               <Cloud size={20} className="text-blue-400" />
               Primary Stack (Toronto)
@@ -30,7 +30,7 @@ export function SlideInfrastructure() {
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-earth/30">
+          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
             <h3 className="font-bold flex items-center gap-2 mb-6">
               <Zap size={20} className="text-purple-400" />
               AI-Native Services (Montréal)
@@ -51,7 +51,7 @@ export function SlideInfrastructure() {
         </div>
 
         <div className="relative">
-          <div className="absolute inset-0 bg-stone-amber/5 rounded-full blur-[100px] -z-10" />
+          <div className="absolute inset-0 bg-gable-green/5 rounded-full blur-[100px] -z-10" />
           <div className="glass-card rounded-3xl p-8 border-white/10 shadow-elevation-3 text-center space-y-8">
             <div className="flex justify-center flex-wrap gap-4">
               <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center gap-2 min-w-[120px]">
@@ -59,7 +59,7 @@ export function SlideInfrastructure() {
                 <span className="text-[10px] font-bold uppercase tracking-wider">Zero Trust</span>
               </div>
               <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center gap-2 min-w-[120px]">
-                <Globe size={24} className="text-stone-amber" />
+                <Globe size={24} className="text-gable-green" />
                 <span className="text-[10px] font-bold uppercase tracking-wider">Open API</span>
               </div>
               <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center gap-2 min-w-[120px]">
@@ -91,20 +91,20 @@ export function SlideInfrastructure() {
       </div>
 
       {/* Open Requirements */}
-      <div className="mt-10 glass-card rounded-2xl p-6 border-stone-amber/20 bg-stone-amber/5">
-        <h4 className="font-bold text-sm text-stone-amber mb-4 flex items-center gap-2">
+      <div className="mt-10 glass-card rounded-2xl p-6 border-gable-green/20 bg-gable-green/5">
+        <h4 className="font-bold text-sm text-gable-green mb-4 flex items-center gap-2">
           <HelpCircle size={16} />
           Open Questions / Requirements
         </h4>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-deep-earth/40 rounded-xl p-4 border border-white/5">
-            <span className="text-[10px] font-bold text-stone-amber uppercase block mb-2">Offline Mode Operations</span>
+          <div className="bg-deep-space/40 rounded-xl p-4 border border-white/5">
+            <span className="text-[10px] font-bold text-gable-green uppercase block mb-2">Offline Mode Operations</span>
             <p className="text-xs text-zinc-400 leading-relaxed">
               Do yard operations require an offline-capable mode for POS or inventory lookup during internet outages? What is the acceptable sync delay when connectivity resumes?
             </p>
           </div>
-          <div className="bg-deep-earth/40 rounded-xl p-4 border border-white/5">
-            <span className="text-[10px] font-bold text-stone-amber uppercase block mb-2">Local / On-Premise DB Backups</span>
+          <div className="bg-deep-space/40 rounded-xl p-4 border border-white/5">
+            <span className="text-[10px] font-bold text-gable-green uppercase block mb-2">Local / On-Premise DB Backups</span>
             <p className="text-xs text-zinc-400 leading-relaxed">
               Is there a requirement to maintain local on-premise database backups in addition to cloud-hosted PITR backups? What retention and compliance expectations exist for on-site data?
             </p>

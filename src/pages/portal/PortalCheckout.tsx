@@ -84,7 +84,7 @@ export const PortalCheckout = () => {
                 <div className="flex gap-3">
                     <Link
                         to="/portal/orders"
-                        className="px-6 py-3 rounded-xl bg-stone-amber text-black font-semibold hover:bg-stone-amber/90 transition-colors"
+                        className="px-6 py-3 rounded-xl bg-gable-green text-black font-semibold hover:bg-gable-green/90 transition-colors"
                     >
                         View Orders
                     </Link>
@@ -103,7 +103,7 @@ export const PortalCheckout = () => {
         return (
             <div className="text-center py-16">
                 <p className="text-zinc-400">Your cart is empty.</p>
-                <Link to="/portal/catalog" className="text-stone-amber hover:underline mt-2 inline-block">
+                <Link to="/portal/catalog" className="text-gable-green hover:underline mt-2 inline-block">
                     Browse Catalog
                 </Link>
             </div>
@@ -153,7 +153,7 @@ export const PortalCheckout = () => {
                                 type="button"
                                 onClick={() => setDeliveryMethod('DELIVERY')}
                                 className={`flex flex-col items-center gap-2 p-4 rounded-xl border transition-all ${deliveryMethod === 'DELIVERY'
-                                    ? 'border-stone-amber bg-stone-amber/5 text-stone-amber'
+                                    ? 'border-gable-green bg-gable-green/5 text-gable-green'
                                     : 'border-white/10 text-zinc-400 hover:border-white/20'
                                     }`}
                             >
@@ -164,7 +164,7 @@ export const PortalCheckout = () => {
                                 type="button"
                                 onClick={() => setDeliveryMethod('PICKUP')}
                                 className={`flex flex-col items-center gap-2 p-4 rounded-xl border transition-all ${deliveryMethod === 'PICKUP'
-                                    ? 'border-stone-amber bg-stone-amber/5 text-stone-amber'
+                                    ? 'border-gable-green bg-gable-green/5 text-gable-green'
                                     : 'border-white/10 text-zinc-400 hover:border-white/20'
                                     }`}
                             >
@@ -183,7 +183,7 @@ export const PortalCheckout = () => {
                                     onChange={e => setDeliveryAddress(e.target.value)}
                                     placeholder="Enter delivery address..."
                                     rows={3}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-stone-amber/50 transition-colors text-sm resize-none"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-gable-green/50 transition-colors text-sm resize-none"
                                 />
                             </div>
                         )}
@@ -199,7 +199,7 @@ export const PortalCheckout = () => {
                                 type="button"
                                 onClick={() => setPaymentMethod('ACCOUNT')}
                                 className={`flex flex-col items-center gap-2 p-4 rounded-xl border transition-all ${paymentMethod === 'ACCOUNT'
-                                    ? 'border-stone-amber bg-stone-amber/5 text-stone-amber'
+                                    ? 'border-gable-green bg-gable-green/5 text-gable-green'
                                     : 'border-white/10 text-zinc-400 hover:border-white/20'
                                     }`}
                             >
@@ -210,7 +210,7 @@ export const PortalCheckout = () => {
                                 type="button"
                                 onClick={() => setPaymentMethod('CARD')}
                                 className={`flex flex-col items-center gap-2 p-4 rounded-xl border transition-all ${paymentMethod === 'CARD'
-                                    ? 'border-stone-amber bg-stone-amber/5 text-stone-amber'
+                                    ? 'border-gable-green bg-gable-green/5 text-gable-green'
                                     : 'border-white/10 text-zinc-400 hover:border-white/20'
                                     }`}
                             >
@@ -230,7 +230,7 @@ export const PortalCheckout = () => {
                             onChange={e => setNotes(e.target.value)}
                             placeholder="Special instructions, PO number, job reference..."
                             rows={3}
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-stone-amber/50 transition-colors text-sm resize-none"
+                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-gable-green/50 transition-colors text-sm resize-none"
                         />
                     </CardContent>
                 </Card>
@@ -246,7 +246,7 @@ export const PortalCheckout = () => {
                 <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 rounded-xl text-lg font-bold bg-stone-amber text-black hover:bg-stone-amber/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.99]"
+                    className="w-full py-4 rounded-xl text-lg font-bold bg-gable-green text-black hover:bg-gable-green/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.99]"
                 >
                     {submitting ? 'Placing Order...' : `Place Order - ${formatCurrency(cart.subtotal)}`}
                 </button>

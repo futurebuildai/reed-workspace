@@ -64,7 +64,7 @@ export const PortalProductDetail = () => {
         return (
             <div className="text-center py-16">
                 <p className="text-zinc-400">{error || 'Product not found'}</p>
-                <Link to="/portal/catalog" className="text-stone-amber hover:underline mt-4 inline-block">
+                <Link to="/portal/catalog" className="text-gable-green hover:underline mt-4 inline-block">
                     Back to Catalog
                 </Link>
             </div>
@@ -112,7 +112,7 @@ export const PortalProductDetail = () => {
                 <div className="space-y-6">
                     {/* Category */}
                     {product.category && (
-                        <span className="inline-block px-2.5 py-1 rounded-full text-xs uppercase tracking-wider font-semibold bg-stone-amber/10 text-stone-amber border border-stone-amber/20">
+                        <span className="inline-block px-2.5 py-1 rounded-full text-xs uppercase tracking-wider font-semibold bg-gable-green/10 text-gable-green border border-gable-green/20">
                             {product.category}
                         </span>
                     )}
@@ -135,7 +135,7 @@ export const PortalProductDetail = () => {
                                 <span className="text-sm text-zinc-500">/{product.uom}</span>
                             </div>
                             {product.price_source !== 'retail' && (
-                                <p className="text-xs text-stone-amber">
+                                <p className="text-xs text-gable-green">
                                     Your {product.price_source} pricing applied
                                 </p>
                             )}
@@ -186,7 +186,7 @@ export const PortalProductDetail = () => {
                             onClick={handleAddToCart}
                             disabled={adding || !product.in_stock}
                             className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold transition-all
-                                bg-stone-amber text-black hover:bg-stone-amber/90
+                                bg-gable-green text-black hover:bg-gable-green/90
                                 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]"
                         >
                             <ShoppingCart className="w-4 h-4" />

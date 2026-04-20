@@ -104,7 +104,7 @@ export const ProductMarginModal: React.FC<ProductMarginModalProps> = ({ isOpen, 
                                     step="0.1"
                                     value={targetMargin}
                                     onChange={(e) => setTargetMargin(Number(e.target.value))}
-                                    className="w-full bg-black/40 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-white font-mono focus:border-stone-amber/50 focus:outline-none transition-colors"
+                                    className="w-full bg-black/40 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-white font-mono focus:border-gable-green/50 focus:outline-none transition-colors"
                                 />
                             </div>
                             <p className="text-xs text-zinc-500 mt-1">Suggested Price: <span className="text-emerald-400 font-mono">${projectedPrice.toFixed(2)}</span></p>
@@ -124,7 +124,7 @@ export const ProductMarginModal: React.FC<ProductMarginModalProps> = ({ isOpen, 
                                     step="0.1"
                                     value={commissionRate}
                                     onChange={(e) => setCommissionRate(Number(e.target.value))}
-                                    className="w-full bg-black/40 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-white font-mono focus:border-stone-amber/50 focus:outline-none transition-colors"
+                                    className="w-full bg-black/40 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-white font-mono focus:border-gable-green/50 focus:outline-none transition-colors"
                                 />
                             </div>
                             <p className="text-xs text-zinc-500 mt-1">Projected Commission: <span className="text-emerald-400 font-mono">${projectedCommission.toFixed(2)}</span></p>

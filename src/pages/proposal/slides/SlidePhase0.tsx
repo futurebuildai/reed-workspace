@@ -3,9 +3,9 @@ import { Layers, CheckCircle2, Search } from 'lucide-react';
 
 export function SlidePhase0() {
   const modules = [
-    { name: 'Workflow Discovery Audit', desc: 'Mapping BisTrack processes to custom workflows' },
+    { name: 'Workflow Discovery Audit', desc: 'Mapping QuickBooks/Clover processes to cloud workflows' },
     { name: 'Dedicated Agent Env', desc: 'Configured instances for documentation and spec sync' },
-    { name: 'Security & Staging Setup', desc: 'Zero-trust auth and sandbox infrastructure' },
+    { name: 'Security & Staging Setup', desc: 'Zero-trust auth and cloud sandbox infrastructure' },
     { name: '10 Consulting Hours Incl.', desc: 'Dedicated time for architecture and system design' },
   ];
 
@@ -14,10 +14,10 @@ export function SlidePhase0() {
       <div className="flex flex-col md:flex-row gap-12 items-center">
         <div className="flex-1 space-y-8">
           <div>
-            <div className="inline-flex items-center gap-2 bg-stone-amber/20 text-stone-amber px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 border border-stone-amber/30">
+            <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
               Initial Step
             </div>
-            <h2 className="text-4xl font-bold mb-4">Phase 0: <span className="text-stone-amber">Blueprint & Agent Setup</span></h2>
+            <h2 className="text-4xl font-bold mb-4">Phase 0: <span className="text-gable-green">Blueprint & Agent Setup</span></h2>
             <p className="text-zinc-500 leading-relaxed">
               Before we build, we map. We dedicate the first 1-2 months to fully auditing your yard's workflows and setting up the foundational agent environments.
             </p>
@@ -30,10 +30,10 @@ export function SlidePhase0() {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: i * 0.1 }}
-                className="p-4 rounded-xl border border-white/5 bg-white/5 flex items-start gap-3 group hover:border-stone-amber/20 transition-all"
+                className="p-4 rounded-xl border border-white/5 bg-white/5 flex items-start gap-3 group hover:border-gable-green/20 transition-all"
               >
                 <div className="mt-1">
-                  <CheckCircle2 size={16} className="text-stone-amber/60 group-hover:text-stone-amber" />
+                  <CheckCircle2 size={16} className="text-gable-green/60 group-hover:text-gable-green" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white">{m.name}</h4>
@@ -43,23 +43,23 @@ export function SlidePhase0() {
             ))}
           </div>
 
-          <div className="p-4 rounded-xl border border-stone-amber/10 bg-stone-amber/5 flex items-center gap-4">
-            <Search size={24} className="text-stone-amber shrink-0" />
+          <div className="p-4 rounded-xl border border-gable-green/10 bg-gable-green/5 flex items-center gap-4">
+            <Search size={24} className="text-gable-green shrink-0" />
             <p className="text-xs text-zinc-400 italic">
-              <span className="text-stone-amber font-bold">Goal:</span> Move into Phase 1 with zero ambiguity about how your BisTrack data maps to the new OS.
+              <span className="text-gable-green font-bold">Goal:</span> Move into Phase 1 with zero ambiguity about how your QuickBooks data maps to the new OS.
             </p>
           </div>
         </div>
 
-        <div className="w-full md:w-[400px] aspect-square glass-card rounded-3xl p-8 border-stone-amber/10 flex flex-col items-center justify-center relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-br from-stone-amber/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          <Layers size={80} className="text-stone-amber/20 mb-6 group-hover:scale-110 transition-transform duration-500" />
+        <div className="w-full md:w-[400px] aspect-square glass-card rounded-3xl p-8 border-gable-green/10 flex flex-col items-center justify-center relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-gable-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <Layers size={80} className="text-gable-green/20 mb-6 group-hover:scale-110 transition-transform duration-500" />
           <h3 className="text-center font-bold text-lg mb-2">The Blueprint Map</h3>
           <p className="text-center text-xs text-zinc-500 leading-relaxed px-4">
             Phase 0 concludes with a finalized proposal, a fully mapped implementation timeline, and live agent staging environments.
           </p>
-          <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-stone-amber animate-shimmer bg-[length:1000px_100%]" 
-               style={{ backgroundImage: 'linear-gradient(90deg, transparent, rgba(232,167,78,0.4), transparent)' }} />
+          <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gable-green animate-shimmer bg-[length:1000px_100%]" 
+               style={{ backgroundImage: 'linear-gradient(90deg, transparent, rgba(0,255,163,0.4), transparent)' }} />
         </div>
       </div>
     </div>

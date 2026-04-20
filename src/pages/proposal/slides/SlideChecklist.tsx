@@ -12,7 +12,7 @@ export function SlideChecklist() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Discovery <span className="text-stone-amber">Next Steps</span></h2>
+        <h2 className="text-4xl font-bold mb-4">Discovery <span className="text-gable-green">Next Steps</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto italic">Finalizing the data and requirements needed for a firm Phase 1 quote.</p>
       </div>
 
@@ -23,7 +23,7 @@ export function SlideChecklist() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: i * 0.15 }}
-            className="glass-card rounded-2xl p-6 border-white/5 bg-deep-earth/30 flex flex-col"
+            className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center">
@@ -35,8 +35,8 @@ export function SlideChecklist() {
             <ul className="space-y-4 mb-10 flex-1">
               {step.items.map((item, j) => (
                 <li key={j} className="flex items-start gap-3 group">
-                  <div className="p-0.5 rounded border border-white/10 group-hover:border-stone-amber/50 transition-colors mt-0.5">
-                    <CheckSquare size={12} className="text-transparent group-hover:text-stone-amber/50 transition-colors" />
+                  <div className="p-0.5 rounded border border-white/10 group-hover:border-gable-green/50 transition-colors mt-0.5">
+                    <CheckSquare size={12} className="text-transparent group-hover:text-gable-green/50 transition-colors" />
                   </div>
                   <span className="text-xs text-zinc-400 group-hover:text-white transition-colors">{item}</span>
                 </li>
@@ -45,19 +45,19 @@ export function SlideChecklist() {
 
             <div className="pt-4 border-t border-white/5 text-[10px] text-zinc-600 uppercase tracking-widest font-bold flex items-center justify-between">
               <span>Target</span>
-              <span className={step.status !== 'TBD' ? 'text-stone-amber' : ''}>{step.status}</span>
+              <span className={step.status !== 'TBD' ? 'text-gable-green' : ''}>{step.status}</span>
             </div>
           </motion.div>
         ))}
       </div>
 
       <div className="flex flex-col md:flex-row gap-6 mt-8">
-        <div className="flex-1 p-6 rounded-2xl border border-stone-amber/30 bg-stone-amber/5 flex items-start gap-4">
-          <div className="w-10 h-10 rounded-full bg-stone-amber/20 flex items-center justify-center shrink-0">
-            <span className="text-lg font-bold text-stone-amber">1</span>
+        <div className="flex-1 p-6 rounded-2xl border border-gable-green/30 bg-gable-green/5 flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-gable-green/20 flex items-center justify-center shrink-0">
+            <span className="text-lg font-bold text-gable-green">1</span>
           </div>
           <div className="flex-1">
-            <h4 className="flex items-center gap-2 font-bold text-sm text-stone-amber mb-2">
+            <h4 className="flex items-center gap-2 font-bold text-sm text-gable-green mb-2">
               <Search size={16} /> Complete Discovery Tracker
             </h4>
             <p className="text-xs text-zinc-400 leading-relaxed mb-4">
@@ -65,7 +65,7 @@ export function SlideChecklist() {
             </p>
             <Link 
               to="/discovery"
-              className="inline-flex items-center gap-2 bg-stone-amber text-deep-earth text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-lg hover:scale-[1.02] transition-all"
+              className="inline-flex items-center gap-2 bg-gable-green text-deep-space text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-lg hover:scale-[1.02] transition-all"
             >
               Begin Phase 0 Discovery <ArrowRight size={12} />
             </Link>

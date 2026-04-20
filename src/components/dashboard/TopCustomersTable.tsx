@@ -64,7 +64,7 @@ export function TopCustomersTable({ customers, loading = false }: TopCustomersTa
                                         <td className="px-6 py-3 text-right font-mono text-zinc-400">
                                             {customer.order_count}
                                         </td>
-                                        <td className="px-6 py-3 text-right font-mono font-bold text-stone-amber">
+                                        <td className="px-6 py-3 text-right font-mono font-bold text-gable-green">
                                             ${(customer.total_revenue / 100).toLocaleString('en-CA', { minimumFractionDigits: 2 })}
                                         </td>
                                     </tr>

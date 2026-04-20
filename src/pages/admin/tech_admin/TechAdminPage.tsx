@@ -78,7 +78,7 @@ const APIKeyManager = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="bg-slate-warm/50 border border-white/10 rounded-lg p-6 overflow-hidden"
+                        className="bg-slate-steel/50 border border-white/10 rounded-lg p-6 overflow-hidden"
                     >
                         {!generatedKey ? (
                             <div className="flex gap-4 items-end">
@@ -88,7 +88,7 @@ const APIKeyManager = () => {
                                         type="text"
                                         value={newKeyName}
                                         onChange={(e) => setNewKeyName(e.target.value)}
-                                        className="w-full bg-deep-earth border border-white/10 rounded px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-stone-amber transition-colors"
+                                        className="w-full bg-deep-space border border-white/10 rounded px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-gable-green transition-colors"
                                         placeholder="Friendly name..."
                                         autoFocus
                                     />
@@ -105,11 +105,11 @@ const APIKeyManager = () => {
                                     <span>Copy this key now. You won't be able to see it again!</span>
                                 </div>
                                 <div className="flex gap-2">
-                                    <code className="flex-1 bg-deep-earth border border-stone-amber/50 rounded px-4 py-3 text-stone-amber font-mono text-lg break-all">
+                                    <code className="flex-1 bg-deep-space border border-gable-green/50 rounded px-4 py-3 text-gable-green font-mono text-lg break-all">
                                         {generatedKey}
                                     </code>
                                     <Button onClick={() => copyToClipboard(generatedKey)} variant="outline" className="h-[52px] w-[52px] p-0 flex items-center justify-center">
-                                        {copied ? <Check size={20} className="text-stone-amber" /> : <Copy size={20} />}
+                                        {copied ? <Check size={20} className="text-gable-green" /> : <Copy size={20} />}
                                     </Button>
                                 </div>
                                 <div className="flex justify-end">
@@ -122,7 +122,7 @@ const APIKeyManager = () => {
             </AnimatePresence>
 
             {/* Key List */}
-            <div className="bg-slate-warm border border-white/5 rounded-lg overflow-hidden">
+            <div className="bg-slate-steel border border-white/5 rounded-lg overflow-hidden">
                 <table className="w-full text-left text-sm">
                     <thead className="bg-white/5 text-slate-400 font-medium">
                         <tr>
@@ -147,7 +147,7 @@ const APIKeyManager = () => {
                                     {key.revoked_at ? (
                                         <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-500/10 text-red-500">Revoked</span>
                                     ) : (
-                                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-stone-amber/10 text-stone-amber">Active</span>
+                                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gable-green/10 text-gable-green">Active</span>
                                     )}
                                 </td>
                                 <td className="px-4 py-3 text-right">
@@ -178,9 +178,9 @@ const APIKeyManager = () => {
 };
 
 const IntegrationCard = ({ name, description, icon: Icon, connected = false }: { name: string, description: string, icon: React.ElementType, connected?: boolean }) => (
-    <div className="bg-slate-warm border border-white/5 p-6 rounded-lg flex items-start justify-between hover:border-white/10 transition-colors group">
+    <div className="bg-slate-steel border border-white/5 p-6 rounded-lg flex items-start justify-between hover:border-white/10 transition-colors group">
         <div className="flex gap-4">
-            <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center shrink-0 transition-colors", connected ? "bg-stone-amber/20 text-stone-amber" : "bg-white/5 text-slate-400 group-hover:text-white")}>
+            <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center shrink-0 transition-colors", connected ? "bg-gable-green/20 text-gable-green" : "bg-white/5 text-slate-400 group-hover:text-white")}>
                 <Icon size={24} />
             </div>
             <div>
@@ -188,7 +188,7 @@ const IntegrationCard = ({ name, description, icon: Icon, connected = false }: {
                 <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
             </div>
         </div>
-        <Button variant={connected ? "outline" : "default"} className={cn(connected && "border-stone-amber/50 text-stone-amber hover:bg-stone-amber/10")}>
+        <Button variant={connected ? "outline" : "default"} className={cn(connected && "border-gable-green/50 text-gable-green hover:bg-gable-green/10")}>
             {connected ? "Configure" : "Connect"}
         </Button>
     </div>
@@ -362,7 +362,7 @@ const AISettingsPanel = () => {
                                         type="password"
                                         value={newKey}
                                         onChange={(e) => setNewKey(e.target.value)}
-                                        className="w-full bg-deep-earth border border-white/10 rounded px-10 py-2.5 text-white font-mono text-sm placeholder-slate-500 focus:outline-none focus:border-stone-amber transition-colors"
+                                        className="w-full bg-deep-space border border-white/10 rounded px-10 py-2.5 text-white font-mono text-sm placeholder-slate-500 focus:outline-none focus:border-gable-green transition-colors"
                                         placeholder="sk-ant-api03-..."
                                         autoFocus
                                     />
@@ -392,8 +392,8 @@ const AISettingsPanel = () => {
                         <div key={f.name} className={cn(
                             "border rounded-lg p-4 transition-colors",
                             settings?.configured
-                                ? "bg-slate-warm border-white/5"
-                                : "bg-slate-warm/50 border-white/5 opacity-60"
+                                ? "bg-slate-steel border-white/5"
+                                : "bg-slate-steel/50 border-white/5 opacity-60"
                         )}>
                             <div className="flex items-center gap-2 mb-2">
                                 <Sparkles className={cn("w-4 h-4", settings?.configured ? "text-violet-400" : "text-slate-600")} />
@@ -543,7 +543,7 @@ const GeminiSettingsPanel = () => {
                                         type="password"
                                         value={newKey}
                                         onChange={(e) => setNewKey(e.target.value)}
-                                        className="w-full bg-deep-earth border border-white/10 rounded px-10 py-2.5 text-white font-mono text-sm placeholder-slate-500 focus:outline-none focus:border-blue-400 transition-colors"
+                                        className="w-full bg-deep-space border border-white/10 rounded px-10 py-2.5 text-white font-mono text-sm placeholder-slate-500 focus:outline-none focus:border-blue-400 transition-colors"
                                         placeholder="AIza..."
                                         autoFocus
                                     />
@@ -572,8 +572,8 @@ const GeminiSettingsPanel = () => {
                     <div className={cn(
                         "border rounded-lg p-4 transition-colors",
                         settings?.configured
-                            ? "bg-slate-warm border-white/5"
-                            : "bg-slate-warm/50 border-white/5 opacity-60"
+                            ? "bg-slate-steel border-white/5"
+                            : "bg-slate-steel/50 border-white/5 opacity-60"
                     )}>
                         <div className="flex items-center gap-2 mb-2">
                             <ImageIcon className={cn("w-4 h-4", settings?.configured ? "text-blue-400" : "text-slate-600")} />
@@ -600,7 +600,7 @@ export const TechAdminPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-deep-earth p-8 space-y-8">
+        <div className="min-h-screen bg-deep-space p-8 space-y-8">
             {/* Header */}
             <div>
                 <h1 className="text-3xl font-bold text-white tracking-tight mb-2">Tech Admin</h1>
@@ -615,7 +615,7 @@ export const TechAdminPage = () => {
                         onClick={() => setActiveTab(tab.id as typeof activeTab)}
                         className={cn(
                             "flex items-center gap-2 px-6 py-3 text-sm font-medium transition-colors relative",
-                            activeTab === tab.id ? "text-stone-amber" : "text-slate-400 hover:text-white"
+                            activeTab === tab.id ? "text-gable-green" : "text-slate-400 hover:text-white"
                         )}
                     >
                         <tab.icon size={16} />
@@ -623,7 +623,7 @@ export const TechAdminPage = () => {
                         {activeTab === tab.id && (
                             <motion.div
                                 layoutId="activeTab"
-                                className="absolute bottom-0 left-0 right-0 h-0.5 bg-stone-amber"
+                                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gable-green"
                             />
                         )}
                     </button>
@@ -641,7 +641,7 @@ export const TechAdminPage = () => {
                 )}
                 {activeTab === 'integrations' && <Integrations />}
                 {activeTab === 'health' && (
-                    <div className="bg-slate-warm border border-white/5 rounded-lg p-12 text-center">
+                    <div className="bg-slate-steel border border-white/5 rounded-lg p-12 text-center">
                         <Activity className="w-12 h-12 text-slate-500 mx-auto mb-4" />
                         <h3 className="text-lg font-medium text-white">System Health ok</h3>
                         <p className="text-slate-400 mt-2">All services are running normally. Logs coming soon.</p>

@@ -36,13 +36,13 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
 const ToastItem: React.FC<{ toast: Toast; onClose: () => void }> = ({ toast, onClose }) => {
     const icons = {
-        success: <CheckCircle className="w-5 h-5 text-stone-amber" />,
+        success: <CheckCircle className="w-5 h-5 text-gable-green" />,
         error: <AlertCircle className="w-5 h-5 text-rose-500" />,
         info: <Info className="w-5 h-5 text-blue-400" />
     };
 
     const styles = {
-        success: 'border-stone-amber/20 bg-stone-amber/10',
+        success: 'border-gable-green/20 bg-gable-green/10',
         error: 'border-rose-500/20 bg-rose-500/10',
         info: 'border-blue-500/20 bg-blue-500/10'
     };

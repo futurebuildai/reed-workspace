@@ -51,7 +51,7 @@ export const InventoryTable: React.FC<InventoryTableProps> = ({ products, onAdju
                                     <tr key={p.id} className="group hover:bg-white/5 transition-colors cursor-pointer" onClick={() => navigate(`/erp/inventory/${p.id}`)}>
                                         <td className="px-6 py-4">
                                             <div className="flex flex-col">
-                                                <span className="font-mono font-bold text-white group-hover:text-stone-amber transition-colors">
+                                                <span className="font-mono font-bold text-white group-hover:text-gable-green transition-colors">
                                                     {p.sku}
                                                 </span>
                                                 {p.upc && <span className="text-xs text-zinc-500 font-mono mt-0.5">{p.upc}</span>}
@@ -78,7 +78,7 @@ export const InventoryTable: React.FC<InventoryTableProps> = ({ products, onAdju
                                             <span className="text-xs text-zinc-500">{(p.commission_rate || 0).toFixed(1)}% Comm</span>
                                         </td>
                                         <td className="px-6 py-4 text-right">
-                                            <span className="font-mono text-white group-hover:text-stone-amber transition-colors">
+                                            <span className="font-mono text-white group-hover:text-gable-green transition-colors">
                                                 ${(p.base_price || 0).toFixed(2)}
                                             </span>
                                         </td>
@@ -108,7 +108,7 @@ export const InventoryTable: React.FC<InventoryTableProps> = ({ products, onAdju
                                                     className="p-1.5 rounded-md hover:bg-white/10 text-zinc-400 hover:text-white transition-colors"
                                                     title="Edit Margins and Commissions"
                                                 >
-                                                    <span className="text-xs font-bold leading-none px-1 py-0.5 rounded bg-zinc-800 text-stone-amber border border-stone-amber/30">$</span>
+                                                    <span className="text-xs font-bold leading-none px-1 py-0.5 rounded bg-zinc-800 text-gable-green border border-gable-green/30">$</span>
                                                 </button>
                                             </div>
                                         </td>

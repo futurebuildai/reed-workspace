@@ -49,7 +49,7 @@ export const PortalLayout = () => {
 
     return (
         <div
-            className="min-h-screen text-foreground flex font-sans selection:bg-stone-amber/30"
+            className="min-h-screen text-foreground flex font-sans selection:bg-gable-green/30"
             style={{
                 '--portal-primary': primaryColor,
                 backgroundColor: '#0C0E14',

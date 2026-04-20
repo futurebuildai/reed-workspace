@@ -11,11 +11,9 @@ const DISCOVERY_SECTIONS = [
     title: 'Infrastructure & Scale',
     icon: <Server className="text-blue-400" size={20} />,
     questions: [
-      { id: 'user_seats', category: 'Infrastructure', question: 'Total User Seats', placeholder: 'e.g., 25 user seats' },
-      { id: 'locations', category: 'Infrastructure', question: 'Total Branch Locations', placeholder: 'Confirmed Trenton & Kingston' },
-      { id: 'internet_setup', category: 'Infrastructure', question: 'Internet Provider & Bandwidth', placeholder: 'Describe your current internet setup and backup lines', type: 'textarea', tip: 'Essential for optimizing cloud performance and offline fallback.' },
-      { id: 'hardware_age', category: 'Infrastructure', question: 'Hardware Refresh Status', placeholder: 'Approx age of current servers/workstations', tip: 'Helps us plan the cloud-native transition vs hybrid needs.' },
-      { id: 'yard_wifi', category: 'Infrastructure', question: 'Yard WiFi Coverage', placeholder: 'Is there signal in the loading yards?', tip: 'Essential for real-time mobile inventory checks.' },
+      { id: 'user_seats', category: 'Infrastructure', question: 'Total User Seats', placeholder: 'How many total system users will there be, and what specific roles require access?' },
+      { id: 'locations', category: 'Infrastructure', question: 'Total Branch Locations', placeholder: 'Number of active locations' },
+      { id: 'ai_layer', category: 'Infrastructure', question: 'Managed AI/API Layer vs Self-Serve', placeholder: 'Would you prefer a managed AI/API layer (one-click out-of-the-box, billed monthly as a single line item) or a self-serve AI/integrations setup (more complexity, more to manage)?', type: 'textarea' },
     ]
   },
   {
@@ -23,33 +21,29 @@ const DISCOVERY_SECTIONS = [
     title: 'Data & Migration',
     icon: <Database className="text-emerald-400" size={20} />,
     questions: [
-      { id: 'sku_count', category: 'Migration', question: 'Estimated SKU Count', placeholder: 'e.g., 12,000 SKUs' },
-      { id: 'db_size', category: 'Migration', question: 'BisTrack Database Size (GB)', placeholder: 'e.g., 45GB SQL database' },
-      { id: 'data_health', category: 'Migration', question: 'Data Health / Cleanup Status', placeholder: 'e.g., Describe any known issues with address records, duplicate contacts, etc.', type: 'textarea' },
-      { id: 'retention', category: 'Migration', question: 'Data Retention Requirements', placeholder: 'e.g., 7 years for CRA compliance' },
-      { id: 'customizations', category: 'Migration', question: 'Custom Tables/Stored Procs', placeholder: 'List any proprietary BisTrack modifications', type: 'textarea', tip: 'Critical for the AI mapping engine rollout.' },
+      { id: 'sku_count', category: 'Migration', question: 'Estimated SKU Count', placeholder: 'Active SKUs currently in QuickBooks' },
+      { id: 'qb_type', category: 'Accounting', question: 'QuickBooks Environment', placeholder: 'Are you using QuickBooks Desktop or QuickBooks Online?' },
+      { id: 'costing_type', category: 'Accounting', question: 'Inventory Costing', placeholder: 'Do you run standard average costing in QuickBooks?' },
     ]
   },
   {
     id: 'payments',
     title: 'Payments & Revenue',
-    icon: <CreditCard className="text-stone-amber" size={20} />,
+    icon: <CreditCard className="text-gable-green" size={20} />,
     questions: [
-      { id: 'gmv_volume', category: 'Payments', question: 'Annual Transaction Volume (GMV)', placeholder: 'e.g., $10.5M' },
-      { id: 'revenue_split', category: 'Payments', question: 'Percentage Revenue by Type', placeholder: 'e.g., Card: X%, Cash: Y%, Bank Account (including EFT): Z%' },
-      { id: 'terminals', category: 'Payments', question: 'Payment Terminal Inventory', placeholder: 'Quantity and models of current hardware', tip: 'Enables GableX payment integration planning.' },
+      { id: 'gmv_volume', category: 'Run Payments', question: 'Annual Transaction Volume (GMV)', placeholder: 'Estimated annual gross processing volume through Clover', tip: 'Crucial for targeting Run Payments rates.' },
+      { id: 'revenue_split', category: 'Payments', question: 'Payment Split', placeholder: 'Percentage split between cash/credit at POS vs. on-account transactions?' },
+      { id: 'terminals', category: 'Run Payments', question: 'Physical Checkout Lanes', placeholder: 'How many physical checkout lanes/registers exist to replace the Clover terminals?' },
+      { id: 'invoicing_process', category: 'Invoicing', question: 'Invoice/Statement Processes', placeholder: 'How are invoices/statements distributed and collected today?', type: 'textarea' },
     ]
   },
   {
     id: 'logistics',
-    title: 'Logistics & Vision',
+    title: 'Logistics',
     icon: <Layout className="text-purple-400" size={20} />,
     questions: [
-      { id: 'truck_count', category: 'Logistics', question: 'Delivery Fleet Size', placeholder: 'Number of dedicated delivery trucks' },
-      { id: 'gps_routing', category: 'Logistics', question: 'Current Routing Solution', placeholder: 'Current GPS or routing software in use' },
-      { id: 'gp_version', category: 'Accounting', question: 'Great Plains Version', placeholder: 'Current version of Microsoft Great Plains' },
-      { id: 'contractor_vision', category: 'Vision', question: 'Contractor Facing Tools Vision', placeholder: 'Describe your vision for integrated contractor account management tools', type: 'textarea', tip: 'Helps us prioritize the contractor portal features.' },
-      { id: 'bt_gp_touchpoints', category: 'Accounting', question: 'BT-GP Integration Points', placeholder: 'How do BisTrack and GP talk today?', tip: 'Helps ensure one-click financial reconciliation.' },
+      { id: 'fleet_size', category: 'Fleet & Delivery', question: 'Delivery Fleet Size', placeholder: 'How many delivery vehicles are in the fleet?' },
+      { id: 'gps_routing', category: 'Fleet & Delivery', question: 'Current Routing Solution', placeholder: 'How is routing currently handled?' },
     ]
   }
 ];
@@ -58,18 +52,18 @@ const WEBHOOK_URL = "https://chat.googleapis.com/v1/spaces/AAQAzw-J0lI/messages?
 
 export function DiscoveryForm() {
   const [values, setValues] = useState<Record<string, string>>(() => {
-    const saved = localStorage.getItem('dibbits_discovery_form');
+    const saved = localStorage.getItem('reed_discovery_form');
     return saved ? JSON.parse(saved) : {};
   });
   const [submitted, setSubmitted] = useState<string[]>([]);
   const [isFinalized, setIsFinalized] = useState<boolean>(() => {
-    return localStorage.getItem('dibbits_discovery_finalized') === 'true';
+    return localStorage.getItem('reed_discovery_finalized') === 'true';
   });
   const [isSending, setIsSending] = useState<string | null>(null);
   const [isFinalSubmitting, setIsFinalSubmitting] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('dibbits_discovery_form', JSON.stringify(values));
+    localStorage.setItem('reed_discovery_form', JSON.stringify(values));
   }, [values]);
 
   const handleSave = async (id: string, force?: boolean) => {
@@ -99,7 +93,7 @@ export function DiscoveryForm() {
     setIsFinalSubmitting(true);
 
     // Format the message for Google Chat
-    let messageBody = `🚀 *Phase 0 Discovery Audit Completed: Dibbits Landscape Supply*\n\n`;
+    let messageBody = `🚀 *Phase 0 Discovery Audit Completed: Reed Building Supply*\n\n`;
     
     DISCOVERY_SECTIONS.forEach(section => {
       messageBody += `*${section.title.toUpperCase()}*\n`;
@@ -122,7 +116,7 @@ export function DiscoveryForm() {
       if (!response.ok) throw new Error('Webhook push failed');
 
       setIsFinalized(true);
-      localStorage.setItem('dibbits_discovery_finalized', 'true');
+      localStorage.setItem('reed_discovery_finalized', 'true');
     } catch (error) {
       console.error('Final submission failed', error);
       alert('Failed to send data to Google Chat. Please check your connection and try again.');
@@ -136,21 +130,21 @@ export function DiscoveryForm() {
       setValues({});
       setSubmitted([]);
       setIsFinalized(false);
-      localStorage.removeItem('dibbits_discovery_form');
-      localStorage.removeItem('dibbits_discovery_finalized');
+      localStorage.removeItem('reed_discovery_form');
+      localStorage.removeItem('reed_discovery_finalized');
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] text-white font-sans selection:bg-stone-amber/30 pb-20">
+    <div className="min-h-screen bg-[#111111] text-white font-sans selection:bg-gable-green/30 pb-20">
       {/* Header */}
       <header className="h-20 flex items-center justify-between px-8 border-b border-white/5 bg-[#111111]/80 backdrop-blur-xl sticky top-0 z-50">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center gap-2 group">
-             <svg viewBox="0 0 64 64" fill="none" className="w-8 h-8 text-white group-hover:text-stone-amber transition-colors">
+             <svg viewBox="0 0 64 64" fill="none" className="w-8 h-8 text-white group-hover:text-gable-green transition-colors">
               <path d="M4 36 L32 8 L60 36" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="text-xl font-bold tracking-tight">Phase 0 <span className="text-stone-amber font-light tracking-widest uppercase text-sm ml-2">Discovery Room</span></span>
+            <span className="text-xl font-bold tracking-tight">Phase 0 <span className="text-gable-green font-light tracking-widest uppercase text-sm ml-2">Discovery Room</span></span>
           </Link>
           <div className="h-8 w-px bg-white/10" />
           <div className="flex flex-col gap-1">
@@ -160,10 +154,10 @@ export function DiscoveryForm() {
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={{ width: `${calculateProgress()}%` }}
-                  className="h-full bg-stone-amber shadow-glow"
+                  className="h-full bg-gable-green shadow-glow"
                 />
               </div>
-              <span className="text-[10px] font-mono text-stone-amber">{calculateProgress()}%</span>
+              <span className="text-[10px] font-mono text-gable-green">{calculateProgress()}%</span>
             </div>
           </div>
         </div>
@@ -175,8 +169,8 @@ export function DiscoveryForm() {
               </div>
            )}
            <Link to="/proposal" className="text-xs text-zinc-500 hover:text-white transition-colors">Return to Proposal</Link>
-           <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold tracking-widest rounded flex items-center gap-1.5">
-             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+           <div className="px-3 py-1 bg-gable-green/10 border border-gable-green/20 text-gable-green text-[10px] uppercase font-bold tracking-widest rounded flex items-center gap-1.5">
+             <div className="w-1.5 h-1.5 rounded-full bg-gable-green animate-pulse" />
              Live Sync Active
            </div>
         </div>
@@ -191,7 +185,7 @@ export function DiscoveryForm() {
           <p className="text-zinc-400 max-w-2xl leading-relaxed mx-auto lg:mx-0">
             {isFinalized 
               ? "Your discovery audit has been submitted and locked for review. FutureBuildAI team has been notified via secure webhook."
-              : "Please complete the following technical audit. This data directly populates your Phase 1 Execution Plan and helps us finalize the server infrastructure and AI training models required for the Dibbits migration."}
+              : "Please complete the following technical audit. This data directly populates your Phase 1 Execution Plan and helps us finalize the GableLBM stack configuration."}
           </p>
         </div>
 
@@ -233,7 +227,7 @@ export function DiscoveryForm() {
                             "w-full bg-[#111111] border rounded-xl px-4 py-3 text-sm transition-all focus:outline-none resize-none no-scrollbar",
                             isFinalized
                                ? "border-emerald-500/10 text-emerald-400/50 cursor-not-allowed"
-                               : "border-white/5 focus:border-stone-amber/50 focus:ring-1 focus:ring-stone-amber/20"
+                               : "border-white/5 focus:border-gable-green/50 focus:ring-1 focus:ring-gable-green/20"
                           )}
                           onBlur={() => handleSave(q.id)}
                         />
@@ -248,7 +242,7 @@ export function DiscoveryForm() {
                             "w-full bg-[#111111] border rounded-xl px-4 py-3 text-sm transition-all focus:outline-none",
                              isFinalized
                                ? "border-emerald-500/10 text-emerald-400/50 cursor-not-allowed"
-                               : "border-white/5 focus:border-stone-amber/50 focus:ring-1 focus:ring-stone-amber/20"
+                               : "border-white/5 focus:border-gable-green/50 focus:ring-1 focus:ring-gable-green/20"
                           )}
                           onBlur={() => handleSave(q.id)}
                         />
@@ -256,14 +250,14 @@ export function DiscoveryForm() {
                       
                       {isSending === q.id && (
                          <div className="absolute right-3 top-4">
-                           <div className="w-4 h-4 border-2 border-stone-amber/20 border-t-stone-amber rounded-full animate-spin" />
+                           <div className="w-4 h-4 border-2 border-gable-green/20 border-t-gable-green rounded-full animate-spin" />
                          </div>
                       )}
                       {!isFinalized && !submitted.includes(q.id) && !isSending && values[q.id] && (
                         <button 
                           onClick={() => handleSave(q.id)}
                           className={cn(
-                            "absolute right-2 p-2 hover:bg-stone-amber/10 rounded-lg text-stone-amber transition-all",
+                            "absolute right-2 p-2 hover:bg-gable-green/10 rounded-lg text-gable-green transition-all",
                             q.type === 'textarea' ? "top-2" : "top-1/2 -translate-y-1/2"
                           )}
                         >
@@ -297,11 +291,11 @@ export function DiscoveryForm() {
                  <button 
                    onClick={handleFinalSubmit}
                    disabled={isFinalSubmitting || calculateProgress() < 10}
-                   className="group relative flex items-center gap-3 bg-stone-amber hover:bg-amber-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-deep-earth font-bold px-10 py-4 rounded-2xl transition-all shadow-glow hover:shadow-glow-strong overflow-hidden"
+                   className="group relative flex items-center gap-3 bg-gable-green hover:bg-amber-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-deep-space font-bold px-10 py-4 rounded-2xl transition-all shadow-glow hover:shadow-glow-strong overflow-hidden"
                  >
                    {isFinalSubmitting ? (
                      <>
-                        <div className="w-5 h-5 border-2 border-deep-earth/20 border-t-deep-earth rounded-full animate-spin" />
+                        <div className="w-5 h-5 border-2 border-deep-space/20 border-t-deep-space rounded-full animate-spin" />
                         Pushing to Google Chat...
                      </>
                    ) : (
@@ -329,7 +323,7 @@ export function DiscoveryForm() {
                  </p>
                  <Link 
                    to="/proposal" 
-                   className="mt-4 text-xs font-bold text-stone-amber hover:text-amber-400 transition-colors uppercase tracking-widest flex items-center gap-2"
+                   className="mt-4 text-xs font-bold text-gable-green hover:text-amber-400 transition-colors uppercase tracking-widest flex items-center gap-2"
                  >
                    Return to Proposal Slide Deck <ArrowRight size={14} />
                  </Link>

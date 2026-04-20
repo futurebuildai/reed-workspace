@@ -21,7 +21,7 @@ interface TooltipPayload {
 const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: TooltipPayload[] }) => {
     if (active && payload && payload.length) {
         return (
-            <div className="bg-slate-warm/90 backdrop-blur-md border border-white/10 p-2 rounded-lg shadow-xl text-xs">
+            <div className="bg-slate-steel/90 backdrop-blur-md border border-white/10 p-2 rounded-lg shadow-xl text-xs">
                 <span className="text-zinc-400">{payload[0].name}: </span>
                 <span className="font-mono font-bold text-white">{payload[0].value}</span>
             </div>
@@ -38,7 +38,7 @@ export function OrderStatusChart({ statusBreakdown, loading = false }: OrderStat
                     <div className="h-6 w-32 bg-white/10 rounded animate-pulse" />
                 </CardHeader>
                 <CardContent className="flex items-center justify-center h-[320px]">
-                    <div className="h-48 w-48 rounded-full border-4 border-white/10 border-t-stone-amber/50 animate-spin" />
+                    <div className="h-48 w-48 rounded-full border-4 border-white/10 border-t-gable-green/50 animate-spin" />
                 </CardContent>
             </Card>
         );

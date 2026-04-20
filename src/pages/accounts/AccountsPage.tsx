@@ -60,11 +60,11 @@ export function AccountsPage() {
                             placeholder="Search accounts..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="bg-slate-warm/50 border border-white/5 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-stone-amber/50 w-64"
+                            className="bg-slate-steel/50 border border-white/5 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-gable-green/50 w-64"
                         />
                     </div>
 
-                    <div className="bg-slate-warm/50 p-1 rounded-lg flex items-center border border-white/5">
+                    <div className="bg-slate-steel/50 p-1 rounded-lg flex items-center border border-white/5">
                         <FilterButton active={filter === 'all'} onClick={() => setFilter('all')} label="All" />
                         <FilterButton active={filter === 'credit'} onClick={() => setFilter('credit')} label="Credit" icon={<Building2 size={14} />} />
                         <FilterButton active={filter === 'cash'} onClick={() => setFilter('cash')} label="Cash" icon={<DollarSign size={14} />} />
@@ -89,7 +89,7 @@ export function AccountsPage() {
                         key={customer.id}
                     >
                         <Link to={`/erp/accounts/${customer.id}`}>
-                            <Card className="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-white/5 transition-colors border-white/5 hover:border-stone-amber/30 group">
+                            <Card className="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-white/5 transition-colors border-white/5 hover:border-gable-green/30 group">
                                 <div className="col-span-4 flex items-center gap-3">
                                     <div className={cn(
                                         "w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold shrink-0",
@@ -100,7 +100,7 @@ export function AccountsPage() {
                                         {customer.credit_limit > 0 ? <Building2 size={18} /> : <User size={18} />}
                                     </div>
                                     <div>
-                                        <div className="font-medium text-white group-hover:text-stone-amber transition-colors">{customer.name}</div>
+                                        <div className="font-medium text-white group-hover:text-gable-green transition-colors">{customer.name}</div>
                                         <div className="text-xs text-zinc-500 truncate">{customer.email || 'No email'}</div>
                                     </div>
                                 </div>

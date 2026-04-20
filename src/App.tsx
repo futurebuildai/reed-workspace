@@ -77,14 +77,14 @@ import { useState } from "react";
 // Protection gate for the interactive workspace
 const WorkspaceGate = ({ children }: { children: React.ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    sessionStorage.getItem("dibbits_auth") === "true"
+    sessionStorage.getItem("reed_auth") === "true"
   );
 
   if (!isAuthenticated) {
     return (
       <ProposalPassword 
         onAuthenticated={() => {
-          sessionStorage.setItem("dibbits_auth", "true");
+          sessionStorage.setItem("reed_auth", "true");
           setIsAuthenticated(true);
         }} 
       />

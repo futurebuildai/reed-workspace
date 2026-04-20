@@ -65,12 +65,12 @@ export const ParsedResultsPanel = ({ result, onAccept, onClose }: ParsedResultsP
 
     return (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" id="parsed-results-overlay">
-            <div className="bg-slate-warm rounded-2xl border border-white/10 w-full max-w-6xl max-h-[90vh] flex flex-col shadow-2xl">
+            <div className="bg-slate-steel rounded-2xl border border-white/10 w-full max-w-6xl max-h-[90vh] flex flex-col shadow-2xl">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/5">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-stone-amber/10 border border-stone-amber/20 flex items-center justify-center">
-                            <Sparkles className="w-5 h-5 text-stone-amber" />
+                        <div className="w-10 h-10 rounded-xl bg-gable-green/10 border border-gable-green/20 flex items-center justify-center">
+                            <Sparkles className="w-5 h-5 text-gable-green" />
                         </div>
                         <div>
                             <h2 className="text-lg font-semibold text-white">AI Parse Results</h2>
@@ -177,7 +177,7 @@ const ParsedItemCard = ({ item, index, selected, onToggleSelect, onSwapSku }: Pa
         <Card
             variant="glass"
             className={`transition-all duration-200 ${selected
-                    ? 'border-stone-amber/30 bg-stone-amber/5'
+                    ? 'border-gable-green/30 bg-gable-green/5'
                     : 'border-white/5 opacity-50'
                 }`}
         >
@@ -187,7 +187,7 @@ const ParsedItemCard = ({ item, index, selected, onToggleSelect, onSwapSku }: Pa
                     <button
                         onClick={onToggleSelect}
                         className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center shrink-0 transition-all ${selected
-                                ? 'bg-stone-amber border-stone-amber text-black'
+                                ? 'bg-gable-green border-gable-green text-black'
                                 : 'border-white/20 hover:border-white/40'
                             }`}
                         id={`toggle-item-${index}`}

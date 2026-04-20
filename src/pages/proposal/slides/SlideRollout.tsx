@@ -5,13 +5,13 @@ export function SlideRollout() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4">Implementation <span className="text-stone-amber">Roadmap</span></h2>
+        <h2 className="text-4xl font-bold mb-4">Implementation <span className="text-gable-green">Roadmap</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">A data-driven transition designed to minimize operational risk.</p>
       </div>
 
       <div className="relative">
         {/* Connection Line */}
-        <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-stone-amber/5 via-stone-amber/20 to-stone-amber/5 -translate-y-1/2 hidden md:block" />
+        <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-gable-green/5 via-gable-green/20 to-gable-green/5 -translate-y-1/2 hidden md:block" />
 
         <div className="grid md:grid-cols-4 gap-6 relative z-10">
           {[
@@ -55,17 +55,17 @@ export function SlideRollout() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: i * 0.2 }}
-              className={`glass-card rounded-2xl p-6 border-white/5 flex flex-col items-center text-center group hover:border-stone-amber/30 transition-all ${item.active ? 'bg-stone-amber/5 ring-1 ring-stone-amber/20' : ''}`}
+              className={`glass-card rounded-2xl p-6 border-white/5 flex flex-col items-center text-center group hover:border-gable-green/30 transition-all ${item.active ? 'bg-gable-green/5 ring-1 ring-gable-green/20' : ''}`}
             >
-              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${item.active ? 'bg-stone-amber text-deep-earth' : 'bg-white/5 text-zinc-500'}`}>
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${item.active ? 'bg-gable-green text-deep-space' : 'bg-white/5 text-zinc-500'}`}>
                 <item.icon size={24} />
               </div>
-              <span className={`text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${item.active ? 'text-stone-amber' : 'text-zinc-600'}`}>{item.phase}</span>
+              <span className={`text-[10px] uppercase tracking-[0.2em] font-bold mb-2 ${item.active ? 'text-gable-green' : 'text-zinc-600'}`}>{item.phase}</span>
               <h3 className="text-lg font-bold mb-4">{item.title}</h3>
               <ul className="space-y-3 text-xs text-zinc-400 mb-6 flex-1 text-left w-full">
                 {item.items.map((li, j) => (
                   <li key={j} className="flex items-start gap-2">
-                    <span className="text-stone-amber mt-1">•</span>
+                    <span className="text-gable-green mt-1">•</span>
                     {li}
                   </li>
                 ))}
@@ -84,7 +84,7 @@ export function SlideRollout() {
         </div>
       </div>
 
-      <div className="mt-16 glass-card rounded-xl p-6 border-white/5 bg-deep-earth/50">
+      <div className="mt-16 glass-card rounded-xl p-6 border-white/5 bg-deep-space/50">
         <div className="flex items-start gap-4">
           <div className="p-2 bg-emerald-500/10 rounded-lg shrink-0">
             <CheckCircle2 size={20} className="text-emerald-500" />

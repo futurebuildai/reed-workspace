@@ -33,7 +33,7 @@ export function PartnerRoomTracker({ isOpen, onClose }: { isOpen: boolean, onClo
     try {
       const payload = {
         timestamp: new Date().toISOString(),
-        customer: 'Dibbits Landscape Supply',
+        customer: 'Reed Building Supply',
         field: DISCOVERY_ITEMS.find(item => item.id === id)?.question || id,
         value: values[id],
         category: DISCOVERY_ITEMS.find(item => item.id === id)?.category || 'General',
@@ -67,11 +67,11 @@ export function PartnerRoomTracker({ isOpen, onClose }: { isOpen: boolean, onClo
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 right-0 w-full max-w-md bg-slate-warm border-l border-white/5 z-[70] flex flex-col shadow-elevation-3"
+            className="fixed inset-y-0 right-0 w-full max-w-md bg-slate-steel border-l border-white/5 z-[70] flex flex-col shadow-elevation-3"
           >
-            <div className="h-16 flex items-center justify-between px-6 border-b border-white/5 bg-deep-earth/50">
+            <div className="h-16 flex items-center justify-between px-6 border-b border-white/5 bg-deep-space/50">
               <h2 className="text-lg font-bold flex items-center gap-2 text-white">
-                <Search size={18} className="text-stone-amber" />
+                <Search size={18} className="text-gable-green" />
                 Partner Room Insights
               </h2>
               <button 
@@ -83,7 +83,7 @@ export function PartnerRoomTracker({ isOpen, onClose }: { isOpen: boolean, onClo
             </div>
 
             <div className="flex-1 overflow-y-auto p-6 space-y-8 no-scrollbar">
-              <div className="bg-stone-amber/10 border border-stone-amber/20 rounded-xl p-4 text-sm text-stone-amber">
+              <div className="bg-gable-green/10 border border-gable-green/20 rounded-xl p-4 text-sm text-gable-green">
                 <p className="leading-relaxed">
                   Inputs captured here are pushed live to the shared **Project Roadmap Log** for final SOW generation and implementation alignment.
                 </p>
@@ -108,17 +108,17 @@ export function PartnerRoomTracker({ isOpen, onClose }: { isOpen: boolean, onClo
                       placeholder={item.placeholder}
                       disabled={submitted.includes(item.id)}
                       className={cn(
-                        "flex-1 bg-deep-earth/50 border rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-all",
+                        "flex-1 bg-deep-space/50 border rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-all",
                         submitted.includes(item.id) 
                           ? "border-emerald-500/30 text-emerald-400/70" 
-                          : "border-white/5 focus:ring-1 focus:ring-stone-amber/50 placeholder:text-zinc-600"
+                          : "border-white/5 focus:ring-1 focus:ring-gable-green/50 placeholder:text-zinc-600"
                       )}
                     />
                     {!submitted.includes(item.id) && (
                       <button
                         onClick={() => handleSend(item.id)}
                         disabled={!values[item.id] || isSending}
-                        className="bg-stone-amber hover:bg-amber-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-deep-earth p-2.5 rounded-lg transition-colors shadow-glow shrink-0"
+                        className="bg-gable-green hover:bg-amber-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-deep-space p-2.5 rounded-lg transition-colors shadow-glow shrink-0"
                       >
                         <Send size={18} />
                       </button>
@@ -128,7 +128,7 @@ export function PartnerRoomTracker({ isOpen, onClose }: { isOpen: boolean, onClo
               ))}
             </div>
 
-            <div className="p-6 border-t border-white/5 bg-deep-earth/30">
+            <div className="p-6 border-t border-white/5 bg-deep-space/30">
               <p className="text-[10px] text-zinc-500 text-center uppercase tracking-widest">
                 Data pushed via Secure Webhook to futurebuildai organization
               </p>

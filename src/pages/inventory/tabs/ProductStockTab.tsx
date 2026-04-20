@@ -139,7 +139,7 @@ export const ProductStockTab: React.FC<Props> = ({ productId, productDescription
                                     type="number"
                                     value={adjustQty}
                                     onChange={e => setAdjustQty(e.target.value)}
-                                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-stone-amber/50"
+                                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gable-green/50"
                                     min="1"
                                     placeholder="Enter quantity..."
                                 />
@@ -150,7 +150,7 @@ export const ProductStockTab: React.FC<Props> = ({ productId, productDescription
                                     type="text"
                                     value={adjustReason}
                                     onChange={e => setAdjustReason(e.target.value)}
-                                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-stone-amber/50"
+                                    className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gable-green/50"
                                     placeholder="Reason for adjustment..."
                                 />
                             </div>

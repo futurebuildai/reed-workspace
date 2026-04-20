@@ -119,7 +119,7 @@ export function AccountDetailPage() {
             </div>
 
             {/* Salesperson Card */}
-            <div className="p-5 bg-slate-warm border border-white/10 rounded-2xl relative">
+            <div className="p-5 bg-slate-steel border border-white/10 rounded-2xl relative">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
@@ -165,7 +165,7 @@ export function AccountDetailPage() {
                                             onClick={() => handleChangeSalesperson(sp.id)}
                                             className={cn(
                                                 "w-full px-4 py-3 text-left text-sm hover:bg-white/5 transition-colors flex items-center justify-between first:rounded-t-lg",
-                                                sp.id === customer?.salesperson_id ? "bg-stone-amber/10 text-stone-amber" : "text-white"
+                                                sp.id === customer?.salesperson_id ? "bg-gable-green/10 text-gable-green" : "text-white"
                                             )}
                                         >
                                             <div>
@@ -173,7 +173,7 @@ export function AccountDetailPage() {
                                                 <div className="text-xs text-zinc-400">{sp.role}</div>
                                             </div>
                                             {sp.id === customer?.salesperson_id && (
-                                                <span className="text-xs text-stone-amber">Current</span>
+                                                <span className="text-xs text-gable-green">Current</span>
                                             )}
                                         </button>
                                     ))}
@@ -194,7 +194,7 @@ export function AccountDetailPage() {
 
             {/* Financial Overview Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Card className="p-5 border-l-4 border-l-orange-500 bg-gradient-to-br from-slate-warm to-transparent">
+                <Card className="p-5 border-l-4 border-l-orange-500 bg-gradient-to-br from-slate-steel to-transparent">
                     <div className="flex items-center gap-3 mb-2 text-zinc-400 text-sm font-medium uppercase tracking-wide">
                         <Receipt size={16} className="text-orange-400" />
                         Balance Due
@@ -205,7 +205,7 @@ export function AccountDetailPage() {
                     <div className="mt-2 text-xs text-zinc-500">Current outstanding balance</div>
                 </Card>
 
-                <Card className="p-5 border-l-4 border-l-emerald-500 bg-gradient-to-br from-slate-warm to-transparent">
+                <Card className="p-5 border-l-4 border-l-emerald-500 bg-gradient-to-br from-slate-steel to-transparent">
                     <div className="flex items-center gap-3 mb-2 text-zinc-400 text-sm font-medium uppercase tracking-wide">
                         <CreditCard size={16} className="text-emerald-400" />
                         Available Credit
@@ -221,7 +221,7 @@ export function AccountDetailPage() {
                     </div>
                 </Card>
 
-                <Card className="p-5 border-l-4 border-l-blue-500 bg-gradient-to-br from-slate-warm to-transparent">
+                <Card className="p-5 border-l-4 border-l-blue-500 bg-gradient-to-br from-slate-steel to-transparent">
                     <div className="flex items-center gap-3 mb-2 text-zinc-400 text-sm font-medium uppercase tracking-wide">
                         <Activity size={16} className="text-blue-400" />
                         Credit Limit
@@ -246,7 +246,7 @@ export function AccountDetailPage() {
 
                 <div className="min-h-[400px]">
                     {activeTab === 'ledger' && (
-                        <div className="border border-white/5 rounded-lg overflow-hidden bg-slate-warm/20">
+                        <div className="border border-white/5 rounded-lg overflow-hidden bg-slate-steel/20">
                             <table className="w-full text-sm">
                                 <thead className="bg-white/5 text-zinc-400 font-medium border-b border-white/5">
                                     <tr>
@@ -326,7 +326,7 @@ function Tab({ active, onClick, label, icon }: { active: boolean, onClick: () =>
             className={cn(
                 "flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors",
                 active
-                    ? "text-stone-amber border-stone-amber bg-stone-amber/5"
+                    ? "text-gable-green border-gable-green bg-gable-green/5"
                     : "text-zinc-400 border-transparent hover:text-white hover:border-white/20"
             )}
         >

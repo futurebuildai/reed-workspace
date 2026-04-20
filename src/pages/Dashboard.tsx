@@ -121,7 +121,7 @@ const fetchDashboardData = useCallback(async (showSpinner = false) => {
                     <div className="text-right text-xs text-zinc-500 hidden md:block">
                         <div className="font-mono">Last updated: {lastRefresh.toLocaleTimeString()}</div>
                         <div className="flex items-center gap-1 justify-end mt-1">
-                            <span className={`w-2 h-2 rounded-full ${error ? 'bg-rose-500' : 'bg-stone-amber'} animate-pulse`}></span>
+                            <span className={`w-2 h-2 rounded-full ${error ? 'bg-rose-500' : 'bg-gable-green'} animate-pulse`}></span>
                             {error ? 'Error' : 'Live'}
                         </div>
                     </div>
@@ -170,7 +170,7 @@ const fetchDashboardData = useCallback(async (showSpinner = false) => {
                     trend={summary?.today_revenue_change}
                     icon={<DollarSign className="w-5 h-5" />}
                     loading={loading}
-                    valueColor="text-stone-amber"
+                    valueColor="text-gable-green"
                 />
                 <KPICard
                     title="Active Orders"

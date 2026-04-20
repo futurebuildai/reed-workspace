@@ -41,7 +41,7 @@ export function RouteList() {
             <div className="flex flex-col h-full space-y-4 p-4 max-w-md mx-auto">
                 <div className="flex items-center justify-between mb-2">
                     <h1 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-                        <Truck className="w-6 h-6 text-stone-amber" />
+                        <Truck className="w-6 h-6 text-gable-green" />
                         Driver App
                     </h1>
                 </div>
@@ -56,7 +56,7 @@ export function RouteList() {
                             <select
                                 value={selectedDriver}
                                 onChange={e => setSelectedDriver(e.target.value)}
-                                className="w-full bg-black/20 border border-white/10 text-white rounded-lg p-3 appearance-none focus:outline-none focus:border-stone-amber/50 transition-colors"
+                                className="w-full bg-black/20 border border-white/10 text-white rounded-lg p-3 appearance-none focus:outline-none focus:border-gable-green/50 transition-colors"
                             >
                                 <option value="">Choose your profile...</option>
                                 {drivers.map(d => (
@@ -76,7 +76,7 @@ export function RouteList() {
                         <Card
                             key={route.id}
                             variant="glass"
-                            className="active:scale-[0.98] transition-transform cursor-pointer border-white/5 hover:border-stone-amber/30"
+                            className="active:scale-[0.98] transition-transform cursor-pointer border-white/5 hover:border-gable-green/30"
                             onClick={() => navigate(`/driver/routes/${route.id}`)}
                         >
                             <CardContent className="p-4">
@@ -100,7 +100,7 @@ export function RouteList() {
 
                                 <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
                                     <div className="flex items-center gap-1.5 text-xs text-zinc-300 font-mono bg-white/5 px-2 py-1 rounded">
-                                        <MapPin className="w-3 h-3 text-stone-amber" />
+                                        <MapPin className="w-3 h-3 text-gable-green" />
                                         {route.stop_count} Stops
                                     </div>
                                     <div className="text-xs text-zinc-500">Tap to start</div>

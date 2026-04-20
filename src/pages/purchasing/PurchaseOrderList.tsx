@@ -48,7 +48,7 @@ export function PurchaseOrderList() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-                        <Truck className="w-8 h-8 text-stone-amber" />
+                        <Truck className="w-8 h-8 text-gable-green" />
                         Purchasing
                     </h1>
                     <p className="text-zinc-500 mt-1">Purchase orders, receiving, and reorder alerts</p>
@@ -118,7 +118,7 @@ export function PurchaseOrderList() {
                 <CardContent className="p-0">
                     {loading ? (
                         <div className="p-12 flex justify-center">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stone-amber"></div>
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gable-green"></div>
                         </div>
                     ) : pos.length === 0 ? (
                         <div className="p-12 text-center text-zinc-500">

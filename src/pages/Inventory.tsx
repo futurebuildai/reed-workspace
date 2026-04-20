@@ -69,7 +69,7 @@ export const Inventory = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-display-large text-white flex items-center gap-3">
-                        <Package className="w-10 h-10 text-stone-amber" />
+                        <Package className="w-10 h-10 text-gable-green" />
                         The Pile
                     </h1>
                     <p className="text-zinc-500 mt-1 max-w-2xl text-lg">
@@ -95,25 +95,25 @@ export const Inventory = () => {
                                 placeholder="Search SKUs, products, manufacturers..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full bg-deep-earth/50 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-stone-amber/50 placeholder:text-zinc-600 transition-all font-mono"
+                                className="w-full bg-deep-space/50 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-gable-green/50 placeholder:text-zinc-600 transition-all font-mono"
                             />
                         </div>
                         <select value={manufacturer} onChange={e => setManufacturer(e.target.value)}
-                            className="px-3 py-2.5 rounded-lg bg-deep-earth/50 border border-white/10 text-white text-sm focus:outline-none focus:ring-1 focus:ring-stone-amber/50 appearance-none">
+                            className="px-3 py-2.5 rounded-lg bg-deep-space/50 border border-white/10 text-white text-sm focus:outline-none focus:ring-1 focus:ring-gable-green/50 appearance-none">
                             <option value="">All Manufacturers</option>
                             {[...new Set(products.map(p => p.manufacturer).filter(Boolean))].sort().map(m => (
                                 <option key={m} value={m}>{m}</option>
                             ))}
                         </select>
                         <select value={collection} onChange={e => setCollection(e.target.value)}
-                            className="px-3 py-2.5 rounded-lg bg-deep-earth/50 border border-white/10 text-white text-sm focus:outline-none focus:ring-1 focus:ring-stone-amber/50 appearance-none">
+                            className="px-3 py-2.5 rounded-lg bg-deep-space/50 border border-white/10 text-white text-sm focus:outline-none focus:ring-1 focus:ring-gable-green/50 appearance-none">
                             <option value="">All Collections</option>
                             {[...new Set(products.map(p => p.collection).filter(Boolean))].sort().map(c => (
                                 <option key={c} value={c}>{c}</option>
                             ))}
                         </select>
                         <select value={application} onChange={e => setApplication(e.target.value)}
-                            className="px-3 py-2.5 rounded-lg bg-deep-earth/50 border border-white/10 text-white text-sm focus:outline-none focus:ring-1 focus:ring-stone-amber/50 appearance-none">
+                            className="px-3 py-2.5 rounded-lg bg-deep-space/50 border border-white/10 text-white text-sm focus:outline-none focus:ring-1 focus:ring-gable-green/50 appearance-none">
                             <option value="">All Applications</option>
                             {[...new Set(products.map(p => p.application).filter(Boolean))].sort().map(a => (
                                 <option key={a} value={a}>{a}</option>
@@ -124,7 +124,7 @@ export const Inventory = () => {
                         <div className="flex items-center gap-2 mt-3">
                             <Filter className="w-3.5 h-3.5 text-zinc-500" />
                             {[manufacturer, collection, application].filter(Boolean).map(f => (
-                                <span key={f} className="px-2 py-0.5 rounded-full text-xs bg-stone-amber/10 text-stone-amber border border-stone-amber/20">
+                                <span key={f} className="px-2 py-0.5 rounded-full text-xs bg-gable-green/10 text-gable-green border border-gable-green/20">
                                     {f}
                                 </span>
                             ))}

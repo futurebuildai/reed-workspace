@@ -11,16 +11,16 @@ export function SlideWiki() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Foundation: <span className="text-stone-amber">Product Wiki</span></h2>
+        <h2 className="text-4xl font-bold mb-4">Foundation: <span className="text-gable-green">Product Wiki</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">We've already started documenting your business. This living wiki lays the groundwork for your implementation.</p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-10">
         <div className="space-y-6">
-          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-earth/30">
+          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-stone-amber/10 rounded-lg">
-                <BookOpen size={20} className="text-stone-amber" />
+              <div className="p-2 bg-gable-green/10 rounded-lg">
+                <BookOpen size={20} className="text-gable-green" />
               </div>
               <h3 className="font-bold">Preliminary Research Log</h3>
             </div>
@@ -38,9 +38,9 @@ export function SlideWiki() {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl border border-stone-amber/20 bg-stone-amber/5 flex items-start gap-4">
-            <div className="w-10 h-10 rounded-full bg-stone-amber/20 flex items-center justify-center shrink-0">
-              <span className="text-lg font-bold text-stone-amber">P0</span>
+          <div className="p-6 rounded-2xl border border-gable-green/20 bg-gable-green/5 flex items-start gap-4">
+            <div className="w-10 h-10 rounded-full bg-gable-green/20 flex items-center justify-center shrink-0">
+              <span className="text-lg font-bold text-gable-green">P0</span>
             </div>
             <div>
               <h4 className="font-bold text-sm text-white mb-1 tracking-tight">Phase 0 Deliverable</h4>
@@ -51,17 +51,17 @@ export function SlideWiki() {
           </div>
         </div>
 
-        <div className="glass-card rounded-2xl p-8 border-white/5 relative bg-slate-warm/40 overflow-hidden group flex flex-col justify-center">
+        <div className="glass-card rounded-2xl p-8 border-white/5 relative bg-slate-steel/40 overflow-hidden group flex flex-col justify-center">
           <div className="absolute top-0 right-0 p-4">
-            <div className="flex items-center gap-2 bg-stone-amber/10 border border-stone-amber/20 rounded-full px-3 py-1">
-              <div className="w-1.5 h-1.5 bg-stone-amber rounded-full animate-pulse" />
-              <span className="text-[10px] uppercase tracking-widest font-bold text-stone-amber">Future Product Agent</span>
+            <div className="flex items-center gap-2 bg-gable-green/10 border border-gable-green/20 rounded-full px-3 py-1">
+              <div className="w-1.5 h-1.5 bg-gable-green rounded-full animate-pulse" />
+              <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Future Product Agent</span>
             </div>
           </div>
 
           <div className="flex items-center gap-3 mb-8 mt-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-stone-amber/20 to-amber-600/20 border border-stone-amber/30 flex items-center justify-center shadow-glow">
-              <Bot size={24} className="text-stone-amber" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gable-green/20 to-amber-600/20 border border-gable-green/30 flex items-center justify-center shadow-glow">
+              <Bot size={24} className="text-gable-green" />
             </div>
             <div>
               <h3 className="font-bold text-lg">Knowledge Chat</h3>
@@ -73,7 +73,7 @@ export function SlideWiki() {
             <div className="p-3 bg-white/5 rounded-2xl rounded-bl-none text-xs text-zinc-400 max-w-[85%]">
               What assumption did we make about Techo-Bloc pallet weights vs. Unilock?
             </div>
-            <div className="p-3 bg-stone-amber/10 border border-stone-amber/20 rounded-2xl rounded-br-none text-xs text-white max-w-[95%] ml-auto leading-relaxed">
+            <div className="p-3 bg-gable-green/10 border border-gable-green/20 rounded-2xl rounded-br-none text-xs text-white max-w-[95%] ml-auto leading-relaxed">
               Based on our <strong>Product Assumptions</strong> log:
               <br/><br/>
               We noted that Techo-Bloc pallets often exceed 3,500 lbs, requiring a different forklift capacity check in the dispatch engine compared to standard Unilock pallets which average closer to 2,800 lbs.

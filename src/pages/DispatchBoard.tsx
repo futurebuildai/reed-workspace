@@ -28,7 +28,7 @@ export const DispatchBoard: React.FC = () => {
                 <div className="flex justify-between items-center mb-6">
                     <div>
                         <h1 className="text-display-large text-white flex items-center gap-3">
-                            <Truck className="w-10 h-10 text-stone-amber" />
+                            <Truck className="w-10 h-10 text-gable-green" />
                             Logistics & Dispatch
                         </h1>
                         <p className="text-zinc-500 mt-1 text-lg">
@@ -36,7 +36,7 @@ export const DispatchBoard: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 font-mono text-sm">
-                        <Calendar className="w-4 h-4 text-stone-amber" />
+                        <Calendar className="w-4 h-4 text-gable-green" />
                         Today: {new Date().toLocaleDateString(undefined, { weekday: 'short', month: 'long', day: 'numeric' })}
                     </div>
                 </div>

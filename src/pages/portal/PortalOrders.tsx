@@ -123,7 +123,7 @@ export const PortalOrders = () => {
                                             handleReorder(order.id);
                                         }}
                                         disabled={reorderingId === order.id}
-                                        className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-amber text-black
+                                        className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gable-green text-black
                                                    hover:bg-amber-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed
                                                    flex items-center gap-1.5"
                                     >

@@ -181,7 +181,7 @@ export function DeliveryDetail() {
                 </div>
 
                 {/* Status Card */}
-                <Card variant="glass" className="border-t-4 border-t-stone-amber">
+                <Card variant="glass" className="border-t-4 border-t-gable-green">
                     <CardContent className="p-6 text-center">
                         <div className={`mx-auto w-fit px-3 py-1 rounded-full text-xs font-mono font-bold uppercase border mb-2 ${statusColor}`}>
                             {delivery.status}
@@ -239,7 +239,7 @@ export function DeliveryDetail() {
                         <div className="bg-[#171921] w-full max-w-md rounded-2xl border border-white/10 p-6 space-y-6 shadow-2xl max-h-[90vh] overflow-y-auto">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                                    <PenTool className="w-5 h-5 text-stone-amber" />
+                                    <PenTool className="w-5 h-5 text-gable-green" />
                                     Proof of Delivery
                                 </h2>
                                 <button onClick={() => setShowPODModal(false)} className="text-zinc-500 hover:text-white">
@@ -253,7 +253,7 @@ export function DeliveryDetail() {
                                     <div className="grid grid-cols-2 gap-3">
                                         <button
                                             onClick={() => setStatus('DELIVERED')}
-                                            className={`p-3 rounded-lg border text-sm font-bold transition-all ${status === 'DELIVERED' ? 'bg-stone-amber/20 border-stone-amber text-stone-amber' : 'bg-white/5 border-white/10 text-zinc-400'}`}
+                                            className={`p-3 rounded-lg border text-sm font-bold transition-all ${status === 'DELIVERED' ? 'bg-gable-green/20 border-gable-green text-gable-green' : 'bg-white/5 border-white/10 text-zinc-400'}`}
                                         >
                                             <CheckCircle className="w-5 h-5 mx-auto mb-1" />
                                             Delivered
@@ -340,7 +340,7 @@ export function DeliveryDetail() {
                                                 type="text"
                                                 value={signedBy}
                                                 onChange={e => setSignedBy(e.target.value)}
-                                                className="w-full bg-black/20 border border-white/10 p-3 rounded-lg text-white focus:outline-none focus:border-stone-amber/50"
+                                                className="w-full bg-black/20 border border-white/10 p-3 rounded-lg text-white focus:outline-none focus:border-gable-green/50"
                                                 placeholder="Received by..."
                                             />
                                         </div>

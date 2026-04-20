@@ -32,7 +32,7 @@ export function ARAgingReportPage() {
     if (loading) {
         return (
             <div className="p-12 flex justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stone-amber"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gable-green"></div>
             </div>
         );
     }
@@ -41,7 +41,7 @@ export function ARAgingReportPage() {
         <PageTransition>
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-                    <DollarSign className="w-8 h-8 text-stone-amber" />
+                    <DollarSign className="w-8 h-8 text-gable-green" />
                     AR Aging Report
                 </h1>
                 <p className="text-zinc-500 mt-1">

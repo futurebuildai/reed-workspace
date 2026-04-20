@@ -124,7 +124,7 @@ export default function QuoteDetail() {
                     )}
                     {(quote.state === 'DRAFT' || quote.state === 'SENT' || quote.state === 'ACCEPTED') && (
                         <button onClick={handleConvert} disabled={processing}
-                            className="bg-stone-amber text-black px-4 py-2 rounded hover:bg-stone-amber/90 transition-colors flex items-center gap-2 text-sm font-bold disabled:opacity-50">
+                            className="bg-gable-green text-black px-4 py-2 rounded hover:bg-gable-green/90 transition-colors flex items-center gap-2 text-sm font-bold disabled:opacity-50">
                             <ShoppingCart size={14} /> Convert to Order
                         </button>
                     )}
@@ -139,7 +139,7 @@ export default function QuoteDetail() {
                         onClick={() => setActiveTab(tab.id)}
                         className={`flex items-center gap-2 px-4 py-3 text-sm font-medium transition-colors border-b-2 -mb-px ${
                             activeTab === tab.id
-                                ? 'text-stone-amber border-stone-amber'
+                                ? 'text-gable-green border-gable-green'
                                 : 'text-zinc-500 border-transparent hover:text-white hover:border-white/20'
                         }`}
                     >
@@ -170,9 +170,9 @@ function DetailsTab({ quote }: { quote: Quote }) {
         <div className="space-y-6">
             {/* Projected Margin Card */}
             {hasCostData && (
-                <div className="bg-slate-warm border border-white/10 rounded-xl p-5">
+                <div className="bg-slate-steel border border-white/10 rounded-xl p-5">
                     <div className="flex items-center gap-2 mb-4">
-                        <TrendingUp className="w-5 h-5 text-stone-amber" />
+                        <TrendingUp className="w-5 h-5 text-gable-green" />
                         <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Projected Margin</h3>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -186,19 +186,19 @@ function DetailsTab({ quote }: { quote: Quote }) {
                         </div>
                         <div>
                             <div className="text-[11px] text-zinc-500 uppercase tracking-wider mb-1">Projected Margin</div>
-                            <div className={`text-xl font-mono font-bold ${projectedMargin >= 0 ? 'text-stone-amber' : 'text-red-400'}`}>
+                            <div className={`text-xl font-mono font-bold ${projectedMargin >= 0 ? 'text-gable-green' : 'text-red-400'}`}>
                                 ${projectedMargin.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                             </div>
                         </div>
                         <div>
                             <div className="text-[11px] text-zinc-500 uppercase tracking-wider mb-1">Margin %</div>
-                            <div className={`text-xl font-mono font-bold ${marginPct >= 20 ? 'text-stone-amber' : marginPct >= 10 ? 'text-amber-400' : 'text-red-400'}`}>
+                            <div className={`text-xl font-mono font-bold ${marginPct >= 20 ? 'text-gable-green' : marginPct >= 10 ? 'text-amber-400' : 'text-red-400'}`}>
                                 {marginPct.toFixed(1)}%
                             </div>
                             {/* Margin bar */}
                             <div className="mt-2 h-1.5 bg-white/5 rounded-full overflow-hidden">
                                 <div
-                                    className={`h-full rounded-full transition-all ${marginPct >= 20 ? 'bg-stone-amber' : marginPct >= 10 ? 'bg-amber-400' : 'bg-red-400'}`}
+                                    className={`h-full rounded-full transition-all ${marginPct >= 20 ? 'bg-gable-green' : marginPct >= 10 ? 'bg-amber-400' : 'bg-red-400'}`}
                                     style={{ width: `${Math.min(Math.max(marginPct, 0), 100)}%` }}
                                 />
                             </div>
@@ -209,7 +209,7 @@ function DetailsTab({ quote }: { quote: Quote }) {
 
             {/* Summary Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <SummaryCard label="Total Amount" value={`$${quote.total_amount.toFixed(2)}`} accent="text-stone-amber" />
+                <SummaryCard label="Total Amount" value={`$${quote.total_amount.toFixed(2)}`} accent="text-gable-green" />
                 <SummaryCard label="Lines" value={String(lines.length)} />
                 <SummaryCard label="Fulfillment" value={quote.delivery_type === 'DELIVERY' ? 'Delivery' : 'Pickup'} accent={quote.delivery_type === 'DELIVERY' ? 'text-blue-400' : undefined} />
                 <SummaryCard label="Source" value={quote.source === 'ai' ? 'AI Parsed' : 'Manual'} />
@@ -237,7 +237,7 @@ function DetailsTab({ quote }: { quote: Quote }) {
             )}
 
             {/* Timeline */}
-            <div className="bg-slate-warm border border-white/10 rounded-lg p-6">
+            <div className="bg-slate-steel border border-white/10 rounded-lg p-6">
                 <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider mb-4">Timeline</h3>
                 <div className="space-y-3 text-sm">
                     <TimelineEntry label="Created" date={quote.created_at} />
@@ -248,7 +248,7 @@ function DetailsTab({ quote }: { quote: Quote }) {
             </div>
 
             {/* Line Items */}
-            <div className="bg-slate-warm border border-white/10 rounded-lg overflow-hidden">
+            <div className="bg-slate-steel border border-white/10 rounded-lg overflow-hidden">
                 <table className="w-full text-left text-sm">
                     <thead>
                         <tr className="border-b border-white/10 bg-white/5">
@@ -279,11 +279,11 @@ function DetailsTab({ quote }: { quote: Quote }) {
                                             {line.unit_cost > 0 ? `$${line.unit_cost.toFixed(2)}` : '—'}
                                         </td>
                                     )}
-                                    <td className="p-4 text-right font-mono text-stone-amber font-medium">${line.line_total.toFixed(2)}</td>
+                                    <td className="p-4 text-right font-mono text-gable-green font-medium">${line.line_total.toFixed(2)}</td>
                                     {hasCostData && (
                                         <td className="p-4 text-right font-mono">
                                             {line.unit_cost > 0 ? (
-                                                <span className={lineMarginPct >= 20 ? 'text-stone-amber' : lineMarginPct >= 10 ? 'text-amber-400' : 'text-red-400'}>
+                                                <span className={lineMarginPct >= 20 ? 'text-gable-green' : lineMarginPct >= 10 ? 'text-amber-400' : 'text-red-400'}>
                                                     {lineMarginPct.toFixed(1)}%
                                                 </span>
                                             ) : (
@@ -315,7 +315,7 @@ function DetailsTab({ quote }: { quote: Quote }) {
                             )}
                             <tr className={quote.freight_amount > 0 ? 'border-t border-white/5' : ''}>
                                 <td colSpan={hasCostData ? 6 : 4} className="p-4 text-right font-medium text-zinc-400 uppercase tracking-wider text-xs">Total</td>
-                                <td className="p-4 text-right font-mono text-xl font-bold text-stone-amber">${quote.total_amount.toFixed(2)}</td>
+                                <td className="p-4 text-right font-mono text-xl font-bold text-gable-green">${quote.total_amount.toFixed(2)}</td>
                             </tr>
                         </tfoot>
                     )}
@@ -336,12 +336,12 @@ function OriginalUploadTab({ quote }: { quote: Quote }) {
             <div className="flex items-center justify-between">
                 <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider">Original Material List Upload</h3>
                 <a href={fileUrl} download={quote.original_filename || 'original-upload'}
-                    className="text-stone-amber hover:text-stone-amber/80 text-sm flex items-center gap-2 transition-colors">
+                    className="text-gable-green hover:text-gable-green/80 text-sm flex items-center gap-2 transition-colors">
                     <Download size={14} /> Download Original
                 </a>
             </div>
 
-            <div className="bg-slate-warm border border-white/10 rounded-lg overflow-hidden">
+            <div className="bg-slate-steel border border-white/10 rounded-lg overflow-hidden">
                 {isImage && (
                     <img src={fileUrl} alt="Original material list" className="w-full max-h-[70vh] object-contain bg-black/30 p-4" />
                 )}
@@ -352,7 +352,7 @@ function OriginalUploadTab({ quote }: { quote: Quote }) {
                     <div className="p-12 text-center text-zinc-500">
                         <FileText className="w-12 h-12 mx-auto mb-4 opacity-50" />
                         <p>Preview not available for {quote.original_content_type}</p>
-                        <a href={fileUrl} download className="text-stone-amber hover:underline text-sm mt-2 inline-block">
+                        <a href={fileUrl} download className="text-gable-green hover:underline text-sm mt-2 inline-block">
                             Download to view
                         </a>
                     </div>
@@ -377,7 +377,7 @@ function MappingTab({ parseMap }: { parseMap: ParseMapItem[] }) {
 
             <div className="space-y-3">
                 {parseMap.map((item, idx) => (
-                    <div key={idx} className="bg-slate-warm border border-white/10 rounded-lg p-4">
+                    <div key={idx} className="bg-slate-steel border border-white/10 rounded-lg p-4">
                         {/* Raw text source */}
                         <div className="flex items-center gap-3 mb-3 pb-3 border-b border-white/5">
                             <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-600 bg-white/5 px-2 py-0.5 rounded">
@@ -445,7 +445,7 @@ function MappingTab({ parseMap }: { parseMap: ParseMapItem[] }) {
 // --- Shared Components ---
 function SummaryCard({ label, value, accent }: { label: string; value: string; accent?: string }) {
     return (
-        <div className="bg-slate-warm border border-white/10 rounded-lg p-4">
+        <div className="bg-slate-steel border border-white/10 rounded-lg p-4">
             <div className="text-xs text-zinc-500 uppercase tracking-wider mb-1">{label}</div>
             <div className={`text-lg font-mono font-bold ${accent || 'text-white'}`}>{value}</div>
         </div>
@@ -455,7 +455,7 @@ function SummaryCard({ label, value, accent }: { label: string; value: string; a
 function TimelineEntry({ label, date }: { label: string; date: string }) {
     return (
         <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-stone-amber/60" />
+            <div className="w-2 h-2 rounded-full bg-gable-green/60" />
             <span className="text-zinc-400 w-20">{label}</span>
             <span className="text-white font-mono text-xs">{new Date(date).toLocaleString('en-CA')}</span>
         </div>

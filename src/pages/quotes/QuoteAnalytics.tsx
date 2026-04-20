@@ -38,7 +38,7 @@ export default function QuoteAnalytics() {
                     <ArrowLeft size={14} /> Back to Quotes
                 </button>
                 <h1 className="text-3xl font-bold tracking-tight text-white font-mono flex items-center gap-3">
-                    <BarChart3 className="w-8 h-8 text-stone-amber" />
+                    <BarChart3 className="w-8 h-8 text-gable-green" />
                     Quote Analytics
                 </h1>
                 <p className="text-muted-foreground mt-1">Last 90 days performance — optimize the tradeoff between conversion and margins.</p>
@@ -47,7 +47,7 @@ export default function QuoteAnalytics() {
             {/* KPI Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <KPICard icon={Target} label="Total Quotes" value={String(analytics.total_quotes)} />
-                <KPICard icon={Percent} label="Conversion Rate" value={`${analytics.conversion_rate.toFixed(1)}%`} accent="text-stone-amber" />
+                <KPICard icon={Percent} label="Conversion Rate" value={`${analytics.conversion_rate.toFixed(1)}%`} accent="text-gable-green" />
                 <KPICard icon={TrendingUp} label="Avg Margin (Won)" value={`$${analytics.avg_margin_accepted.toFixed(2)}`} accent="text-emerald-400" />
                 <KPICard icon={Clock} label="Avg Days to Close" value={analytics.avg_days_to_close.toFixed(1)} />
             </div>
@@ -55,7 +55,7 @@ export default function QuoteAnalytics() {
             {/* Conversion Funnel + Value */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Funnel */}
-                <div className="bg-slate-warm border border-white/10 rounded-lg p-6">
+                <div className="bg-slate-steel border border-white/10 rounded-lg p-6">
                     <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider mb-6">Conversion Funnel</h3>
                     <div className="space-y-4">
                         <FunnelBar label="Draft" count={analytics.draft_count} total={analytics.total_quotes} color="bg-zinc-500" />
@@ -67,7 +67,7 @@ export default function QuoteAnalytics() {
                 </div>
 
                 {/* Value Summary */}
-                <div className="bg-slate-warm border border-white/10 rounded-lg p-6">
+                <div className="bg-slate-steel border border-white/10 rounded-lg p-6">
                     <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider mb-6">Quote Value</h3>
                     <div className="space-y-6">
                         <div>
@@ -76,7 +76,7 @@ export default function QuoteAnalytics() {
                         </div>
                         <div>
                             <div className="text-xs text-zinc-500 mb-1">Total Won</div>
-                            <div className="text-2xl font-mono font-bold text-stone-amber">${analytics.total_accepted_value.toLocaleString('en-CA', { minimumFractionDigits: 2 })}</div>
+                            <div className="text-2xl font-mono font-bold text-gable-green">${analytics.total_accepted_value.toLocaleString('en-CA', { minimumFractionDigits: 2 })}</div>
                         </div>
                         <div className="pt-4 border-t border-white/5">
                             <div className="text-xs text-zinc-500 mb-1">Capture Rate (Value)</div>
@@ -93,7 +93,7 @@ export default function QuoteAnalytics() {
             {/* Margin vs Conversion - AI vs Manual */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Margin Analysis */}
-                <div className="bg-slate-warm border border-white/10 rounded-lg p-6">
+                <div className="bg-slate-steel border border-white/10 rounded-lg p-6">
                     <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider mb-6">Margin: Won vs Lost</h3>
                     <p className="text-xs text-zinc-500 mb-4">Are you losing deals because margins are too high?</p>
                     <div className="space-y-4">
@@ -114,7 +114,7 @@ export default function QuoteAnalytics() {
                 </div>
 
                 {/* AI vs Manual */}
-                <div className="bg-slate-warm border border-white/10 rounded-lg p-6">
+                <div className="bg-slate-steel border border-white/10 rounded-lg p-6">
                     <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider mb-6 flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-violet-400" />
                         AI vs Manual Performance
@@ -148,7 +148,7 @@ export default function QuoteAnalytics() {
 
             {/* 30-Day Trend */}
             {analytics.trend_data && analytics.trend_data.length > 0 && (
-                <div className="bg-slate-warm border border-white/10 rounded-lg p-6">
+                <div className="bg-slate-steel border border-white/10 rounded-lg p-6">
                     <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-wider mb-6">30-Day Quote Trend</h3>
                     <div className="flex items-end gap-1 h-32">
                         {analytics.trend_data.map((day, idx) => (
@@ -161,7 +161,7 @@ export default function QuoteAnalytics() {
                                 {/* Accepted overlay */}
                                 {day.accepted > 0 && (
                                     <div
-                                        className="w-full bg-stone-amber rounded-t-sm absolute bottom-0"
+                                        className="w-full bg-gable-green rounded-t-sm absolute bottom-0"
                                         style={{ height: `${Math.max((day.accepted / maxTrendCreated) * 100, 2)}%` }}
                                     />
                                 )}
@@ -172,7 +172,7 @@ export default function QuoteAnalytics() {
                         <span>{analytics.trend_data[0]?.date}</span>
                         <div className="flex items-center gap-4">
                             <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-zinc-600 inline-block" /> Created</span>
-                            <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-stone-amber inline-block" /> Accepted</span>
+                            <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-gable-green inline-block" /> Accepted</span>
                         </div>
                         <span>{analytics.trend_data[analytics.trend_data.length - 1]?.date}</span>
                     </div>
@@ -186,7 +186,7 @@ export default function QuoteAnalytics() {
 
 function KPICard({ icon: Icon, label, value, accent }: { icon: typeof Target; label: string; value: string; accent?: string }) {
     return (
-        <div className="bg-slate-warm border border-white/10 rounded-lg p-5">
+        <div className="bg-slate-steel border border-white/10 rounded-lg p-5">
             <div className="flex items-center gap-2 mb-2">
                 <Icon className="w-4 h-4 text-zinc-500" />
                 <span className="text-xs text-zinc-500 uppercase tracking-wider">{label}</span>

@@ -107,7 +107,7 @@ export const BisTrackDashboard = () => {
                 <div className="flex items-center justify-between">
                     <div>
                         <h1 className="text-display-large text-white flex items-center gap-3">
-                            <Database className="w-10 h-10 text-stone-amber" />
+                            <Database className="w-10 h-10 text-gable-green" />
                             BisTrack Migration
                         </h1>
                         <p className="text-zinc-500 mt-1 text-lg">
@@ -117,7 +117,7 @@ export const BisTrackDashboard = () => {
                     <button
                         onClick={handleStartSync}
                         disabled={syncing}
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-stone-amber text-black font-semibold text-sm hover:bg-stone-amber/90 transition-all disabled:opacity-50 active:scale-[0.98]"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gable-green text-black font-semibold text-sm hover:bg-gable-green/90 transition-all disabled:opacity-50 active:scale-[0.98]"
                     >
                         <RefreshCw className={`w-4 h-4 ${syncing ? 'animate-spin' : ''}`} />
                         {syncing ? 'Syncing...' : 'Manual Sync'}
@@ -217,7 +217,7 @@ export const BisTrackDashboard = () => {
                 {/* Discrepancies Link */}
                 <Link
                     to="/erp/bistrack/discrepancies"
-                    className="flex items-center gap-3 p-4 rounded-xl border border-white/10 hover:border-stone-amber/30 bg-white/[0.02] hover:bg-white/[0.04] transition-all group"
+                    className="flex items-center gap-3 p-4 rounded-xl border border-white/10 hover:border-gable-green/30 bg-white/[0.02] hover:bg-white/[0.04] transition-all group"
                 >
                     <AlertTriangle className="w-5 h-5 text-amber-400" />
                     <div className="flex-1">
@@ -226,7 +226,7 @@ export const BisTrackDashboard = () => {
                             Review and resolve conflicts between BisTrack and GableXHardscape data.
                         </div>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-zinc-500 group-hover:text-stone-amber transition-colors" />
+                    <ArrowRight className="w-5 h-5 text-zinc-500 group-hover:text-gable-green transition-colors" />
                 </Link>
             </div>
         </PageTransition>

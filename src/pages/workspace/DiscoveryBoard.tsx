@@ -83,13 +83,13 @@ const INITIAL_TASKS: Task[] = [
 
 export function DiscoveryBoard() {
   const [tasks, setTasks] = useState<Task[]>(() => {
-    const saved = localStorage.getItem('dibbits_discovery_tasks');
+    const saved = localStorage.getItem('reed_discovery_tasks');
     return saved ? JSON.parse(saved) : INITIAL_TASKS;
   });
 
   const saveTasks = (newTasks: Task[]) => {
     setTasks(newTasks);
-    localStorage.setItem('dibbits_discovery_tasks', JSON.stringify(newTasks));
+    localStorage.setItem('reed_discovery_tasks', JSON.stringify(newTasks));
   };
 
   const filterTasks = (status: string) => tasks.filter(t => t.status === status);
@@ -98,14 +98,14 @@ export function DiscoveryBoard() {
     <div className="space-y-8">
       <div className="flex items-end justify-between">
         <div>
-          <h1 className="text-3xl font-bold mb-2">Discovery <span className="text-stone-amber">Tracker</span></h1>
+          <h1 className="text-3xl font-bold mb-2">Discovery <span className="text-gable-green">Tracker</span></h1>
           <p className="text-zinc-500 max-w-xl">Project Phase 0: Blueprints & Technical Scoping. Complete these items to finalize the Phase 1 Statement of Work.</p>
         </div>
         <div className="flex gap-3">
           <button className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 transition-all">
             Filter by Category
           </button>
-          <button className="px-4 py-2 rounded-lg bg-stone-amber text-deep-earth text-sm font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-glow">
+          <button className="px-4 py-2 rounded-lg bg-gable-green text-deep-space text-sm font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-glow">
             Add Discovery Item
           </button>
         </div>
@@ -164,7 +164,7 @@ function Column({ title, count, children, status }: { title: string, count: numb
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-2">
           <span className={`w-1.5 h-1.5 rounded-full ${
-            status === 'todo' ? 'bg-zinc-500' : status === 'review' ? 'bg-stone-amber' : 'bg-emerald-500'
+            status === 'todo' ? 'bg-zinc-500' : status === 'review' ? 'bg-gable-green' : 'bg-emerald-500'
           }`} />
           <h3 className="font-bold text-sm text-zinc-400 uppercase tracking-wider">{title}</h3>
         </div>
@@ -187,7 +187,7 @@ function TaskCard({ task, onStatusChange }: { task: Task, onStatusChange: (id: s
   return (
     <motion.div
       whileHover={{ y: -2 }}
-      className="group p-5 rounded-2xl bg-[#171921] border border-white/5 hover:border-stone-amber/30 transition-all cursor-pointer relative overflow-hidden shadow-sm"
+      className="group p-5 rounded-2xl bg-[#171921] border border-white/5 hover:border-gable-green/30 transition-all cursor-pointer relative overflow-hidden shadow-sm"
     >
       {/* Category Pill */}
       <div className="flex items-center justify-between mb-4">
@@ -196,7 +196,7 @@ function TaskCard({ task, onStatusChange }: { task: Task, onStatusChange: (id: s
         </span>
         <div className={`text-[10px] font-bold px-2 py-0.5 rounded ${
           task.priority === 'High' ? 'text-red-400 bg-red-400/10' : 
-          task.priority === 'Medium' ? 'text-stone-amber bg-stone-amber/10' : 
+          task.priority === 'Medium' ? 'text-gable-green bg-gable-green/10' : 
           'text-zinc-500 bg-zinc-500/10'
         }`}>
           {task.priority}
@@ -204,11 +204,11 @@ function TaskCard({ task, onStatusChange }: { task: Task, onStatusChange: (id: s
       </div>
 
       <div className="flex gap-4">
-        <div className="w-10 h-10 shrink-0 rounded-xl bg-deep-earth border border-white/5 flex items-center justify-center text-zinc-400 group-hover:text-stone-amber group-hover:border-stone-amber/30 transition-all">
+        <div className="w-10 h-10 shrink-0 rounded-xl bg-deep-space border border-white/5 flex items-center justify-center text-zinc-400 group-hover:text-gable-green group-hover:border-gable-green/30 transition-all">
           <task.icon size={20} />
         </div>
         <div className="min-w-0" onClick={() => onStatusChange(task.id, nextStatus)}>
-          <h4 className="font-bold text-sm mb-1 group-hover:text-stone-amber transition-colors truncate">{task.title}</h4>
+          <h4 className="font-bold text-sm mb-1 group-hover:text-gable-green transition-colors truncate">{task.title}</h4>
           <p className="text-xs text-zinc-500 leading-relaxed line-clamp-2">{task.description}</p>
         </div>
       </div>
@@ -216,12 +216,12 @@ function TaskCard({ task, onStatusChange }: { task: Task, onStatusChange: (id: s
       <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between">
         <div className="flex items-center gap-2" onClick={(e) => { e.stopPropagation(); onStatusChange(task.id, nextStatus); }}>
           {task.status === 'todo' ? (
-            <div className="flex items-center gap-1.5 text-[10px] text-zinc-600 font-bold uppercase tracking-widest hover:text-stone-amber transition-colors">
+            <div className="flex items-center gap-1.5 text-[10px] text-zinc-600 font-bold uppercase tracking-widest hover:text-gable-green transition-colors">
               <Clock size={12} /> Pending
             </div>
           ) : task.status === 'review' ? (
-            <div className="flex items-center gap-1.5 text-[10px] text-stone-amber font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">
-              <Circle size={12} className="animate-pulse fill-stone-amber/20" /> In Review
+            <div className="flex items-center gap-1.5 text-[10px] text-gable-green font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">
+              <Circle size={12} className="animate-pulse fill-gable-green/20" /> In Review
             </div>
           ) : (
             <div className="flex items-center gap-1.5 text-[10px] text-emerald-500 font-bold uppercase tracking-widest hover:text-zinc-500 transition-colors">

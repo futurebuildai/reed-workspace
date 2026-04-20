@@ -42,7 +42,7 @@ export function BrandLogo({ variant = 'full', className, size = 'md' }: BrandLog
         return (
             <div className={cn("flex items-center gap-0.5", className)}>
                 <span className="font-bold tracking-tight text-white">GableX</span>
-                <span className="font-light tracking-widest text-stone-amber">Hardscape</span>
+                <span className="font-light tracking-widest text-gable-green">Hardscape</span>
             </div>
         );
     }
@@ -65,7 +65,7 @@ export function BrandLogo({ variant = 'full', className, size = 'md' }: BrandLog
                 size === 'xl' && "text-4xl"
             )}>
                 <span className="font-bold tracking-tight text-white">GableX</span>
-                <span className="font-light tracking-widest text-stone-amber ml-0.5">Hardscape</span>
+                <span className="font-light tracking-widest text-gable-green ml-0.5">Hardscape</span>
             </div>
         </div>
     );

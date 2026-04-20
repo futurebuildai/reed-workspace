@@ -10,9 +10,9 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     ({ className, variant = 'default', noPadding = false, children, ...props }, ref) => {
 
         const variants = {
-            default: "bg-slate-warm border border-white/5 shadow-elevation-1",
-            glass: "bg-slate-warm/60 backdrop-blur-xl border border-white/5 shadow-elevation-1",
-            interactive: "bg-slate-warm/40 backdrop-blur-md border border-white/5 shadow-elevation-1 hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300 cursor-pointer group hover:border-stone-amber/30"
+            default: "bg-slate-steel border border-white/5 shadow-elevation-1",
+            glass: "bg-slate-steel/60 backdrop-blur-xl border border-white/5 shadow-elevation-1",
+            interactive: "bg-slate-steel/40 backdrop-blur-md border border-white/5 shadow-elevation-1 hover:shadow-elevation-3 hover:-translate-y-1 transition-all duration-300 cursor-pointer group hover:border-gable-green/30"
         };
 
         return (

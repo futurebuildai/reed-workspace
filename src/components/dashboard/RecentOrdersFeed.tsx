@@ -12,7 +12,7 @@ const getStatusColor = (status: string) => {
         case 'confirmed': return 'bg-blue-500/10 text-blue-500 border-blue-500/20';
         case 'processing': return 'bg-indigo-500/10 text-indigo-500 border-indigo-500/20';
         case 'ready': return 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
-        case 'completed': return 'bg-stone-amber/10 text-stone-amber border-stone-amber/20';
+        case 'completed': return 'bg-gable-green/10 text-gable-green border-gable-green/20';
         case 'cancelled': return 'bg-rose-500/10 text-rose-500 border-rose-500/20';
         default: return 'bg-zinc-500/10 text-zinc-500 border-zinc-500/20';
     }
@@ -55,7 +55,7 @@ export function RecentOrdersFeed({ orders, loading = false }: RecentOrdersFeedPr
                         orders.map((order) => (
                             <div key={order.order_id} className="p-4 hover:bg-white/5 transition-colors group">
                                 <div className="flex justify-between items-start mb-1">
-                                    <div className="font-medium text-white group-hover:text-stone-amber transition-colors">
+                                    <div className="font-medium text-white group-hover:text-gable-green transition-colors">
                                         {order.customer_name}
                                     </div>
                                     <span className={`text-[10px] px-2 py-0.5 rounded-full border uppercase tracking-wider font-semibold ${getStatusColor(order.status)}`}>

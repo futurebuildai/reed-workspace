@@ -73,15 +73,15 @@ export function ProposalView() {
   const CurrentSlideComponent = SLIDES[currentSlide].component;
 
   return (
-    <div className="min-h-screen bg-deep-earth text-white font-sans overflow-hidden flex flex-col selection:bg-stone-amber/30 selection:text-stone-amber">
+    <div className="min-h-screen bg-deep-space text-white font-sans overflow-hidden flex flex-col selection:bg-gable-green/30 selection:text-gable-green">
       {/* Top bar */}
-      <header className="h-16 flex items-center justify-between px-6 border-b border-white/5 bg-deep-earth/80 backdrop-blur-xl z-50">
+      <header className="h-16 flex items-center justify-between px-6 border-b border-white/5 bg-deep-space/80 backdrop-blur-xl z-50">
         <div className="flex items-center gap-4">
           <Link to="/" className="flex items-center gap-2 group">
-            <svg viewBox="0 0 64 64" fill="none" className="w-6 h-6 text-white group-hover:text-stone-amber transition-colors">
+            <svg viewBox="0 0 64 64" fill="none" className="w-6 h-6 text-white group-hover:text-gable-green transition-colors">
               <path d="M4 36 L32 8 L60 36" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="text-sm font-bold tracking-tight hidden md:block">GableX<span className="text-stone-amber font-light">Hardscape</span></span>
+            <span className="text-sm font-bold tracking-tight hidden md:block">Reed <span className="text-gable-green font-light">Building Supply</span></span>
           </Link>
           <div className="h-4 w-px bg-white/10 hidden md:block" />
           <div className="flex items-center gap-2">
@@ -99,16 +99,16 @@ export function ProposalView() {
         <div className="flex items-center gap-3">
           {/* Partner Room Insights moved to standalone discovery page */}
           
-          <Link to="/erp" className="p-2 hover:bg-white/5 rounded-lg text-zinc-400 hover:text-white transition-colors title='Switch to ERP Demo'">
+          <a href="https://demo.community/gablelbm.com" target="_blank" rel="noreferrer" className="p-2 hover:bg-white/5 rounded-lg text-zinc-400 hover:text-white transition-colors title='Switch to ERP Demo'">
             <LayoutDashboard size={18} />
-          </Link>
+          </a>
         </div>
       </header>
 
       {/* Main Slide Area */}
       <main className="flex-1 relative flex items-center justify-center p-6 md:p-12 overflow-hidden">
         {/* Background glow effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-stone-amber/5 rounded-full blur-[180px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gable-green/5 rounded-full blur-[180px] pointer-events-none" />
         
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
@@ -135,7 +135,7 @@ export function ProposalView() {
             onClick={prevSlide}
             disabled={currentSlide === 0}
             className={cn(
-              "p-4 rounded-full bg-slate-warm/50 border border-white/5 text-white/50 hover:text-white hover:bg-slate-warm/80 transition-all pointer-events-auto",
+              "p-4 rounded-full bg-slate-steel/50 border border-white/5 text-white/50 hover:text-white hover:bg-slate-steel/80 transition-all pointer-events-auto",
               currentSlide === 0 && "opacity-0 pointer-events-none"
             )}
           >
@@ -145,7 +145,7 @@ export function ProposalView() {
             onClick={nextSlide}
             disabled={currentSlide === SLIDES.length - 1}
             className={cn(
-              "p-4 rounded-full bg-slate-warm/50 border border-white/5 text-white/50 hover:text-white hover:bg-slate-warm/80 transition-all pointer-events-auto",
+              "p-4 rounded-full bg-slate-steel/50 border border-white/5 text-white/50 hover:text-white hover:bg-slate-steel/80 transition-all pointer-events-auto",
               currentSlide === SLIDES.length - 1 && "opacity-0 pointer-events-none"
             )}
           >
@@ -164,7 +164,7 @@ export function ProposalView() {
               }}
               className={cn(
                 "h-1 rounded-full flex-1 transition-all cursor-pointer",
-                i === currentSlide ? "bg-stone-amber shadow-glow" : "bg-white/10 hover:bg-white/20"
+                i === currentSlide ? "bg-gable-green shadow-glow" : "bg-white/10 hover:bg-white/20"
               )}
             />
           ))}
@@ -186,15 +186,15 @@ export function ProposalView() {
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
-              className="fixed top-20 left-6 w-72 bg-slate-warm border border-white/10 rounded-2xl shadow-elevation-3 z-[110] overflow-hidden"
+              className="fixed top-20 left-6 w-72 bg-slate-steel border border-white/10 rounded-2xl shadow-elevation-3 z-[110] overflow-hidden"
             >
-              <div className="p-4 bg-deep-earth/50 border-b border-white/5 flex items-center justify-between">
+              <div className="p-4 bg-deep-space/50 border-b border-white/5 flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">Presentation Sections</span>
                 <button onClick={() => setTocOpen(false)} className="text-zinc-500 hover:text-white">
                   <X size={14} />
                 </button>
               </div>
-              <div className="bg-slate-warm p-2 overflow-y-auto max-h-[60vh] no-scrollbar">
+              <div className="bg-slate-steel p-2 overflow-y-auto max-h-[60vh] no-scrollbar">
                 {SLIDES.map((slide, i) => (
                   <button
                     key={slide.id}
@@ -206,7 +206,7 @@ export function ProposalView() {
                     className={cn(
                       "w-full text-left px-4 py-2.5 rounded-lg text-sm transition-all flex items-center justify-between group",
                       currentSlide === i 
-                        ? "bg-stone-amber text-deep-earth font-bold" 
+                        ? "bg-gable-green text-deep-space font-bold" 
                         : "text-zinc-400 hover:text-white hover:bg-white/5"
                     )}
                   >

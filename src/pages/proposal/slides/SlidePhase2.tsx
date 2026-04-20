@@ -17,7 +17,7 @@ export function SlidePhase2() {
         </div>
         <h2 className="text-4xl font-bold mb-4">Phase 2: <span className="text-purple-400">Operational Excellence</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto italic">
-          High-margin workflows that differentiate Dibbits from standard yards.
+          High-margin workflows that differentiate Reed Lumber from standard yards.
         </p>
       </div>
 

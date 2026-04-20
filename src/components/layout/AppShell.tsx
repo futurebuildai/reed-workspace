@@ -29,16 +29,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     }, []);
 
     return (
-        <div className="min-h-screen bg-deep-earth text-foreground flex overflow-hidden font-sans selection:bg-stone-amber/30">
+        <div className="min-h-screen bg-deep-space text-foreground flex overflow-hidden font-sans selection:bg-gable-green/30">
             {/* Sidebar */}
             <motion.aside
                 initial={false}
                 animate={{ width: sidebarOpen ? 280 : 80 }}
                 transition={{ duration: 0.3, ease: [0.2, 0, 0, 1] }} // MD3 Emphasized easing
-                className="bg-slate-warm border-r border-white/5 flex flex-col fixed inset-y-0 left-0 z-50 shadow-elevation-2"
+                className="bg-slate-steel border-r border-white/5 flex flex-col fixed inset-y-0 left-0 z-50 shadow-elevation-2"
             >
                 {/* Logo Section */}
-                <div className="h-16 flex items-center px-4 border-b border-white/5 relative bg-deep-earth/20">
+                <div className="h-16 flex items-center px-4 border-b border-white/5 relative bg-deep-space/20">
                     <div className="flex-1 flex items-center gap-3 overflow-hidden">
                         <div className="h-10 w-10 flex items-center justify-center shrink-0">
                             <BrandLogo variant="mark" size="md" className="text-white drop-shadow-glow" />
@@ -98,14 +98,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 </nav>
 
                 {/* Footer / Admin */}
-                <div className="p-3 border-t border-white/5 bg-slate-warm/50">
+                <div className="p-3 border-t border-white/5 bg-slate-steel/50">
                     <NavItem to="/erp/admin" icon={<Settings size={20} />} label="Admin" isOpen={sidebarOpen} active={location.pathname.startsWith('/erp/admin')} />
                 </div>
 
                 {/* Collapse Toggle */}
                 <button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
-                    className="absolute -right-3 top-20 bg-slate-warm border border-white/10 rounded-full p-1 text-zinc-400 hover:text-white shadow-elevation-1 hover:shadow-glow transition-all duration-200 z-50 text-xs flex items-center justify-center w-6 h-6"
+                    className="absolute -right-3 top-20 bg-slate-steel border border-white/10 rounded-full p-1 text-zinc-400 hover:text-white shadow-elevation-1 hover:shadow-glow transition-all duration-200 z-50 text-xs flex items-center justify-center w-6 h-6"
                 >
                     {sidebarOpen ? <ChevronLeft size={12} /> : <ChevronRight size={12} />}
                 </button>
@@ -118,7 +118,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 className="flex-1 flex flex-col min-h-screen relative w-full"
             >
                 {/* Header */}
-                <header className="h-16 border-b border-white/5 bg-deep-earth/80 backdrop-blur-xl px-6 flex items-center justify-between sticky top-0 z-40 shadow-sm">
+                <header className="h-16 border-b border-white/5 bg-deep-space/80 backdrop-blur-xl px-6 flex items-center justify-between sticky top-0 z-40 shadow-sm">
                     {/* Search Trigger */}
                     <button
                         onClick={() => setSidebarOpen(!sidebarOpen)} // Mobile toggle only? 
@@ -129,11 +129,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
                     <div className="flex-1 max-w-xl">
                         <div className="relative group">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 group-focus-within:text-stone-amber transition-colors" />
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 group-focus-within:text-gable-green transition-colors" />
                             <input
                                 type="text"
                                 placeholder="Search everything... (Cmd+K)"
-                                className="w-full bg-slate-warm/50 border border-white/5 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-stone-amber/50 focus:bg-slate-warm transition-all"
+                                className="w-full bg-slate-steel/50 border border-white/5 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-gable-green/50 focus:bg-slate-steel transition-all"
                             />
                         </div>
                     </div>
@@ -146,7 +146,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                                 className={cn(
                                     "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                                     activeLocation === 'trenton'
-                                        ? "bg-stone-amber/15 text-stone-amber border border-stone-amber/20"
+                                        ? "bg-gable-green/15 text-gable-green border border-gable-green/20"
                                         : "text-zinc-400 hover:text-white"
                                 )}
                             >
@@ -158,7 +158,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                                 className={cn(
                                     "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                                     activeLocation === 'kingston'
-                                        ? "bg-stone-amber/15 text-stone-amber border border-stone-amber/20"
+                                        ? "bg-gable-green/15 text-gable-green border border-gable-green/20"
                                         : "text-zinc-400 hover:text-white"
                                 )}
                             >
@@ -169,7 +169,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                         <div className="text-xs text-zinc-500 font-medium hidden lg:block bg-white/5 px-2 py-1 rounded border border-white/5">
                             ⌘K
                         </div>
-                        <div className="h-9 w-9 rounded-full bg-gradient-to-br from-stone-amber/20 to-amber-500/20 border border-stone-amber/30 flex items-center justify-center text-xs font-mono font-bold text-stone-amber shadow-glow cursor-pointer hover:scale-105 transition-transform">
+                        <div className="h-9 w-9 rounded-full bg-gradient-to-br from-gable-green/20 to-amber-500/20 border border-gable-green/30 flex items-center justify-center text-xs font-mono font-bold text-gable-green shadow-glow cursor-pointer hover:scale-105 transition-transform">
                             AD
                         </div>
                     </div>
@@ -194,20 +194,20 @@ function NavItem({ icon, label, isOpen, active = false, to }: { icon: React.Reac
         <Link to={to} className={cn(
             "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm font-medium group relative overflow-hidden",
             active
-                ? "text-stone-amber bg-stone-amber/10 shadow-[inset_0_0_0_1px_rgba(232,167,78,0.2)]"
+                ? "text-gable-green bg-gable-green/10 shadow-[inset_0_0_0_1px_rgba(232,167,78,0.2)]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
         )}>
             {/* Active Indicator Bar */}
             {active && (
                 <motion.div
                     layoutId="active-nav"
-                    className="absolute left-0 top-2 bottom-2 w-1 bg-stone-amber rounded-r-full"
+                    className="absolute left-0 top-2 bottom-2 w-1 bg-gable-green rounded-r-full"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                 />
             )}
 
-            <span className={cn("transition-colors relative z-10", active ? "text-stone-amber" : "group-hover:text-white")}>
+            <span className={cn("transition-colors relative z-10", active ? "text-gable-green" : "group-hover:text-white")}>
                 {icon}
             </span>
 

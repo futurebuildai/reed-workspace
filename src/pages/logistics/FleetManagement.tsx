@@ -66,7 +66,7 @@ export const FleetManagement = () => {
                 <div className="flex justify-between items-center">
                     <div>
                         <h1 className="text-display-large text-white flex items-center gap-3">
-                            <Truck className="w-10 h-10 text-stone-amber" />
+                            <Truck className="w-10 h-10 text-gable-green" />
                             Fleet Management
                         </h1>
                         <p className="text-zinc-500 mt-1 text-lg">Manage vehicles, drivers, and fleet compliance.</p>
@@ -77,13 +77,13 @@ export const FleetManagement = () => {
                 <div className="flex gap-1 bg-white/5 rounded-lg p-1 w-fit border border-white/10">
                     <button
                         onClick={() => setTab('vehicles')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${tab === 'vehicles' ? 'bg-stone-amber/10 text-stone-amber border border-stone-amber/20' : 'text-zinc-400 hover:text-white'}`}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${tab === 'vehicles' ? 'bg-gable-green/10 text-gable-green border border-gable-green/20' : 'text-zinc-400 hover:text-white'}`}
                     >
                         <Truck size={16} /> Vehicles ({vehicles.length})
                     </button>
                     <button
                         onClick={() => setTab('drivers')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${tab === 'drivers' ? 'bg-stone-amber/10 text-stone-amber border border-stone-amber/20' : 'text-zinc-400 hover:text-white'}`}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${tab === 'drivers' ? 'bg-gable-green/10 text-gable-green border border-gable-green/20' : 'text-zinc-400 hover:text-white'}`}
                     >
                         <Users size={16} /> Drivers ({drivers.length})
                     </button>
@@ -124,7 +124,7 @@ function VehiclesTab({ vehicles, onEdit, onAdd }: { vehicles: Vehicle[]; onEdit:
             <CardContent className="p-0">
                 <div className="flex items-center justify-between p-4 border-b border-white/5">
                     <span className="text-white font-semibold">Fleet Vehicles</span>
-                    <button onClick={onAdd} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-stone-amber/10 text-stone-amber border border-stone-amber/20 text-sm font-medium hover:bg-stone-amber/20 transition-colors">
+                    <button onClick={onAdd} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gable-green/10 text-gable-green border border-gable-green/20 text-sm font-medium hover:bg-gable-green/20 transition-colors">
                         <Plus size={14} /> Add Vehicle
                     </button>
                 </div>
@@ -201,7 +201,7 @@ function DriversTab({ drivers, onEdit, onAdd }: { drivers: Driver[]; onEdit: (d:
             <CardContent className="p-0">
                 <div className="flex items-center justify-between p-4 border-b border-white/5">
                     <span className="text-white font-semibold">Drivers</span>
-                    <button onClick={onAdd} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-stone-amber/10 text-stone-amber border border-stone-amber/20 text-sm font-medium hover:bg-stone-amber/20 transition-colors">
+                    <button onClick={onAdd} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gable-green/10 text-gable-green border border-gable-green/20 text-sm font-medium hover:bg-gable-green/20 transition-colors">
                         <Plus size={14} /> Add Driver
                     </button>
                 </div>
@@ -321,7 +321,7 @@ function VehicleModal({ vehicle, onClose, onSaved }: { vehicle?: Vehicle; onClos
 
     return (
         <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
-            <div className="bg-slate-warm border border-white/10 rounded-2xl w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="bg-slate-steel border border-white/10 rounded-2xl w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
                 <div className="flex items-center justify-between p-5 border-b border-white/5">
                     <h2 className="text-lg font-semibold text-white">{isEdit ? 'Edit Vehicle' : 'Add Vehicle'}</h2>
                     <button onClick={onClose} className="p-1 rounded hover:bg-white/10 text-zinc-400"><X size={18} /></button>
@@ -376,7 +376,7 @@ function VehicleModal({ vehicle, onClose, onSaved }: { vehicle?: Vehicle; onClos
                     ) : <div />}
                     <div className="flex gap-2">
                         <button onClick={onClose} className="px-4 py-2 rounded-lg text-zinc-400 hover:text-white text-sm transition-colors">Cancel</button>
-                        <button onClick={handleSave} disabled={saving || !form.name || !form.license_plate} className="px-4 py-2 rounded-lg bg-stone-amber text-black text-sm font-semibold hover:bg-stone-amber/90 disabled:opacity-50 transition-colors">
+                        <button onClick={handleSave} disabled={saving || !form.name || !form.license_plate} className="px-4 py-2 rounded-lg bg-gable-green text-black text-sm font-semibold hover:bg-gable-green/90 disabled:opacity-50 transition-colors">
                             {saving ? 'Saving...' : isEdit ? 'Save Changes' : 'Create Vehicle'}
                         </button>
                     </div>
@@ -440,7 +440,7 @@ function DriverModal({ driver, onClose, onSaved }: { driver?: Driver; onClose: (
 
     return (
         <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
-            <div className="bg-slate-warm border border-white/10 rounded-2xl w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="bg-slate-steel border border-white/10 rounded-2xl w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
                 <div className="flex items-center justify-between p-5 border-b border-white/5">
                     <h2 className="text-lg font-semibold text-white">{isEdit ? 'Edit Driver' : 'Add Driver'}</h2>
                     <button onClick={onClose} className="p-1 rounded hover:bg-white/10 text-zinc-400"><X size={18} /></button>
@@ -491,7 +491,7 @@ function DriverModal({ driver, onClose, onSaved }: { driver?: Driver; onClose: (
                     ) : <div />}
                     <div className="flex gap-2">
                         <button onClick={onClose} className="px-4 py-2 rounded-lg text-zinc-400 hover:text-white text-sm transition-colors">Cancel</button>
-                        <button onClick={handleSave} disabled={saving || !form.name} className="px-4 py-2 rounded-lg bg-stone-amber text-black text-sm font-semibold hover:bg-stone-amber/90 disabled:opacity-50 transition-colors">
+                        <button onClick={handleSave} disabled={saving || !form.name} className="px-4 py-2 rounded-lg bg-gable-green text-black text-sm font-semibold hover:bg-gable-green/90 disabled:opacity-50 transition-colors">
                             {saving ? 'Saving...' : isEdit ? 'Save Changes' : 'Add Driver'}
                         </button>
                     </div>
@@ -540,7 +540,7 @@ function Field({ label, value, onChange, required }: { label: string; value: str
     return (
         <div>
             <label className="block text-xs text-zinc-500 mb-1">{label}{required && ' *'}</label>
-            <input type="text" value={value} onChange={e => onChange(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-stone-amber/50" />
+            <input type="text" value={value} onChange={e => onChange(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-gable-green/50" />
         </div>
     );
 }
@@ -549,7 +549,7 @@ function NumField({ label, value, onChange }: { label: string; value?: number; o
     return (
         <div>
             <label className="block text-xs text-zinc-500 mb-1">{label}</label>
-            <input type="number" value={value ?? ''} onChange={e => onChange(e.target.value ? Number(e.target.value) : undefined)} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-stone-amber/50" />
+            <input type="number" value={value ?? ''} onChange={e => onChange(e.target.value ? Number(e.target.value) : undefined)} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-gable-green/50" />
         </div>
     );
 }
@@ -558,7 +558,7 @@ function DateField({ label, value, onChange }: { label: string; value: string; o
     return (
         <div>
             <label className="block text-xs text-zinc-500 mb-1">{label}</label>
-            <input type="date" value={value} onChange={e => onChange(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-stone-amber/50" />
+            <input type="date" value={value} onChange={e => onChange(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-gable-green/50" />
         </div>
     );
 }

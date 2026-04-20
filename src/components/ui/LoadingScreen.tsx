@@ -11,7 +11,7 @@ export const LoadingScreen: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="relative"
             >
-                <div className="w-24 h-24 rounded-full border-4 border-white/5 border-t-stone-amber animate-spin absolute inset-0" />
+                <div className="w-24 h-24 rounded-full border-4 border-white/5 border-t-gable-green animate-spin absolute inset-0" />
                 <div className="w-24 h-24 flex items-center justify-center">
                     <BrandLogo variant="mark" size="lg" className="text-white" />
                 </div>
@@ -30,9 +30,9 @@ export const LoadingScreen: React.FC = () => {
                 initial={{ width: 0 }}
                 animate={{ width: 100 }}
                 transition={{ delay: 0.4, duration: 1.5, repeat: Infinity }}
-                className="mt-4 h-1 bg-stone-amber/50 rounded-full overflow-hidden"
+                className="mt-4 h-1 bg-gable-green/50 rounded-full overflow-hidden"
             >
-                <div className="h-full bg-stone-amber w-full origin-left animate-progress" />
+                <div className="h-full bg-gable-green w-full origin-left animate-progress" />
             </motion.div>
 
             <p className="mt-4 text-zinc-500 font-mono text-xs uppercase tracking-widest animate-pulse">
