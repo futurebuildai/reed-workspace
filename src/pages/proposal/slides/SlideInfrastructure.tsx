@@ -1,0 +1,116 @@
+import { Shield, Cloud, Database, Globe, Zap, HelpCircle } from 'lucide-react';
+
+export function SlideInfrastructure() {
+  return (
+    <div className="w-full max-w-5xl">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold mb-4">High-Availability <span className="text-stone-amber">Architecture</span></h2>
+        <p className="text-zinc-500 max-w-2xl mx-auto">Enterprise-grade infrastructure with multi-cloud redundancy and Canadian data residency.</p>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="space-y-6">
+          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-earth/30">
+            <h3 className="font-bold flex items-center gap-2 mb-6">
+              <Cloud size={20} className="text-blue-400" />
+              Primary Stack (Toronto)
+            </h3>
+            <div className="space-y-4">
+              {[
+                { label: 'Compute', val: 'DigitalOcean Premium Droplets' },
+                { label: 'Database', val: 'Managed PostgreSql w/ PITR Backups' },
+                { label: 'Integrations', val: 'Open API Layer (REST/JSON)' },
+                { label: 'Messaging', val: 'NATS JetStream (Event Bus)' },
+              ].map((row, i) => (
+                <div key={i} className="flex justify-between items-center py-2 border-b border-white/5 last:border-none">
+                  <span className="text-xs text-zinc-500">{row.label}</span>
+                  <span className="text-xs font-mono text-white">{row.val}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-earth/30">
+            <h3 className="font-bold flex items-center gap-2 mb-6">
+              <Zap size={20} className="text-purple-400" />
+              AI-Native Services (Montréal)
+            </h3>
+            <div className="space-y-4">
+              {[
+                { label: 'AI Inference', val: 'GCP Vertex AI / Montréal' },
+                { label: 'Automations', val: 'Easy Flow Integration Engine' },
+                { label: 'Audit Logs', val: 'Cloud Logging (Immutable)' },
+              ].map((row, i) => (
+                <div key={i} className="flex justify-between items-center py-2 border-b border-white/5 last:border-none">
+                  <span className="text-xs text-zinc-500">{row.label}</span>
+                  <span className="text-xs font-mono text-white">{row.val}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="absolute inset-0 bg-stone-amber/5 rounded-full blur-[100px] -z-10" />
+          <div className="glass-card rounded-3xl p-8 border-white/10 shadow-elevation-3 text-center space-y-8">
+            <div className="flex justify-center flex-wrap gap-4">
+              <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center gap-2 min-w-[120px]">
+                <Shield size={24} className="text-emerald-500" />
+                <span className="text-[10px] font-bold uppercase tracking-wider">Zero Trust</span>
+              </div>
+              <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center gap-2 min-w-[120px]">
+                <Globe size={24} className="text-stone-amber" />
+                <span className="text-[10px] font-bold uppercase tracking-wider">Open API</span>
+              </div>
+              <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center gap-2 min-w-[120px]">
+                <Database size={24} className="text-blue-400" />
+                <span className="text-[10px] font-bold uppercase tracking-wider">Encrypted</span>
+              </div>
+            </div>
+
+            <div className="space-y-4 pt-4">
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-left">
+                <span className="text-[10px] font-bold text-emerald-500 uppercase block mb-1">Open & Easy Integration</span>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Our system is built for easy connectivity with existing tools. Whether via our Open API or pre-built connectors, data flows freely without silos.
+                </p>
+              </div>
+              <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-left">
+                <span className="text-[10px] font-bold text-blue-500 uppercase block mb-1">AI-Native Core</span>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Intelligence is baked in, not bolted on. Our Canadian-hosted LLM endpoints power automated categorization and predictive analytics.
+                </p>
+              </div>
+            </div>
+            
+            <p className="text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-bold pt-4">
+              uptime commitment: 99.9%
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Open Requirements */}
+      <div className="mt-10 glass-card rounded-2xl p-6 border-stone-amber/20 bg-stone-amber/5">
+        <h4 className="font-bold text-sm text-stone-amber mb-4 flex items-center gap-2">
+          <HelpCircle size={16} />
+          Open Questions / Requirements
+        </h4>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-deep-earth/40 rounded-xl p-4 border border-white/5">
+            <span className="text-[10px] font-bold text-stone-amber uppercase block mb-2">Offline Mode Operations</span>
+            <p className="text-xs text-zinc-400 leading-relaxed">
+              Do yard operations require an offline-capable mode for POS or inventory lookup during internet outages? What is the acceptable sync delay when connectivity resumes?
+            </p>
+          </div>
+          <div className="bg-deep-earth/40 rounded-xl p-4 border border-white/5">
+            <span className="text-[10px] font-bold text-stone-amber uppercase block mb-2">Local / On-Premise DB Backups</span>
+            <p className="text-xs text-zinc-400 leading-relaxed">
+              Is there a requirement to maintain local on-premise database backups in addition to cloud-hosted PITR backups? What retention and compliance expectations exist for on-site data?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* MD3 Dark Theme Defaults (Hardscape Dark) */
+    --background: 230 20% 6%;
+    /* #0C0D12 Deep Earth */
+    --foreground: 210 40% 98%;
+    /* White/98% */
+
+    /* Primary: Stone Amber */
+    --primary: 36 78% 61%;
+    /* #E8A74E */
+    --primary-foreground: 230 20% 6%;
+    --primary-container: 36 78% 15%;
+    --on-primary-container: 36 78% 80%;
+
+    /* Secondary: Slate Warm */
+    --secondary: 228 16% 11%;
+    /* #171921 Slate Warm */
+    --secondary-foreground: 210 40% 98%;
+    --secondary-container: 228 16% 20%;
+    --on-secondary-container: 210 40% 98%;
+
+    /* Tertiary: Info Blue */
+    --tertiary: 217 95% 73%;
+    /* #60A5FA */
+    --tertiary-foreground: 230 20% 6%;
+
+    /* Error/Destructive */
+    --destructive: 346 87% 60%;
+    /* #F43F5E Safety Red */
+    --destructive-foreground: 210 40% 98%;
+
+    /* Neutral Surfaces */
+    --card: 228 16% 11%;
+    /* #171921 */
+    --card-foreground: 210 40% 98%;
+    --popover: 228 16% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --muted: 228 16% 11%;
+    --muted-foreground: 228 10% 66%;
+
+    --accent: 36 78% 61%;
+    --accent-foreground: 230 20% 6%;
+
+    --border: 228 16% 18%;
+    --input: 228 16% 18%;
+    --ring: 36 78% 61%;
+
+    --radius: 0.75rem;
+    /* 12px default radius */
+  }
+
+  .dark {
+    --background: 230 20% 6%;
+    --foreground: 210 40% 98%;
+    /* ... replicate root details if switching modes,
+       but currently we are effectively dark-only */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-stone-amber/30 selection:text-stone-amber;
+  }
+}
+
+@layer utilities {
+
+  /* Glassmorphism Utilities */
+  .glass-card {
+    @apply bg-slate-warm/60 backdrop-blur-xl border border-white/5 shadow-elevation-1;
+  }
+
+  .glass-panel {
+    @apply bg-deep-earth/80 backdrop-blur-2xl border-r border-white/5;
+  }
+
+  /* Text Styles */
+  .text-display-large {
+    @apply font-sans font-bold text-5xl tracking-tight;
+  }
+
+  .text-headline-medium {
+    @apply font-sans font-semibold text-2xl tracking-normal;
+  }
+
+  .text-body-large {
+    @apply font-sans font-normal text-lg tracking-wide;
+  }
+
+  .font-data {
+    @apply font-mono tracking-tight;
+  }
+
+  /* Animation Utilities */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-elevation-2;
+  }
+
+  .animate-enter {
+    @apply animate-fade-in animate-slide-up;
+  }
+}
