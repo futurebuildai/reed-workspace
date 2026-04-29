@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code per-machine settings (may contain API tokens in env block)
+.claude/settings.local.json
