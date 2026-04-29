@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Send, CheckCircle2, ChevronRight, Database, Server, CreditCard, Layout, ArrowRight, Lock, RotateCcw, MessageSquare } from 'lucide-react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { Send, CheckCircle2, ChevronRight, Database, Server, CreditCard, Layout, ArrowRight, Lock, RotateCcw, MessageSquare, AlertCircle, User, Building2, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import { Link } from 'react-router-dom';
@@ -48,38 +48,123 @@ const DISCOVERY_SECTIONS = [
   }
 ];
 
-const WEBHOOK_URL = "https://chat.googleapis.com/v1/spaces/AAQAzw-J0lI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=gOXlEiZqKRt6KhXBEQol8sQyG-6jVzikiWbCvgk2GCI";
+const WEBHOOK_URL = import.meta.env.VITE_DISCOVERY_WEBHOOK_URL || '';
+const SYNC_DEBOUNCE_MS = 800;
+
+type SaveState = 'saved' | 'failed' | undefined;
+
+interface Identity {
+  name: string;
+  email: string;
+  company: string;
+}
+
+function getOrCreateSubmissionId(): string {
+  let id = localStorage.getItem('reed_discovery_id');
+  if (!id) {
+    id = (typeof crypto !== 'undefined' && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `sub-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    localStorage.setItem('reed_discovery_id', id);
+  }
+  return id;
+}
 
 export function DiscoveryForm() {
+  const [submissionId] = useState(getOrCreateSubmissionId);
+  const [identity, setIdentity] = useState<Identity>(() => {
+    const saved = localStorage.getItem('reed_discovery_identity');
+    return saved ? JSON.parse(saved) : { name: '', email: '', company: '' };
+  });
   const [values, setValues] = useState<Record<string, string>>(() => {
     const saved = localStorage.getItem('reed_discovery_form');
     return saved ? JSON.parse(saved) : {};
   });
-  const [submitted, setSubmitted] = useState<string[]>([]);
+  const [submitted, setSubmitted] = useState<Record<string, SaveState>>({});
   const [isFinalized, setIsFinalized] = useState<boolean>(() => {
     return localStorage.getItem('reed_discovery_finalized') === 'true';
   });
   const [isSending, setIsSending] = useState<string | null>(null);
   const [isFinalSubmitting, setIsFinalSubmitting] = useState(false);
+  const identitySent = useRef(false);
+
+  const debounceTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
   useEffect(() => {
     localStorage.setItem('reed_discovery_form', JSON.stringify(values));
   }, [values]);
 
-  const handleSave = async (id: string, force?: boolean) => {
-    if (isFinalized && !force) return;
-    if (!values[id]) return;
-    
+  useEffect(() => {
+    localStorage.setItem('reed_discovery_identity', JSON.stringify(identity));
+  }, [identity]);
+
+  const isIdentityComplete = Boolean(
+    identity.name.trim() && identity.email.trim() && identity.company.trim()
+  );
+
+  const syncField = useCallback(async (id: string, value: string): Promise<boolean> => {
+    if (!WEBHOOK_URL) {
+      // No webhook configured (dev or pre-deploy) — fall back to local-only "saved"
+      setSubmitted(prev => ({ ...prev, [id]: 'saved' }));
+      return true;
+    }
     setIsSending(id);
     try {
-      // Small simulated delay for local feel
-      await new Promise(resolve => setTimeout(resolve, 600));
-      setSubmitted(prev => Array.from(new Set([...prev, id])));
-    } catch (error) {
-      console.error('Failed to save', error);
+      const includeIdentity = isIdentityComplete && !identitySent.current;
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          submission_id: submissionId,
+          field: { id, value },
+          ...(includeIdentity && { identity }),
+        }),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (includeIdentity) identitySent.current = true;
+      setSubmitted(prev => ({ ...prev, [id]: 'saved' }));
+      return true;
+    } catch (err) {
+      console.error('Field sync failed', id, err);
+      setSubmitted(prev => ({ ...prev, [id]: 'failed' }));
+      return false;
     } finally {
       setIsSending(null);
     }
+  }, [submissionId, identity, isIdentityComplete]);
+
+  const handleSave = (id: string, force?: boolean) => {
+    if (isFinalized && !force) return;
+    if (!values[id] || !values[id].trim()) return;
+
+    if (debounceTimers.current[id]) clearTimeout(debounceTimers.current[id]);
+    debounceTimers.current[id] = setTimeout(() => {
+      void syncField(id, values[id]);
+    }, force ? 0 : SYNC_DEBOUNCE_MS);
+  };
+
+  const syncIdentity = useCallback(async (next: Identity) => {
+    if (!WEBHOOK_URL) return;
+    if (!next.name.trim() || !next.email.trim() || !next.company.trim()) return;
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ submission_id: submissionId, identity: next }),
+      });
+      if (response.ok) identitySent.current = true;
+    } catch (err) {
+      console.warn('Identity sync failed', err);
+    }
+  }, [submissionId]);
+
+  const updateIdentity = (field: keyof Identity, value: string) => {
+    setIdentity(prev => {
+      const next = { ...prev, [field]: value };
+      if (debounceTimers.current['__identity']) clearTimeout(debounceTimers.current['__identity']);
+      debounceTimers.current['__identity'] = setTimeout(() => void syncIdentity(next), SYNC_DEBOUNCE_MS);
+      return next;
+    });
   };
 
   const calculateProgress = () => {
@@ -90,48 +175,59 @@ export function DiscoveryForm() {
 
   const handleFinalSubmit = async () => {
     if (isFinalized) return;
+    if (!isIdentityComplete) {
+      alert('Please fill in your name, email, and company before submitting.');
+      return;
+    }
+    if (!WEBHOOK_URL) {
+      alert('Form sync is not configured. Please contact the FutureBuildAI team.');
+      return;
+    }
+
     setIsFinalSubmitting(true);
-
-    // Format the message for Google Chat
-    let messageBody = `🚀 *Phase 0 Discovery Audit Completed: Reed Building Materials*\n\n`;
-    
-    DISCOVERY_SECTIONS.forEach(section => {
-      messageBody += `*${section.title.toUpperCase()}*\n`;
-      section.questions.forEach(q => {
-        const value = values[q.id] || "*(No response provided)*";
-        messageBody += `• *${q.question}:* ${value}\n`;
-      });
-      messageBody += `\n`;
-    });
-
     try {
+      // Flush any pending debounced saves
+      Object.values(debounceTimers.current).forEach(t => clearTimeout(t));
+      const pendingSaves = Object.entries(values)
+        .filter(([, v]) => v?.trim() !== '')
+        .map(([id, value]) => syncField(id, value));
+      await Promise.all(pendingSaves);
+
+      // Then trigger finalize (also includes identity in case it never synced)
       const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify({ text: messageBody }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          submission_id: submissionId,
+          identity,
+          finalize: true,
+        }),
       });
-
-      if (!response.ok) throw new Error('Webhook push failed');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       setIsFinalized(true);
       localStorage.setItem('reed_discovery_finalized', 'true');
     } catch (error) {
       console.error('Final submission failed', error);
-      alert('Failed to send data to Google Chat. Please check your connection and try again.');
+      alert('Submission failed. Your responses are still saved locally and to the sheet — please try again, or contact us if it keeps failing.');
     } finally {
       setIsFinalSubmitting(false);
     }
   };
 
   const handleReset = () => {
-    if (window.confirm('DEV ONLY: Are you sure you want to reset the entire form and unlock it?')) {
+    if (window.confirm('DEV ONLY: Reset entire form, generate new submission ID, and unlock?')) {
       setValues({});
-      setSubmitted([]);
+      setIdentity({ name: '', email: '', company: '' });
+      setSubmitted({});
       setIsFinalized(false);
+      identitySent.current = false;
       localStorage.removeItem('reed_discovery_form');
+      localStorage.removeItem('reed_discovery_identity');
       localStorage.removeItem('reed_discovery_finalized');
+      localStorage.removeItem('reed_discovery_id');
+      // Force regenerate id by reloading
+      window.location.reload();
     }
   };
 
@@ -151,7 +247,7 @@ export function DiscoveryForm() {
             <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold">Project Progress</span>
             <div className="flex items-center gap-3 w-48">
               <div className="h-1.5 flex-1 bg-white/5 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${calculateProgress()}%` }}
                   className="h-full bg-gable-green shadow-glow"
@@ -169,9 +265,17 @@ export function DiscoveryForm() {
               </div>
            )}
            <Link to="/proposal" className="text-xs text-zinc-500 hover:text-white transition-colors">Return to Proposal</Link>
-           <div className="px-3 py-1 bg-gable-green/10 border border-gable-green/20 text-gable-green text-[10px] uppercase font-bold tracking-widest rounded flex items-center gap-1.5">
-             <div className="w-1.5 h-1.5 rounded-full bg-gable-green animate-pulse" />
-             Live Sync Active
+           <div className={cn(
+             "px-3 py-1 border text-[10px] uppercase font-bold tracking-widest rounded flex items-center gap-1.5",
+             WEBHOOK_URL
+               ? "bg-gable-green/10 border-gable-green/20 text-gable-green"
+               : "bg-amber-500/10 border-amber-500/20 text-amber-500"
+           )}>
+             <div className={cn(
+               "w-1.5 h-1.5 rounded-full animate-pulse",
+               WEBHOOK_URL ? "bg-gable-green" : "bg-amber-500"
+             )} />
+             {WEBHOOK_URL ? 'Live Sync Active' : 'Local Save Only'}
            </div>
         </div>
       </header>
@@ -183,15 +287,32 @@ export function DiscoveryForm() {
             {isFinalized && <Lock className="text-amber-500 opacity-50" size={32} />}
           </h1>
           <p className="text-zinc-400 max-w-2xl leading-relaxed mx-auto lg:mx-0">
-            {isFinalized 
-              ? "Your discovery audit has been submitted and locked for review. FutureBuildAI team has been notified via secure webhook."
-              : "Please complete the following technical audit. This data directly populates your Phase 1 Execution Plan and helps us finalize the GableLBM stack configuration."}
+            {isFinalized
+              ? "Your discovery audit has been submitted and locked for review. The FutureBuildAI team has been notified."
+              : "Please complete the following technical audit. Each field auto-saves as you type. This data directly populates your Phase 1 Execution Plan."}
           </p>
         </div>
 
+        {/* Identity intro */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-8 bg-[#1a1a1a] border border-white/5 rounded-2xl p-6 shadow-xl"
+        >
+          <div className="mb-5">
+            <h2 className="text-sm font-bold tracking-tight text-white">Who's filling this out?</h2>
+            <p className="text-[11px] text-zinc-500 mt-1">Required so we know whose responses these are. Saves automatically.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <IdentityInput icon={<User size={14} />} label="Your name" value={identity.name} onChange={v => updateIdentity('name', v)} disabled={isFinalized} placeholder="Jane Reed" />
+            <IdentityInput icon={<Mail size={14} />} label="Email" value={identity.email} onChange={v => updateIdentity('email', v)} disabled={isFinalized} placeholder="jane@reedbuildingsupply.com" type="email" />
+            <IdentityInput icon={<Building2 size={14} />} label="Company" value={identity.company} onChange={v => updateIdentity('company', v)} disabled={isFinalized} placeholder="Reed Building Supply" />
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {DISCOVERY_SECTIONS.map((section) => (
-            <motion.div 
+            <motion.div
               key={section.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -202,15 +323,20 @@ export function DiscoveryForm() {
                 {section.icon}
                 <h2 className="font-bold text-lg tracking-tight">{section.title}</h2>
               </div>
-              
+
               <div className="p-6 space-y-6">
                 {section.questions.map((q) => (
                   <div key={q.id} className="space-y-3">
                     <div className="flex items-center justify-between">
                       <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{q.category}</label>
-                      {(submitted.includes(q.id) || isFinalized) && values[q.id] && (
+                      {submitted[q.id] === 'saved' && values[q.id] && (
                         <span className="flex items-center gap-1 text-[10px] text-emerald-400 font-bold tracking-tight">
                           <CheckCircle2 size={10} /> SAVED
+                        </span>
+                      )}
+                      {submitted[q.id] === 'failed' && (
+                        <span className="flex items-center gap-1 text-[10px] text-rose-400 font-bold tracking-tight">
+                          <AlertCircle size={10} /> RETRY
                         </span>
                       )}
                     </div>
@@ -247,15 +373,15 @@ export function DiscoveryForm() {
                           onBlur={() => handleSave(q.id)}
                         />
                       )}
-                      
+
                       {isSending === q.id && (
                          <div className="absolute right-3 top-4">
                            <div className="w-4 h-4 border-2 border-gable-green/20 border-t-gable-green rounded-full animate-spin" />
                          </div>
                       )}
-                      {!isFinalized && !submitted.includes(q.id) && !isSending && values[q.id] && (
-                        <button 
-                          onClick={() => handleSave(q.id)}
+                      {!isFinalized && submitted[q.id] !== 'saved' && !isSending && values[q.id] && (
+                        <button
+                          onClick={() => handleSave(q.id, true)}
                           className={cn(
                             "absolute right-2 p-2 hover:bg-gable-green/10 rounded-lg text-gable-green transition-all",
                             q.type === 'textarea' ? "top-2" : "top-1/2 -translate-y-1/2"
@@ -281,34 +407,38 @@ export function DiscoveryForm() {
         <div className="mt-16 flex flex-col items-center gap-6">
            <AnimatePresence mode="wait">
              {!isFinalized ? (
-               <motion.div 
+               <motion.div
                  key="submit-btn"
                  initial={{ opacity: 0, y: 10 }}
                  animate={{ opacity: 1, y: 0 }}
                  className="flex flex-col items-center gap-4"
                >
-                 <p className="text-zinc-500 text-xs tracking-wide">Ready to send the technical data for review?</p>
-                 <button 
+                 <p className="text-zinc-500 text-xs tracking-wide">
+                   {isIdentityComplete
+                     ? 'Ready to send the technical data for review?'
+                     : 'Fill in name, email, and company above to enable final submit.'}
+                 </p>
+                 <button
                    onClick={handleFinalSubmit}
-                   disabled={isFinalSubmitting || calculateProgress() < 10}
-                   className="group relative flex items-center gap-3 bg-gable-green hover:bg-amber-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-deep-space font-bold px-10 py-4 rounded-2xl transition-all shadow-glow hover:shadow-glow-strong overflow-hidden"
+                   disabled={isFinalSubmitting || !isIdentityComplete || calculateProgress() < 10}
+                   className="group relative flex items-center gap-3 bg-gable-green hover:bg-amber-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-deep-space font-bold px-10 py-4 rounded-2xl transition-all shadow-glow hover:shadow-glow-strong overflow-hidden disabled:shadow-none"
                  >
                    {isFinalSubmitting ? (
                      <>
                         <div className="w-5 h-5 border-2 border-deep-space/20 border-t-deep-space rounded-full animate-spin" />
-                        Pushing to Google Chat...
+                        Submitting to Sheet...
                      </>
                    ) : (
                      <>
                         <MessageSquare size={20} className="group-hover:scale-110 transition-transform" />
-                        Submit Final Audit to Roadmap
+                        Submit Final Audit
                         <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                      </>
                    )}
                  </button>
                </motion.div>
              ) : (
-               <motion.div 
+               <motion.div
                  key="locked-msg"
                  initial={{ opacity: 0, scale: 0.95 }}
                  animate={{ opacity: 1, scale: 1 }}
@@ -319,10 +449,10 @@ export function DiscoveryForm() {
                  </div>
                  <h2 className="text-xl font-bold text-white tracking-tight">Audit Successfully Logged</h2>
                  <p className="text-zinc-400 text-sm leading-relaxed">
-                   The technical data points have been pushed to the FutureBuildAI Google Chat channel. Our engineers are reviewing the specs for the Phase 1 Statement of Work.
+                   Your responses have been written to the FutureBuildAI Discovery Sheet and the team has been notified. We'll be in touch with the Phase 1 Statement of Work shortly.
                  </p>
-                 <Link 
-                   to="/proposal" 
+                 <Link
+                   to="/proposal"
                    className="mt-4 text-xs font-bold text-gable-green hover:text-amber-400 transition-colors uppercase tracking-widest flex items-center gap-2"
                  >
                    Return to Proposal Slide Deck <ArrowRight size={14} />
@@ -332,7 +462,7 @@ export function DiscoveryForm() {
            </AnimatePresence>
 
            <div className="flex items-center gap-4 opacity-30 hover:opacity-100 transition-opacity">
-              <button 
+              <button
                 onClick={handleReset}
                 className="flex items-center gap-2 text-[10px] text-zinc-500 hover:text-red-400 transition-colors uppercase tracking-widest font-bold font-mono"
               >
@@ -341,6 +471,39 @@ export function DiscoveryForm() {
            </div>
         </div>
       </main>
+    </div>
+  );
+}
+
+interface IdentityInputProps {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  disabled: boolean;
+  placeholder: string;
+  type?: string;
+}
+
+function IdentityInput({ icon, label, value, onChange, disabled, placeholder, type = 'text' }: IdentityInputProps) {
+  return (
+    <div className="space-y-2">
+      <label className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+        {icon} {label}
+      </label>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        disabled={disabled}
+        className={cn(
+          "w-full bg-[#111111] border rounded-xl px-4 py-2.5 text-sm transition-all focus:outline-none",
+          disabled
+            ? "border-emerald-500/10 text-emerald-400/50 cursor-not-allowed"
+            : "border-white/5 focus:border-gable-green/50 focus:ring-1 focus:ring-gable-green/20"
+        )}
+      />
     </div>
   );
 }
