@@ -1,59 +1,188 @@
 import { motion } from 'framer-motion';
-import { DollarSign, Clock, Wrench, LayoutDashboard } from 'lucide-react';
+import { CheckCircle2, Sparkles, Wrench, GraduationCap, MapPin, ShieldCheck, Server, Clock } from 'lucide-react';
+
+const LINE_ITEMS = [
+  {
+    icon: Sparkles,
+    name: 'Phase 0 — Discovery + Dev/Staging Env Setup',
+    amount: '$500',
+    breakdown: '$250 setup labor + 1 month × $250 infra (rolls into Phase 1 if proceeding)',
+  },
+  {
+    icon: Wrench,
+    name: 'Solution Scoping + Software Customization',
+    amount: '$17,500',
+    breakdown: '50 hrs Lead Architect @ $225 + 36 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s commercial-supply workflows',
+  },
+  {
+    icon: MapPin,
+    name: 'Onsite Implementation (1 trip, ~3 days)',
+    amount: '$4,000',
+    breakdown: '~24 hrs onsite @ $150 + $400 travel allowance  ·  hands-on cutover and team enablement at McKees Rocks',
+  },
+  {
+    icon: GraduationCap,
+    name: 'Training & Implementation Support',
+    amount: '$750',
+    breakdown: '6 hrs @ $125  ·  2 live training sessions during onsite week + recorded follow-up library',
+  },
+];
+
+const MILESTONES = [
+  { pct: '50%', when: 'Scoping sign-off' },
+  { pct: '30%', when: 'Phase 1 delivery' },
+  { pct: '20%', when: 'Go-live + first month of recurring' },
+];
 
 export function SlideRateCard() {
-  const rates = [
-    { service: 'Implementation & dev', rate: '$175/hr', icon: LayoutDashboard, desc: 'Building features, integrations, migrations' },
-    { service: 'Workflows & Config', rate: '$150/hr', icon: Wrench, desc: 'Rules, templates, workflow adjustments' },
-    { service: 'Project Management', rate: '$150/hr', icon: Clock, desc: 'Agile management, discovery, QA' },
-    { service: 'Support & Training', rate: '$125/hr', icon: DollarSign, desc: 'Live training, go-live assistance' },
-  ];
-
   return (
     <div className="w-full max-w-5xl">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4">Transparent <span className="text-gable-green">Rate Card</span></h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto">No confusing licensing tiers. You pay for effort, not access.</p>
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
+          Reed Building Supply — Phase 1 Pricing
+        </div>
+        <h2 className="text-4xl font-bold mb-4">Project <span className="text-gable-green">Proposal</span></h2>
+        <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
+          Fixed-price, milestone-billed, no per-seat licensing. A straightforward fork of GableLBM tailored to Reed's commercial-supply workflows.
+        </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {rates.map((r, i) => (
+      {/* Hero total */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="glass-card rounded-3xl p-8 border-gable-green/20 bg-gable-green/5 text-center mb-10"
+      >
+        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green mb-2">Total Project</div>
+        <div className="text-6xl font-bold text-white mb-2 font-data">$22,750</div>
+        <div className="text-xs text-zinc-400">
+          one-time, milestone-billed  ·  <span className="text-gable-green">+ $250–$800/mo recurring</span> (tier of your choice)
+        </div>
+      </motion.div>
+
+      {/* Line items */}
+      <div className="space-y-3 mb-12">
+        {LINE_ITEMS.map((item, i) => (
           <motion.div
             key={i}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: i * 0.1 }}
-            className="glass-card rounded-2xl p-6 border-white/5 flex flex-col group hover:border-gable-green/30 transition-all"
+            className="glass-card rounded-2xl p-5 border-white/5 flex items-start gap-4 hover:border-gable-green/20 transition-all"
           >
-            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-gable-green/10 transition-colors">
-              <r.icon size={20} className="text-zinc-400 group-hover:text-gable-green" />
+            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+              <item.icon size={18} className="text-gable-green" />
             </div>
-            <h3 className="font-bold text-sm mb-1">{r.service}</h3>
-            <div className="text-2xl font-bold text-gable-green mb-4">{r.rate}</div>
-            <p className="text-[11px] text-zinc-500 leading-relaxed border-t border-white/5 pt-4">
-              {r.desc}
-            </p>
+            <div className="flex-1 min-w-0">
+              <h3 className="font-bold text-sm text-white mb-1">{item.name}</h3>
+              <p className="text-[11px] text-zinc-500 leading-relaxed">{item.breakdown}</p>
+            </div>
+            <div className="text-2xl font-bold text-gable-green font-data shrink-0 self-center">{item.amount}</div>
           </motion.div>
         ))}
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="rounded-2xl p-5 border border-gable-green/30 bg-gable-green/10 flex items-center justify-between"
+        >
+          <span className="text-sm uppercase tracking-widest font-bold text-gable-green">Project Total</span>
+          <span className="text-3xl font-bold text-white font-data">$22,750</span>
+        </motion.div>
       </div>
 
-      <div className="mt-12 grid md:grid-cols-2 gap-8">
-        <div className="p-6 rounded-2xl border border-white/5 bg-deep-space/50">
-          <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-zinc-500">How Phases are Quoted</h4>
-          <p className="text-xs text-zinc-400 leading-relaxed space-y-4">
-            Phase 1 and 2 are provided as **fixed-price estimates** based on the discovery findings. We work against these milestones to ensure budget predictability.
-          </p>
-          <div className="mt-6 flex items-center gap-2 text-xs font-bold text-gable-green">
-            <span>SOW → Implementation → Delivery → Next Phase</span>
-          </div>
-        </div>
+      {/* Ongoing Partnership — two tiers */}
+      <div className="mb-12">
+        <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500 mb-4 text-center">Ongoing Partnership — Reed selects post-launch</h3>
+        <div className="grid md:grid-cols-2 gap-5">
+          {/* Tier 1: Managed Hosting */}
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="glass-card rounded-2xl p-6 border-white/5 flex flex-col"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <Server size={16} className="text-zinc-400" />
+                <span className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">Tier 1</span>
+              </div>
+            </div>
+            <h4 className="font-bold text-base text-white mb-1">Managed Hosting</h4>
+            <div className="text-3xl font-bold text-white mb-4 font-data">$250<span className="text-sm text-zinc-500 font-sans">/mo</span></div>
+            <ul className="space-y-2 text-xs text-zinc-400 mb-4 flex-1">
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Digital Ocean hosting + monitoring</li>
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Reactive bug response (best-effort)</li>
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Dev/staging environments included</li>
+            </ul>
+            <div className="pt-3 border-t border-white/5">
+              <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold">No SLA</span>
+            </div>
+          </motion.div>
 
-        <div className="p-6 rounded-2xl border border-gable-green/20 bg-gable-green/5">
-          <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-gable-green">Founding Customer Discount</h4>
-          <p className="text-xs text-gable-green/80 leading-relaxed italic">
-            "As a founding partner, your implementation rates are locked at the lowest tier, and we waive all onboarding fees for the first two years."
-          </p>
+          {/* Tier 2: Standard MSP — RECOMMENDED */}
+          <motion.div
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="glass-card rounded-2xl p-6 border-gable-green/30 bg-gable-green/5 flex flex-col shadow-glow relative overflow-hidden"
+          >
+            <div className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-widest text-gable-green bg-gable-green/15 px-2 py-1 rounded border border-gable-green/30">
+              Recommended
+            </div>
+            <div className="flex items-center gap-2 mb-4">
+              <ShieldCheck size={16} className="text-gable-green" />
+              <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Tier 2</span>
+            </div>
+            <h4 className="font-bold text-base text-white mb-1">Standard MSP</h4>
+            <div className="text-3xl font-bold text-white mb-4 font-data">$800<span className="text-sm text-zinc-500 font-sans">/mo</span></div>
+            <ul className="space-y-2 text-xs text-zinc-300 mb-4 flex-1">
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" />Everything in Tier 1</li>
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">4 hrs/mo bundled support</strong> (rolls 90 days)</span></li>
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><strong className="text-white">Quarterly upstream merges</strong> from GableLBM main</li>
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><strong className="text-white">99.9% uptime SLA</strong> (P1 &lt; 4hr / P2 &lt; 1bd / P3 &lt; 3bd)</li>
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" />Patch management + priority bug queue</li>
+            </ul>
+            <div className="pt-3 border-t border-gable-green/20">
+              <span className="text-[10px] text-zinc-400 italic">Beyond 4 hrs/mo billed at Pro Services rates ($175 Dev / $225 Architect / $150 PM / $125 Training)</span>
+            </div>
+          </motion.div>
         </div>
+      </div>
+
+      {/* Payment milestones + Founding customer */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="p-6 rounded-2xl border border-white/5 bg-deep-space/50"
+        >
+          <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+            <Clock size={14} /> Payment Milestones
+          </h4>
+          <ul className="space-y-3">
+            {MILESTONES.map((m, i) => (
+              <li key={i} className="flex items-baseline justify-between text-sm">
+                <span className="text-zinc-400">{m.when}</span>
+                <span className="font-bold text-gable-green font-data">{m.pct}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="p-6 rounded-2xl border border-gable-green/20 bg-gable-green/5"
+        >
+          <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-gable-green">Founding Customer Terms</h4>
+          <p className="text-xs text-gable-green/80 leading-relaxed italic">
+            "As a founding partner, your implementation rates are locked at the lowest tier shown, and all onboarding fees are waived for the first two years."
+          </p>
+        </motion.div>
       </div>
     </div>
   );
