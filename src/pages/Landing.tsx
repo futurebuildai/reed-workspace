@@ -99,10 +99,25 @@ export function Landing() {
             </Link>
             <Link
               to="/erp"
-              className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium px-8 py-3.5 rounded-xl transition-all text-base"
+              className="flex flex-col items-center gap-1 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium px-8 py-3 rounded-xl transition-all text-base"
             >
-              Explore the Live ERP
+              <span className="flex items-center gap-2">Explore the Live ERP</span>
+              <span className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">Community Build · Demo</span>
             </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-8 max-w-2xl mx-auto"
+          >
+            <div className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.04] p-4 flex items-start gap-3 text-left">
+              <span className="text-[18px] leading-none mt-0.5">💡</span>
+              <p className="text-[12px] text-amber-200/80 leading-relaxed">
+                <span className="font-bold text-amber-300">What you're seeing now:</span> the Live ERP link above points to our public <span className="text-white font-semibold">community build</span> of GableLBM — useful for understanding the platform's shape and capabilities. <span className="font-bold text-amber-300">During Phase 0,</span> this link gets swapped to <span className="text-white font-semibold">Reed's own staging environment</span> — Reed leadership and team get 24/7 access to watch the build progress daily/weekly and provide early feedback as features land.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -206,7 +221,7 @@ export function Landing() {
             variants={fadeUp}
             className="text-zinc-400 mb-8"
           >
-            $23,250 one-time + $250–$800/mo recurring. Includes 10 free Sr Architect hours in Phase 0. Full scope, timeline, and MSP options inside.
+            Phase 0 — $500 setup + $500/mo during implementation. Phase 1 — $18,600 net (NTE $24K) after the "Running with Rowdy" referral credit from Run Payments. Phase 2 deeper features deferred at ~$2–3K per module. MSP tiers $250 / $800 / $1,400/mo (2-year agreement). 10 free Sr Architect hours included in Phase 0.
           </motion.p>
           <motion.div
             initial="hidden"

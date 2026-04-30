@@ -8,7 +8,7 @@ const TIMELINE_STEPS = [
 
 const MODULES = [
   { name: 'Workflow Discovery Audit', desc: 'Mapping QuickBooks/Clover processes to GableLBM workflows' },
-  { name: 'Dev / Staging Environments', desc: 'Spun up day one — same infra Reed runs on after go-live' },
+  { name: 'Dev / Staging Environments — 24/7 Reed Access', desc: 'Spun up day one. Reed leadership + team watch the build daily/weekly and feed back early — not surprised at go-live' },
   { name: 'AI Service Layer Provisioned', desc: 'Categorization endpoints + agent runtimes ready for Phase 1' },
   { name: '10 Sr Architect Hours Included', desc: '$2,250 value — sufficient to fully scope and lock the Phase 1 build plan' },
 ];

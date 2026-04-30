@@ -99,6 +99,7 @@ const SLIDES: SlideMeta[] = [
       'New structure: $500 one-time setup + $500/mo flat during implementation (~3–4 months).',
       'Timeline: 1 week setup + 2–3 weeks discovery = 3–4 weeks total.',
       '$500/mo covers dev/staging environments + AI service runtime — no surprise infra bills.',
+      'Reed gets 24/7 access to its own staging environment from Phase 0 day one — replaces the community-build /erp link in this portal. Watch the build progress daily/weekly, give early feedback.',
       'AI model APIs (OpenAI/Anthropic/Vertex) billed as-incurred — typical < $100/mo, heavy enrichment runs pre-quoted.',
       '10 free Sr Architect hours included ($2,250 value) — should be sufficient to fully scope Phase 1.',
       'TRANSPARENCY: Recommend Reed be comfortable with up to ~10 additional billable scoping hours (~$2,250) depending on Phase 1 goals. All approved in writing before billing.',
