@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { FileSignature, Sparkles, ClipboardCheck, Rocket, ArrowRight, Mail, Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { FileSignature, Sparkles, ClipboardCheck, Rocket, Mail, Calendar } from 'lucide-react';
 
 const STEPS = [
   {
@@ -40,7 +39,7 @@ export function SlideNextSteps() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           What Happens After Today
         </div>
-        <h2 className="text-4xl font-bold mb-4">From Yes to <span className="text-gable-green">Go-Live</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">From Yes to <span className="text-gable-green">Go-Live</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
           A clear, low-friction on-ramp. Phase 0 is intentionally small ($500) and reversible — we earn Phase 1 by delivering a locked plan first.
         </p>
@@ -65,7 +64,6 @@ export function SlideNextSteps() {
             </div>
             <div className="hidden md:flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-zinc-500 shrink-0 self-center">
               <span>{step.cta}</span>
-              <ArrowRight size={12} />
             </div>
           </motion.div>
         ))}
@@ -96,15 +94,9 @@ export function SlideNextSteps() {
           <Mail size={18} className="text-zinc-400 shrink-0 mt-0.5" />
           <div className="flex-1">
             <h4 className="font-bold text-sm text-white mb-1">Questions?</h4>
-            <p className="text-[11px] text-zinc-400 leading-relaxed mb-2">
-              Reach out anytime. The discovery checklist captures the inputs we need from Reed for Phase 0.
+            <p className="text-[11px] text-zinc-400 leading-relaxed">
+              Reach out anytime. We'll capture remaining Phase 0 inputs together on the kickoff call.
             </p>
-            <Link
-              to="/discovery"
-              className="inline-flex items-center gap-1.5 text-[11px] text-gable-green hover:text-gable-green/80 font-bold uppercase tracking-widest transition-colors"
-            >
-              Open Discovery Form <ArrowRight size={12} />
-            </Link>
           </div>
         </motion.div>
       </div>

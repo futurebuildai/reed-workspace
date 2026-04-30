@@ -15,7 +15,7 @@ export function SlidePhase2() {
         <div className="inline-flex items-center gap-2 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
           Enhanced Scale
         </div>
-        <h2 className="text-4xl font-bold mb-4">Phase 2: <span className="text-purple-400">Operational Excellence</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Phase 2: <span className="text-purple-400">Operational Excellence</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto italic">
           High-margin workflows that differentiate Reed Building Materials from standard yards.
         </p>

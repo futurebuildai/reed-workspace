@@ -17,7 +17,7 @@ export function SlidePhase0() {
             <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
               Initial Step
             </div>
-            <h2 className="text-4xl font-bold mb-4">Phase 0: <span className="text-gable-green">Blueprint & Agent Setup</span></h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Phase 0: <span className="text-gable-green">Blueprint & Agent Setup</span></h2>
             <p className="text-zinc-500 leading-relaxed">
               Before we build, we map. We dedicate the first 1-2 months to fully auditing your yard's workflows and setting up the foundational agent environments.
             </p>

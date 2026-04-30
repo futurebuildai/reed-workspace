@@ -11,7 +11,7 @@ export function SlideWiki() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Foundation: <span className="text-gable-green">Product Wiki</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Foundation: <span className="text-gable-green">Product Wiki</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">We've already started documenting your business. This living wiki lays the groundwork for your implementation.</p>
       </div>
 

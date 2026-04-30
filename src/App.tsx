@@ -68,7 +68,6 @@ import { PricingAuditPage } from "./pages/admin/PricingAuditPage";
 
 import { Landing } from "./pages/Landing";
 import { ProposalView } from "./pages/proposal/ProposalLayout";
-import { DiscoveryForm } from "./pages/workspace/DiscoveryForm";
 import { ProposalPassword } from "./pages/proposal/ProposalPassword";
 
 import { ToastProvider } from "./components/ui/Toast";
@@ -103,7 +102,6 @@ function App() {
           {/* Public Landing & Presales */}
           <Route path="/" element={<Landing />} />
           <Route path="/proposal" element={<ProposalView />} />
-          <Route path="/discovery" element={<DiscoveryForm />} />
 
           {/* POS Terminal */}
           <Route path="/pos" element={<POSTerminal />} />

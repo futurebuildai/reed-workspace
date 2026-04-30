@@ -80,7 +80,7 @@ export function SlideRollout() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           Reed Building Supply — Implementation Timeline
         </div>
-        <h2 className="text-4xl font-bold mb-4">3-Month <span className="text-gable-green">Build Clock</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">3-Month <span className="text-gable-green">Build Clock</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
           Compressed timeline. Phase 0 (Discovery) is pre-project; the 3-month build kicks off at sign-off. Month 4 is optional hypercare.
         </p>

@@ -12,7 +12,7 @@ export function SlideChecklist() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Discovery <span className="text-gable-green">Next Steps</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Discovery <span className="text-gable-green">Next Steps</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto italic">Finalizing the data and requirements needed for a firm Phase 1 quote.</p>
       </div>
 

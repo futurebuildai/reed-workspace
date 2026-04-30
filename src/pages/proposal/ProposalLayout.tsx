@@ -271,30 +271,37 @@ export function ProposalView() {
     return () => clearTimeout(t);
   }, [showNavHint, dismissNavHint]);
 
+  // Listen for in-slide advance triggers (e.g. SlideTitle's "Begin" button)
+  useEffect(() => {
+    const onAdvance = () => nextSlide();
+    window.addEventListener('proposal:next', onAdvance);
+    return () => window.removeEventListener('proposal:next', onAdvance);
+  }, [nextSlide]);
+
   const CurrentSlideComponent = SLIDES[currentSlide].component;
   const currentNotes = SLIDES[currentSlide].notes;
 
   return (
     <div className="min-h-screen bg-deep-space text-white font-sans overflow-hidden flex flex-col selection:bg-gable-green/30 selection:text-gable-green">
       {/* Top bar */}
-      <header className="h-16 flex items-center justify-between px-6 border-b border-white/5 bg-deep-space/80 backdrop-blur-xl z-50">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="flex items-center gap-2 group">
+      <header className="h-14 md:h-16 flex items-center justify-between px-3 md:px-6 border-b border-white/5 bg-deep-space/80 backdrop-blur-xl z-50 gap-2">
+        <div className="flex items-center gap-2 md:gap-4 min-w-0 flex-1">
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
             <svg viewBox="0 0 64 64" fill="none" className="w-6 h-6 text-white group-hover:text-gable-green transition-colors">
               <path d="M4 36 L32 8 L60 36" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span className="text-sm font-bold tracking-tight hidden md:block">Reed <span className="text-gable-green font-light">Building Supply</span></span>
           </Link>
-          <div className="h-4 w-px bg-white/10 hidden md:block" />
-          <div className="flex items-center gap-2">
-            <button 
+          <div className="h-4 w-px bg-white/10 hidden md:block shrink-0" />
+          <div className="flex items-center gap-2 min-w-0">
+            <button
               onClick={() => setTocOpen(!tocOpen)}
-              className="px-3 py-1.5 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-white transition-all flex items-center gap-2 border border-transparent hover:border-white/5"
+              className="px-2 md:px-3 py-1.5 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-white transition-all flex items-center gap-1.5 md:gap-2 border border-transparent hover:border-white/5 min-w-0"
             >
-              <Menu size={16} />
-              <span className="text-sm font-medium">{SLIDES[currentSlide].title}</span>
+              <Menu size={16} className="shrink-0" />
+              <span className="text-xs md:text-sm font-medium truncate max-w-[110px] sm:max-w-none">{SLIDES[currentSlide].title}</span>
             </button>
-            <span className="text-[10px] text-zinc-600 font-mono mt-0.5">{currentSlide + 1} / {SLIDES.length}</span>
+            <span className="text-[10px] text-zinc-600 font-mono whitespace-nowrap shrink-0">{currentSlide + 1} / {SLIDES.length}</span>
           </div>
         </div>
 
@@ -367,10 +374,10 @@ export function ProposalView() {
       </AnimatePresence>
 
       {/* Main Slide Area */}
-      <main className="flex-1 relative flex items-center justify-center p-6 md:p-12 overflow-hidden">
+      <main className="flex-1 relative overflow-hidden">
         {/* Background glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gable-green/5 rounded-full blur-[180px] pointer-events-none" />
-        
+
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentSlide}
@@ -384,47 +391,54 @@ export function ProposalView() {
             animate="center"
             exit="exit"
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="w-full h-full max-w-6xl flex items-center justify-center"
+            className="absolute inset-0 overflow-y-auto overflow-x-hidden no-scrollbar"
           >
-            <CurrentSlideComponent />
+            <div className="min-h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-20 py-6 md:py-10 pb-24">
+              <div className="w-full max-w-6xl">
+                <CurrentSlideComponent />
+              </div>
+            </div>
           </motion.div>
         </AnimatePresence>
 
         {/* Navigation arrows */}
-        <div className="absolute inset-x-0 bottom-0 top-0 flex items-center justify-between px-4 pointer-events-none">
-          <button 
+        <div className="absolute inset-0 flex items-center justify-between px-1 sm:px-2 md:px-4 pointer-events-none z-10">
+          <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
+            aria-label="Previous slide"
             className={cn(
-              "p-4 rounded-full bg-slate-steel/50 border border-white/5 text-white/50 hover:text-white hover:bg-slate-steel/80 transition-all pointer-events-auto",
+              "p-2 md:p-3 rounded-full bg-slate-steel/80 backdrop-blur-md border border-white/10 text-white/80 hover:text-white hover:bg-slate-steel hover:border-gable-green/40 shadow-elevation-2 transition-all pointer-events-auto",
               currentSlide === 0 && "opacity-0 pointer-events-none"
             )}
           >
-            <ChevronLeft size={32} />
+            <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
           </button>
-          <button 
+          <button
             onClick={nextSlide}
             disabled={currentSlide === SLIDES.length - 1}
+            aria-label="Next slide"
             className={cn(
-              "p-4 rounded-full bg-slate-steel/50 border border-white/5 text-white/50 hover:text-white hover:bg-slate-steel/80 transition-all pointer-events-auto",
-              currentSlide === SLIDES.length - 1 && "opacity-0 pointer-events-none"
+              "p-2 md:p-3 rounded-full bg-slate-steel/80 backdrop-blur-md border border-white/10 text-white/80 hover:text-white hover:bg-slate-steel hover:border-gable-green/40 shadow-elevation-2 transition-all pointer-events-auto",
+              currentSlide === SLIDES.length - 1 && "opacity-0 pointer-events-none",
+              currentSlide === 0 && "ring-2 ring-gable-green/50 animate-pulse"
             )}
           >
-            <ChevronRight size={32} />
+            <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
           </button>
         </div>
 
         {/* Progress bar */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 p-1 bg-white/5 rounded-full border border-white/5 max-w-xs w-full">
+        <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-1 md:gap-1.5 p-1 bg-deep-space/80 backdrop-blur-md rounded-full border border-white/10 w-[80%] sm:w-auto sm:max-w-xs sm:min-w-[200px] z-10">
           {SLIDES.map((slide, i) => (
-            <div 
+            <div
               key={slide.id}
               onClick={() => {
                 setDirection(i > currentSlide ? 1 : -1);
                 setCurrentSlide(i);
               }}
               className={cn(
-                "h-1 rounded-full flex-1 transition-all cursor-pointer",
+                "h-1 rounded-full flex-1 transition-all cursor-pointer min-w-[6px]",
                 i === currentSlide ? "bg-gable-green shadow-glow" : "bg-white/10 hover:bg-white/20"
               )}
             />

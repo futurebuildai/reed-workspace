@@ -4,7 +4,7 @@ export function SlideReplacement() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Consolidating Your <span className="text-gable-green">Core Stack</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Consolidating Your <span className="text-gable-green">Core Stack</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">One integrated system replaces multiple siloed legacy tools.</p>
       </div>
 

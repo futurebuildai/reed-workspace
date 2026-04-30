@@ -14,7 +14,7 @@ export function SlideMigration() {
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         <div className="flex-1 space-y-8">
           <div>
-            <h2 className="text-4xl font-bold mb-4">AI-Powered <span className="text-gable-green">Migration Engine</span></h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">AI-Powered <span className="text-gable-green">Migration Engine</span></h2>
             <p className="text-zinc-500 leading-relaxed max-w-xl">
               Don't manually map spreadsheets. We deploy custom Claude Code agents that understand QuickBooks CSV exports to automate mapping and validation.
             </p>

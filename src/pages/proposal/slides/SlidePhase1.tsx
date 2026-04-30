@@ -19,7 +19,7 @@ export function SlidePhase1() {
             <div className="inline-flex items-center gap-2 bg-gable-green text-deep-space px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
               Now Building
             </div>
-            <h2 className="text-4xl font-bold mb-4">Phase 1: <span className="text-gable-green">The Foundation</span></h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Phase 1: <span className="text-gable-green">The Foundation</span></h2>
             <p className="text-zinc-500 leading-relaxed">
               Everything required to replace your core legacy footprint. No functional gaps from day one of sandbox.
             </p>

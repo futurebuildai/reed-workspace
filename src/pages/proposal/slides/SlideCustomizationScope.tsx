@@ -102,7 +102,7 @@ export function SlideCustomizationScope() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           Customization Scope — Reed Building Supply
         </div>
-        <h2 className="text-4xl font-bold mb-4">What Scoping + Customization Will <span className="text-gable-green">Address</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">What Scoping + Customization Will <span className="text-gable-green">Address</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
           Nine operational buckets we'll fork from GableLBM main and tailor to Reed's commercial-supply workflows. <span className="text-gable-green">Phase 0</span> locks the per-bucket scope using the included 10 Senior Architect hours. <span className="text-gable-green">Phase 1</span> builds against that locked plan.
         </p>

@@ -94,14 +94,7 @@ export function Landing() {
               to="/proposal"
               className="group flex items-center gap-2 bg-gradient-to-r from-gable-green to-amber-500 text-deep-space font-semibold px-8 py-3.5 rounded-xl shadow-glow hover:shadow-glow-strong transition-all hover:scale-[1.02] text-base"
             >
-              View Phase 1 Proposal
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/discovery"
-              className="group flex items-center gap-2 bg-gradient-to-r from-gable-green to-amber-500 text-deep-space font-semibold px-8 py-3.5 rounded-xl shadow-glow hover:shadow-glow-strong transition-all hover:scale-[1.02] text-base"
-            >
-              Start Phase 0 Discovery
+              Proposal &amp; Scope
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -226,7 +219,7 @@ export function Landing() {
               to="/proposal"
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-gable-green to-amber-500 text-deep-space font-semibold px-8 py-3.5 rounded-xl shadow-glow hover:shadow-glow-strong transition-all hover:scale-[1.02] text-base"
             >
-              View Phase 1 Proposal
+              Proposal &amp; Scope
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

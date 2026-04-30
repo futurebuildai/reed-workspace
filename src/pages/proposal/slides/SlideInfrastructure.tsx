@@ -4,7 +4,7 @@ export function SlideInfrastructure() {
   return (
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">High-Availability <span className="text-gable-green">Architecture</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">High-Availability <span className="text-gable-green">Architecture</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto">Enterprise-grade infrastructure with multi-cloud redundancy and US East data residency — closest to Reed's McKees Rocks operations.</p>
       </div>
 

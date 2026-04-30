@@ -42,7 +42,7 @@ export function SlideRateCard() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           Reed Building Supply — Phase 1 Pricing
         </div>
-        <h2 className="text-4xl font-bold mb-4">Project <span className="text-gable-green">Proposal</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Project <span className="text-gable-green">Proposal</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
           Fixed-price, milestone-billed, no per-seat licensing. A straightforward fork of GableLBM tailored to Reed's commercial-supply workflows.
         </p>
@@ -55,7 +55,7 @@ export function SlideRateCard() {
         className="glass-card rounded-3xl p-8 border-gable-green/20 bg-gable-green/5 text-center mb-10"
       >
         <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green mb-2">Total Project — Estimated</div>
-        <div className="text-6xl font-bold text-white mb-2 font-data">$23,250</div>
+        <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 font-data">$23,250</div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-3">
           Do-Not-Exceed Cap: $28,000
         </div>
