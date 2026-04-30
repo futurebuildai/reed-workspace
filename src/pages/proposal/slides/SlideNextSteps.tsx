@@ -20,7 +20,7 @@ const STEPS = [
     icon: ClipboardCheck,
     label: 'Step 3 — End of Phase 0',
     title: 'Locked Phase 1 Plan + Quote',
-    detail: 'Final fixed-price quote (within $18,600 estimate, $22,000 NTE). Reed reviews — fully informed — and decides whether to proceed to Phase 1.',
+    detail: 'Final fixed-price quote (within $18,600 estimate, $24,000 NTE). Reed reviews — fully informed — and decides whether to proceed to Phase 1.',
     cta: 'Reed decides',
   },
   {

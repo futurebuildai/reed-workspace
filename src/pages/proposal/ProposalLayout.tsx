@@ -110,7 +110,7 @@ const SLIDES: SlideMeta[] = [
     title: 'Phase 1 — Parity',
     component: SlidePhase1,
     notes: [
-      'Walk phase. Net $18,600 after $10,025 "Running with Rowdy" referral credit. Sticker $28,625. NTE $22,000.',
+      'Walk phase. Net $18,600 after $10,025 "Running with Rowdy" referral credit. Sticker $28,625. NTE $24,000.',
       '10–12 week build (8–10 build + 2 testing/cutover). 50/30/20 milestone billing.',
       'Hours bumped +20% per bucket with ≥10 hr floor on both Architect and Engineer roles → 65 LA + 60 Eng = 125 hrs total.',
       'Onsite: 2 days × $1,500/day flat = $3,000 (added to total).',
@@ -153,7 +153,7 @@ const SLIDES: SlideMeta[] = [
     title: 'Rate Card',
     component: SlideRateCard,
     notes: [
-      'Crawl/Walk/Run pricing. Phase 0: $500 + $500/mo. Phase 1: $18,600 net (after "Running with Rowdy" credit), NTE $22K. Phase 2: ~$2-3K per module, deferred.',
+      'Crawl/Walk/Run pricing. Phase 0: $500 + $500/mo. Phase 1: $18,600 net (after "Running with Rowdy" credit), NTE $24K. Phase 2: ~$2-3K per module, deferred.',
       'Phase 1 line items: Build $25,125 (65 LA + 60 Eng, ≥10 hrs both roles per bucket) + Onsite $3,000 (2 days @ $1,500/day) + Training $500 = $28,625 sticker.',
       'Hourly rates unchanged: LA $225 / Eng $175 / Trainer $125 / PM $150.',
       '"Running with Rowdy" credit: Reed activating Run Payments unlocks $10,025 off Phase 1 (~45 free Sr Architect hrs) — partner referral program.',

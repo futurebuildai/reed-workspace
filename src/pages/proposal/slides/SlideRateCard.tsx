@@ -126,11 +126,11 @@ export function SlideRateCard() {
           >
             <div>
               <div className="text-sm uppercase tracking-widest font-bold text-gable-green">Phase 1 Net — Estimated</div>
-              <div className="text-[10px] text-amber-400/80 uppercase tracking-widest font-bold mt-1">Capped at $22,000 not-to-exceed</div>
+              <div className="text-[10px] text-amber-400/80 uppercase tracking-widest font-bold mt-1">Capped at $24,000 not-to-exceed</div>
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold text-white font-data">$18,600</div>
-              <div className="text-[10px] text-amber-400/80 font-data">/ $22,000 max</div>
+              <div className="text-[10px] text-amber-400/80 font-data">/ $24,000 max</div>
             </div>
           </motion.div>
 
@@ -142,7 +142,7 @@ export function SlideRateCard() {
           >
             <Lock size={14} className="text-zinc-500 shrink-0 mt-0.5" />
             <p className="text-[11px] text-zinc-400 leading-relaxed">
-              <span className="font-bold text-white">Hourly rates unchanged.</span> Lead Architect $225  ·  Engineer $175  ·  Trainer $125  ·  PM $150. Bucket allocations beefed +20% (≥10 hrs each role per bucket) to absorb scope drift; the "Running with Rowdy" credit absorbs the increase. Approved scope expansion beyond that bills against the $3,400 NTE buffer at standard rates. Anything beyond $22,000 requires a written change order.
+              <span className="font-bold text-white">Hourly rates unchanged.</span> Lead Architect $225  ·  Engineer $175  ·  Trainer $125  ·  PM $150. Bucket allocations beefed +20% (≥10 hrs each role per bucket) to absorb scope drift; the "Running with Rowdy" credit absorbs the increase. Approved scope expansion beyond that bills against the $5,400 NTE buffer at standard rates. Anything beyond $24,000 requires a written change order.
             </p>
           </motion.div>
 

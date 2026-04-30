@@ -91,7 +91,7 @@ export function SlidePhase1() {
         >
           <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green mb-1">Phase 1 Net</div>
           <div className="text-2xl font-bold text-white font-data">$18,600</div>
-          <div className="text-[10px] text-gable-green/80 mt-1">After Run Payments referral credit · NTE $22K</div>
+          <div className="text-[10px] text-gable-green/80 mt-1">After Run Payments referral credit · NTE $24K</div>
         </motion.div>
 
         <motion.div

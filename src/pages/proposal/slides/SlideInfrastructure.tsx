@@ -1,4 +1,4 @@
-import { Shield, Cloud, Database, Globe, Zap, HelpCircle, Archive, WifiOff } from 'lucide-react';
+import { Shield, Cloud, Database, Globe, Zap, HelpCircle, WifiOff } from 'lucide-react';
 
 export function SlideInfrastructure() {
   return (
@@ -31,38 +31,6 @@ export function SlideInfrastructure() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="glass-card rounded-2xl p-6 border-emerald-500/20 bg-emerald-500/[0.03]">
-            <h3 className="font-bold flex items-center gap-2 mb-4">
-              <Archive size={20} className="text-emerald-400" />
-              Data Protection & Recovery
-            </h3>
-            <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
-                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">Database PITR</div>
-                <div className="text-xs text-white font-mono">7-day window</div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">point-in-time restore</div>
-              </div>
-              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
-                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">Volume Snapshots</div>
-                <div className="text-xs text-white font-mono">Daily · 7-day</div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">automated, encrypted</div>
-              </div>
-              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
-                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">Tier 2 Extended</div>
-                <div className="text-xs text-white font-mono">30-day offsite</div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">DO Spaces archive</div>
-              </div>
-              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
-                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">RPO / RTO</div>
-                <div className="text-xs text-white font-mono">&lt; 1hr / &lt; 4hr</div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">tier 2 SLA</div>
-              </div>
-            </div>
-            <p className="text-[10px] text-zinc-500 leading-relaxed">
-              All backups encrypted at rest (AES-256). Quarterly restore drills validate recovery procedures. Optional on-prem export sync available for Reed's local archive requirements.
-            </p>
           </div>
 
           <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
