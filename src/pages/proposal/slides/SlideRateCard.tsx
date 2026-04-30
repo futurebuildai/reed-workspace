@@ -5,8 +5,8 @@ const PHASE_1_LINES = [
   {
     icon: Wrench,
     name: 'Solution Scoping + Build',
-    amount: '$17,475',
-    breakdown: '45 hrs Lead Architect @ $225 + 42 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s Parity scope (QB integration, inventory, POS, quote/order, AR, dispatch)',
+    amount: '$25,125',
+    breakdown: '65 hrs Lead Architect @ $225 + 60 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s Parity scope (QB integration, inventory, POS, quote/order, AR, dispatch)  ·  every bucket gets ≥10 hrs of both Architect and Engineer',
   },
   {
     icon: MapPin,
@@ -61,9 +61,9 @@ export function SlideRateCard() {
             <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk · Phase 1 — Parity Go-Live</span>
           </div>
           <div className="text-xl font-bold text-white font-data">
-            $18,600 <span className="text-sm text-zinc-500 line-through font-normal">$20,975</span>
+            $18,600 <span className="text-sm text-zinc-500 line-through font-normal">$28,625</span>
           </div>
-          <div className="text-[10px] text-gable-green mt-1">After $2,375 Run Payments referral credit</div>
+          <div className="text-[10px] text-gable-green mt-1">After $10,025 "Running with Rowdy" referral credit</div>
         </div>
         <div className="rounded-2xl border border-purple-500/20 bg-purple-500/5 p-4">
           <div className="flex items-center gap-2 mb-2">
@@ -110,12 +110,12 @@ export function SlideRateCard() {
               <CreditCard size={18} className="text-amber-400" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-sm text-white mb-1">Run Payments Referral Credit</h3>
+              <h3 className="font-bold text-sm text-white mb-1">"Running with Rowdy" Referral Credit</h3>
               <p className="text-[11px] text-zinc-400 leading-relaxed">
-                Reed activating Run Payments as the POS + on-account processor unlocks a referral credit we apply directly to Phase 1 — equivalent to <span className="text-amber-300 font-semibold">~10 free Sr Architect hours</span>. Pricing stays at standard hourly; the credit closes the gap.
+                Reed activating <span className="text-amber-300 font-semibold">Run Payments</span> as the POS + on-account processor unlocks our partner program credit (a.k.a. "Running with Rowdy"). Equivalent to <span className="text-amber-300 font-semibold">~45 free Sr Architect hours</span> applied directly to Phase 1. Pricing stays at standard hourly; the credit closes the gap.
               </p>
             </div>
-            <div className="text-xl font-bold text-amber-400 font-data shrink-0 self-center">−$2,375</div>
+            <div className="text-xl font-bold text-amber-400 font-data shrink-0 self-center">−$10,025</div>
           </motion.div>
 
           <motion.div
@@ -142,7 +142,7 @@ export function SlideRateCard() {
           >
             <Lock size={14} className="text-zinc-500 shrink-0 mt-0.5" />
             <p className="text-[11px] text-zinc-400 leading-relaxed">
-              <span className="font-bold text-white">Hourly rates unchanged.</span> Lead Architect $225  ·  Engineer $175  ·  Trainer $125  ·  PM $150. Approved scope expansion bills against the $3,400 NTE buffer at standard rates. Anything beyond $22,000 requires a written change order.
+              <span className="font-bold text-white">Hourly rates unchanged.</span> Lead Architect $225  ·  Engineer $175  ·  Trainer $125  ·  PM $150. Bucket allocations beefed +20% (≥10 hrs each role per bucket) to absorb scope drift; the "Running with Rowdy" credit absorbs the increase. Approved scope expansion beyond that bills against the $3,400 NTE buffer at standard rates. Anything beyond $22,000 requires a written change order.
             </p>
           </motion.div>
 

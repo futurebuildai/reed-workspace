@@ -80,8 +80,8 @@ export function Landing() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Replace QuickBooks and Clover with a single, commercial-supply-native ERP
-            that you own — no licensing fees, no per-user seats, no vendor lock-in.
+            A custom Operating System and POS built for local, independent LBM suppliers.
+            You own the source — no licensing fees, no per-user seats, no vendor lock-in.
           </motion.p>
 
           <motion.div

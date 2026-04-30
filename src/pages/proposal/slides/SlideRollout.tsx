@@ -12,8 +12,8 @@ const PHASES = [
       'QuickBooks bi-directional sync pipeline + validation',
     ],
     hours: [
-      { role: 'Lead Architect', hrs: 25 },
-      { role: 'Engineer', hrs: 8 },
+      { role: 'Lead Architect', hrs: 30 },
+      { role: 'Engineer', hrs: 10 },
     ],
   },
   {
@@ -27,8 +27,8 @@ const PHASES = [
       'Basic AR + monthly statements + dispatch',
     ],
     hours: [
-      { role: 'Lead Architect', hrs: 12 },
-      { role: 'Engineer', hrs: 26 },
+      { role: 'Lead Architect', hrs: 15 },
+      { role: 'Engineer', hrs: 30 },
     ],
   },
   {
@@ -41,8 +41,8 @@ const PHASES = [
       'Bug bash + final polish before cutover',
     ],
     hours: [
-      { role: 'Engineer', hrs: 8 },
-      { role: 'Lead Architect', hrs: 4 },
+      { role: 'Lead Architect', hrs: 10 },
+      { role: 'Engineer', hrs: 10 },
     ],
   },
   {
@@ -55,9 +55,10 @@ const PHASES = [
       'Day-one hypercare coverage',
     ],
     hours: [
+      { role: 'Lead Architect', hrs: 10 },
+      { role: 'Engineer', hrs: 10 },
       { role: 'Onsite (1 person)', hrs: '2 days' },
       { role: 'Trainer', hrs: 4 },
-      { role: 'Lead Architect', hrs: 4 },
     ],
   },
   {
@@ -259,7 +260,7 @@ export function SlideRollout() {
           <Rocket size={18} className="text-gable-green" />
         </div>
         <div className="flex-1">
-          <h4 className="font-bold text-sm text-white mb-1">Phase 1 effort: ~87 hrs across roles + 2 onsite days</h4>
+          <h4 className="font-bold text-sm text-white mb-1">Phase 1 effort: 65 LA + 60 Eng = 125 hrs + 2 onsite days + 4 hrs training</h4>
           <p className="text-[11px] text-zinc-400 leading-relaxed">
             From Phase 0 sign-off to Reed running production on GableLBM in <span className="text-gable-green font-bold">10–12 weeks</span> (8–10 build + 2 testing/cutover). No "big bang" — UAT + parallel QB sync precede every cutover. Phase 2 modules scheduled quarterly post-go-live, Reed-prioritized.
           </p>
