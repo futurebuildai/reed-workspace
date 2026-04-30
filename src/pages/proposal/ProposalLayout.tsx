@@ -15,6 +15,7 @@ import { cn } from '../../lib/utils';
 import { SlideTitle } from './slides/SlideTitle';
 import { SlideEngagementModel } from './slides/SlideEngagementModel';
 import { SlideReplacement } from './slides/SlideReplacement';
+import { SlideCustomizationScope } from './slides/SlideCustomizationScope';
 import { SlideRollout } from './slides/SlideRollout';
 import { SlidePhase0 } from './slides/SlidePhase0';
 import { SlidePhase1 } from './slides/SlidePhase1';
@@ -30,6 +31,7 @@ const SLIDES = [
   { id: 'title', title: 'Introduction', component: SlideTitle },
   { id: 'model', title: 'How We Work', component: SlideEngagementModel },
   { id: 'replacement', title: 'What You\'re Replacing', component: SlideReplacement },
+  { id: 'scope', title: 'Customization Scope', component: SlideCustomizationScope },
   { id: 'rollout', title: 'Scope & Rollout', component: SlideRollout },
   { id: 'phase0', title: 'Phase 0 Details', component: SlidePhase0 },
   { id: 'phase1', title: 'Phase 1 Details', component: SlidePhase1 },

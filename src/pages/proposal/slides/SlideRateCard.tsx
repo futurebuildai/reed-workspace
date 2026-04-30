@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, Sparkles, Wrench, GraduationCap, MapPin, ShieldCheck, Server, Clock } from 'lucide-react';
+import { CheckCircle2, Sparkles, Wrench, GraduationCap, MapPin, ShieldCheck, Server, Clock, Lock } from 'lucide-react';
 
 const LINE_ITEMS = [
   {
@@ -54,8 +54,11 @@ export function SlideRateCard() {
         animate={{ y: 0, opacity: 1 }}
         className="glass-card rounded-3xl p-8 border-gable-green/20 bg-gable-green/5 text-center mb-10"
       >
-        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green mb-2">Total Project</div>
+        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green mb-2">Total Project — Estimated</div>
         <div className="text-6xl font-bold text-white mb-2 font-data">$23,250</div>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-3">
+          Do-Not-Exceed Cap: $28,000
+        </div>
         <div className="text-xs text-zinc-400">
           one-time, milestone-billed  ·  <span className="text-gable-green">+ $250–$800/mo recurring</span> (tier of your choice)
         </div>
@@ -99,8 +102,27 @@ export function SlideRateCard() {
           transition={{ delay: 0.4 }}
           className="rounded-2xl p-5 border border-gable-green/30 bg-gable-green/10 flex items-center justify-between"
         >
-          <span className="text-sm uppercase tracking-widest font-bold text-gable-green">Project Total</span>
-          <span className="text-3xl font-bold text-white font-data">$23,250</span>
+          <div>
+            <div className="text-sm uppercase tracking-widest font-bold text-gable-green">Project Total — Estimated</div>
+            <div className="text-[10px] text-amber-400/80 uppercase tracking-widest font-bold mt-1">Capped at $28,000 not-to-exceed</div>
+          </div>
+          <div className="text-right">
+            <div className="text-3xl font-bold text-white font-data">$23,250</div>
+            <div className="text-[10px] text-amber-400/80 font-data">/ $28,000 max</div>
+          </div>
+        </motion.div>
+
+        {/* NTE explainer */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.45 }}
+          className="rounded-2xl p-4 border border-amber-500/20 bg-amber-500/5 flex items-start gap-3 mt-3"
+        >
+          <Lock size={14} className="text-amber-400 shrink-0 mt-0.5" />
+          <p className="text-[11px] text-amber-200/80 leading-relaxed">
+            <span className="font-bold text-amber-300">How the cap works:</span> If approved scope expands during Phase 1, additional work bills against the $4,750 buffer at standard Pro Services rates. Any work beyond the $28,000 cap requires a written change order signed by both parties — protecting Reed from runaway scope.
+          </p>
         </motion.div>
       </div>
 
