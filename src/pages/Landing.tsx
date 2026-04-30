@@ -48,9 +48,9 @@ export function Landing() {
           >
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gable-green/70 mb-4">Strategic Partnership</span>
             <div className="flex items-center gap-6">
-               {/* Custom CSS text logo for Reed Building Materials that looks like an established brand */}
+               {/* Custom CSS text logo for Reed Building Supply that looks like an established brand */}
                <div className="font-serif italic tracking-tight text-3xl md:text-5xl text-white">
-                 Reed Building Materials
+                 Reed Building Supply
                </div>
                <div className="text-xl md:text-2xl text-zinc-600 font-light">×</div>
                <div className="font-sans text-2xl md:text-4xl font-bold tracking-tight flex items-center">
