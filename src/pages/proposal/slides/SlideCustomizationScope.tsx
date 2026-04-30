@@ -11,89 +11,111 @@ import {
   Users,
 } from 'lucide-react';
 
-const BUCKETS = [
+type Phase = 'P1' | 'P2' | 'BOTH';
+
+const BUCKETS: Array<{
+  icon: typeof FileText;
+  title: string;
+  phase: Phase;
+  items: Array<{ text: string; p2?: boolean }>;
+}> = [
   {
     icon: FileText,
     title: 'Sales & Quoting',
+    phase: 'P1',
     items: [
-      'Bid prep and multi-line quote building',
-      'Pricing tier application at quote time',
-      'Quote → PO → invoice conversion workflow',
+      { text: 'Bid prep and multi-line quote building' },
+      { text: 'Pricing tier application at quote time' },
+      { text: 'Quote → PO → invoice conversion workflow' },
     ],
   },
   {
     icon: ShoppingCart,
     title: 'Order Management',
+    phase: 'P1',
     items: [
-      'On-account ordering (~95% of GMV)',
-      'Project-tied POs and milestones',
-      'Backorder + partial-ship handling',
+      { text: 'On-account ordering (~95% of GMV)' },
+      { text: 'Project-tied POs and milestones' },
+      { text: 'Backorder + partial-ship handling' },
     ],
   },
   {
     icon: Package,
     title: 'Inventory & Procurement',
+    phase: 'P1',
     items: [
-      '3,000–5,000 SKU import from QB Enterprise',
-      'Multi-vendor SKU mapping',
-      'Reorder thresholds + supplier lead times',
+      { text: '3,000–5,000 SKU import from QB Enterprise' },
+      { text: 'Multi-vendor SKU mapping' },
+      { text: 'Reorder thresholds + supplier lead times' },
     ],
   },
   {
     icon: Receipt,
     title: 'Accounts Receivable',
+    phase: 'BOTH',
     items: [
-      'AIA G702/G703 progress billing',
-      'Monthly statements + emailed invoices',
-      'A/R aging + collections workflow',
+      { text: 'Monthly statements + emailed invoices' },
+      { text: 'A/R aging + collections workflow' },
+      { text: 'AIA G702/G703 progress billing', p2: true },
     ],
   },
   {
     icon: Truck,
     title: 'Logistics & Delivery',
+    phase: 'P1',
     items: [
-      'Single-truck dispatch + driver app',
-      '3rd-party freight broker handoff',
-      'Delivery tickets + electronic POD',
+      { text: 'Truck dispatch + driver app' },
+      { text: '3rd-party freight broker handoff' },
+      { text: 'Delivery tickets + electronic POD' },
     ],
   },
   {
     icon: Plug,
     title: 'Integrations & Migration',
+    phase: 'BOTH',
     items: [
-      'QuickBooks parallel execution during transition — live sync, not big-bang cutover',
-      'Freight carrier portal integration',
-      'Long-term: embed QB functionality natively in GableLBM — eliminating the external dependency',
+      { text: 'QuickBooks parallel execution during transition — live sync, not big-bang' },
+      { text: 'Run Payments wired (POS + on-account + ACH)' },
+      { text: 'Long-term: embed QB functionality natively in GableLBM', p2: true },
     ],
   },
   {
     icon: BarChart3,
     title: 'Reporting & BI',
+    phase: 'BOTH',
     items: [
-      'Sales by rep / customer / region',
-      'Vendor margin analysis',
-      'Cash-flow forecast + A/R aging dashboards',
+      { text: 'Sales by rep / customer / region' },
+      { text: 'A/R aging dashboards' },
+      { text: 'Vendor margin analysis + cash-flow forecast', p2: true },
     ],
   },
   {
     icon: Tag,
     title: 'Pricing Rules & Tier Configurator',
+    phase: 'P2',
     items: [
-      'Configurable price tiers by customer, volume, or project',
-      'Product category pricing rules + margin floor enforcement',
-      'Override workflow with approval controls',
+      { text: 'Configurable price tiers by customer, volume, or project' },
+      { text: 'Product category pricing rules + margin floor enforcement' },
+      { text: 'Override workflow with approval controls' },
     ],
   },
   {
     icon: Users,
     title: 'Roles & Permissions',
+    phase: 'BOTH',
     items: [
-      'Reed-tailored role definitions',
-      'Owner / Sales / Yard / Office / Driver tiers',
-      'SSO-ready (Google/Microsoft) for Phase 2',
+      { text: 'Owner / Sales / Yard / Office / Driver tiers' },
+      { text: 'Reed-tailored role definitions' },
+      { text: 'SSO (Google/Microsoft)', p2: true },
     ],
   },
 ];
+
+const PHASE_BADGE: Record<Phase, { label: string; class: string }> = {
+  P1: { label: 'Phase 1 · Walk', class: 'bg-gable-green/15 text-gable-green border-gable-green/30' },
+  P2: { label: 'Phase 2 · Run', class: 'bg-purple-500/15 text-purple-300 border-purple-500/30' },
+  BOTH: { label: 'P1 + P2', class: 'bg-white/5 text-zinc-400 border-white/10' },
+};
 
 export function SlideCustomizationScope() {
   return (
@@ -109,28 +131,41 @@ export function SlideCustomizationScope() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
-        {BUCKETS.map((bucket, i) => (
-          <motion.div
-            key={i}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: i * 0.06 }}
-            className="glass-card rounded-2xl p-5 border-white/5 flex flex-col group hover:border-gable-green/30 transition-all"
-          >
-            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-4 group-hover:bg-gable-green/10 transition-colors">
-              <bucket.icon size={18} className="text-zinc-400 group-hover:text-gable-green transition-colors" />
-            </div>
-            <h3 className="font-bold text-sm text-white mb-3">{bucket.title}</h3>
-            <ul className="space-y-1.5 text-[11px] text-zinc-400 leading-snug flex-1">
-              {bucket.items.map((item, j) => (
-                <li key={j} className="flex items-start gap-1.5">
-                  <span className="text-gable-green mt-0.5">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+        {BUCKETS.map((bucket, i) => {
+          const badge = PHASE_BADGE[bucket.phase];
+          return (
+            <motion.div
+              key={i}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: i * 0.06 }}
+              className="glass-card rounded-2xl p-5 border-white/5 flex flex-col group hover:border-gable-green/30 transition-all"
+            >
+              <div className="flex items-start justify-between mb-3 gap-2">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-gable-green/10 transition-colors shrink-0">
+                  <bucket.icon size={18} className="text-zinc-400 group-hover:text-gable-green transition-colors" />
+                </div>
+                <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded border ${badge.class} whitespace-nowrap`}>
+                  {badge.label}
+                </span>
+              </div>
+              <h3 className="font-bold text-sm text-white mb-3">{bucket.title}</h3>
+              <ul className="space-y-1.5 text-[11px] text-zinc-400 leading-snug flex-1">
+                {bucket.items.map((item, j) => (
+                  <li key={j} className="flex items-start gap-1.5">
+                    <span className={item.p2 ? 'text-purple-400 mt-0.5' : 'text-gable-green mt-0.5'}>•</span>
+                    <span className="flex-1">
+                      {item.text}
+                      {item.p2 && (
+                        <span className="ml-1.5 text-[9px] font-bold uppercase tracking-widest text-purple-300/70">P2</span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          );
+        })}
       </div>
 
       <motion.div

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Code2, Users, Coins } from 'lucide-react';
+import { ShieldCheck, Code2, Users, Coins, Footprints, Activity, Zap } from 'lucide-react';
 
 export function SlideEngagementModel() {
   return (
@@ -58,11 +58,55 @@ export function SlideEngagementModel() {
         </div>
       </div>
 
-      <motion.div 
+      {/* Crawl / Walk / Run pacing strip */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="mt-10"
+      >
+        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 mb-3 text-center">
+          How we phase the work — Crawl · Walk · Run
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="rounded-xl border border-white/5 bg-deep-space/40 p-4 flex items-start gap-3">
+            <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+              <Footprints size={16} className="text-zinc-400" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 mb-0.5">Crawl · Phase 0</div>
+              <div className="text-sm font-bold text-white mb-1">Discovery</div>
+              <p className="text-[11px] text-zinc-400 leading-snug">$500 setup + $500/mo dev/staging/AI · 10 free Sr Architect hrs</p>
+            </div>
+          </div>
+          <div className="rounded-xl border border-gable-green/30 bg-gable-green/10 p-4 flex items-start gap-3">
+            <div className="w-9 h-9 rounded-lg bg-gable-green/20 flex items-center justify-center shrink-0">
+              <Activity size={16} className="text-gable-green" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green mb-0.5">Walk · Phase 1</div>
+              <div className="text-sm font-bold text-white mb-1">Parity Go-Live</div>
+              <p className="text-[11px] text-zinc-300 leading-snug">$16,500 · 8 weeks · daily ops running on GableLBM</p>
+            </div>
+          </div>
+          <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-4 flex items-start gap-3">
+            <div className="w-9 h-9 rounded-lg bg-purple-500/15 flex items-center justify-center shrink-0">
+              <Zap size={16} className="text-purple-300" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10px] uppercase tracking-widest font-bold text-purple-300 mb-0.5">Run · Phase 2</div>
+              <div className="text-sm font-bold text-white mb-1">Deeper Features</div>
+              <p className="text-[11px] text-zinc-400 leading-snug">Reed picks modules quarterly · no commitment up front</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="mt-12 p-4 rounded-xl bg-white/5 border border-white/10 text-center"
+        transition={{ delay: 1.1 }}
+        className="mt-6 p-4 rounded-xl bg-white/5 border border-white/10 text-center"
       >
         <span className="text-sm text-zinc-500 italic">
           "The last ERP you'll ever buy. Own your platform, own your future."

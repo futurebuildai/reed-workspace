@@ -1,136 +1,228 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, Sparkles, Wrench, GraduationCap, MapPin, ShieldCheck, Server, Clock, Lock } from 'lucide-react';
+import { CheckCircle2, Sparkles, Wrench, GraduationCap, MapPin, ShieldCheck, Server, Clock, Lock, CreditCard, Footprints, Activity, Zap } from 'lucide-react';
 
-const LINE_ITEMS = [
-  {
-    icon: Sparkles,
-    name: 'Phase 0 — Discovery + Dev/Staging Env Setup',
-    amount: '$500',
-    breakdown: '$250 setup labor + 1 month × $250 infra (rolls into Phase 1 if proceeding)',
-    bonus: 'Includes 10 Senior Architect hours — $2,250 value, free. Estimated sufficient to fully scope and lock the Phase 1 build plan.',
-  },
+const PHASE_1_LINES = [
   {
     icon: Wrench,
-    name: 'Solution Scoping + Software Customization',
-    amount: '$17,500',
-    breakdown: '50 hrs Lead Architect @ $225 + 36 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s commercial-supply workflows',
+    name: 'Solution Scoping + Build',
+    amount: '$15,375',
+    breakdown: '45 hrs Lead Architect @ $225 + 30 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s Parity scope (inventory, POS, quote/order, AR)',
   },
   {
     icon: MapPin,
-    name: 'Onsite Implementation (1 person, 2–3 days)',
-    amount: '$4,500',
-    breakdown: '1 person × 3 days @ $1,500/day flat (all-in: accommodations + travel included)  ·  hands-on cutover and team enablement at McKees Rocks  ·  shorter trip = $3,000 (2 days)',
+    name: 'Onsite Cutover (1 person, 2 days)',
+    amount: '$3,000',
+    breakdown: '2 days × $1,500/day flat (all-in: travel + accommodations)  ·  hands-on cutover and team enablement at McKees Rocks',
   },
   {
     icon: GraduationCap,
-    name: 'Training & Implementation Support',
-    amount: '$750',
-    breakdown: '6 hrs @ $125  ·  2 live training sessions during onsite week + recorded follow-up library',
+    name: 'Live Training',
+    amount: '$500',
+    breakdown: '4 hrs @ $125  ·  2 live sessions during onsite week + recorded follow-up library',
   },
 ];
 
-const MILESTONES = [
-  { pct: '50%', when: 'Scoping sign-off' },
-  { pct: '30%', when: 'Phase 1 delivery' },
-  { pct: '20%', when: 'Go-live + first month of recurring' },
+const PHASE_2_OPTIONS = [
+  { name: 'AIA G702/G703 progress billing', est: '$3,500' },
+  { name: 'AI categorization + reorder predictions', est: '$5,000' },
+  { name: 'Pricing Rules & Tier Configurator', est: '$4,500' },
+  { name: 'Advanced BI dashboards', est: '$4,000' },
+  { name: 'SSO (Google / Microsoft)', est: '$2,500' },
+  { name: 'RFID inventory tagging', est: '$6,000' },
+  { name: 'Contractor self-serve portal', est: 'TBD — scoped to Reed\'s preferences' },
 ];
 
 export function SlideRateCard() {
   return (
     <div className="w-full max-w-5xl">
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
-          Reed Building Supply — Phase 1 Pricing
+          Reed Building Supply — Crawl · Walk · Run
         </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Project <span className="text-gable-green">Proposal</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          Fixed-price, milestone-billed, no per-seat licensing. A straightforward fork of GableLBM tailored to Reed's commercial-supply workflows.
+          Built around Reed's pace and budget. Lock the Parity scope first, see real value in production, then add deeper features when Reed chooses — no commitment to Phase 2 until you're ready.
         </p>
       </div>
 
-      {/* Hero total */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        className="glass-card rounded-3xl p-8 border-gable-green/20 bg-gable-green/5 text-center mb-10"
-      >
-        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green mb-2">Total Project — Estimated</div>
-        <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 font-data">$23,250</div>
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-3">
-          Do-Not-Exceed Cap: $28,000
+      {/* Three-phase summary strip */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
+        <div className="rounded-2xl border border-white/5 bg-deep-space/40 p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <Footprints size={16} className="text-zinc-400" />
+            <span className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">Crawl · Phase 0</span>
+          </div>
+          <div className="text-xl font-bold text-white font-data">$500 + $500<span className="text-sm text-zinc-500 font-sans">/mo</span></div>
+          <div className="text-[10px] text-zinc-500 mt-1">Setup + dev/staging/AI during implementation  ·  10 free Sr Architect hrs</div>
         </div>
-        <div className="text-xs text-zinc-400">
-          one-time, milestone-billed  ·  <span className="text-gable-green">+ $250–$800/mo recurring</span> (tier of your choice)
+        <div className="rounded-2xl border border-gable-green/30 bg-gable-green/10 p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <Activity size={16} className="text-gable-green" />
+            <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk · Phase 1 — Parity Go-Live</span>
+          </div>
+          <div className="text-xl font-bold text-white font-data">
+            $16,500 <span className="text-sm text-zinc-500 line-through font-normal">$18,875</span>
+          </div>
+          <div className="text-[10px] text-gable-green mt-1">After $2,375 Run Payments referral credit</div>
         </div>
-      </motion.div>
+        <div className="rounded-2xl border border-purple-500/20 bg-purple-500/5 p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <Zap size={16} className="text-purple-400" />
+            <span className="text-[10px] uppercase tracking-widest font-bold text-purple-300">Run · Phase 2 — Deeper Features</span>
+          </div>
+          <div className="text-xl font-bold text-white font-data">$2.5K – $6K</div>
+          <div className="text-[10px] text-zinc-500 mt-1">per priced module  ·  contractor portal scoped to Reed's preferences</div>
+        </div>
+      </div>
 
-      {/* Line items */}
-      <div className="space-y-3 mb-12">
-        {LINE_ITEMS.map((item, i) => (
+      {/* Phase 1 detail */}
+      <div className="mb-8">
+        <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gable-green mb-3 flex items-center gap-2">
+          <Activity size={14} /> Phase 1 — Parity Go-Live (line items)
+        </h3>
+        <div className="space-y-2.5">
+          {PHASE_1_LINES.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: i * 0.08 }}
+              className="glass-card rounded-2xl p-4 border-white/5 flex items-start gap-4 hover:border-gable-green/20 transition-all"
+            >
+              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                <item.icon size={18} className="text-gable-green" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-sm text-white mb-1">{item.name}</h3>
+                <p className="text-[11px] text-zinc-500 leading-relaxed">{item.breakdown}</p>
+              </div>
+              <div className="text-2xl font-bold text-gable-green font-data shrink-0 self-center">{item.amount}</div>
+            </motion.div>
+          ))}
+
           <motion.div
-            key={i}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: i * 0.1 }}
-            className="glass-card rounded-2xl p-5 border-white/5 flex items-start gap-4 hover:border-gable-green/20 transition-all"
+            transition={{ delay: 0.3 }}
+            className="rounded-2xl p-4 border border-amber-500/30 bg-amber-500/[0.04] flex items-start gap-4"
           >
-            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-              <item.icon size={18} className="text-gable-green" />
+            <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0">
+              <CreditCard size={18} className="text-amber-400" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-sm text-white mb-1">{item.name}</h3>
-              <p className="text-[11px] text-zinc-500 leading-relaxed">{item.breakdown}</p>
-              {item.bonus && (
-                <div className="mt-2 inline-flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-gable-green/10 border border-gable-green/30">
-                  <Sparkles size={11} className="text-gable-green shrink-0 mt-0.5" />
-                  <span className="text-[10px] text-gable-green/90 leading-snug font-medium">{item.bonus}</span>
-                </div>
-              )}
+              <h3 className="font-bold text-sm text-white mb-1">Run Payments Referral Credit</h3>
+              <p className="text-[11px] text-zinc-400 leading-relaxed">
+                Reed activating Run Payments as the POS + on-account processor unlocks a referral credit we apply directly to Phase 1 — equivalent to <span className="text-amber-300 font-semibold">~10 free Sr Architect hours</span>. Pricing stays at standard hourly; the credit closes the gap.
+              </p>
             </div>
-            <div className="flex flex-col items-end shrink-0 self-center gap-1">
-              <div className="text-2xl font-bold text-gable-green font-data">{item.amount}</div>
-              {item.bonus && (
-                <div className="text-[9px] uppercase tracking-widest font-bold text-gable-green/70 whitespace-nowrap">+ $2,250 free</div>
-              )}
+            <div className="text-xl font-bold text-amber-400 font-data shrink-0 self-center">−$2,375</div>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="rounded-2xl p-5 border border-gable-green/30 bg-gable-green/10 flex items-center justify-between"
+          >
+            <div>
+              <div className="text-sm uppercase tracking-widest font-bold text-gable-green">Phase 1 Net — Estimated</div>
+              <div className="text-[10px] text-amber-400/80 uppercase tracking-widest font-bold mt-1">Capped at $20,000 not-to-exceed</div>
+            </div>
+            <div className="text-right">
+              <div className="text-3xl font-bold text-white font-data">$16,500</div>
+              <div className="text-[10px] text-amber-400/80 font-data">/ $20,000 max</div>
             </div>
           </motion.div>
-        ))}
 
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="rounded-2xl p-5 border border-gable-green/30 bg-gable-green/10 flex items-center justify-between"
-        >
-          <div>
-            <div className="text-sm uppercase tracking-widest font-bold text-gable-green">Project Total — Estimated</div>
-            <div className="text-[10px] text-amber-400/80 uppercase tracking-widest font-bold mt-1">Capped at $28,000 not-to-exceed</div>
-          </div>
-          <div className="text-right">
-            <div className="text-3xl font-bold text-white font-data">$23,250</div>
-            <div className="text-[10px] text-amber-400/80 font-data">/ $28,000 max</div>
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.45 }}
+            className="rounded-2xl p-4 border border-white/5 bg-deep-space/40 flex items-start gap-3"
+          >
+            <Lock size={14} className="text-zinc-500 shrink-0 mt-0.5" />
+            <p className="text-[11px] text-zinc-400 leading-relaxed">
+              <span className="font-bold text-white">Hourly rates unchanged.</span> Lead Architect $225  ·  Engineer $175  ·  Trainer $125  ·  PM $150. Approved scope expansion bills against the $3,500 NTE buffer at standard rates. Anything beyond $20,000 requires a written change order.
+            </p>
+          </motion.div>
 
-        {/* NTE explainer */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.45 }}
-          className="rounded-2xl p-4 border border-amber-500/20 bg-amber-500/5 flex items-start gap-3 mt-3"
-        >
-          <Lock size={14} className="text-amber-400 shrink-0 mt-0.5" />
-          <p className="text-[11px] text-amber-200/80 leading-relaxed">
-            <span className="font-bold text-amber-300">How the cap works:</span> If approved scope expands during Phase 1, additional work bills against the $4,750 buffer at standard Pro Services rates. Any work beyond the $28,000 cap requires a written change order signed by both parties — protecting Reed from runaway scope.
+          {/* Run Payments processing rates */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="rounded-2xl p-4 border border-amber-500/15 bg-amber-500/[0.03]"
+          >
+            <div className="flex items-start gap-3 mb-3">
+              <CreditCard size={14} className="text-amber-400 shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <h4 className="font-bold text-sm text-white">Run Payments — Indicative Processing Rates</h4>
+                <p className="text-[11px] text-zinc-400 leading-relaxed mt-0.5">
+                  Independent of the project pricing above. Final rates confirmed after Reed's current merchant statements are reviewed for card-type mix.
+                </p>
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-2 mb-3">
+              <div className="rounded-lg bg-deep-space/60 border border-white/5 p-3">
+                <div className="text-[9px] uppercase tracking-widest font-bold text-amber-400/80 mb-1">Card-Present</div>
+                <div className="text-sm text-white font-mono">Low 2% range</div>
+                <div className="text-[10px] text-zinc-500 mt-0.5">depends on card mix</div>
+              </div>
+              <div className="rounded-lg bg-deep-space/60 border border-white/5 p-3">
+                <div className="text-[9px] uppercase tracking-widest font-bold text-amber-400/80 mb-1">Surcharge Option</div>
+                <div className="text-sm text-white font-mono">Available</div>
+                <div className="text-[10px] text-zinc-500 mt-0.5">pass card fees to customer</div>
+              </div>
+              <div className="rounded-lg bg-deep-space/60 border border-white/5 p-3">
+                <div className="text-[9px] uppercase tracking-widest font-bold text-amber-400/80 mb-1">ACH</div>
+                <div className="text-sm text-white font-mono">0.10% · $1 min · $10 max</div>
+                <div className="text-[10px] text-zinc-500 mt-0.5">ideal for on-account billing</div>
+              </div>
+            </div>
+            <p className="text-[10px] text-zinc-500 leading-relaxed italic">
+              Send Reed's current merchant statement and we'll return firm rates within 2 business days. Run Payments is the underlying processor; FutureBuild AI does not mark up processing fees.
+            </p>
+          </motion.div>
+
+          {/* AI model API usage */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.55 }}
+            className="rounded-2xl p-4 border border-purple-500/15 bg-purple-500/[0.03] flex items-start gap-3"
+          >
+            <Sparkles size={14} className="text-purple-300 shrink-0 mt-0.5" />
+            <p className="text-[11px] text-zinc-400 leading-relaxed">
+              <span className="font-bold text-purple-300">AI model API usage:</span> AI features call out to model APIs (OpenAI / Anthropic / Vertex) billed as-incurred each month. Expect <span className="text-white font-semibold">&lt; $100/mo</span> for typical usage. Heavy one-off runs (deep product catalog enrichment, bulk reclassification) bill separately and are pre-quoted before execution.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Phase 2 menu */}
+      <div className="mb-10">
+        <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-purple-300 mb-3 flex items-center gap-2">
+          <Zap size={14} /> Phase 2 — Deeper Features (deferred, Reed-prioritized menu)
+        </h3>
+        <div className="rounded-2xl border border-purple-500/20 bg-purple-500/[0.04] p-5">
+          <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5 mb-4">
+            {PHASE_2_OPTIONS.map((opt, i) => (
+              <div key={i} className="flex items-center justify-between text-xs border-b border-white/5 pb-2 last:border-0">
+                <span className="text-zinc-300">{opt.name}</span>
+                <span className="font-mono text-purple-300 font-bold whitespace-nowrap ml-3">{opt.est}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-[11px] text-zinc-500 leading-relaxed">
+            Quoted T&amp;M or fixed-price per module. Reed selects modules quarterly post-go-live based on actual operational needs. Most customers commit to 2–3 modules in their first 12 months ($8K–$15K typical Phase 2 spend).
           </p>
-        </motion.div>
+        </div>
       </div>
 
       {/* Ongoing Partnership — two tiers */}
-      <div className="mb-12">
+      <div className="mb-10">
         <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500 mb-4 text-center">Ongoing Partnership — Reed selects post-launch</h3>
         <div className="grid md:grid-cols-2 gap-5">
-          {/* Tier 1: Managed Hosting */}
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -157,7 +249,6 @@ export function SlideRateCard() {
             </div>
           </motion.div>
 
-          {/* Tier 2: Standard MSP — RECOMMENDED */}
           <motion.div
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -182,7 +273,7 @@ export function SlideRateCard() {
               <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" />Patch management + priority bug queue</li>
             </ul>
             <div className="pt-3 border-t border-gable-green/20">
-              <span className="text-[10px] text-zinc-400 italic">Beyond 4 hrs/mo billed at Pro Services rates ($175 Dev / $225 Architect / $150 PM / $125 Training)</span>
+              <span className="text-[10px] text-zinc-400 italic">Beyond 4 hrs/mo billed at Pro Services rates</span>
             </div>
           </motion.div>
         </div>
@@ -197,15 +288,21 @@ export function SlideRateCard() {
           className="p-6 rounded-2xl border border-white/5 bg-deep-space/50"
         >
           <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-zinc-500 flex items-center gap-2">
-            <Clock size={14} /> Payment Milestones
+            <Clock size={14} /> Phase 1 Payment Milestones
           </h4>
           <ul className="space-y-3">
-            {MILESTONES.map((m, i) => (
-              <li key={i} className="flex items-baseline justify-between text-sm">
-                <span className="text-zinc-400">{m.when}</span>
-                <span className="font-bold text-gable-green font-data">{m.pct}</span>
-              </li>
-            ))}
+            <li className="flex items-baseline justify-between text-sm">
+              <span className="text-zinc-400">Scoping sign-off</span>
+              <span className="font-bold text-gable-green font-data">50%</span>
+            </li>
+            <li className="flex items-baseline justify-between text-sm">
+              <span className="text-zinc-400">Parity build complete</span>
+              <span className="font-bold text-gable-green font-data">30%</span>
+            </li>
+            <li className="flex items-baseline justify-between text-sm">
+              <span className="text-zinc-400">Go-live + first month of recurring</span>
+              <span className="font-bold text-gable-green font-data">20%</span>
+            </li>
           </ul>
         </motion.div>
 
@@ -215,9 +312,11 @@ export function SlideRateCard() {
           transition={{ delay: 0.8 }}
           className="p-6 rounded-2xl border border-gable-green/20 bg-gable-green/5"
         >
-          <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-gable-green">Founding Customer Terms</h4>
+          <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-gable-green flex items-center gap-2">
+            <Sparkles size={14} /> Founding Customer Terms
+          </h4>
           <p className="text-xs text-gable-green/80 leading-relaxed italic">
-            "As a founding partner, your implementation rates are locked at the lowest tier shown, and all onboarding fees are waived for the first two years."
+            Phase 1 hourly rates locked for any Phase 2 work for 24 months. Onboarding fees waived. First-customer co-marketing rights (with Reed approval) for case studies and references.
           </p>
         </motion.div>
       </div>

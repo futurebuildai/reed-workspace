@@ -21,6 +21,7 @@ export function SlideInfrastructure() {
                 { label: 'Database', val: 'Managed PostgreSQL (HA pair)' },
                 { label: 'Object Storage', val: 'DO Spaces (S3-compatible)' },
                 { label: 'CDN / Edge', val: 'Cloudflare (TLS, DDoS, WAF)' },
+                { label: 'Payments', val: 'Run Payments (POS + on-account + ACH)' },
                 { label: 'Integrations', val: 'Open API Layer (REST/JSON)' },
                 { label: 'Messaging', val: 'NATS JetStream (Event Bus)' },
               ].map((row, i) => (
@@ -72,6 +73,7 @@ export function SlideInfrastructure() {
             <div className="space-y-4">
               {[
                 { label: 'AI Inference', val: 'GCP Vertex AI / us-east4 (Virginia)' },
+                { label: 'Model APIs', val: 'OpenAI · Anthropic · Vertex (pass-through)' },
                 { label: 'Automations', val: 'Easy Flow Integration Engine' },
                 { label: 'Audit Logs', val: 'Cloud Logging (Immutable)' },
               ].map((row, i) => (
@@ -81,6 +83,9 @@ export function SlideInfrastructure() {
                 </div>
               ))}
             </div>
+            <p className="text-[10px] text-purple-200/70 leading-relaxed mt-3 pt-3 border-t border-white/5">
+              <span className="font-bold text-purple-300">Model API usage</span> billed as-incurred each month (typical &lt; $100/mo). Deep enrichment runs pre-quoted separately.
+            </p>
           </div>
         </div>
 

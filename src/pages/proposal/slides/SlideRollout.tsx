@@ -1,63 +1,60 @@
 import { motion } from 'framer-motion';
-import { Calendar, Search, Wrench, Database, Rocket, Heart, CheckCircle2, Flag } from 'lucide-react';
+import { Calendar, Search, Wrench, Database, Rocket, Heart, CheckCircle2, Flag, Footprints, Activity, Zap } from 'lucide-react';
 
 const PHASES = [
   {
-    label: 'Month 1',
-    title: 'Solution Scoping + First-Pass Customization',
+    label: 'Weeks 1–3',
+    title: 'Solution Design + Repo Fork + QB Import Pipeline',
     icon: Wrench,
-    weeks: 'Weeks 1–4',
     deliverables: [
-      'Detailed data model + integration design',
       'Build plan locked, repo forked from GableLBM',
       'Dev/staging environments scaffolded + CI wired',
+      'QB Enterprise import + validation pipeline',
     ],
     hours: [
-      { role: 'Lead Architect', hrs: 30 },
+      { role: 'Lead Architect', hrs: 25 },
       { role: 'Engineer', hrs: 8 },
     ],
   },
   {
-    label: 'Month 2',
-    title: 'Core Build + QB→Portal Migration Prep',
+    label: 'Weeks 4–5',
+    title: 'Core Build (POS, Quote/Order, AR, Inventory)',
     icon: Database,
-    weeks: 'Weeks 5–8',
     deliverables: [
-      'Reed-tailored customizations forked from GableLBM',
-      'QuickBooks data import + validation pipeline',
-      'Internal demo + integration smoke tests',
+      'Inventory + reorder thresholds wired',
+      'POS terminal + Run Payments integration',
+      'Quote → PO → invoice conversion flow',
+      'Basic AR + monthly statements',
     ],
     hours: [
-      { role: 'Lead Architect', hrs: 15 },
-      { role: 'Engineer', hrs: 22 },
+      { role: 'Lead Architect', hrs: 12 },
+      { role: 'Engineer', hrs: 18 },
     ],
   },
   {
-    label: 'Month 3',
-    title: 'UAT + Onsite Training + Go-Live',
+    label: 'Weeks 6–7',
+    title: 'UAT + Onsite Cutover + Training',
     icon: Rocket,
-    weeks: 'Weeks 9–12',
     deliverables: [
       'User acceptance testing with Reed team',
-      '3-day onsite at McKees Rocks (cutover + hands-on training)',
+      '2-day onsite at McKees Rocks (cutover + hands-on training)',
       'Production go-live + monitoring active',
     ],
     hours: [
-      { role: 'Engineer', hrs: 6 },
-      { role: 'Onsite (1 person)', hrs: '3 days' },
+      { role: 'Engineer', hrs: 4 },
+      { role: 'Onsite (1 person)', hrs: '2 days' },
       { role: 'Trainer', hrs: 4 },
-      { role: 'Lead Architect', hrs: 5 },
+      { role: 'Lead Architect', hrs: 8 },
     ],
   },
   {
-    label: 'Month 4',
+    label: 'Week 8+',
     title: 'Hypercare + Phase 2 Planning',
     icon: Heart,
-    weeks: 'Optional buffer',
     deliverables: [
       'Recorded follow-up Q&A + training library',
       'First month of managed-infra recurring kicks in',
-      'Phase 2 roadmap discussion (RFID, advanced BI, etc.)',
+      'Phase 2 module prioritization with Reed leadership',
     ],
     hours: [
       { role: 'Trainer', hrs: 2 },
@@ -67,105 +64,142 @@ const PHASES = [
 ];
 
 const MILESTONES = [
-  { label: 'Phase 0 Sign-off', position: 0 },
-  { label: 'Scoping Locked', position: 1 },
-  { label: 'Build Complete', position: 2 },
-  { label: 'Go-Live 🚀', position: 3 },
+  { label: 'Phase 0 Sign-off' },
+  { label: 'Scoping Locked' },
+  { label: 'Build Complete' },
+  { label: 'Go-Live 🚀' },
 ];
 
 export function SlideRollout() {
   return (
     <div className="w-full max-w-5xl">
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           Reed Building Supply — Implementation Timeline
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">3-Month <span className="text-gable-green">Build Clock</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">8-Week <span className="text-gable-green">Parity Build</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          Compressed timeline. Phase 0 (Discovery) is pre-project; the 3-month build kicks off at sign-off. Month 4 is optional hypercare.
+          Compressed timeline focused on Parity scope only. Phase 0 is pre-project; the 8-week build clock starts at sign-off. Phase 2 deeper features are scheduled separately, post go-live.
         </p>
+      </div>
+
+      {/* Crawl/Walk/Run strip */}
+      <div className="grid grid-cols-3 gap-2 mb-6 text-center">
+        <div className="rounded-xl border border-white/5 bg-deep-space/40 p-3">
+          <Footprints size={14} className="text-zinc-400 mx-auto mb-1" />
+          <div className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">Crawl</div>
+          <div className="text-xs text-white font-semibold">Discovery</div>
+          <div className="text-[10px] text-zinc-600 mt-0.5">2–3 weeks</div>
+        </div>
+        <div className="rounded-xl border border-gable-green/30 bg-gable-green/10 p-3">
+          <Activity size={14} className="text-gable-green mx-auto mb-1" />
+          <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk</div>
+          <div className="text-xs text-white font-semibold">Parity Go-Live</div>
+          <div className="text-[10px] text-gable-green/80 mt-0.5">8 weeks</div>
+        </div>
+        <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-3">
+          <Zap size={14} className="text-purple-400 mx-auto mb-1" />
+          <div className="text-[10px] uppercase tracking-widest font-bold text-purple-300">Run</div>
+          <div className="text-xs text-white font-semibold">Deeper Features</div>
+          <div className="text-[10px] text-zinc-500 mt-0.5">rolling, optional</div>
+        </div>
       </div>
 
       {/* Pre-project Phase 0 row */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-5 mb-6 flex items-center gap-4"
+        className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-4 mb-3 flex items-center gap-4"
       >
         <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
           <Search size={18} className="text-zinc-500" />
         </div>
         <div className="flex-1">
-          <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 mb-1">Pre-Project</div>
+          <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 mb-1">Pre-Project · Crawl</div>
           <h3 className="font-bold text-sm text-zinc-300 mb-1">Phase 0 — Discovery & Env Setup</h3>
-          <p className="text-[11px] text-zinc-500">2–3 weeks · billed separately ($500) · build clock starts at sign-off</p>
+          <p className="text-[11px] text-zinc-500">2–3 weeks · $500 setup + $500/mo dev/staging/AI starts at sign-off</p>
         </div>
-        <div className="text-xs font-bold text-zinc-500 font-data shrink-0">$500</div>
+        <div className="text-right shrink-0">
+          <div className="text-xs font-bold text-zinc-300 font-data">$500</div>
+          <div className="text-[10px] text-zinc-500 font-data">+ $500/mo</div>
+        </div>
+      </motion.div>
+
+      {/* During-implementation infra note */}
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.1 }}
+        className="rounded-xl border border-amber-500/15 bg-amber-500/[0.03] p-3 mb-5 text-center"
+      >
+        <p className="text-[11px] text-amber-200/70 leading-relaxed">
+          <span className="font-bold text-amber-300">During implementation (~3 months total):</span> $500/mo flat covers dev/staging environments + AI service runtime. Drops to standard Managed Hosting tier ($250 or $800/mo) at go-live.
+        </p>
       </motion.div>
 
       {/* Build clock anchor line */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-5">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gable-green/40 to-gable-green/40" />
         <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green flex items-center gap-2">
-          <Flag size={12} /> 3-Month Build Clock Begins
+          <Flag size={12} /> 8-Week Parity Build Clock
         </span>
         <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gable-green/40 to-gable-green/40" />
       </div>
 
-      {/* Month bars */}
-      <div className="space-y-4 mb-10">
+      {/* Week bars */}
+      <div className="space-y-3 mb-8">
         {PHASES.map((phase, i) => (
           <motion.div
             key={i}
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: i * 0.12 }}
-            className={`glass-card rounded-2xl border p-5 transition-all ${
+            transition={{ delay: i * 0.1 }}
+            className={`glass-card rounded-2xl border p-4 transition-all ${
               phase.optional
                 ? 'border-white/5 bg-white/[0.02] opacity-70 hover:opacity-100'
                 : 'border-white/5 hover:border-gable-green/30'
             }`}
           >
-            <div className="flex items-start gap-5">
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
+            <div className="flex items-start gap-4">
+              <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
                 phase.optional ? 'bg-white/5 text-zinc-500' : 'bg-gable-green/10 text-gable-green'
               }`}>
-                <phase.icon size={20} />
+                <phase.icon size={18} />
               </div>
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline justify-between mb-1 gap-3">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className={`text-[10px] uppercase tracking-[0.2em] font-bold ${
                       phase.optional ? 'text-zinc-600' : 'text-gable-green'
                     }`}>{phase.label}</span>
                     {phase.optional && (
                       <span className="text-[9px] uppercase tracking-widest font-bold text-amber-500/70 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                        Optional Buffer
+                        Hypercare
                       </span>
                     )}
                   </div>
                   <span className="text-[10px] font-mono text-zinc-500 uppercase flex items-center gap-1 shrink-0">
-                    <Calendar size={10} /> {phase.weeks}
+                    <Calendar size={10} /> {phase.label}
                   </span>
                 </div>
-                <h3 className="font-bold text-base text-white mb-3">{phase.title}</h3>
+                <h3 className="font-bold text-sm text-white mb-2">{phase.title}</h3>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <ul className="space-y-1.5 text-xs text-zinc-400">
+                <div className="grid md:grid-cols-2 gap-3">
+                  <ul className="space-y-1 text-[11px] text-zinc-400">
                     {phase.deliverables.map((d, j) => (
-                      <li key={j} className="flex items-start gap-2">
-                        <CheckCircle2 size={12} className="text-gable-green/60 shrink-0 mt-0.5" />
+                      <li key={j} className="flex items-start gap-1.5">
+                        <CheckCircle2 size={10} className="text-gable-green/60 shrink-0 mt-0.5" />
                         <span>{d}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2 content-start">
+                  <div className="flex flex-wrap gap-1.5 content-start">
                     {phase.hours.map((h, j) => (
                       <span
                         key={j}
-                        className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded bg-white/5 border border-white/5 text-zinc-400"
+                        className="text-[9px] font-mono uppercase tracking-wider px-1.5 py-1 rounded bg-white/5 border border-white/5 text-zinc-400"
                       >
                         {h.role}: <span className="text-gable-green font-bold">{h.hrs}h</span>
                       </span>
@@ -183,10 +217,10 @@ export function SlideRollout() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="glass-card rounded-2xl border-white/5 p-5 mb-8"
+        className="glass-card rounded-2xl border-white/5 p-4 mb-6"
       >
-        <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 mb-4 text-center">Key Milestones</h4>
-        <div className="grid grid-cols-4 gap-3 relative">
+        <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 mb-3 text-center">Key Milestones</h4>
+        <div className="grid grid-cols-4 gap-2 relative">
           <div className="absolute top-3 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-gable-green/20 via-gable-green/40 to-gable-green/20" />
           {MILESTONES.map((m) => (
             <div key={m.label} className="flex flex-col items-center gap-2 relative z-10">
@@ -201,20 +235,20 @@ export function SlideRollout() {
         </div>
       </motion.div>
 
-      {/* Summary card */}
+      {/* Summary */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.7 }}
-        className="rounded-2xl border border-gable-green/20 bg-gable-green/5 p-5 flex items-center gap-4"
+        className="rounded-2xl border border-gable-green/20 bg-gable-green/5 p-4 flex items-center gap-3"
       >
         <div className="p-2 bg-gable-green/15 rounded-lg shrink-0">
-          <Rocket size={20} className="text-gable-green" />
+          <Rocket size={18} className="text-gable-green" />
         </div>
         <div className="flex-1">
-          <h4 className="font-bold text-sm text-white mb-1">3 months core · 4 months with hypercare</h4>
-          <p className="text-xs text-zinc-400 leading-relaxed">
-            Total team commitment from Phase 0 sign-off to go-live: <span className="text-gable-green font-bold">~92 hrs</span> (Lead Architect, Engineer, Trainer) <span className="text-gable-green font-bold">+ 3 onsite days</span> at McKees Rocks. No "big bang" — UAT and parallel validation precede every cutover.
+          <h4 className="font-bold text-sm text-white mb-1">Phase 1 effort: ~75 hrs across roles + 2 onsite days</h4>
+          <p className="text-[11px] text-zinc-400 leading-relaxed">
+            From Phase 0 sign-off to Reed running production on GableLBM in <span className="text-gable-green font-bold">8 weeks</span>. No "big bang" — UAT + parallel QB sync precede every cutover. Phase 2 modules scheduled quarterly post-go-live, Reed-prioritized.
           </p>
         </div>
       </motion.div>

@@ -46,8 +46,8 @@ const SLIDES: SlideMeta[] = [
     component: SlideTitle,
     notes: [
       'Open: who we are (FutureBuild AI / GableLBM) and why a fork makes sense for Reed.',
-      'Anchor: this is a strategic partnership, not a SaaS purchase. Reed owns the source.',
-      'Set expectation: 12 short slides. We close on Phase 0 today, not Phase 1.',
+      'Anchor: strategic partnership, not a SaaS purchase. Reed owns the source.',
+      'Set expectation: ~12 short slides. We close on Phase 0 today, not Phase 1.',
     ],
   },
   {
@@ -55,8 +55,9 @@ const SLIDES: SlideMeta[] = [
     title: 'How We Work',
     component: SlideEngagementModel,
     notes: [
-      'Three phases: 0 (discovery, $500), 1 (build, ~$23K), 2 (post-launch growth).',
+      'Crawl / Walk / Run: Phase 0 (discovery), Phase 1 (Parity Go-Live), Phase 2 (deeper features, deferred).',
       'Each phase has its own go/no-go. Reed is never on the hook for the next phase until the prior one delivers.',
+      'Total commitment today is just Phase 0 — $500 setup + $500/mo during implementation.',
     ],
   },
   {
@@ -65,7 +66,7 @@ const SLIDES: SlideMeta[] = [
     component: SlideReplacement,
     notes: [
       'BisTrack (yard) + Great Plains (books) = two systems, manual sync, double entry.',
-      'GableLBM collapses both into one data model. Reconciliation step disappears entirely.',
+      'GableLBM collapses both into one data model. Reconciliation step disappears.',
       'No per-seat licensing. Reed owns the source forever.',
     ],
   },
@@ -74,9 +75,9 @@ const SLIDES: SlideMeta[] = [
     title: 'Customization Scope',
     component: SlideCustomizationScope,
     notes: [
-      'Nine operational buckets we will customize from GableLBM main.',
-      'Phase 0 locks the per-bucket scope using the included 10 Sr Architect hours.',
-      'Note QB parallel execution + long-term native QB embedding plan.',
+      'Nine operational buckets. Each tagged Phase 1 (Walk), Phase 2 (Run), or both.',
+      'Walk = parity (daily ops). Run = deeper features Reed picks post-go-live.',
+      'AIA billing, AI categorization, Pricing Tier Configurator, advanced BI, SSO, RFID, contractor portal all sit in Phase 2.',
     ],
   },
   {
@@ -84,9 +85,9 @@ const SLIDES: SlideMeta[] = [
     title: 'Scope & Rollout',
     component: SlideRollout,
     notes: [
-      'Phase 0 is pre-project; the 3-month build clock starts at Phase 0 sign-off.',
-      'Month 4 is optional hypercare buffer.',
-      'No big-bang cutover — UAT and parallel validation precede every step.',
+      'Phase 0 is pre-project. The 8-week Parity build clock starts at Phase 0 sign-off.',
+      'During implementation: $500/mo flat covers dev/staging + AI runtime.',
+      'No big-bang cutover — UAT + parallel QB sync precede every step.',
     ],
   },
   {
@@ -94,27 +95,33 @@ const SLIDES: SlideMeta[] = [
     title: 'Phase 0 Details',
     component: SlidePhase0,
     notes: [
-      'Phase 0 = $500 (covers $250 setup + 30 days dev/staging infra).',
+      'New structure: $500 one-time setup + $500/mo flat during implementation (~3 months).',
+      '$500/mo covers dev/staging environments + AI service runtime — no surprise infra bills.',
+      'AI model APIs (OpenAI/Anthropic/Vertex) billed as-incurred — typical < $100/mo, heavy enrichment runs pre-quoted.',
       '10 free Sr Architect hours included ($2,250 value) — sufficient to fully scope Phase 1.',
-      'If Reed proceeds, Phase 0 cost rolls into Phase 1.',
+      'After go-live, switches to Managed Hosting tier of choice ($250 or $800/mo).',
     ],
   },
   {
     id: 'phase1',
-    title: 'Phase 1 Details',
+    title: 'Phase 1 — Parity',
     component: SlidePhase1,
     notes: [
-      'Fixed-price build phase. 50/30/20 milestone billing.',
-      'Includes 3-day onsite at McKees Rocks for cutover + hands-on training.',
+      'Walk phase. Net $16,500 after Run Payments referral credit. NTE $20,000.',
+      '8-week build, 50/30/20 milestone billing.',
+      'Includes 2-day onsite at McKees Rocks + 4 hrs live training.',
+      'Scope: SKU migration, inventory, POS + Run Payments, quote/order, basic AR, dispatch, roles.',
     ],
   },
   {
     id: 'phase2',
-    title: 'Phase 2 Details',
+    title: 'Phase 2 — Deeper Features',
     component: SlidePhase2,
     notes: [
-      'Post-launch growth: SSO, advanced BI, RFID, Reed-driven roadmap.',
-      'Quoted per scope after go-live. Reed prioritizes the queue.',
+      'Run phase. Deferred. Reed picks modules quarterly post go-live.',
+      'Per-priced module: $2.5K–$6K. Contractor portal scoped custom (depends on Reed\'s preferences).',
+      'Typical 12-month spend: $8K–$15K across 2–3 modules.',
+      'Founding customer rate lock: Phase 1 hourly rates hold for 24 months.',
     ],
   },
   {
@@ -140,10 +147,12 @@ const SLIDES: SlideMeta[] = [
     title: 'Rate Card',
     component: SlideRateCard,
     notes: [
-      'Total: $23,250 one-time + $250–$800/mo recurring. NTE cap $28,000.',
-      'Tier 1 ($250) covers DO hosting + daily snapshots + PITR backups.',
-      'Tier 2 ($800) adds 4 hrs/mo support, 99.9% SLA, quarterly upstream merges, extended retention.',
-      'Founding customer terms: rate lock + 2-year onboarding waive.',
+      'Crawl/Walk/Run pricing. Phase 0: $500 + $500/mo. Phase 1: $16,500 net (after Run Payments credit). Phase 2: per-module, deferred.',
+      'Hourly rates unchanged: LA $225 / Eng $175 / Trainer $125 / PM $150.',
+      'Run Payments referral credit: Reed activating Run Payments unlocks ~$2,375 off Phase 1 (~10 free Sr Architect hrs).',
+      'Run Payments processing: low 2% range card-present (mix-dependent), surcharge available, ACH 0.10% / $1 min / $10 max. Firm rates after merchant statement review.',
+      'AI model API usage: pass-through, billed monthly as-incurred, typical < $100/mo, heavy enrichment pre-quoted.',
+      'Founding customer terms: rate lock for 24 months on Phase 2 work.',
     ],
   },
   {
@@ -152,6 +161,7 @@ const SLIDES: SlideMeta[] = [
     component: SlideInfrastructure,
     notes: [
       'DigitalOcean NYC3 (compute + DB) + GCP us-east4 Virginia (AI). Low latency to McKees Rocks.',
+      'Run Payments wired into the Primary Stack as the merchant processor.',
       'Daily volume snapshots + Managed PostgreSQL PITR (7-day window) included in Tier 1.',
       'Tier 2 adds 30-day offsite to DO Spaces + RPO < 1hr / RTO < 4hr SLA.',
     ],
@@ -163,7 +173,8 @@ const SLIDES: SlideMeta[] = [
     component: SlideChecklist,
     notes: [
       'Inputs we need from Reed for Phase 0.',
-      'The discovery form (link in CTA) captures these answers and saves as you type.',
+      'Most discovery answers already captured in docs/reed-phase0-discovery.md from research + prior calls.',
+      'Walk through this list to confirm/correct vs. our pre-fills.',
     ],
   },
   {
@@ -171,7 +182,7 @@ const SLIDES: SlideMeta[] = [
     title: 'Next Steps',
     component: SlideNextSteps,
     notes: [
-      'Close the meeting here. Today\'s decision is Phase 0 only — $500, locked plan in 2–3 weeks.',
+      'Close the meeting here. Today\'s decision is Phase 0 only — $500 setup + $500/mo, locked plan in 2–3 weeks.',
       'Action: send Phase 0 agreement PDF this week. Book first working session.',
       'No commitment to Phase 1 until the locked plan is signed.',
     ],
