@@ -6,7 +6,7 @@ const PHASE_1_LINES = [
     icon: Wrench,
     name: 'Solution Scoping + Build',
     amount: '$25,125',
-    breakdown: '65 hrs Lead Architect @ $225 + 60 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s Parity scope (QB integration, inventory, POS, quote/order, AR, dispatch)  ·  every bucket gets ≥10 hrs of both Architect and Engineer',
+    breakdown: '65 hrs Lead Architect @ $225 + 60 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s operational readiness scope (QB integration, inventory, POS, quote/order, AR, dispatch)  ·  every bucket gets ≥10 hrs of both Architect and Engineer',
   },
   {
     icon: MapPin,
@@ -41,7 +41,7 @@ export function SlideRateCard() {
         </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Project <span className="text-gable-green">Proposal</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          Built around Reed's pace and budget. Lock the Parity scope first, see real value in production, then add deeper features when Reed chooses — no commitment to Phase 2 until you're ready.
+          Built around Reed's pace and budget. Lock the operational readiness scope first, see real value in production, then add deeper features when Reed chooses — no commitment to Phase 2 until you're ready.
         </p>
       </div>
 
@@ -58,7 +58,7 @@ export function SlideRateCard() {
         <div className="rounded-2xl border border-gable-green/30 bg-gable-green/10 p-4">
           <div className="flex items-center gap-2 mb-2">
             <Activity size={16} className="text-gable-green" />
-            <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk · Phase 1 — Parity Go-Live</span>
+            <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk · Phase 1 — Operational Readiness & Cutover</span>
           </div>
           <div className="text-xl font-bold text-white font-data">
             $18,600 <span className="text-sm text-zinc-500 line-through font-normal">$28,625</span>
@@ -78,7 +78,7 @@ export function SlideRateCard() {
       {/* Phase 1 detail */}
       <div className="mb-8">
         <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gable-green mb-3 flex items-center gap-2">
-          <Activity size={14} /> Phase 1 — Parity Go-Live (line items)
+          <Activity size={14} /> Phase 1 — Operational Readiness & Cutover (line items)
         </h3>
         <div className="space-y-2.5">
           {PHASE_1_LINES.map((item, i) => (
@@ -180,7 +180,7 @@ export function SlideRateCard() {
               </div>
             </div>
             <p className="text-[10px] text-zinc-500 leading-relaxed italic">
-              Send Reed's current merchant statement and we'll return firm rates within 2 business days. Run Payments is the underlying processor; FutureBuild AI does not mark up processing fees.
+              Send Reed's current merchant statement and we'll return firm rates within 2 business days.
             </p>
           </motion.div>
 
@@ -242,7 +242,7 @@ export function SlideRateCard() {
         <span className="text-[9px] font-bold uppercase tracking-widest text-gable-green/70 shrink-0 hidden md:inline">Next slide →</span>
       </motion.div>
 
-      {/* Payment milestones + Founding customer */}
+      {/* Payment milestones + Rate lock */}
       <div className="grid md:grid-cols-2 gap-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -259,7 +259,7 @@ export function SlideRateCard() {
               <span className="font-bold text-gable-green font-data">50%</span>
             </li>
             <li className="flex items-baseline justify-between text-sm">
-              <span className="text-zinc-400">Parity build complete</span>
+              <span className="text-zinc-400">Operational Readiness Build complete</span>
               <span className="font-bold text-gable-green font-data">30%</span>
             </li>
             <li className="flex items-baseline justify-between text-sm">
@@ -276,10 +276,10 @@ export function SlideRateCard() {
           className="p-6 rounded-2xl border border-gable-green/20 bg-gable-green/5"
         >
           <h4 className="font-bold text-sm mb-4 uppercase tracking-widest text-gable-green flex items-center gap-2">
-            <Sparkles size={14} /> Founding Customer Terms
+            <Sparkles size={14} /> Rate Lock &amp; Onboarding Terms
           </h4>
           <p className="text-xs text-gable-green/80 leading-relaxed italic">
-            Phase 1 hourly rates locked for any Phase 2 work for 24 months. Onboarding fees waived. First-customer co-marketing rights (with Reed approval) for case studies and references.
+            Phase 1 hourly rates locked for any Phase 2 work for 24 months. Onboarding fees waived. Optional co-marketing rights (with Reed approval) for case studies and references.
           </p>
         </motion.div>
       </div>

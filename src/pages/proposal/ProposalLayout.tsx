@@ -54,7 +54,7 @@ const SLIDES: SlideMeta[] = [
     title: 'How We Work',
     component: SlideEngagementModel,
     notes: [
-      'Crawl / Walk / Run: Phase 0 (discovery), Phase 1 (Parity Go-Live), Phase 2 (deeper features, deferred).',
+      'Crawl / Walk / Run: Phase 0 (discovery), Phase 1 (Operational Readiness & Cutover), Phase 2 (deeper features, deferred).',
       'Each phase has its own go/no-go. Reed is never on the hook for the next phase until the prior one delivers.',
       'Total commitment today is just Phase 0 — $500 setup + $500/mo during implementation.',
     ],
@@ -76,7 +76,7 @@ const SLIDES: SlideMeta[] = [
     component: SlideCustomizationScope,
     notes: [
       'Nine operational buckets. Each tagged Phase 1 (Walk), Phase 2 (Run), or both.',
-      'Walk = parity (daily ops). Run = deeper features Reed picks post-go-live.',
+      'Walk = operational readiness for daily ops. Run = deeper features Reed picks post-go-live.',
       'AIA billing, AI categorization, Pricing Tier Configurator, advanced BI, SSO, RFID, contractor portal all sit in Phase 2.',
     ],
   },
@@ -108,7 +108,7 @@ const SLIDES: SlideMeta[] = [
   },
   {
     id: 'phase1',
-    title: 'Phase 1 — Parity',
+    title: 'Phase 1 — Operational Readiness',
     component: SlidePhase1,
     notes: [
       'Walk phase. Net $18,600 after $10,025 "Running with Rowdy" referral credit. Sticker $28,625. NTE $24,000.',
@@ -128,7 +128,7 @@ const SLIDES: SlideMeta[] = [
       'Most features available; ~$2K–$3K each in dev hours to wire up. Contractor portal scoped custom.',
       'Typical 12-month spend: $6K–$9K across 2–3 modules.',
       'Phase 2+ also covers full QB workload migration (GableLBM becomes source of truth).',
-      'Founding customer rate lock: Phase 1 hourly rates hold for 24 months.',
+      '24-month rate lock: Phase 1 hourly rates hold for any Phase 2 work for 24 months.',
     ],
   },
   {

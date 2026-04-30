@@ -91,9 +91,9 @@ export function SlideRollout() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           Reed Building Supply — Implementation Timeline
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">10–12 Week <span className="text-gable-green">Parity Build</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">10–12 Week <span className="text-gable-green">Operational Readiness Build</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          Phase 0 (1 week setup + 2–3 weeks discovery) is pre-project. The 10–12 week Parity build clock — 8–10 weeks of build plus 2 weeks of final testing &amp; cutover — starts at Phase 0 sign-off. Phase 2 deeper features are scheduled separately, post go-live.
+          Phase 0 (1 week setup + 2–3 weeks discovery) is pre-project. The 10–12 week operational readiness build clock — 8–10 weeks of build plus 2 weeks of final testing &amp; cutover — starts at Phase 0 sign-off. Phase 2 deeper features are scheduled separately, post go-live.
         </p>
       </div>
 
@@ -108,7 +108,7 @@ export function SlideRollout() {
         <div className="rounded-xl border border-gable-green/30 bg-gable-green/10 p-3">
           <Activity size={14} className="text-gable-green mx-auto mb-1" />
           <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk</div>
-          <div className="text-xs text-white font-semibold">Parity Go-Live</div>
+          <div className="text-xs text-white font-semibold">Operational Readiness & Cutover</div>
           <div className="text-[10px] text-gable-green/80 mt-0.5">10–12 weeks</div>
         </div>
         <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-3">
@@ -155,7 +155,7 @@ export function SlideRollout() {
       <div className="flex items-center gap-3 mb-5">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gable-green/40 to-gable-green/40" />
         <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green flex items-center gap-2">
-          <Flag size={12} /> 10–12 Week Parity Build Clock
+          <Flag size={12} /> 10–12 Week Operational Readiness Build Clock
         </span>
         <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gable-green/40 to-gable-green/40" />
       </div>

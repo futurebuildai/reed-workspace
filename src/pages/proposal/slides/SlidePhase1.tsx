@@ -49,7 +49,7 @@ export function SlidePhase1() {
     <div className="w-full max-w-5xl">
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
-          <Activity size={12} /> Walk · Phase 1 — Parity Go-Live
+          <Activity size={12} /> Walk · Phase 1 — Operational Readiness & Cutover
         </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Replace Clover, <span className="text-gable-green">Augment QuickBooks</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
@@ -125,7 +125,7 @@ export function SlidePhase1() {
       >
         <CreditCard size={16} className="text-amber-400 shrink-0 mt-0.5" />
         <p className="text-[11px] text-amber-200/80 leading-relaxed">
-          <span className="font-bold text-amber-300">Why parity-first?</span> Reed's day-to-day keeps running on QuickBooks (source of truth) with GableLBM layered on top — no broken workflows on go-live day. Clover is the only legacy system fully replaced in Phase 1. Advanced features (AIA billing, AI categorization, RFID, Pricing Tier Configurator, advanced BI, SSO, contractor portal) and full QuickBooks workload migration move to Phase 2+ where Reed picks priorities based on real usage.
+          <span className="font-bold text-amber-300">Why operational-readiness-first?</span> Reed's day-to-day keeps running on QuickBooks (source of truth) with GableLBM layered on top — no broken workflows on go-live day. Clover is the only legacy system fully replaced in Phase 1. Advanced features (AIA billing, AI categorization, RFID, Pricing Tier Configurator, advanced BI, SSO, contractor portal) and full QuickBooks workload migration move to Phase 2+ where Reed picks priorities based on real usage.
         </p>
       </motion.div>
     </div>

@@ -121,7 +121,7 @@ export function SlidePhase2() {
       >
         <ArrowRight size={16} className="text-gable-green shrink-0 mt-0.5" />
         <p className="text-[11px] text-zinc-400 leading-relaxed">
-          <span className="font-bold text-gable-green">Founding-customer rate lock:</span> Phase 1 hourly rates ($225 LA / $175 Eng / $125 Trainer) hold for any Phase 2 work for 24 months — even if FutureBuild AI raises standard rates in the meantime.
+          <span className="font-bold text-gable-green">24-month rate lock:</span> Phase 1 hourly rates ($225 LA / $175 Eng / $125 Trainer) hold for any Phase 2 work for 24 months — even if FutureBuild AI raises standard rates in the meantime.
         </p>
       </motion.div>
     </div>
