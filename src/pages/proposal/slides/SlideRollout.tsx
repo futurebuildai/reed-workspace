@@ -4,12 +4,12 @@ import { Calendar, Search, Wrench, Database, Rocket, Heart, CheckCircle2, Flag, 
 const PHASES = [
   {
     label: 'Weeks 1–3',
-    title: 'Solution Design + Repo Fork + QB Import Pipeline',
+    title: 'Solution Design + Repo Fork + QB Integration Pipeline',
     icon: Wrench,
     deliverables: [
       'Build plan locked, repo forked from GableLBM',
       'Dev/staging environments scaffolded + CI wired',
-      'QB Enterprise import + validation pipeline',
+      'QuickBooks bi-directional sync pipeline + validation',
     ],
     hours: [
       { role: 'Lead Architect', hrs: 25 },
@@ -17,38 +17,51 @@ const PHASES = [
     ],
   },
   {
-    label: 'Weeks 4–5',
-    title: 'Core Build (POS, Quote/Order, AR, Inventory)',
+    label: 'Weeks 4–8',
+    title: 'Core Build (POS + Run Payments, Quote/Order, AR, Inventory, Dispatch)',
     icon: Database,
     deliverables: [
       'Inventory + reorder thresholds wired',
       'POS terminal + Run Payments integration',
       'Quote → PO → invoice conversion flow',
-      'Basic AR + monthly statements',
+      'Basic AR + monthly statements + dispatch',
     ],
     hours: [
       { role: 'Lead Architect', hrs: 12 },
-      { role: 'Engineer', hrs: 18 },
+      { role: 'Engineer', hrs: 26 },
     ],
   },
   {
-    label: 'Weeks 6–7',
-    title: 'UAT + Onsite Cutover + Training',
-    icon: Rocket,
+    label: 'Weeks 9–10',
+    title: 'UAT + Final Testing',
+    icon: CheckCircle2,
     deliverables: [
-      'User acceptance testing with Reed team',
-      '2-day onsite at McKees Rocks (cutover + hands-on training)',
-      'Production go-live + monitoring active',
+      'Full user acceptance testing with Reed team',
+      'QB sync validation under real-world load',
+      'Bug bash + final polish before cutover',
     ],
     hours: [
-      { role: 'Engineer', hrs: 4 },
-      { role: 'Onsite (1 person)', hrs: '2 days' },
-      { role: 'Trainer', hrs: 4 },
-      { role: 'Lead Architect', hrs: 8 },
+      { role: 'Engineer', hrs: 8 },
+      { role: 'Lead Architect', hrs: 4 },
     ],
   },
   {
-    label: 'Week 8+',
+    label: 'Weeks 11–12',
+    title: 'Onsite Cutover + Training + Go-Live',
+    icon: Rocket,
+    deliverables: [
+      '2-day onsite at Reed Building Supply (cutover + hands-on training)',
+      'Production go-live + monitoring active',
+      'Day-one hypercare coverage',
+    ],
+    hours: [
+      { role: 'Onsite (1 person)', hrs: '2 days' },
+      { role: 'Trainer', hrs: 4 },
+      { role: 'Lead Architect', hrs: 4 },
+    ],
+  },
+  {
+    label: 'Post Go-Live',
     title: 'Hypercare + Phase 2 Planning',
     icon: Heart,
     deliverables: [
@@ -77,9 +90,9 @@ export function SlideRollout() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           Reed Building Supply — Implementation Timeline
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">8-Week <span className="text-gable-green">Parity Build</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">10–12 Week <span className="text-gable-green">Parity Build</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          Compressed timeline focused on Parity scope only. Phase 0 is pre-project; the 8-week build clock starts at sign-off. Phase 2 deeper features are scheduled separately, post go-live.
+          Phase 0 (1 week setup + 2–3 weeks discovery) is pre-project. The 10–12 week Parity build clock — 8–10 weeks of build plus 2 weeks of final testing &amp; cutover — starts at Phase 0 sign-off. Phase 2 deeper features are scheduled separately, post go-live.
         </p>
       </div>
 
@@ -88,14 +101,14 @@ export function SlideRollout() {
         <div className="rounded-xl border border-white/5 bg-deep-space/40 p-3">
           <Footprints size={14} className="text-zinc-400 mx-auto mb-1" />
           <div className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">Crawl</div>
-          <div className="text-xs text-white font-semibold">Discovery</div>
-          <div className="text-[10px] text-zinc-600 mt-0.5">2–3 weeks</div>
+          <div className="text-xs text-white font-semibold">Setup + Discovery</div>
+          <div className="text-[10px] text-zinc-600 mt-0.5">3–4 weeks</div>
         </div>
         <div className="rounded-xl border border-gable-green/30 bg-gable-green/10 p-3">
           <Activity size={14} className="text-gable-green mx-auto mb-1" />
           <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk</div>
           <div className="text-xs text-white font-semibold">Parity Go-Live</div>
-          <div className="text-[10px] text-gable-green/80 mt-0.5">8 weeks</div>
+          <div className="text-[10px] text-gable-green/80 mt-0.5">10–12 weeks</div>
         </div>
         <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-3">
           <Zap size={14} className="text-purple-400 mx-auto mb-1" />
@@ -116,8 +129,8 @@ export function SlideRollout() {
         </div>
         <div className="flex-1">
           <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 mb-1">Pre-Project · Crawl</div>
-          <h3 className="font-bold text-sm text-zinc-300 mb-1">Phase 0 — Discovery & Env Setup</h3>
-          <p className="text-[11px] text-zinc-500">2–3 weeks · $500 setup + $500/mo dev/staging/AI starts at sign-off</p>
+          <h3 className="font-bold text-sm text-zinc-300 mb-1">Phase 0 — Setup &amp; Discovery</h3>
+          <p className="text-[11px] text-zinc-500">1 week setup + 2–3 weeks discovery (3–4 weeks total) · $500 setup + $500/mo dev/staging/AI starts at sign-off</p>
         </div>
         <div className="text-right shrink-0">
           <div className="text-xs font-bold text-zinc-300 font-data">$500</div>
@@ -133,7 +146,7 @@ export function SlideRollout() {
         className="rounded-xl border border-amber-500/15 bg-amber-500/[0.03] p-3 mb-5 text-center"
       >
         <p className="text-[11px] text-amber-200/70 leading-relaxed">
-          <span className="font-bold text-amber-300">During implementation (~3 months total):</span> $500/mo flat covers dev/staging environments + AI service runtime. Drops to standard Managed Hosting tier ($250 or $800/mo) at go-live.
+          <span className="font-bold text-amber-300">During implementation (~3–4 months total):</span> $500/mo flat covers dev/staging environments + AI service runtime. Drops to standard Managed Hosting tier ($250 or $800/mo) at go-live.
         </p>
       </motion.div>
 
@@ -141,7 +154,7 @@ export function SlideRollout() {
       <div className="flex items-center gap-3 mb-5">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gable-green/40 to-gable-green/40" />
         <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green flex items-center gap-2">
-          <Flag size={12} /> 8-Week Parity Build Clock
+          <Flag size={12} /> 10–12 Week Parity Build Clock
         </span>
         <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gable-green/40 to-gable-green/40" />
       </div>
@@ -246,9 +259,9 @@ export function SlideRollout() {
           <Rocket size={18} className="text-gable-green" />
         </div>
         <div className="flex-1">
-          <h4 className="font-bold text-sm text-white mb-1">Phase 1 effort: ~75 hrs across roles + 2 onsite days</h4>
+          <h4 className="font-bold text-sm text-white mb-1">Phase 1 effort: ~87 hrs across roles + 2 onsite days</h4>
           <p className="text-[11px] text-zinc-400 leading-relaxed">
-            From Phase 0 sign-off to Reed running production on GableLBM in <span className="text-gable-green font-bold">8 weeks</span>. No "big bang" — UAT + parallel QB sync precede every cutover. Phase 2 modules scheduled quarterly post-go-live, Reed-prioritized.
+            From Phase 0 sign-off to Reed running production on GableLBM in <span className="text-gable-green font-bold">10–12 weeks</span> (8–10 build + 2 testing/cutover). No "big bang" — UAT + parallel QB sync precede every cutover. Phase 2 modules scheduled quarterly post-go-live, Reed-prioritized.
           </p>
         </div>
       </motion.div>

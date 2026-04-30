@@ -145,7 +145,7 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
 
         <div className="mt-12 pt-8 border-t border-white/5 text-center space-y-1">
           <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-bold">GableLBM &middot; FutureBuild AI &copy; 2026</p>
-          <p className="text-[10px] text-zinc-700">McKees Rocks, PA &middot; reed.gablelbm.com</p>
+          <p className="text-[10px] text-zinc-700">Reed Building Supply &middot; reed.gablelbm.com</p>
         </div>
       </motion.div>
     </div>

@@ -86,7 +86,7 @@ export function SlideEngagementModel() {
             <div className="flex-1 min-w-0">
               <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green mb-0.5">Walk · Phase 1</div>
               <div className="text-sm font-bold text-white mb-1">Parity Go-Live</div>
-              <p className="text-[11px] text-zinc-300 leading-snug">$16,500 · 8 weeks · daily ops running on GableLBM</p>
+              <p className="text-[11px] text-zinc-300 leading-snug">$18,600 · 10–12 weeks · daily ops running on GableLBM</p>
             </div>
           </div>
           <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-4 flex items-start gap-3">

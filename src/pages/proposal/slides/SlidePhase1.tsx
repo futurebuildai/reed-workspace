@@ -10,7 +10,7 @@ const PARITY_MODULES = [
   {
     icon: Package,
     name: 'Inventory & Procurement',
-    items: ['Core item master (3K–5K SKUs)', 'Reorder thresholds + supplier lead times'],
+    items: ['Core item master', 'Reorder thresholds + supplier lead times'],
   },
   {
     icon: FileText,
@@ -90,8 +90,8 @@ export function SlidePhase1() {
           className="rounded-2xl border border-gable-green/30 bg-gable-green/10 p-4"
         >
           <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green mb-1">Phase 1 Net</div>
-          <div className="text-2xl font-bold text-white font-data">$16,500</div>
-          <div className="text-[10px] text-gable-green/80 mt-1">After Run Payments referral credit</div>
+          <div className="text-2xl font-bold text-white font-data">$18,600</div>
+          <div className="text-[10px] text-gable-green/80 mt-1">After Run Payments referral credit · NTE $22K</div>
         </motion.div>
 
         <motion.div
@@ -101,8 +101,8 @@ export function SlidePhase1() {
           className="rounded-2xl border border-white/5 bg-deep-space/50 p-4"
         >
           <div className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 mb-1">Timeline</div>
-          <div className="text-2xl font-bold text-white font-data">~8 weeks</div>
-          <div className="text-[10px] text-zinc-500 mt-1">From Phase 0 sign-off to go-live</div>
+          <div className="text-2xl font-bold text-white font-data">10–12 weeks</div>
+          <div className="text-[10px] text-zinc-500 mt-1">8–10 build + 2 testing/cutover</div>
         </motion.div>
 
         <motion.div
@@ -113,7 +113,7 @@ export function SlidePhase1() {
         >
           <div className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 mb-1">Onsite</div>
           <div className="text-2xl font-bold text-white font-data">2 days</div>
-          <div className="text-[10px] text-zinc-500 mt-1">McKees Rocks cutover + training</div>
+          <div className="text-[10px] text-zinc-500 mt-1">Reed Building Supply cutover + training</div>
         </motion.div>
       </div>
 

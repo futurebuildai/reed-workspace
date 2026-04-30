@@ -44,7 +44,7 @@ const BUCKETS: Array<{
     title: 'Inventory & Procurement',
     phase: 'P1',
     items: [
-      { text: '3,000–5,000 SKU import from QB Enterprise' },
+      { text: 'SKU import from QuickBooks Enterprise' },
       { text: 'Multi-vendor SKU mapping' },
       { text: 'Reorder thresholds + supplier lead times' },
     ],
@@ -65,7 +65,6 @@ const BUCKETS: Array<{
     phase: 'P1',
     items: [
       { text: 'Truck dispatch + driver app' },
-      { text: '3rd-party freight broker handoff' },
       { text: 'Delivery tickets + electronic POD' },
     ],
   },

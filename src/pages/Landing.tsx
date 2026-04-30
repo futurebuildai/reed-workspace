@@ -148,7 +148,7 @@ export function Landing() {
               {
                 number: '03',
                 title: 'AI-Native, Not AI-Bolted',
-                body: 'Intelligence is built into the foundation, not added as an afterthought. Automated product categorization, predictive reorder points, and smart cost analysis are part of the core architecture. Our US East AI endpoints keep your data domestic while giving your team intelligent automation from day one with low latency to McKees Rocks.',
+                body: 'Intelligence is built into the foundation, not added as an afterthought. Automated product categorization, predictive reorder points, and smart cost analysis are part of the core architecture. Our US East AI endpoints keep your data domestic while giving your team intelligent automation from day one with low latency to Reed Building Supply.',
                 accent: 'purple',
               },
               {
@@ -230,7 +230,7 @@ export function Landing() {
       <footer className="border-t border-white/5 py-8 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-zinc-600">
           <span>© 2026 FutureBuild AI · Confidential</span>
-          <span>Prepared for Reed Building Supply · McKees Rocks, PA</span>
+          <span>Prepared for Reed Building Supply</span>
         </div>
       </footer>
     </div>

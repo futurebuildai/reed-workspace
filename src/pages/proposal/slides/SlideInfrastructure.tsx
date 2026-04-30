@@ -5,7 +5,7 @@ export function SlideInfrastructure() {
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">High-Availability <span className="text-gable-green">Architecture</span></h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto">Enterprise-grade infrastructure with multi-cloud redundancy and US East data residency — closest to Reed's McKees Rocks operations.</p>
+        <p className="text-zinc-500 max-w-2xl mx-auto">Enterprise-grade infrastructure with multi-cloud redundancy and US East data residency — closest to Reed Building Supply operations.</p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -117,7 +117,7 @@ export function SlideInfrastructure() {
               <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-left">
                 <span className="text-[10px] font-bold text-blue-500 uppercase block mb-1">AI-Native Core</span>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Intelligence is baked in, not bolted on. Our US East LLM endpoints power automated categorization and predictive analytics with low latency to McKees Rocks.
+                  Intelligence is baked in, not bolted on. Our US East LLM endpoints power automated categorization and predictive analytics with low latency to Reed Building Supply.
                 </p>
               </div>
             </div>

@@ -5,14 +5,14 @@ const PHASE_1_LINES = [
   {
     icon: Wrench,
     name: 'Solution Scoping + Build',
-    amount: '$15,375',
-    breakdown: '45 hrs Lead Architect @ $225 + 30 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s Parity scope (inventory, POS, quote/order, AR)',
+    amount: '$17,475',
+    breakdown: '45 hrs Lead Architect @ $225 + 42 hrs Engineer @ $175  ·  fork of GableLBM tailored to Reed\'s Parity scope (QB integration, inventory, POS, quote/order, AR, dispatch)',
   },
   {
     icon: MapPin,
-    name: 'Onsite Cutover (1 person, 2 days)',
+    name: 'Onsite Cutover — 2 days @ $1,500/day',
     amount: '$3,000',
-    breakdown: '2 days × $1,500/day flat (all-in: travel + accommodations)  ·  hands-on cutover and team enablement at McKees Rocks',
+    breakdown: '$1,500/day flat day rate (all-in: travel + accommodations)  ·  2 days × $1,500 = $3,000 added to Phase 1 total  ·  hands-on cutover and team enablement at Reed Building Supply',
   },
   {
     icon: GraduationCap,
@@ -61,7 +61,7 @@ export function SlideRateCard() {
             <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Walk · Phase 1 — Parity Go-Live</span>
           </div>
           <div className="text-xl font-bold text-white font-data">
-            $16,500 <span className="text-sm text-zinc-500 line-through font-normal">$18,875</span>
+            $18,600 <span className="text-sm text-zinc-500 line-through font-normal">$20,975</span>
           </div>
           <div className="text-[10px] text-gable-green mt-1">After $2,375 Run Payments referral credit</div>
         </div>
@@ -126,11 +126,11 @@ export function SlideRateCard() {
           >
             <div>
               <div className="text-sm uppercase tracking-widest font-bold text-gable-green">Phase 1 Net — Estimated</div>
-              <div className="text-[10px] text-amber-400/80 uppercase tracking-widest font-bold mt-1">Capped at $20,000 not-to-exceed</div>
+              <div className="text-[10px] text-amber-400/80 uppercase tracking-widest font-bold mt-1">Capped at $22,000 not-to-exceed</div>
             </div>
             <div className="text-right">
-              <div className="text-3xl font-bold text-white font-data">$16,500</div>
-              <div className="text-[10px] text-amber-400/80 font-data">/ $20,000 max</div>
+              <div className="text-3xl font-bold text-white font-data">$18,600</div>
+              <div className="text-[10px] text-amber-400/80 font-data">/ $22,000 max</div>
             </div>
           </motion.div>
 
@@ -142,7 +142,7 @@ export function SlideRateCard() {
           >
             <Lock size={14} className="text-zinc-500 shrink-0 mt-0.5" />
             <p className="text-[11px] text-zinc-400 leading-relaxed">
-              <span className="font-bold text-white">Hourly rates unchanged.</span> Lead Architect $225  ·  Engineer $175  ·  Trainer $125  ·  PM $150. Approved scope expansion bills against the $3,500 NTE buffer at standard rates. Anything beyond $20,000 requires a written change order.
+              <span className="font-bold text-white">Hourly rates unchanged.</span> Lead Architect $225  ·  Engineer $175  ·  Trainer $125  ·  PM $150. Approved scope expansion bills against the $3,400 NTE buffer at standard rates. Anything beyond $22,000 requires a written change order.
             </p>
           </motion.div>
 
