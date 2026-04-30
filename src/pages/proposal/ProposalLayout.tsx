@@ -5,7 +5,11 @@ import {
   ChevronRight,
   Menu,
   LayoutDashboard,
-  X
+  X,
+  Share2,
+  Check,
+  Presentation,
+  Keyboard,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '../../lib/utils';
@@ -26,28 +30,168 @@ import { SlideRateCard } from './slides/SlideRateCard';
 import { SlideInfrastructure } from './slides/SlideInfrastructure';
 // import { SlideManagedServices } from './slides/SlideManagedServices';
 import { SlideChecklist } from './slides/SlideChecklist';
+import { SlideNextSteps } from './slides/SlideNextSteps';
 
-const SLIDES = [
-  { id: 'title', title: 'Introduction', component: SlideTitle },
-  { id: 'model', title: 'How We Work', component: SlideEngagementModel },
-  { id: 'replacement', title: 'What You\'re Replacing', component: SlideReplacement },
-  { id: 'scope', title: 'Customization Scope', component: SlideCustomizationScope },
-  { id: 'rollout', title: 'Scope & Rollout', component: SlideRollout },
-  { id: 'phase0', title: 'Phase 0 Details', component: SlidePhase0 },
-  { id: 'phase1', title: 'Phase 1 Details', component: SlidePhase1 },
-  { id: 'phase2', title: 'Phase 2 Details', component: SlidePhase2 },
-  { id: 'migration', title: 'AI Migration Engine', component: SlideMigration },
-  { id: 'wiki', title: 'Wiki & AI Assistant', component: SlideWiki },
-  { id: 'rates', title: 'Rate Card', component: SlideRateCard },
-  { id: 'infra', title: 'Infrastructure', component: SlideInfrastructure },
-//  { id: 'msp', title: 'Managed Services', component: SlideManagedServices },
-  { id: 'discovery', title: 'Discovery Checklist', component: SlideChecklist },
+interface SlideMeta {
+  id: string;
+  title: string;
+  component: React.ComponentType;
+  notes: string[];
+}
+
+const SLIDES: SlideMeta[] = [
+  {
+    id: 'title',
+    title: 'Introduction',
+    component: SlideTitle,
+    notes: [
+      'Open: who we are (FutureBuild AI / GableLBM) and why a fork makes sense for Reed.',
+      'Anchor: this is a strategic partnership, not a SaaS purchase. Reed owns the source.',
+      'Set expectation: 12 short slides. We close on Phase 0 today, not Phase 1.',
+    ],
+  },
+  {
+    id: 'model',
+    title: 'How We Work',
+    component: SlideEngagementModel,
+    notes: [
+      'Three phases: 0 (discovery, $500), 1 (build, ~$23K), 2 (post-launch growth).',
+      'Each phase has its own go/no-go. Reed is never on the hook for the next phase until the prior one delivers.',
+    ],
+  },
+  {
+    id: 'replacement',
+    title: 'What You\'re Replacing',
+    component: SlideReplacement,
+    notes: [
+      'BisTrack (yard) + Great Plains (books) = two systems, manual sync, double entry.',
+      'GableLBM collapses both into one data model. Reconciliation step disappears entirely.',
+      'No per-seat licensing. Reed owns the source forever.',
+    ],
+  },
+  {
+    id: 'scope',
+    title: 'Customization Scope',
+    component: SlideCustomizationScope,
+    notes: [
+      'Nine operational buckets we will customize from GableLBM main.',
+      'Phase 0 locks the per-bucket scope using the included 10 Sr Architect hours.',
+      'Note QB parallel execution + long-term native QB embedding plan.',
+    ],
+  },
+  {
+    id: 'rollout',
+    title: 'Scope & Rollout',
+    component: SlideRollout,
+    notes: [
+      'Phase 0 is pre-project; the 3-month build clock starts at Phase 0 sign-off.',
+      'Month 4 is optional hypercare buffer.',
+      'No big-bang cutover — UAT and parallel validation precede every step.',
+    ],
+  },
+  {
+    id: 'phase0',
+    title: 'Phase 0 Details',
+    component: SlidePhase0,
+    notes: [
+      'Phase 0 = $500 (covers $250 setup + 30 days dev/staging infra).',
+      '10 free Sr Architect hours included ($2,250 value) — sufficient to fully scope Phase 1.',
+      'If Reed proceeds, Phase 0 cost rolls into Phase 1.',
+    ],
+  },
+  {
+    id: 'phase1',
+    title: 'Phase 1 Details',
+    component: SlidePhase1,
+    notes: [
+      'Fixed-price build phase. 50/30/20 milestone billing.',
+      'Includes 3-day onsite at McKees Rocks for cutover + hands-on training.',
+    ],
+  },
+  {
+    id: 'phase2',
+    title: 'Phase 2 Details',
+    component: SlidePhase2,
+    notes: [
+      'Post-launch growth: SSO, advanced BI, RFID, Reed-driven roadmap.',
+      'Quoted per scope after go-live. Reed prioritizes the queue.',
+    ],
+  },
+  {
+    id: 'migration',
+    title: 'AI Migration Engine',
+    component: SlideMigration,
+    notes: [
+      'AI-assisted migration from QuickBooks Enterprise — SKUs, customers, vendors, history.',
+      'Parallel execution during transition. Long-term: embed QB functionality natively in GableLBM.',
+    ],
+  },
+  {
+    id: 'wiki',
+    title: 'Wiki & AI Assistant',
+    component: SlideWiki,
+    notes: [
+      'Knowledge base + AI assistant trained on Reed\'s specific workflows.',
+      'Reduces onboarding time for new hires; captures tribal knowledge.',
+    ],
+  },
+  {
+    id: 'rates',
+    title: 'Rate Card',
+    component: SlideRateCard,
+    notes: [
+      'Total: $23,250 one-time + $250–$800/mo recurring. NTE cap $28,000.',
+      'Tier 1 ($250) covers DO hosting + daily snapshots + PITR backups.',
+      'Tier 2 ($800) adds 4 hrs/mo support, 99.9% SLA, quarterly upstream merges, extended retention.',
+      'Founding customer terms: rate lock + 2-year onboarding waive.',
+    ],
+  },
+  {
+    id: 'infra',
+    title: 'Infrastructure',
+    component: SlideInfrastructure,
+    notes: [
+      'DigitalOcean Toronto (compute + DB) + Montréal (AI). Canadian data residency.',
+      'Daily volume snapshots + Managed PostgreSQL PITR (7-day window) included in Tier 1.',
+      'Tier 2 adds 30-day offsite to DO Spaces + RPO < 1hr / RTO < 4hr SLA.',
+    ],
+  },
+  //  { id: 'msp', title: 'Managed Services', component: SlideManagedServices, notes: [] },
+  {
+    id: 'discovery',
+    title: 'Discovery Checklist',
+    component: SlideChecklist,
+    notes: [
+      'Inputs we need from Reed for Phase 0.',
+      'The discovery form (link in CTA) captures these answers and saves as you type.',
+    ],
+  },
+  {
+    id: 'next',
+    title: 'Next Steps',
+    component: SlideNextSteps,
+    notes: [
+      'Close the meeting here. Today\'s decision is Phase 0 only — $500, locked plan in 2–3 weeks.',
+      'Action: send Phase 0 agreement PDF this week. Book first working session.',
+      'No commitment to Phase 1 until the locked plan is signed.',
+    ],
+  },
 ];
+
+const SHARE_PASSWORD = 'HowReedWins2026';
 
 export function ProposalView() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [tocOpen, setTocOpen] = useState(false);
   const [direction, setDirection] = useState(0);
+  const [presenterMode, setPresenterMode] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
+  const [showNavHint, setShowNavHint] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return !window.localStorage.getItem('reed_proposal_nav_hint_dismissed');
+  });
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
     if (currentSlide < SLIDES.length - 1) {
@@ -63,16 +207,72 @@ export function ProposalView() {
     }
   }, [currentSlide]);
 
+  const dismissNavHint = useCallback(() => {
+    setShowNavHint(false);
+    try {
+      window.localStorage.setItem('reed_proposal_nav_hint_dismissed', '1');
+    } catch {
+      // ignore storage failures
+    }
+  }, []);
+
+  const handleShare = useCallback(async () => {
+    const shareText = `Reed Building Supply × GableLBM — Confidential Proposal\n\n${window.location.origin}/proposal\nAccess code: ${SHARE_PASSWORD}`;
+    try {
+      await navigator.clipboard.writeText(shareText);
+      setShareCopied(true);
+      setShareOpen(true);
+      setTimeout(() => {
+        setShareCopied(false);
+        setShareOpen(false);
+      }, 3000);
+    } catch {
+      setShareOpen(true);
+    }
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+        return;
+      }
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+        if (showNavHint) dismissNavHint();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+        if (showNavHint) dismissNavHint();
+      }
+      if (e.key === 'p' || e.key === 'P') {
+        setPresenterMode(m => !m);
+      }
+      if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+        setShortcutsOpen(o => !o);
+      }
+      if (e.key === 'Escape') {
+        setPresenterMode(false);
+        setShortcutsOpen(false);
+        setShareOpen(false);
+        setTocOpen(false);
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [nextSlide, prevSlide]);
+  }, [nextSlide, prevSlide, showNavHint, dismissNavHint]);
+
+  // Auto-dismiss nav hint after 8 seconds
+  useEffect(() => {
+    if (!showNavHint) return;
+    const t = setTimeout(() => dismissNavHint(), 8000);
+    return () => clearTimeout(t);
+  }, [showNavHint, dismissNavHint]);
 
   const CurrentSlideComponent = SLIDES[currentSlide].component;
+  const currentNotes = SLIDES[currentSlide].notes;
 
   return (
     <div className="min-h-screen bg-deep-space text-white font-sans overflow-hidden flex flex-col selection:bg-gable-green/30 selection:text-gable-green">
@@ -98,14 +298,73 @@ export function ProposalView() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          {/* Partner Room Insights moved to standalone discovery page */}
-          
-          <a href="https://demo.community/gablelbm.com" target="_blank" rel="noreferrer" className="p-2 hover:bg-white/5 rounded-lg text-zinc-400 hover:text-white transition-colors title='Switch to ERP Demo'">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setPresenterMode(m => !m)}
+            title="Toggle presenter notes (P)"
+            className={cn(
+              "px-3 py-1.5 rounded-lg transition-all flex items-center gap-2 border text-xs font-medium",
+              presenterMode
+                ? "bg-gable-green/15 text-gable-green border-gable-green/30"
+                : "hover:bg-white/5 text-zinc-400 hover:text-white border-transparent hover:border-white/5"
+            )}
+          >
+            <Presentation size={14} />
+            <span className="hidden md:inline">Presenter</span>
+          </button>
+
+          <button
+            onClick={handleShare}
+            title="Copy share link + access code"
+            className="px-3 py-1.5 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-white transition-all flex items-center gap-2 border border-transparent hover:border-white/5 text-xs font-medium"
+          >
+            {shareCopied ? <Check size={14} className="text-gable-green" /> : <Share2 size={14} />}
+            <span className="hidden md:inline">{shareCopied ? 'Copied' : 'Share'}</span>
+          </button>
+
+          <button
+            onClick={() => setShortcutsOpen(true)}
+            title="Keyboard shortcuts (?)"
+            className="p-2 hover:bg-white/5 rounded-lg text-zinc-400 hover:text-white transition-colors"
+          >
+            <Keyboard size={16} />
+          </button>
+
+          <a href="https://demo.community/gablelbm.com" target="_blank" rel="noreferrer" title="Switch to ERP Demo" className="p-2 hover:bg-white/5 rounded-lg text-zinc-400 hover:text-white transition-colors">
             <LayoutDashboard size={18} />
           </a>
         </div>
       </header>
+
+      {/* Share confirmation toast */}
+      <AnimatePresence>
+        {shareOpen && (
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            className="fixed top-20 right-6 z-[120] bg-slate-steel border border-gable-green/30 rounded-2xl shadow-elevation-3 p-4 max-w-sm"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-gable-green/15 flex items-center justify-center shrink-0">
+                <Check size={16} className="text-gable-green" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-white mb-1">{shareCopied ? 'Link + access code copied' : 'Share details'}</div>
+                <div className="text-[11px] text-zinc-400 leading-relaxed font-mono break-all">
+                  {window.location.origin}/proposal
+                </div>
+                <div className="text-[11px] text-zinc-400 leading-relaxed mt-1">
+                  Access code: <span className="font-mono text-gable-green">{SHARE_PASSWORD}</span>
+                </div>
+              </div>
+              <button onClick={() => setShareOpen(false)} className="text-zinc-500 hover:text-white shrink-0">
+                <X size={14} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Main Slide Area */}
       <main className="flex-1 relative flex items-center justify-center p-6 md:p-12 overflow-hidden">
@@ -172,6 +431,118 @@ export function ProposalView() {
           ))}
         </div>
       </main>
+
+      {/* Navigation hint (first-visit, auto-dismiss) */}
+      <AnimatePresence>
+        {showNavHint && (
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 30, opacity: 0 }}
+            className="fixed bottom-20 left-1/2 -translate-x-1/2 z-[90] bg-slate-steel/95 backdrop-blur-xl border border-gable-green/30 rounded-full shadow-elevation-3 px-5 py-2.5 flex items-center gap-3"
+          >
+            <span className="text-[11px] text-zinc-300">
+              Use <kbd className="px-1.5 py-0.5 mx-0.5 rounded bg-white/10 border border-white/10 text-[10px] font-mono text-gable-green">←</kbd>
+              <kbd className="px-1.5 py-0.5 mx-0.5 rounded bg-white/10 border border-white/10 text-[10px] font-mono text-gable-green">→</kbd>
+              or <kbd className="px-1.5 py-0.5 mx-0.5 rounded bg-white/10 border border-white/10 text-[10px] font-mono text-gable-green">space</kbd>
+              to navigate &middot; <kbd className="px-1.5 py-0.5 mx-0.5 rounded bg-white/10 border border-white/10 text-[10px] font-mono text-gable-green">?</kbd> for shortcuts
+            </span>
+            <button onClick={dismissNavHint} className="text-zinc-500 hover:text-white">
+              <X size={12} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Presenter notes overlay */}
+      <AnimatePresence>
+        {presenterMode && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            className="fixed bottom-0 inset-x-0 z-[95] bg-deep-space/95 backdrop-blur-xl border-t border-gable-green/30 shadow-elevation-3"
+          >
+            <div className="max-w-5xl mx-auto px-6 py-4">
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 flex flex-col items-center gap-1 pt-1">
+                  <Presentation size={18} className="text-gable-green" />
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-gable-green/70">Notes</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-500 mb-2">
+                    Slide {currentSlide + 1} / {SLIDES.length} &middot; {SLIDES[currentSlide].title}
+                  </div>
+                  <ul className="space-y-1.5">
+                    {currentNotes.map((note, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-zinc-200 leading-snug">
+                        <span className="text-gable-green mt-1">▸</span>
+                        <span>{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <button
+                  onClick={() => setPresenterMode(false)}
+                  className="text-zinc-500 hover:text-white shrink-0"
+                  title="Close presenter notes (P or Esc)"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Keyboard shortcuts modal */}
+      <AnimatePresence>
+        {shortcutsOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShortcutsOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[105]"
+            />
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[110] bg-slate-steel border border-white/10 rounded-2xl shadow-elevation-3 w-full max-w-md overflow-hidden"
+            >
+              <div className="p-4 bg-deep-space/50 border-b border-white/5 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Keyboard size={16} className="text-gable-green" />
+                  <span className="text-sm font-bold text-white">Keyboard Shortcuts</span>
+                </div>
+                <button onClick={() => setShortcutsOpen(false)} className="text-zinc-500 hover:text-white">
+                  <X size={14} />
+                </button>
+              </div>
+              <div className="p-5 space-y-2.5">
+                {[
+                  { keys: ['→', 'Space'], desc: 'Next slide' },
+                  { keys: ['←'], desc: 'Previous slide' },
+                  { keys: ['P'], desc: 'Toggle presenter notes' },
+                  { keys: ['?'], desc: 'Show this help' },
+                  { keys: ['Esc'], desc: 'Close any overlay' },
+                ].map((s, i) => (
+                  <div key={i} className="flex items-center justify-between text-sm">
+                    <span className="text-zinc-300">{s.desc}</span>
+                    <div className="flex gap-1">
+                      {s.keys.map(k => (
+                        <kbd key={k} className="px-2 py-1 rounded bg-white/5 border border-white/10 text-[11px] font-mono text-gable-green min-w-[28px] text-center">{k}</kbd>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Table of Contents Popup */}
       <AnimatePresence>

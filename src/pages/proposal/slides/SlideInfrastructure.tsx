@@ -1,4 +1,4 @@
-import { Shield, Cloud, Database, Globe, Zap, HelpCircle } from 'lucide-react';
+import { Shield, Cloud, Database, Globe, Zap, HelpCircle, Archive } from 'lucide-react';
 
 export function SlideInfrastructure() {
   return (
@@ -13,12 +13,14 @@ export function SlideInfrastructure() {
           <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
             <h3 className="font-bold flex items-center gap-2 mb-6">
               <Cloud size={20} className="text-blue-400" />
-              Primary Stack (Toronto)
+              Primary Stack (DigitalOcean — Toronto)
             </h3>
             <div className="space-y-4">
               {[
                 { label: 'Compute', val: 'DigitalOcean Premium Droplets' },
-                { label: 'Database', val: 'Managed PostgreSql w/ PITR Backups' },
+                { label: 'Database', val: 'Managed PostgreSQL (HA pair)' },
+                { label: 'Object Storage', val: 'DO Spaces (S3-compatible)' },
+                { label: 'CDN / Edge', val: 'Cloudflare (TLS, DDoS, WAF)' },
                 { label: 'Integrations', val: 'Open API Layer (REST/JSON)' },
                 { label: 'Messaging', val: 'NATS JetStream (Event Bus)' },
               ].map((row, i) => (
@@ -28,6 +30,38 @@ export function SlideInfrastructure() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="glass-card rounded-2xl p-6 border-emerald-500/20 bg-emerald-500/[0.03]">
+            <h3 className="font-bold flex items-center gap-2 mb-4">
+              <Archive size={20} className="text-emerald-400" />
+              Data Protection & Recovery
+            </h3>
+            <div className="grid grid-cols-2 gap-3 mb-4">
+              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
+                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">Database PITR</div>
+                <div className="text-xs text-white font-mono">7-day window</div>
+                <div className="text-[10px] text-zinc-500 mt-0.5">point-in-time restore</div>
+              </div>
+              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
+                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">Volume Snapshots</div>
+                <div className="text-xs text-white font-mono">Daily · 7-day</div>
+                <div className="text-[10px] text-zinc-500 mt-0.5">automated, encrypted</div>
+              </div>
+              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
+                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">Tier 2 Extended</div>
+                <div className="text-xs text-white font-mono">30-day offsite</div>
+                <div className="text-[10px] text-zinc-500 mt-0.5">DO Spaces archive</div>
+              </div>
+              <div className="bg-deep-space/60 rounded-lg p-3 border border-white/5">
+                <div className="text-[9px] uppercase tracking-widest font-bold text-emerald-400/80 mb-1">RPO / RTO</div>
+                <div className="text-xs text-white font-mono">&lt; 1hr / &lt; 4hr</div>
+                <div className="text-[10px] text-zinc-500 mt-0.5">tier 2 SLA</div>
+              </div>
+            </div>
+            <p className="text-[10px] text-zinc-500 leading-relaxed">
+              All backups encrypted at rest (AES-256). Quarterly restore drills validate recovery procedures. Optional on-prem export sync available for Reed's local archive requirements.
+            </p>
           </div>
 
           <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
@@ -104,9 +138,9 @@ export function SlideInfrastructure() {
             </p>
           </div>
           <div className="bg-deep-space/40 rounded-xl p-4 border border-white/5">
-            <span className="text-[10px] font-bold text-gable-green uppercase block mb-2">Local / On-Premise DB Backups</span>
+            <span className="text-[10px] font-bold text-gable-green uppercase block mb-2">SSO / Identity Provider</span>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Is there a requirement to maintain local on-premise database backups in addition to cloud-hosted PITR backups? What retention and compliance expectations exist for on-site data?
+              Does Reed use Google Workspace or Microsoft 365 as the identity backbone? SSO can land in Phase 2 once the user model and role tiers are validated in Phase 1.
             </p>
           </div>
         </div>

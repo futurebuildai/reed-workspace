@@ -33,22 +33,46 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gable-green/5 blur-[120px] rounded-full" />
       
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md relative"
       >
         <div className="text-center mb-10">
-          <motion.div 
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-[10px] uppercase tracking-[0.3em] font-bold text-gable-green/70 mb-5"
+          >
+            Strategic Partnership
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center justify-center gap-4 mb-7"
+          >
+            <span className="font-serif italic tracking-tight text-xl md:text-2xl text-white">Reed Building Supply</span>
+            <span className="text-zinc-600 font-light">×</span>
+            <span className="font-sans text-lg md:text-xl font-bold tracking-tight">
+              Gable<span className="text-gable-green font-light tracking-widest">LBM</span>
+            </span>
+          </motion.div>
+
+          <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="w-16 h-16 bg-gable-green/10 border border-gable-green/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow"
+            transition={{ delay: 0.3 }}
+            className="w-14 h-14 bg-gable-green/10 border border-gable-green/20 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-glow"
           >
-            <Lock className="text-gable-green" size={28} />
+            <Lock className="text-gable-green" size={24} />
           </motion.div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Reed Building Materials Partner Portal</h1>
-          <p className="text-zinc-500 text-sm">Enter password to access the Reed Building Materials Partner Portal.</p>
+          <h1 className="text-2xl font-bold text-white mb-2 tracking-tight">Confidential Proposal</h1>
+          <p className="text-zinc-500 text-sm leading-relaxed max-w-sm mx-auto">
+            Prepared for Reed Building Supply leadership and team. Enter the access code shared with your team to continue.
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -119,8 +143,9 @@ export function ProposalPassword({ onAuthenticated }: ProposalPasswordProps) {
           )}
         </AnimatePresence>
 
-        <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-bold">GableLBM | OS &copy; 2026</p>
+        <div className="mt-12 pt-8 border-t border-white/5 text-center space-y-1">
+          <p className="text-[10px] text-zinc-600 uppercase tracking-[0.3em] font-bold">GableLBM &middot; FutureBuild AI &copy; 2026</p>
+          <p className="text-[10px] text-zinc-700">McKees Rocks, PA &middot; reed.gablelbm.com</p>
         </div>
       </motion.div>
     </div>

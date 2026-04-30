@@ -146,9 +146,11 @@ export function SlideRateCard() {
             <h4 className="font-bold text-base text-white mb-1">Managed Hosting</h4>
             <div className="text-3xl font-bold text-white mb-4 font-data">$250<span className="text-sm text-zinc-500 font-sans">/mo</span></div>
             <ul className="space-y-2 text-xs text-zinc-400 mb-4 flex-1">
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Digital Ocean hosting + monitoring</li>
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Reactive bug response (best-effort)</li>
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Digital Ocean Toronto droplets + uptime monitoring</li>
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span><span><strong className="text-white">Daily volume snapshots</strong> (7-day retention)</span></li>
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span><span>Managed PostgreSQL with <strong className="text-white">PITR</strong> (point-in-time recovery, 7-day window)</span></li>
               <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Dev/staging environments included</li>
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Reactive bug response (best-effort)</li>
             </ul>
             <div className="pt-3 border-t border-white/5">
               <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold">No SLA</span>
@@ -174,8 +176,9 @@ export function SlideRateCard() {
             <ul className="space-y-2 text-xs text-zinc-300 mb-4 flex-1">
               <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" />Everything in Tier 1</li>
               <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">4 hrs/mo bundled support</strong> (rolls 90 days)</span></li>
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><strong className="text-white">Quarterly upstream merges</strong> from GableLBM main</li>
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><strong className="text-white">99.9% uptime SLA</strong> (P1 &lt; 4hr / P2 &lt; 1bd / P3 &lt; 3bd)</li>
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">Extended retention</strong> — 30-day snapshots + offsite backup to DO Spaces</span></li>
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">Quarterly upstream merges</strong> from GableLBM main</span></li>
+              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">99.9% uptime SLA</strong> (P1 &lt; 4hr / P2 &lt; 1bd / P3 &lt; 3bd)</span></li>
               <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" />Patch management + priority bug queue</li>
             </ul>
             <div className="pt-3 border-t border-gable-green/20">
