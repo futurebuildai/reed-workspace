@@ -146,7 +146,7 @@ export function SlideRateCard() {
             <h4 className="font-bold text-base text-white mb-1">Managed Hosting</h4>
             <div className="text-3xl font-bold text-white mb-4 font-data">$250<span className="text-sm text-zinc-500 font-sans">/mo</span></div>
             <ul className="space-y-2 text-xs text-zinc-400 mb-4 flex-1">
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Digital Ocean Toronto droplets + uptime monitoring</li>
+              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>DigitalOcean NYC3 droplets + uptime monitoring</li>
               <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span><span><strong className="text-white">Daily volume snapshots</strong> (7-day retention)</span></li>
               <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span><span>Managed PostgreSQL with <strong className="text-white">PITR</strong> (point-in-time recovery, 7-day window)</span></li>
               <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Dev/staging environments included</li>

@@ -151,7 +151,7 @@ const SLIDES: SlideMeta[] = [
     title: 'Infrastructure',
     component: SlideInfrastructure,
     notes: [
-      'DigitalOcean Toronto (compute + DB) + Montréal (AI). Canadian data residency.',
+      'DigitalOcean NYC3 (compute + DB) + GCP us-east4 Virginia (AI). Low latency to McKees Rocks.',
       'Daily volume snapshots + Managed PostgreSQL PITR (7-day window) included in Tier 1.',
       'Tier 2 adds 30-day offsite to DO Spaces + RPO < 1hr / RTO < 4hr SLA.',
     ],

@@ -155,7 +155,7 @@ export function Landing() {
               {
                 number: '03',
                 title: 'AI-Native, Not AI-Bolted',
-                body: 'Intelligence is built into the foundation, not added as an afterthought. Automated product categorization, predictive reorder points, and smart cost analysis are part of the core architecture. Our Canadian-hosted AI endpoints keep your data on sovereign soil while giving your team intelligent automation from day one.',
+                body: 'Intelligence is built into the foundation, not added as an afterthought. Automated product categorization, predictive reorder points, and smart cost analysis are part of the core architecture. Our US East AI endpoints keep your data domestic while giving your team intelligent automation from day one with low latency to McKees Rocks.',
                 accent: 'purple',
               },
               {

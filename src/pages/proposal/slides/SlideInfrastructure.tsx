@@ -5,7 +5,7 @@ export function SlideInfrastructure() {
     <div className="w-full max-w-5xl">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">High-Availability <span className="text-gable-green">Architecture</span></h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto">Enterprise-grade infrastructure with multi-cloud redundancy and Canadian data residency.</p>
+        <p className="text-zinc-500 max-w-2xl mx-auto">Enterprise-grade infrastructure with multi-cloud redundancy and US East data residency — closest to Reed's McKees Rocks operations.</p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -13,7 +13,7 @@ export function SlideInfrastructure() {
           <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
             <h3 className="font-bold flex items-center gap-2 mb-6">
               <Cloud size={20} className="text-blue-400" />
-              Primary Stack (DigitalOcean — Toronto)
+              Primary Stack (DigitalOcean — NYC3)
             </h3>
             <div className="space-y-4">
               {[
@@ -67,11 +67,11 @@ export function SlideInfrastructure() {
           <div className="glass-card rounded-2xl p-6 border-white/5 bg-deep-space/30">
             <h3 className="font-bold flex items-center gap-2 mb-6">
               <Zap size={20} className="text-purple-400" />
-              AI-Native Services (Montréal)
+              AI-Native Services (US East)
             </h3>
             <div className="space-y-4">
               {[
-                { label: 'AI Inference', val: 'GCP Vertex AI / Montréal' },
+                { label: 'AI Inference', val: 'GCP Vertex AI / us-east4 (Virginia)' },
                 { label: 'Automations', val: 'Easy Flow Integration Engine' },
                 { label: 'Audit Logs', val: 'Cloud Logging (Immutable)' },
               ].map((row, i) => (
@@ -112,7 +112,7 @@ export function SlideInfrastructure() {
               <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-left">
                 <span className="text-[10px] font-bold text-blue-500 uppercase block mb-1">AI-Native Core</span>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Intelligence is baked in, not bolted on. Our Canadian-hosted LLM endpoints power automated categorization and predictive analytics.
+                  Intelligence is baked in, not bolted on. Our US East LLM endpoints power automated categorization and predictive analytics with low latency to McKees Rocks.
                 </p>
               </div>
             </div>
