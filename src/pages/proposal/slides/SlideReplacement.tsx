@@ -17,23 +17,23 @@ export function SlideReplacement() {
               </div>
               <div>
                 <h4 className="font-bold">Clover POS</h4>
-                <p className="text-xs text-zinc-500">Retail Sales</p>
+                <p className="text-xs text-zinc-500">Phase 1 — fully replaced by Run Payments</p>
               </div>
             </div>
             <XIcon size={20} className="text-red-500/50" />
           </div>
 
-          <div className="p-6 rounded-2xl border border-white/5 bg-white/5 opacity-60 flex items-center justify-between">
+          <div className="p-6 rounded-2xl border border-amber-500/20 bg-amber-500/5 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center">
-                <Power size={20} className="text-zinc-500" />
+              <div className="w-10 h-10 rounded-full bg-amber-500/15 flex items-center justify-center">
+                <Power size={20} className="text-amber-400" />
               </div>
               <div>
-                <h4 className="font-bold">QuickBooks</h4>
-                <p className="text-xs text-zinc-500">Accounting & GL</p>
+                <h4 className="font-bold">QuickBooks Desktop</h4>
+                <p className="text-xs text-amber-200/80">Phase 1 — kept as source of truth, integrates bi-directionally  ·  Phase 2+ — workloads migrate into GableLBM</p>
               </div>
             </div>
-            <XIcon size={20} className="text-red-500/50" />
+            <span className="text-[9px] font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-1 rounded whitespace-nowrap">Integrate, then migrate</span>
           </div>
 
           <div className="flex justify-center py-2">

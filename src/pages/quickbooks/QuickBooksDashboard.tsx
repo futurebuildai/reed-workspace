@@ -29,7 +29,7 @@ interface SyncJob {
     completed_at: string | null;
 }
 
-export const BisTrackDashboard = () => {
+export const QuickBooksDashboard = () => {
     const [health, setHealth] = useState<SyncHealth | null>(null);
     const [jobs, setJobs] = useState<SyncJob[]>([]);
     const [loading, setLoading] = useState(true);
@@ -39,8 +39,8 @@ export const BisTrackDashboard = () => {
     const fetchData = useCallback(async () => {
         try {
             const [healthRes, jobsRes] = await Promise.all([
-                fetch(`${API_URL}/api/v1/bistrack/sync/health`),
-                fetch(`${API_URL}/api/v1/bistrack/sync/jobs`),
+                fetch(`${API_URL}/api/v1/quickbooks/sync/health`),
+                fetch(`${API_URL}/api/v1/quickbooks/sync/jobs`),
             ]);
             if (healthRes.ok) setHealth(await healthRes.json());
             if (jobsRes.ok) setJobs(await jobsRes.json());
@@ -56,7 +56,7 @@ export const BisTrackDashboard = () => {
     const handleStartSync = async () => {
         setSyncing(true);
         try {
-            const res = await fetch(`${API_URL}/api/v1/bistrack/sync/start`, {
+            const res = await fetch(`${API_URL}/api/v1/quickbooks/sync/start`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ entity_type: 'all' }),
@@ -108,10 +108,10 @@ export const BisTrackDashboard = () => {
                     <div>
                         <h1 className="text-display-large text-white flex items-center gap-3">
                             <Database className="w-10 h-10 text-gable-green" />
-                            BisTrack Migration
+                            QuickBooks Sync
                         </h1>
                         <p className="text-zinc-500 mt-1 text-lg">
-                            Bi-directional sync with Epicor BisTrack ERP.
+                            Bi-directional sync with Reed's QuickBooks Desktop Enterprise. QuickBooks remains source of truth in Phase 1; GableLBM becomes source of truth in Phase 2+.
                         </p>
                     </div>
                     <button
@@ -159,7 +159,7 @@ export const BisTrackDashboard = () => {
                         label="Unresolved"
                         value={String(health?.unresolved_count ?? 0)}
                         accent={(health?.unresolved_count ?? 0) > 0 ? 'amber' : 'emerald'}
-                        link={health?.unresolved_count ? '/erp/bistrack/discrepancies' : undefined}
+                        link={health?.unresolved_count ? '/erp/quickbooks/discrepancies' : undefined}
                     />
                 </div>
 
@@ -183,7 +183,7 @@ export const BisTrackDashboard = () => {
                                     {jobs.length === 0 ? (
                                         <tr>
                                             <td colSpan={6} className="px-4 py-8 text-center text-zinc-500">
-                                                No sync jobs yet. Configure BisTrack credentials to enable sync.
+                                                No sync jobs yet. Configure QuickBooks Desktop connection to enable sync.
                                             </td>
                                         </tr>
                                     ) : (
@@ -216,14 +216,14 @@ export const BisTrackDashboard = () => {
 
                 {/* Discrepancies Link */}
                 <Link
-                    to="/erp/bistrack/discrepancies"
+                    to="/erp/quickbooks/discrepancies"
                     className="flex items-center gap-3 p-4 rounded-xl border border-white/10 hover:border-gable-green/30 bg-white/[0.02] hover:bg-white/[0.04] transition-all group"
                 >
                     <AlertTriangle className="w-5 h-5 text-amber-400" />
                     <div className="flex-1">
                         <div className="text-white font-medium">Data Discrepancies</div>
                         <div className="text-zinc-500 text-sm">
-                            Review and resolve conflicts between BisTrack and GableLBM data.
+                            Review and resolve conflicts between QuickBooks and GableLBM data.
                         </div>
                     </div>
                     <ArrowRight className="w-5 h-5 text-zinc-500 group-hover:text-gable-green transition-colors" />

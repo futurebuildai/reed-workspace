@@ -12,7 +12,7 @@ interface Discrepancy {
     entity_type: string;
     entity_id: string;
     field_name: string;
-    bistrack_value: string;
+    quickbooks_value: string;
     native_value: string;
     resolution: string;
     resolved_by: string | null;
@@ -29,7 +29,7 @@ export const DiscrepancyTable = () => {
     const fetchDiscrepancies = useCallback(async () => {
         try {
             const params = filter === 'all' ? '' : `?status=${filter}`;
-            const res = await fetch(`${API_URL}/api/v1/bistrack/discrepancies${params}`);
+            const res = await fetch(`${API_URL}/api/v1/quickbooks/discrepancies${params}`);
             if (res.ok) setDiscrepancies(await res.json());
         } catch {
             console.error('Failed to load discrepancies');
@@ -43,7 +43,7 @@ export const DiscrepancyTable = () => {
     const handleResolve = async (id: string, resolution: string) => {
         setResolving(id);
         try {
-            const res = await fetch(`${API_URL}/api/v1/bistrack/discrepancies/${id}`, {
+            const res = await fetch(`${API_URL}/api/v1/quickbooks/discrepancies/${id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ resolution }),
@@ -66,7 +66,7 @@ export const DiscrepancyTable = () => {
                 {/* Header */}
                 <div className="flex items-center gap-4">
                     <Link
-                        to="/erp/bistrack"
+                        to="/erp/quickbooks"
                         className="p-2 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-white transition-colors"
                     >
                         <ArrowLeft className="w-5 h-5" />
@@ -77,7 +77,7 @@ export const DiscrepancyTable = () => {
                             Data Discrepancies
                         </h1>
                         <p className="text-zinc-500 mt-1">
-                            Conflicts between BisTrack and GableLBM data.
+                            Conflicts between QuickBooks and GableLBM data.
                         </p>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ export const DiscrepancyTable = () => {
                                 <tr className="border-b border-white/5 text-zinc-500 text-xs uppercase tracking-wider">
                                     <th className="px-4 py-3 text-left">Entity</th>
                                     <th className="px-4 py-3 text-left">Field</th>
-                                    <th className="px-4 py-3 text-left">BisTrack Value</th>
+                                    <th className="px-4 py-3 text-left">QuickBooks Value</th>
                                     <th className="px-4 py-3 text-left">Native Value</th>
                                     <th className="px-4 py-3 text-left">Status</th>
                                     <th className="px-4 py-3 text-right">Actions</th>
@@ -139,7 +139,7 @@ export const DiscrepancyTable = () => {
                                             <td className="px-4 py-3 text-zinc-300">{d.field_name}</td>
                                             <td className="px-4 py-3">
                                                 <code className="px-1.5 py-0.5 rounded bg-blue-400/10 text-blue-400 text-xs font-mono">
-                                                    {d.bistrack_value || '(empty)'}
+                                                    {d.quickbooks_value || '(empty)'}
                                                 </code>
                                             </td>
                                             <td className="px-4 py-3">
@@ -163,12 +163,12 @@ export const DiscrepancyTable = () => {
                                                 {!d.resolved_at && (
                                                     <div className="flex items-center justify-end gap-2">
                                                         <button
-                                                            onClick={() => handleResolve(d.id, 'use_bistrack')}
+                                                            onClick={() => handleResolve(d.id, 'use_quickbooks')}
                                                             disabled={resolving === d.id}
                                                             className="px-2 py-1 rounded text-xs font-medium bg-blue-400/10 text-blue-400 border border-blue-400/20 hover:bg-blue-400/20 transition-colors disabled:opacity-50"
                                                         >
                                                             <Database className="w-3 h-3 inline mr-1" />
-                                                            Use BisTrack
+                                                            Use QuickBooks
                                                         </button>
                                                         <button
                                                             onClick={() => handleResolve(d.id, 'use_native')}

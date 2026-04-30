@@ -60,8 +60,8 @@ import { ProjectDashboard } from "./pages/projects/ProjectDashboard";
 import POSTerminal from "./pages/pos/POSTerminal";
 import { ProductDetail } from "./pages/inventory/ProductDetail";
 import { FleetManagement } from "./pages/logistics/FleetManagement";
-import { BisTrackDashboard } from "./pages/bistrack/BisTrackDashboard";
-import { DiscrepancyTable } from "./pages/bistrack/DiscrepancyTable";
+import { QuickBooksDashboard } from "./pages/quickbooks/QuickBooksDashboard";
+import { DiscrepancyTable } from "./pages/quickbooks/DiscrepancyTable";
 import { PricingTiersPage } from "./pages/admin/PricingTiersPage";
 import { ProductCategoriesPage } from "./pages/admin/ProductCategoriesPage";
 import { PricingAuditPage } from "./pages/admin/PricingAuditPage";
@@ -140,8 +140,8 @@ function App() {
               <Route path="new" element={<NewRFC />} />
               <Route path=":id" element={<RFCDetail />} />
             </Route>
-            <Route path="bistrack" element={<BisTrackDashboard />} />
-            <Route path="bistrack/discrepancies" element={<DiscrepancyTable />} />
+            <Route path="quickbooks" element={<QuickBooksDashboard />} />
+            <Route path="quickbooks/discrepancies" element={<DiscrepancyTable />} />
             <Route path="admin" element={<TechAdminPage />} />
             <Route path="settings/pricing-tiers" element={<PricingTiersPage />} />
             <Route path="settings/product-categories" element={<ProductCategoriesPage />} />

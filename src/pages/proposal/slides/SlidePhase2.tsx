@@ -6,50 +6,37 @@ const PHASE_2_MENU = [
     icon: Receipt,
     name: 'AIA G702/G703 Progress Billing',
     why: 'Standard for $10M+ commercial contracts. Eliminates manual schedule of values.',
-    est: '$3,500',
-    hours: '~16h LA + 8h Eng',
   },
   {
     icon: Sparkles,
     name: 'AI Categorization + Reorder Predictions',
     why: 'Auto-categorize new SKUs from vendor catalogs. Predict reorder points from usage history.',
-    est: '$5,000',
-    hours: '~20h LA + 12h Eng',
   },
   {
     icon: Tag,
     name: 'Pricing Rules & Tier Configurator',
     why: 'Configurable tiers by customer/volume/project. Margin floor enforcement + override approvals.',
-    est: '$4,500',
-    hours: '~16h LA + 12h Eng',
   },
   {
     icon: BarChart3,
     name: 'Advanced BI Dashboards',
     why: 'Sales by rep/customer/region. Vendor margin analysis. Cash-flow forecast.',
-    est: '$4,000',
-    hours: '~12h LA + 14h Eng',
   },
   {
     icon: Lock,
     name: 'SSO (Google / Microsoft)',
     why: 'Centralized identity once Reed picks an IDP. Replaces per-user passwords.',
-    est: '$2,500',
-    hours: '~8h LA + 6h Eng',
   },
   {
     icon: Radio,
     name: 'RFID Inventory Tagging',
     why: 'Pallet-level real-time inventory. Eliminates physical counts on high-velocity SKUs.',
-    est: '$6,000',
-    hours: '~20h LA + 16h Eng',
   },
   {
     icon: Globe,
     name: 'Contractor Self-Serve Portal',
     why: 'GCs see open POs, invoice status, delivery ETAs without calling Reed\'s office. Scoped to Reed\'s preferences (read-only vs. transactional, branding, GC onboarding flow).',
-    est: 'Custom',
-    hours: 'Scoped per preferences',
+    custom: true,
   },
 ];
 
@@ -62,7 +49,7 @@ export function SlidePhase2() {
         </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Add What You <span className="text-purple-400">Actually Need</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          No commitment to Phase 2 until Reed is live and using the system. Pick modules quarterly based on real operational pain — not assumptions on paper. Most customers commit to <span className="text-purple-300">2–3 modules in their first 12 months</span>.
+          No commitment to Phase 2 until Reed is live and using the system. Pick modules quarterly based on real operational pain — not assumptions on paper. Most features land in the <span className="text-purple-300">$2K–$3K range each in dev hours</span>; most customers commit to 2–3 modules in their first 12 months.
         </p>
       </div>
 
@@ -80,11 +67,12 @@ export function SlidePhase2() {
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between gap-3 mb-1">
-                <h3 className="font-bold text-sm text-white truncate">{item.name}</h3>
-                <span className="text-sm font-bold text-purple-300 font-data shrink-0">{item.est}</span>
+                <h3 className="font-bold text-sm text-white">{item.name}</h3>
+                {item.custom && (
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-purple-300/80 shrink-0 whitespace-nowrap">Custom scope</span>
+                )}
               </div>
               <p className="text-[11px] text-zinc-400 leading-snug">{item.why}</p>
-              <div className="text-[9px] text-zinc-600 font-mono mt-1.5 uppercase tracking-wider">{item.hours}</div>
             </div>
           </motion.div>
         ))}
@@ -97,9 +85,9 @@ export function SlidePhase2() {
           transition={{ delay: 0.5 }}
           className="rounded-2xl border border-purple-500/30 bg-purple-500/10 p-4"
         >
-          <div className="text-[10px] uppercase tracking-widest font-bold text-purple-300 mb-1">Per-Module</div>
-          <div className="text-2xl font-bold text-white font-data">$2.5K – $6K</div>
-          <div className="text-[10px] text-zinc-500 mt-1">Per priced module · contractor portal scoped to preferences</div>
+          <div className="text-[10px] uppercase tracking-widest font-bold text-purple-300 mb-1">Most Modules</div>
+          <div className="text-2xl font-bold text-white font-data">~$2K – $3K</div>
+          <div className="text-[10px] text-zinc-500 mt-1">in dev hours each · contractor portal scoped to preferences</div>
         </motion.div>
 
         <motion.div
@@ -109,7 +97,7 @@ export function SlidePhase2() {
           className="rounded-2xl border border-white/5 bg-deep-space/50 p-4"
         >
           <div className="text-[10px] uppercase tracking-widest font-bold text-zinc-500 mb-1">Typical 12mo</div>
-          <div className="text-2xl font-bold text-white font-data">$8K – $15K</div>
+          <div className="text-2xl font-bold text-white font-data">$6K – $9K</div>
           <div className="text-[10px] text-zinc-500 mt-1">Across 2–3 modules</div>
         </motion.div>
 

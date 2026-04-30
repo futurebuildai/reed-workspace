@@ -71,12 +71,12 @@ const BUCKETS: Array<{
   },
   {
     icon: Plug,
-    title: 'Integrations & Migration',
+    title: 'QuickBooks Integration & Migration',
     phase: 'BOTH',
     items: [
-      { text: 'QuickBooks parallel execution during transition — live sync, not big-bang' },
+      { text: 'Phase 1: QuickBooks stays source of truth · bi-directional sync with GableLBM' },
       { text: 'Run Payments wired (POS + on-account + ACH)' },
-      { text: 'Long-term: embed QB functionality natively in GableLBM', p2: true },
+      { text: 'Phase 2+: migrate QB workloads natively into GableLBM (GableLBM becomes SOT)', p2: true },
     ],
   },
   {

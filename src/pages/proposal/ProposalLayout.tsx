@@ -65,8 +65,9 @@ const SLIDES: SlideMeta[] = [
     title: 'What You\'re Replacing',
     component: SlideReplacement,
     notes: [
-      'QuickBooks Desktop Enterprise (books + light inventory) + Clover (POS terminals) = two systems, manual reconciliation, double entry.',
-      'GableLBM collapses both into one data model — sales, inventory, on-account billing, and full GL in a single platform.',
+      'Reed runs QuickBooks Desktop Enterprise (books + light inventory) and Clover (POS).',
+      'Phase 1: Clover replaced by Run Payments. QuickBooks stays as source of truth and integrates bi-directionally with GableLBM.',
+      'Phase 2+: QB workloads migrate natively into GableLBM (becomes SOT) — no big-bang risk, Reed in control of pace.',
       'No per-seat licensing. Reed owns the source forever.',
     ],
   },
@@ -110,7 +111,8 @@ const SLIDES: SlideMeta[] = [
       'Walk phase. Net $16,500 after Run Payments referral credit. NTE $20,000.',
       '8-week build, 50/30/20 milestone billing.',
       'Includes 2-day onsite at McKees Rocks + 4 hrs live training.',
-      'Scope: SKU migration, inventory, POS + Run Payments, quote/order, basic AR, dispatch, roles.',
+      'Clover fully replaced by Run Payments. QuickBooks kept as source of truth + bi-directional sync.',
+      'Scope: QB integration, inventory, POS + Run Payments, quote/order, basic AR, dispatch, roles.',
     ],
   },
   {
@@ -119,8 +121,9 @@ const SLIDES: SlideMeta[] = [
     component: SlidePhase2,
     notes: [
       'Run phase. Deferred. Reed picks modules quarterly post go-live.',
-      'Per-priced module: $2.5K–$6K. Contractor portal scoped custom (depends on Reed\'s preferences).',
-      'Typical 12-month spend: $8K–$15K across 2–3 modules.',
+      'Most features available; ~$2K–$3K each in dev hours to wire up. Contractor portal scoped custom.',
+      'Typical 12-month spend: $6K–$9K across 2–3 modules.',
+      'Phase 2+ also covers full QB workload migration (GableLBM becomes source of truth).',
       'Founding customer rate lock: Phase 1 hourly rates hold for 24 months.',
     ],
   },
@@ -147,7 +150,7 @@ const SLIDES: SlideMeta[] = [
     title: 'Rate Card',
     component: SlideRateCard,
     notes: [
-      'Crawl/Walk/Run pricing. Phase 0: $500 + $500/mo. Phase 1: $16,500 net (after Run Payments credit). Phase 2: per-module, deferred.',
+      'Crawl/Walk/Run pricing. Phase 0: $500 + $500/mo. Phase 1: $16,500 net (after Run Payments credit). Phase 2: ~$2-3K per module, deferred.',
       'Hourly rates unchanged: LA $225 / Eng $175 / Trainer $125 / PM $150.',
       'Run Payments referral credit: Reed activating Run Payments unlocks ~$2,375 off Phase 1 (~10 free Sr Architect hrs).',
       'Run Payments processing: low 2% range card-present (mix-dependent), surcharge available, ACH 0.10% / $1 min / $10 max. Firm rates after merchant statement review.',

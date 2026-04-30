@@ -23,13 +23,13 @@ const PHASE_1_LINES = [
 ];
 
 const PHASE_2_OPTIONS = [
-  { name: 'AIA G702/G703 progress billing', est: '$3,500' },
-  { name: 'AI categorization + reorder predictions', est: '$5,000' },
-  { name: 'Pricing Rules & Tier Configurator', est: '$4,500' },
-  { name: 'Advanced BI dashboards', est: '$4,000' },
-  { name: 'SSO (Google / Microsoft)', est: '$2,500' },
-  { name: 'RFID inventory tagging', est: '$6,000' },
-  { name: 'Contractor self-serve portal', est: 'TBD — scoped to Reed\'s preferences' },
+  { name: 'AIA G702/G703 progress billing' },
+  { name: 'AI categorization + reorder predictions' },
+  { name: 'Pricing Rules & Tier Configurator' },
+  { name: 'Advanced BI dashboards' },
+  { name: 'SSO (Google / Microsoft)' },
+  { name: 'RFID inventory tagging' },
+  { name: 'Contractor self-serve portal', custom: true },
 ];
 
 export function SlideRateCard() {
@@ -70,8 +70,8 @@ export function SlideRateCard() {
             <Zap size={16} className="text-purple-400" />
             <span className="text-[10px] uppercase tracking-widest font-bold text-purple-300">Run · Phase 2 — Deeper Features</span>
           </div>
-          <div className="text-xl font-bold text-white font-data">$2.5K – $6K</div>
-          <div className="text-[10px] text-zinc-500 mt-1">per priced module  ·  contractor portal scoped to Reed's preferences</div>
+          <div className="text-xl font-bold text-white font-data">~$2K – $3K each</div>
+          <div className="text-[10px] text-zinc-500 mt-1">in dev hours per module  ·  contractor portal scoped to Reed's preferences</div>
         </div>
       </div>
 
@@ -209,12 +209,14 @@ export function SlideRateCard() {
             {PHASE_2_OPTIONS.map((opt, i) => (
               <div key={i} className="flex items-center justify-between text-xs border-b border-white/5 pb-2 last:border-0">
                 <span className="text-zinc-300">{opt.name}</span>
-                <span className="font-mono text-purple-300 font-bold whitespace-nowrap ml-3">{opt.est}</span>
+                {opt.custom && (
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-purple-300/70 whitespace-nowrap ml-3">Custom scope</span>
+                )}
               </div>
             ))}
           </div>
           <p className="text-[11px] text-zinc-500 leading-relaxed">
-            Quoted T&amp;M or fixed-price per module. Reed selects modules quarterly post-go-live based on actual operational needs. Most customers commit to 2–3 modules in their first 12 months ($8K–$15K typical Phase 2 spend).
+            Most features here are already available in GableLBM and land in the <span className="text-purple-300 font-semibold">~$2K–$3K range each in dev hours</span> to wire up for Reed. Reed selects modules quarterly post-go-live; typical 12-month spend is $6K–$9K across 2–3 modules. Contractor portal scoped separately based on Reed's preferences.
           </p>
         </div>
       </div>

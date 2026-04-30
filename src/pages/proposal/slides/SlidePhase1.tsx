@@ -4,8 +4,8 @@ import { Activity, CheckCircle2, Package, ShoppingCart, FileText, Receipt, Truck
 const PARITY_MODULES = [
   {
     icon: Database,
-    name: 'Data Migration',
-    items: ['SKU + customer + vendor import from QB Enterprise', 'Live parallel sync (no big-bang cutover)'],
+    name: 'QuickBooks Integration',
+    items: ['QuickBooks stays source of truth in Phase 1', 'Bi-directional sync — SKUs, customers, vendors, invoices', 'GableLBM augments QB without forcing migration'],
   },
   {
     icon: Package,
@@ -51,9 +51,9 @@ export function SlidePhase1() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           <Activity size={12} /> Walk · Phase 1 — Parity Go-Live
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Replace QuickBooks &amp; Clover, <span className="text-gable-green">Day One</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Replace Clover &amp; Augment QuickBooks, <span className="text-gable-green">Day One</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          Phase 1 covers Reed's daily operations — nothing more, nothing less. Get off the legacy stack with all core workflows running. Deeper features wait for Phase 2 once Reed sees real usage.
+          Phase 1 covers Reed's daily operations — nothing more, nothing less. Clover is replaced; QuickBooks stays as source of truth and integrates bi-directionally with GableLBM. Once Reed is comfortable, Phase 2+ migrates QuickBooks workloads natively into GableLBM.
         </p>
       </div>
 
@@ -125,7 +125,7 @@ export function SlidePhase1() {
       >
         <CreditCard size={16} className="text-amber-400 shrink-0 mt-0.5" />
         <p className="text-[11px] text-amber-200/80 leading-relaxed">
-          <span className="font-bold text-amber-300">Why parity-first?</span> Reed's day-to-day keeps running — no broken workflows on go-live day. Advanced features (AIA billing, AI categorization, RFID, Pricing Tier Configurator, advanced BI, SSO, contractor portal) move to Phase 2 where Reed picks priorities based on real-world usage from Phase 1, not assumptions on paper.
+          <span className="font-bold text-amber-300">Why parity-first?</span> Reed's day-to-day keeps running on QuickBooks (source of truth) with GableLBM layered on top — no broken workflows on go-live day. Clover is the only legacy system fully replaced in Phase 1. Advanced features (AIA billing, AI categorization, RFID, Pricing Tier Configurator, advanced BI, SSO, contractor portal) and full QuickBooks workload migration move to Phase 2+ where Reed picks priorities based on real usage.
         </p>
       </motion.div>
     </div>

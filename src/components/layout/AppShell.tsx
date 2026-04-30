@@ -77,7 +77,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                         {sidebarOpen && "Migration"}
                     </div>
 
-                    <NavItem to="/erp/bistrack" icon={<Database size={20} />} label="BisTrack Sync" isOpen={sidebarOpen} active={location.pathname.startsWith('/erp/bistrack')} />
+                    <NavItem to="/erp/quickbooks" icon={<Database size={20} />} label="QuickBooks Sync" isOpen={sidebarOpen} active={location.pathname.startsWith('/erp/quickbooks')} />
 
                     <div className="mb-2 mt-4 px-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider">
                         {sidebarOpen && "Accounting"}
