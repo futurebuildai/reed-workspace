@@ -2,7 +2,7 @@ import { BookOpen, Bot, HelpCircle, Code, FileText } from 'lucide-react';
 
 export function SlideWiki() {
   const sections = [
-    { name: 'LBM to Hardscape Research', icon: FileText, color: 'text-blue-400' },
+    { name: 'Reed Operations Research', icon: FileText, color: 'text-blue-400' },
     { name: 'Product Assumptions', icon: BookOpen, color: 'text-purple-400' },
     { name: 'User Stories & Epics', icon: HelpCircle, color: 'text-amber-400' },
     { name: 'Architecture Specs', icon: Code, color: 'text-emerald-400' },
@@ -34,7 +34,7 @@ export function SlideWiki() {
               ))}
             </div>
             <p className="mt-6 text-[11px] text-zinc-500 leading-relaxed italic">
-              "We don't start from scratch. Our LBM-to-Hardscape research defines the delta between generic lumber ERPs and your specific yard workflows."
+              "We don't start from scratch. Our Reed-specific research captures your QuickBooks chart of accounts, vendor mix, on-account customer tiers, and commercial-supply workflows so Phase 1 builds exactly what you run today."
             </p>
           </div>
 
@@ -71,12 +71,12 @@ export function SlideWiki() {
 
           <div className="space-y-4">
             <div className="p-3 bg-white/5 rounded-2xl rounded-bl-none text-xs text-zinc-400 max-w-[85%]">
-              What assumption did we make about Techo-Bloc pallet weights vs. Unilock?
+              How are we mapping Reed's QuickBooks vendor SKUs for OSB sheathing?
             </div>
             <div className="p-3 bg-gable-green/10 border border-gable-green/20 rounded-2xl rounded-br-none text-xs text-white max-w-[95%] ml-auto leading-relaxed">
-              Based on our <strong>Product Assumptions</strong> log:
+              Based on our <strong>Multi-Vendor SKU Mapping</strong> doc:
               <br/><br/>
-              We noted that Techo-Bloc pallets often exceed 3,500 lbs, requiring a different forklift capacity check in the dispatch engine compared to standard Unilock pallets which average closer to 2,800 lbs.
+              Reed sources 7/16" OSB from both Georgia-Pacific and Weyerhaeuser. We're consolidating these into a single internal SKU with vendor-specific cost layers, since unit pricing varies ~12% by supplier and current commodity index — preserves margin reporting accuracy.
             </div>
             <div className="p-2 border border-blue-400/20 bg-blue-400/5 rounded-lg text-[10px] text-blue-400 text-center cursor-pointer mt-2">
               View Original Assumption Document →

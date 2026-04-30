@@ -18,7 +18,7 @@ export function SlideEngagementModel() {
             <h3 className="text-xl font-bold">You Own the Code</h3>
           </div>
           <p className="text-zinc-400 mb-6 leading-relaxed">
-            Unlike Bistrack or NetSuite, you aren't renting your ERP. You own the source code.
+            Unlike QuickBooks Enterprise, NetSuite, or any SaaS ERP, you aren't renting. You own the source code.
           </p>
           <ul className="space-y-4">
             {[

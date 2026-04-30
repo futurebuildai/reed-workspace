@@ -51,7 +51,7 @@ export function SlidePhase1() {
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
           <Activity size={12} /> Walk · Phase 1 — Parity Go-Live
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Replace BisTrack &amp; Great Plains, <span className="text-gable-green">Day One</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Replace QuickBooks &amp; Clover, <span className="text-gable-green">Day One</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
           Phase 1 covers Reed's daily operations — nothing more, nothing less. Get off the legacy stack with all core workflows running. Deeper features wait for Phase 2 once Reed sees real usage.
         </p>

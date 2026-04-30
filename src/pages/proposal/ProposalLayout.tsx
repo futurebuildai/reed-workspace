@@ -65,8 +65,8 @@ const SLIDES: SlideMeta[] = [
     title: 'What You\'re Replacing',
     component: SlideReplacement,
     notes: [
-      'BisTrack (yard) + Great Plains (books) = two systems, manual sync, double entry.',
-      'GableLBM collapses both into one data model. Reconciliation step disappears.',
+      'QuickBooks Desktop Enterprise (books + light inventory) + Clover (POS terminals) = two systems, manual reconciliation, double entry.',
+      'GableLBM collapses both into one data model — sales, inventory, on-account billing, and full GL in a single platform.',
       'No per-seat licensing. Reed owns the source forever.',
     ],
   },

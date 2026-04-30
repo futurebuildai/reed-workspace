@@ -4,7 +4,7 @@ import { ClipboardList, CheckSquare, Search, ArrowRight } from 'lucide-react';
 
 export function SlideChecklist() {
   const steps = [
-    { title: 'Technical Discovery', items: ['BisTrack database access verification', 'User count & role permission matrix', 'Multi-location network audit'], status: 'Next 2 Weeks' },
+    { title: 'Technical Discovery', items: ['QuickBooks Desktop file export verification', 'User count & role permission matrix', 'Network audit + Clover terminal inventory'], status: 'Next 2 Weeks' },
     { title: 'Functional Discovery', items: ['GL account mapping review', 'Manufacturer/Vendor SKU cleanup', 'Custom pricing rule logic definition'], status: 'Next 2 Weeks' },
     { title: 'Commercials', items: ['Phase 1 Statement of Work (SOW)', 'Founding customer agreement signature', 'Project kick-off'], status: 'TBD' },
   ];

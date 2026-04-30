@@ -71,7 +71,7 @@ export function Landing() {
               Operating System
             </span>
             <br />
-            for Hardscape Supply
+            for Building Supply
           </motion.h1>
 
           <motion.p
@@ -80,8 +80,8 @@ export function Landing() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Replace Bistrack and Great Plains with a single, hardscape-native ERP
-            that you own - no licensing fees, no per-user seats, no vendor lock-in.
+            Replace QuickBooks and Clover with a single, commercial-supply-native ERP
+            that you own — no licensing fees, no per-user seats, no vendor lock-in.
           </motion.p>
 
           <motion.div
@@ -128,7 +128,7 @@ export function Landing() {
             variants={fadeUp}
             className="text-zinc-400 text-center mb-16 max-w-2xl mx-auto leading-relaxed"
           >
-            Reed Building Materials runs on two disconnected systems and a lot of manual workarounds. Here is what changes when you own the platform.
+            Reed Building Supply runs on QuickBooks Desktop + Clover with a lot of manual reconciliation in between. Here is what changes when you own the platform.
           </motion.p>
 
           <div className="space-y-10">
@@ -136,7 +136,7 @@ export function Landing() {
               {
                 number: '01',
                 title: 'One Unified System, Zero Reconciliation',
-                body: 'Today, BisTrack handles your yard and Great Plains handles your books. Every transaction requires manual syncing between them. GableLBM collapses both into one platform. Sales, inventory, purchasing, and full GL accounting live in a single data model. The reconciliation step disappears entirely.',
+                body: 'Today, QuickBooks Desktop handles your books + light inventory and Clover handles your POS terminals. Every counter sale and on-account invoice requires manual reconciliation between the two. GableLBM collapses both into one platform — sales, inventory, on-account billing, and full GL accounting live in a single data model. The reconciliation step disappears entirely.',
                 accent: 'emerald',
               },
               {
