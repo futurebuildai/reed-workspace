@@ -94,7 +94,7 @@ export function Landing() {
               to="/proposal"
               className="group flex items-center gap-2 bg-gradient-to-r from-gable-green to-amber-500 text-deep-space font-semibold px-8 py-3.5 rounded-xl shadow-glow hover:shadow-glow-strong transition-all hover:scale-[1.02] text-base"
             >
-              Price/Scope Framework
+              View Phase 1 Proposal
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -213,7 +213,7 @@ export function Landing() {
             variants={fadeUp}
             className="text-zinc-400 mb-8"
           >
-            Our transparent pricing framework is designed for a consultative conversation — not a hard sell.
+            $22,750 one-time + $250–$800/mo recurring. Full scope, timeline, and MSP options inside.
           </motion.p>
           <motion.div
             initial="hidden"
@@ -226,7 +226,7 @@ export function Landing() {
               to="/proposal"
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-gable-green to-amber-500 text-deep-space font-semibold px-8 py-3.5 rounded-xl shadow-glow hover:shadow-glow-strong transition-all hover:scale-[1.02] text-base"
             >
-              Price/Scope Framework
+              View Phase 1 Proposal
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
