@@ -7,6 +7,7 @@ import {
   Truck,
   Plug,
   BarChart3,
+  Tag,
   Users,
 } from 'lucide-react';
 
@@ -15,9 +16,9 @@ const BUCKETS = [
     icon: FileText,
     title: 'Sales & Quoting',
     items: [
-      'Commercial bid prep (multi-line POs)',
-      'Customer-specific pricing tiers',
-      'Quote → PO → invoice conversion',
+      'Bid prep and multi-line quote building',
+      'Pricing tier application at quote time',
+      'Quote → PO → invoice conversion workflow',
     ],
   },
   {
@@ -60,9 +61,9 @@ const BUCKETS = [
     icon: Plug,
     title: 'Integrations & Migration',
     items: [
-      'QuickBooks Enterprise import + ongoing sync',
-      'Freight carrier portals (read-only)',
-      'Optional: contractor self-serve portal',
+      'QuickBooks parallel execution during transition — live sync, not big-bang cutover',
+      'Freight carrier portal integration',
+      'Long-term: embed QB functionality natively in GableLBM — eliminating the external dependency',
     ],
   },
   {
@@ -75,10 +76,19 @@ const BUCKETS = [
     ],
   },
   {
+    icon: Tag,
+    title: 'Pricing Rules & Tier Configurator',
+    items: [
+      'Configurable price tiers by customer, volume, or project',
+      'Product category pricing rules + margin floor enforcement',
+      'Override workflow with approval controls',
+    ],
+  },
+  {
     icon: Users,
     title: 'Roles & Permissions',
     items: [
-      '13–15 seat setup, Reed-tailored roles',
+      'Reed-tailored role definitions',
       'Owner / Sales / Yard / Office / Driver tiers',
       'SSO-ready (Google/Microsoft) for Phase 2',
     ],
@@ -94,11 +104,11 @@ export function SlideCustomizationScope() {
         </div>
         <h2 className="text-4xl font-bold mb-4">What Scoping + Customization Will <span className="text-gable-green">Address</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          Eight operational buckets we'll fork from GableLBM main and tailor to Reed's commercial-supply workflows. <span className="text-gable-green">Phase 0</span> locks the per-bucket scope using the included 10 Senior Architect hours. <span className="text-gable-green">Phase 1</span> builds against that locked plan.
+          Nine operational buckets we'll fork from GableLBM main and tailor to Reed's commercial-supply workflows. <span className="text-gable-green">Phase 0</span> locks the per-bucket scope using the included 10 Senior Architect hours. <span className="text-gable-green">Phase 1</span> builds against that locked plan.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
         {BUCKETS.map((bucket, i) => (
           <motion.div
             key={i}
