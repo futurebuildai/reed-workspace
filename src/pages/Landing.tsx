@@ -213,7 +213,7 @@ export function Landing() {
             variants={fadeUp}
             className="text-zinc-400 mb-8"
           >
-            $22,750 one-time + $250–$800/mo recurring. Full scope, timeline, and MSP options inside.
+            $23,250 one-time + $250–$800/mo recurring. Includes 10 free Sr Architect hours in Phase 0. Full scope, timeline, and MSP options inside.
           </motion.p>
           <motion.div
             initial="hidden"

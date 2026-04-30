@@ -44,7 +44,7 @@ const PHASES = [
     ],
     hours: [
       { role: 'Engineer', hrs: 6 },
-      { role: 'PM / Onsite', hrs: 24 },
+      { role: 'Onsite (1 person)', hrs: '3 days' },
       { role: 'Trainer', hrs: 4 },
       { role: 'Lead Architect', hrs: 5 },
     ],
@@ -214,7 +214,7 @@ export function SlideRollout() {
         <div className="flex-1">
           <h4 className="font-bold text-sm text-white mb-1">3 months core · 4 months with hypercare</h4>
           <p className="text-xs text-zinc-400 leading-relaxed">
-            Total team commitment from Phase 0 sign-off to go-live: <span className="text-gable-green font-bold">~109 hrs</span> across Lead Architect, Engineer, PM, and Trainer roles. No "big bang" — UAT and parallel validation precede every cutover.
+            Total team commitment from Phase 0 sign-off to go-live: <span className="text-gable-green font-bold">~92 hrs</span> (Lead Architect, Engineer, Trainer) <span className="text-gable-green font-bold">+ 3 onsite days</span> at McKees Rocks. No "big bang" — UAT and parallel validation precede every cutover.
           </p>
         </div>
       </motion.div>

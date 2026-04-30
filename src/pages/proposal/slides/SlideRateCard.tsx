@@ -7,6 +7,7 @@ const LINE_ITEMS = [
     name: 'Phase 0 — Discovery + Dev/Staging Env Setup',
     amount: '$500',
     breakdown: '$250 setup labor + 1 month × $250 infra (rolls into Phase 1 if proceeding)',
+    bonus: 'Includes 10 Senior Architect hours — $2,250 value, free. Estimated sufficient to fully scope and lock the Phase 1 build plan.',
   },
   {
     icon: Wrench,
@@ -16,9 +17,9 @@ const LINE_ITEMS = [
   },
   {
     icon: MapPin,
-    name: 'Onsite Implementation (1 trip, ~3 days)',
-    amount: '$4,000',
-    breakdown: '~24 hrs onsite @ $150 + $400 travel allowance  ·  hands-on cutover and team enablement at McKees Rocks',
+    name: 'Onsite Implementation (1 person, 2–3 days)',
+    amount: '$4,500',
+    breakdown: '1 person × 3 days @ $1,500/day flat (all-in: accommodations + travel included)  ·  hands-on cutover and team enablement at McKees Rocks  ·  shorter trip = $3,000 (2 days)',
   },
   {
     icon: GraduationCap,
@@ -54,7 +55,7 @@ export function SlideRateCard() {
         className="glass-card rounded-3xl p-8 border-gable-green/20 bg-gable-green/5 text-center mb-10"
       >
         <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gable-green mb-2">Total Project</div>
-        <div className="text-6xl font-bold text-white mb-2 font-data">$22,750</div>
+        <div className="text-6xl font-bold text-white mb-2 font-data">$23,250</div>
         <div className="text-xs text-zinc-400">
           one-time, milestone-billed  ·  <span className="text-gable-green">+ $250–$800/mo recurring</span> (tier of your choice)
         </div>
@@ -76,8 +77,19 @@ export function SlideRateCard() {
             <div className="flex-1 min-w-0">
               <h3 className="font-bold text-sm text-white mb-1">{item.name}</h3>
               <p className="text-[11px] text-zinc-500 leading-relaxed">{item.breakdown}</p>
+              {item.bonus && (
+                <div className="mt-2 inline-flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-gable-green/10 border border-gable-green/30">
+                  <Sparkles size={11} className="text-gable-green shrink-0 mt-0.5" />
+                  <span className="text-[10px] text-gable-green/90 leading-snug font-medium">{item.bonus}</span>
+                </div>
+              )}
             </div>
-            <div className="text-2xl font-bold text-gable-green font-data shrink-0 self-center">{item.amount}</div>
+            <div className="flex flex-col items-end shrink-0 self-center gap-1">
+              <div className="text-2xl font-bold text-gable-green font-data">{item.amount}</div>
+              {item.bonus && (
+                <div className="text-[9px] uppercase tracking-widest font-bold text-gable-green/70 whitespace-nowrap">+ $2,250 free</div>
+              )}
+            </div>
           </motion.div>
         ))}
 
@@ -88,7 +100,7 @@ export function SlideRateCard() {
           className="rounded-2xl p-5 border border-gable-green/30 bg-gable-green/10 flex items-center justify-between"
         >
           <span className="text-sm uppercase tracking-widest font-bold text-gable-green">Project Total</span>
-          <span className="text-3xl font-bold text-white font-data">$22,750</span>
+          <span className="text-3xl font-bold text-white font-data">$23,250</span>
         </motion.div>
       </div>
 

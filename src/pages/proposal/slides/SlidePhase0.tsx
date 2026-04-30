@@ -6,7 +6,7 @@ export function SlidePhase0() {
     { name: 'Workflow Discovery Audit', desc: 'Mapping QuickBooks/Clover processes to cloud workflows' },
     { name: 'Dedicated Agent Env', desc: 'Configured instances for documentation and spec sync' },
     { name: 'Security & Staging Setup', desc: 'Zero-trust auth and cloud sandbox infrastructure' },
-    { name: '10 Consulting Hours Incl.', desc: 'Dedicated time for architecture and system design' },
+    { name: '10 Sr Architect Hrs Incl. — $2,250 value, free', desc: 'Estimated sufficient to fully scope and lock the Phase 1 build plan' },
   ];
 
   return (
