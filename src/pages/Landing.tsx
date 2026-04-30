@@ -24,7 +24,7 @@ export function Landing() {
               <path d="M22 28 C22 28 22 46 32 46 C42 46 42 28 42 28" stroke="#E8A74E" strokeWidth="4" strokeLinecap="round" fill="none" />
               <rect x="28" y="46" width="8" height="6" rx="1" fill="#E8A74E" />
             </svg>
-            <span className="text-lg font-bold tracking-tight">GableX<span className="text-gable-green font-light tracking-widest">Hardscape</span></span>
+            <span className="text-lg font-bold tracking-tight">Gable<span className="text-gable-green font-light tracking-widest">LBM</span></span>
           </div>
           <div className="flex items-center gap-3">
             <Link to="/erp" className="text-sm bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg px-4 py-1.5 transition-all">
@@ -54,7 +54,7 @@ export function Landing() {
                </div>
                <div className="text-xl md:text-2xl text-zinc-600 font-light">×</div>
                <div className="font-sans text-2xl md:text-4xl font-bold tracking-tight flex items-center">
-                 GableX<span className="text-gable-green font-light tracking-widest">Hardscape</span>
+                 Gable<span className="text-gable-green font-light tracking-widest">LBM</span>
                </div>
             </div>
             <div className="h-px w-48 bg-gradient-to-r from-transparent via-gable-green/40 to-transparent mt-8" />
@@ -237,7 +237,7 @@ export function Landing() {
       <footer className="border-t border-white/5 py-8 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-zinc-600">
           <span>© 2026 FutureBuild AI · Confidential</span>
-          <span>Prepared for Reed Building Materials · Trenton & Kingston, ON</span>
+          <span>Prepared for Reed Building Supply · McKees Rocks, PA</span>
         </div>
       </footer>
     </div>

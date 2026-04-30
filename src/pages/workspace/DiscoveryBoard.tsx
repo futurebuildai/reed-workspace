@@ -67,7 +67,7 @@ const INITIAL_TASKS: Task[] = [
     category: 'Accounting Migration',
     priority: 'High',
     status: 'todo',
-    description: 'Export current Great Plains chart of accounts to CSV for mapping to native GableX GL.',
+    description: 'Export current Great Plains chart of accounts to CSV for mapping to native GableLBM GL.',
     icon: FileSpreadsheet
   },
   {

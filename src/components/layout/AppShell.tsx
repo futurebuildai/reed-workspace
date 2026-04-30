@@ -1,4 +1,4 @@
-import { LayoutDashboard, Package, Truck, FileText, Settings, Menu, Wrench, ChevronLeft, ChevronRight, Search, ShoppingBag, Store, BookOpen, Database, MapPin } from 'lucide-react';
+import { LayoutDashboard, Package, Truck, FileText, Settings, Menu, Wrench, ChevronLeft, ChevronRight, Search, ShoppingBag, Store, BookOpen, Database } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -13,7 +13,6 @@ import { BrandLogo } from '../ui/BrandLogo';
 export function AppShell({ children }: { children: React.ReactNode }) {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [shortcutsOpen, setShortcutsOpen] = useState(false);
-    const [activeLocation, setActiveLocation] = useState<'trenton' | 'kingston'>('trenton');
     const location = useLocation();
 
     useEffect(() => {
@@ -139,33 +138,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        {/* Location Switcher */}
-                        <div className="hidden lg:flex items-center gap-1 bg-white/5 rounded-lg border border-white/5 p-0.5">
-                            <button
-                                onClick={() => setActiveLocation('trenton')}
-                                className={cn(
-                                    "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
-                                    activeLocation === 'trenton'
-                                        ? "bg-gable-green/15 text-gable-green border border-gable-green/20"
-                                        : "text-zinc-400 hover:text-white"
-                                )}
-                            >
-                                <MapPin size={12} />
-                                Trenton
-                            </button>
-                            <button
-                                onClick={() => setActiveLocation('kingston')}
-                                className={cn(
-                                    "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all",
-                                    activeLocation === 'kingston'
-                                        ? "bg-gable-green/15 text-gable-green border border-gable-green/20"
-                                        : "text-zinc-400 hover:text-white"
-                                )}
-                            >
-                                <MapPin size={12} />
-                                Kingston
-                            </button>
-                        </div>
                         <div className="text-xs text-zinc-500 font-medium hidden lg:block bg-white/5 px-2 py-1 rounded border border-white/5">
                             ⌘K
                         </div>

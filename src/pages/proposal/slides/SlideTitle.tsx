@@ -24,7 +24,7 @@ export function SlideTitle() {
         className="space-y-4"
       >
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-          GableX<span className="bg-gradient-to-r from-gable-green to-amber-400 bg-clip-text text-transparent italic">Hardscape</span> OS
+          Gable<span className="bg-gradient-to-r from-gable-green to-amber-400 bg-clip-text text-transparent italic">LBM</span> OS
         </h1>
         <p className="text-xl md:text-2xl text-zinc-500 font-medium">Pricing & Scope Framework</p>
       </motion.div>

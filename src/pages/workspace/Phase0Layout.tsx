@@ -44,7 +44,7 @@ export function Phase0Layout() {
           <div className="flex items-center gap-2">
             <span className="font-serif italic text-lg">Reed Building Materials</span>
             <span className="text-zinc-600">×</span>
-            <span className="font-bold tracking-tight">GableX<span className="text-gable-green font-light">Hardscape</span></span>
+            <span className="font-bold tracking-tight">Gable<span className="text-gable-green font-light">LBM</span></span>
           </div>
           <div className="h-4 w-px bg-white/10 hidden md:block" />
           <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold hidden md:block">Phase 0 Discovery Room</span>
