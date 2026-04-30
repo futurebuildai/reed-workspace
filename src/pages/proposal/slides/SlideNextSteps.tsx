@@ -1,34 +1,34 @@
 import { motion } from 'framer-motion';
-import { FileSignature, Sparkles, ClipboardCheck, Rocket, Mail, Calendar } from 'lucide-react';
+import { FileSignature, Sparkles, ClipboardCheck, Rocket, Mail, ShieldCheck } from 'lucide-react';
 
 const STEPS = [
   {
     icon: FileSignature,
-    label: 'Step 1 — This Week',
+    label: 'Step 1 — When Reed is ready',
     title: 'Sign Phase 0 Agreement',
-    detail: 'One-page scope letter. $500 covers discovery + 30 days of dev/staging infra. No commitment to Phase 1.',
-    cta: 'Email PDF agreement',
+    detail: 'One-page scope letter. Reed picks the start date — we move at your pace, not ours.',
+    cta: 'Reed-led timing',
   },
   {
     icon: Sparkles,
     label: 'Step 2 — Days 1–14',
     title: 'Use Your 10 Sr Architect Hours',
     detail: '2× working sessions with Reed leadership + ops. We lock the per-bucket scope, data model, and integration design.',
-    cta: 'Book working sessions',
+    cta: 'Working sessions',
   },
   {
     icon: ClipboardCheck,
-    label: 'Step 3 — Day 14–21',
+    label: 'Step 3 — End of Phase 0',
     title: 'Locked Phase 1 Plan + Quote',
-    detail: 'Final fixed-price quote (within $23,250 estimate, $28,000 NTE). Reed reviews and signs to start the 3-month build clock.',
-    cta: 'Receive locked plan',
+    detail: 'Final fixed-price quote (within $18,600 estimate, $22,000 NTE). Reed reviews — fully informed — and decides whether to proceed to Phase 1.',
+    cta: 'Reed decides',
   },
   {
     icon: Rocket,
-    label: 'Step 4 — Month 1+',
-    title: 'Build Clock Starts',
-    detail: 'Phase 1 milestone billing begins (50/30/20). Reed gets weekly demos + a private Slack channel for fast iteration.',
-    cta: 'Build phase begins',
+    label: 'Step 4 — Only if Reed proceeds',
+    title: 'Phase 1 Build Clock Starts',
+    detail: 'Phase 1 milestone billing begins (50/30/20). Reed gets weekly demos + a private Slack channel. Or Reed can walk away after Phase 0 — no further obligation.',
+    cta: 'Optional next step',
   },
 ];
 
@@ -37,11 +37,11 @@ export function SlideNextSteps() {
     <div className="w-full max-w-5xl">
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-gable-green/20 text-gable-green px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 border border-gable-green/30">
-          What Happens After Today
+          What Happens Next
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">From Yes to <span className="text-gable-green">Go-Live</span></h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">A Low-Risk <span className="text-gable-green">On-Ramp</span></h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-sm">
-          A clear, low-friction on-ramp. Phase 0 is intentionally small ($500) and reversible — we earn Phase 1 by delivering a locked plan first.
+          Phase 0 is intentionally small and reversible. Reed makes a fully-informed Phase 1 decision after seeing the locked plan — never under pressure, never on incomplete information.
         </p>
       </div>
 
@@ -76,11 +76,11 @@ export function SlideNextSteps() {
           transition={{ delay: 0.5 }}
           className="rounded-2xl border border-gable-green/30 bg-gable-green/10 p-5 flex items-start gap-3"
         >
-          <Calendar size={18} className="text-gable-green shrink-0 mt-0.5" />
+          <ShieldCheck size={18} className="text-gable-green shrink-0 mt-0.5" />
           <div className="flex-1">
-            <h4 className="font-bold text-sm text-white mb-1">Today's Decision</h4>
+            <h4 className="font-bold text-sm text-white mb-1">Total Phase 0 Risk: ~$1,000</h4>
             <p className="text-[11px] text-zinc-300 leading-relaxed">
-              Reed agrees to Phase 0 — we send the agreement, you sign, we kick off this week. Total exposure: <span className="text-gable-green font-bold">$500</span> for the locked plan.
+              <span className="text-gable-green font-semibold">$500 setup + $500/mo (~1 month)</span>. Reed can <span className="text-white font-semibold">terminate after Phase 0 completes</span> with no obligation to Phase 1 — keep the locked plan for reference, walk away clean.
             </p>
           </div>
         </motion.div>
@@ -93,9 +93,9 @@ export function SlideNextSteps() {
         >
           <Mail size={18} className="text-zinc-400 shrink-0 mt-0.5" />
           <div className="flex-1">
-            <h4 className="font-bold text-sm text-white mb-1">Questions?</h4>
+            <h4 className="font-bold text-sm text-white mb-1">Take Your Time</h4>
             <p className="text-[11px] text-zinc-400 leading-relaxed">
-              Reach out anytime. We'll capture remaining Phase 0 inputs together on the kickoff call.
+              No artificial deadline. When Reed is ready to start Phase 0, we'll send the agreement and get going. Questions in the meantime — reach out anytime.
             </p>
           </div>
         </motion.div>

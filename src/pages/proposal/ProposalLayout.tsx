@@ -27,9 +27,8 @@ import { SlidePhase2 } from './slides/SlidePhase2';
 import { SlideMigration } from './slides/SlideMigration';
 import { SlideWiki } from './slides/SlideWiki';
 import { SlideRateCard } from './slides/SlideRateCard';
+import { SlideManagedServices } from './slides/SlideManagedServices';
 import { SlideInfrastructure } from './slides/SlideInfrastructure';
-// import { SlideManagedServices } from './slides/SlideManagedServices';
-import { SlideChecklist } from './slides/SlideChecklist';
 import { SlideNextSteps } from './slides/SlideNextSteps';
 
 interface SlideMeta {
@@ -115,7 +114,7 @@ const SLIDES: SlideMeta[] = [
       '10–12 week build (8–10 build + 2 testing/cutover). 50/30/20 milestone billing.',
       'Onsite: 2 days × $1,500/day flat = $3,000 (added to total).',
       'Clover fully replaced by Run Payments. QuickBooks kept as source of truth + bi-directional sync.',
-      'Scope: QB integration, inventory, POS + Run Payments, quote/order, basic AR, dispatch, roles.',
+      'Scope: QB integration, inventory, POS + Run Payments (with offline mode), quote/order, basic AR, dispatch, roles.',
     ],
   },
   {
@@ -159,7 +158,20 @@ const SLIDES: SlideMeta[] = [
       'Run Payments referral credit: Reed activating Run Payments unlocks ~$2,375 off Phase 1 (~10 free Sr Architect hrs).',
       'Run Payments processing: low 2% range card-present (mix-dependent), surcharge available, ACH 0.10% / $1 min / $10 max. Firm rates after merchant statement review.',
       'AI model API usage: pass-through, billed monthly as-incurred, typical < $100/mo, heavy enrichment pre-quoted.',
-      'Founding customer terms: rate lock for 24 months on Phase 2 work.',
+      'Ongoing MSP tiers detailed on the next slide.',
+    ],
+  },
+  {
+    id: 'msp',
+    title: 'Managed Services',
+    component: SlideManagedServices,
+    notes: [
+      'Three tiers: Foundation ($250/mo), Active ($800/mo, recommended), Partnership ($1,400/mo).',
+      'All tiers include the SAME hosting + backup regimen — only support hours, feature merges, and SLA differ.',
+      'Bundled hours: Foundation 0, Active 4/mo, Partnership 8/mo. Roll forward 90 days.',
+      'Bundle effective rate: $140/hr (20% off standard $175 Engineer rate).',
+      'List prices assume a 2-year service agreement. Month-to-month available at higher rates, quoted on request.',
+      'Most customers start at Active and only move to Partnership when Phase 2 modules are actively shipping.',
     ],
   },
   {
@@ -169,19 +181,8 @@ const SLIDES: SlideMeta[] = [
     notes: [
       'DigitalOcean NYC3 (compute + DB) + GCP us-east4 Virginia (AI). Low latency to Reed Building Supply.',
       'Run Payments wired into the Primary Stack as the merchant processor.',
-      'Daily volume snapshots + Managed PostgreSQL PITR (7-day window) included in Tier 1.',
-      'Tier 2 adds 30-day offsite to DO Spaces + RPO < 1hr / RTO < 4hr SLA.',
-    ],
-  },
-  //  { id: 'msp', title: 'Managed Services', component: SlideManagedServices, notes: [] },
-  {
-    id: 'discovery',
-    title: 'Discovery Checklist',
-    component: SlideChecklist,
-    notes: [
-      'Inputs we need from Reed for Phase 0.',
-      'Most discovery answers already captured in docs/reed-phase0-discovery.md from research + prior calls.',
-      'Walk through this list to confirm/correct vs. our pre-fills.',
+      'Offline mode for POS + inventory IS in scope for Phase 1 — local-first writes queue and auto-sync on reconnect.',
+      'Same hosting + backup regimen runs across all MSP tiers — never an upcharge for redundancy or recovery.',
     ],
   },
   {
@@ -189,9 +190,9 @@ const SLIDES: SlideMeta[] = [
     title: 'Next Steps',
     component: SlideNextSteps,
     notes: [
-      'Close the meeting here. Today\'s decision is Phase 0 only — $500 setup + $500/mo, locked plan in 2–3 weeks.',
-      'Action: send Phase 0 agreement PDF this week. Book first working session.',
-      'No commitment to Phase 1 until the locked plan is signed.',
+      'Phase 0 total risk: $500 setup + $500/mo (~1 month) = ~$1K, with the option to terminate after Phase 0 — no obligation to Phase 1.',
+      'Close: agree to Phase 0 when Reed is ready. No artificial urgency.',
+      'After Phase 0, Reed has a locked Phase 1 plan + estimate to make a fully-informed decision.',
     ],
   },
 ];

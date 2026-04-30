@@ -10,7 +10,7 @@ const PARITY_MODULES = [
   {
     icon: Package,
     name: 'Inventory & Procurement',
-    items: ['Core item master', 'Reorder thresholds + supplier lead times'],
+    items: ['Core item master', 'Reorder thresholds + supplier lead times', 'Offline lookup during internet outages'],
   },
   {
     icon: FileText,
@@ -25,7 +25,7 @@ const PARITY_MODULES = [
   {
     icon: CreditCard,
     name: 'POS + Payments',
-    items: ['POS terminal replacing Clover', 'Run Payments wired (card-present + on-account card-on-file)'],
+    items: ['POS terminal replacing Clover', 'Run Payments wired (card-present + on-account card-on-file)', 'Offline mode — local-first writes, auto-sync on reconnect'],
   },
   {
     icon: Receipt,

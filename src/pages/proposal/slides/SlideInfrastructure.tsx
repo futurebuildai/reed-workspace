@@ -1,4 +1,4 @@
-import { Shield, Cloud, Database, Globe, Zap, HelpCircle, Archive } from 'lucide-react';
+import { Shield, Cloud, Database, Globe, Zap, HelpCircle, Archive, WifiOff } from 'lucide-react';
 
 export function SlideInfrastructure() {
   return (
@@ -129,25 +129,27 @@ export function SlideInfrastructure() {
         </div>
       </div>
 
-      {/* Open Requirements */}
-      <div className="mt-10 glass-card rounded-2xl p-6 border-gable-green/20 bg-gable-green/5">
-        <h4 className="font-bold text-sm text-gable-green mb-4 flex items-center gap-2">
-          <HelpCircle size={16} />
-          Open Questions / Requirements
-        </h4>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-deep-space/40 rounded-xl p-4 border border-white/5">
-            <span className="text-[10px] font-bold text-gable-green uppercase block mb-2">Offline Mode Operations</span>
-            <p className="text-xs text-zinc-400 leading-relaxed">
-              Do yard operations require an offline-capable mode for POS or inventory lookup during internet outages? What is the acceptable sync delay when connectivity resumes?
-            </p>
+      {/* Confirmed Phase 1 inclusion + Open question */}
+      <div className="mt-10 grid md:grid-cols-2 gap-4">
+        <div className="rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.04] p-5">
+          <div className="flex items-center gap-2 mb-3">
+            <WifiOff size={14} className="text-emerald-400" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-300">Confirmed in Phase 1 Scope</span>
           </div>
-          <div className="bg-deep-space/40 rounded-xl p-4 border border-white/5">
-            <span className="text-[10px] font-bold text-gable-green uppercase block mb-2">SSO / Identity Provider</span>
-            <p className="text-xs text-zinc-400 leading-relaxed">
-              Does Reed use Google Workspace or Microsoft 365 as the identity backbone? SSO can land in Phase 2 once the user model and role tiers are validated in Phase 1.
-            </p>
+          <h4 className="font-bold text-sm text-white mb-2">Offline Mode for POS + Inventory</h4>
+          <p className="text-[11px] text-zinc-400 leading-relaxed">
+            POS terminals and inventory lookup keep working during internet outages. Local-first writes queue on the device and auto-sync when connectivity resumes — no manual reconciliation required. Acceptable sync delay validated during UAT.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-gable-green/20 bg-gable-green/5 p-5">
+          <div className="flex items-center gap-2 mb-3">
+            <HelpCircle size={14} className="text-gable-green" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-gable-green">Open Question</span>
           </div>
+          <h4 className="font-bold text-sm text-white mb-2">SSO / Identity Provider</h4>
+          <p className="text-[11px] text-zinc-400 leading-relaxed">
+            Does Reed use Google Workspace or Microsoft 365 as the identity backbone? SSO can land in Phase 2 once the user model and role tiers are validated in Phase 1.
+          </p>
         </div>
       </div>
     </div>

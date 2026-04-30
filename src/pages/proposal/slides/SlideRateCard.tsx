@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, Sparkles, Wrench, GraduationCap, MapPin, ShieldCheck, Server, Clock, Lock, CreditCard, Footprints, Activity, Zap } from 'lucide-react';
+import { Sparkles, Wrench, GraduationCap, MapPin, Server, Clock, Lock, CreditCard, Footprints, Activity, Zap } from 'lucide-react';
 
 const PHASE_1_LINES = [
   {
@@ -221,65 +221,26 @@ export function SlideRateCard() {
         </div>
       </div>
 
-      {/* Ongoing Partnership — two tiers */}
-      <div className="mb-10">
-        <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500 mb-4 text-center">Ongoing Partnership — Reed selects post-launch</h3>
-        <div className="grid md:grid-cols-2 gap-5">
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="glass-card rounded-2xl p-6 border-white/5 flex flex-col"
-          >
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <Server size={16} className="text-zinc-400" />
-                <span className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">Tier 1</span>
-              </div>
-            </div>
-            <h4 className="font-bold text-base text-white mb-1">Managed Hosting</h4>
-            <div className="text-3xl font-bold text-white mb-4 font-data">$250<span className="text-sm text-zinc-500 font-sans">/mo</span></div>
-            <ul className="space-y-2 text-xs text-zinc-400 mb-4 flex-1">
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>DigitalOcean NYC3 droplets + uptime monitoring</li>
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span><span><strong className="text-white">Daily volume snapshots</strong> (7-day retention)</span></li>
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span><span>Managed PostgreSQL with <strong className="text-white">PITR</strong> (point-in-time recovery, 7-day window)</span></li>
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Dev/staging environments included</li>
-              <li className="flex items-start gap-2"><span className="text-gable-green mt-1">•</span>Reactive bug response (best-effort)</li>
-            </ul>
-            <div className="pt-3 border-t border-white/5">
-              <span className="text-[10px] text-zinc-600 uppercase tracking-widest font-bold">No SLA</span>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="glass-card rounded-2xl p-6 border-gable-green/30 bg-gable-green/5 flex flex-col shadow-glow relative overflow-hidden"
-          >
-            <div className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-widest text-gable-green bg-gable-green/15 px-2 py-1 rounded border border-gable-green/30">
-              Recommended
-            </div>
-            <div className="flex items-center gap-2 mb-4">
-              <ShieldCheck size={16} className="text-gable-green" />
-              <span className="text-[10px] uppercase tracking-widest font-bold text-gable-green">Tier 2</span>
-            </div>
-            <h4 className="font-bold text-base text-white mb-1">Standard MSP</h4>
-            <div className="text-3xl font-bold text-white mb-4 font-data">$800<span className="text-sm text-zinc-500 font-sans">/mo</span></div>
-            <ul className="space-y-2 text-xs text-zinc-300 mb-4 flex-1">
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" />Everything in Tier 1</li>
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">4 hrs/mo bundled support</strong> (rolls 90 days)</span></li>
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">Extended retention</strong> — 30-day snapshots + offsite backup to DO Spaces</span></li>
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">Quarterly upstream merges</strong> from GableLBM main</span></li>
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" /><span><strong className="text-white">99.9% uptime SLA</strong> (P1 &lt; 4hr / P2 &lt; 1bd / P3 &lt; 3bd)</span></li>
-              <li className="flex items-start gap-2"><CheckCircle2 size={12} className="text-gable-green shrink-0 mt-0.5" />Patch management + priority bug queue</li>
-            </ul>
-            <div className="pt-3 border-t border-gable-green/20">
-              <span className="text-[10px] text-zinc-400 italic">Beyond 4 hrs/mo billed at Pro Services rates</span>
-            </div>
-          </motion.div>
+      {/* Ongoing Partnership — short reference, full detail on next slide */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="mb-10 rounded-2xl border border-white/5 bg-deep-space/40 p-5 flex items-center justify-between gap-4"
+      >
+        <div className="flex items-center gap-3 min-w-0 flex-1">
+          <div className="w-10 h-10 rounded-xl bg-gable-green/10 flex items-center justify-center shrink-0">
+            <Server size={18} className="text-gable-green" />
+          </div>
+          <div className="min-w-0">
+            <div className="text-[10px] uppercase tracking-widest font-bold text-gable-green mb-0.5">Ongoing Partnership — 3 monthly tiers</div>
+            <p className="text-[11px] text-zinc-400 leading-snug">
+              <span className="text-white font-semibold">$250 / $800 / $1,400 per month</span>. Same hosting + backup regimen across all tiers — only support hours, feature merges, and SLA differ. Full detail on the next slide.
+            </p>
+          </div>
         </div>
-      </div>
+        <span className="text-[9px] font-bold uppercase tracking-widest text-gable-green/70 shrink-0 hidden md:inline">Next slide →</span>
+      </motion.div>
 
       {/* Payment milestones + Founding customer */}
       <div className="grid md:grid-cols-2 gap-6">
